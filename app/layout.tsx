@@ -9,10 +9,7 @@ export const metadata: Metadata = {
   },
   description:
     'A bilingual personal knowledge website about Life OS, first principles, systems thinking, education, investing, technology, and civilization.',
-  metadataBase: new URL(siteUrl),
-  alternates: {
-    canonical: '/'
-  }
+  metadataBase: new URL(siteUrl)
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

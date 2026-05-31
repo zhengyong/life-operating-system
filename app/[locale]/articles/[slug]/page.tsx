@@ -6,6 +6,7 @@ import {ArticleInteractions} from '@/components/ArticleInteractions';
 import {PageShell} from '@/components/PageShell';
 import {getAllArticles, getArticle, markdownToHtml} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {siteUrl} from '@/lib/site';
 import {getCategoryHref, getCategoryLabel, getTagHref, getTagLabel} from '@/lib/taxonomy';
 import {formatDate} from '@/lib/utils';
 
@@ -31,7 +32,10 @@ export async function generateMetadata({
 
   return {
     title: locale === 'en' && article.title_en ? article.title_en : article.title,
-    description: locale === 'en' && article.summary_en ? article.summary_en : article.summary
+    description: locale === 'en' && article.summary_en ? article.summary_en : article.summary,
+    alternates: {
+      canonical: `${siteUrl}/${locale}/articles/${slug}/`
+    }
   };
 }
 
