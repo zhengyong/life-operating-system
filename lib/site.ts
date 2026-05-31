@@ -1,2 +1,1 @@
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'http://127.0.0.1:4173').replace(/\/$/, '');
-
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://life-operating-system-two.vercel.app').replace(/\/$/, '');
