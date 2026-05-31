@@ -1,0 +1,58 @@
+{
+  "brand": "Yong Zheng's Life Operating System",
+  "brandShort": "Life OS",
+  "brandZh": "郑勇的人生操作系统",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "books": "Books",
+    "articles": "Articles",
+    "categories": "Categories",
+    "tags": "Tags"
+  },
+  "home": {
+    "heroTitle": "Build Your Life Operating System",
+    "heroSubtitle": "A systematic framework for growth, education, investing, technology, and civilization.",
+    "introTitle": "Life is a long-term systems engineering project.",
+    "introBody": "Through values, responsibility, first-principles thinking, and the integration of models, methods, and tools, this website helps people build a better life across growth, education, investing, technology, and civilization.",
+    "latest": "Latest Articles",
+    "systemTitle": "Knowledge Architecture",
+    "systemBody": "The site is organized around Life OS, first principles, mental models, career, investing, education, technology, society, and civilization."
+  },
+  "about": {
+    "title": "About Yong Zheng",
+    "body": "I am Yong Zheng, a long-term practitioner and researcher of first-principles thinking and systems thinking. Over the years, I have studied life growth, education, investing, technology, and society, with the goal of building a Life Operating System that ordinary people can actually use.",
+    "principles": "The work here is centered on long-termism, responsibility, clarity, action, and compounding."
+  },
+  "books": {
+    "title": "Books System",
+    "subtitle": "A long-form publishing roadmap for the Life Operating System."
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Essays, notes, models, and methods from the Life OS knowledge base.",
+    "empty": "No articles yet.",
+    "readMore": "Read article"
+  },
+  "taxonomy": {
+    "categoriesTitle": "Categories",
+    "tagsTitle": "Tags",
+    "articleCount": "articles"
+  },
+  "search": {
+    "placeholder": "Search the knowledge base...",
+    "label": "Search",
+    "empty": "No matching articles.",
+    "open": "Search"
+  },
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "chinese": "中文",
+    "updated": "Updated",
+    "category": "Category",
+    "tags": "Tags",
+    "allArticles": "All articles",
+    "backToArticles": "Back to articles"
+  }
+}

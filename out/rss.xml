@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Yong Zheng's Life Operating System</title>
+  <link>https://example.com</link>
+  <description>A bilingual personal knowledge website for Life OS.</description>
+  <item>
+  <title><![CDATA[Depth vs. Breadth: Why You Need a Deep Well Before You Can Have a Forest]]></title>
+  <link>https://example.com/en/articles/depth-and-breadth-deep-well-forest/</link>
+  <guid>https://example.com/en/articles/depth-and-breadth-deep-well-forest/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[Without depth, breadth is only information accumulation. Without breadth, depth can become a cognitive cage. The optimal path is to stand on depth and break through with breadth.]]></description>
+</item>
+<item>
+  <title><![CDATA[Doing the Right Thing, and Doing Things Right: Life Is Not About Who Works Harder, But Who Makes Fewer Mistakes]]></title>
+  <link>https://example.com/en/articles/doing-the-right-thing-fewer-mistakes/</link>
+  <guid>https://example.com/en/articles/doing-the-right-thing-fewer-mistakes/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[Life is not a sprint defined by effort alone. It is an infinite game shaped by choice, effort, and time. When the direction is wrong, running harder becomes a disaster.]]></description>
+</item>
+<item>
+  <title><![CDATA[Life Positioning: Why Finding Your Coordinates Matters More Than Effort]]></title>
+  <link>https://example.com/en/articles/life-positioning-find-your-coordinates/</link>
+  <guid>https://example.com/en/articles/life-positioning-find-your-coordinates/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[Effort solves the speed problem, while positioning solves the direction problem. The greatest cost in life is not moving slowly, but walking in the wrong direction for too long.]]></description>
+</item>
+<item>
+  <title><![CDATA[Lifelong Learning: Building Your Cognitive Compound Interest System in an Era of Uncertainty]]></title>
+  <link>https://example.com/en/articles/lifelong-learning-cognitive-compound-interest/</link>
+  <guid>https://example.com/en/articles/lifelong-learning-cognitive-compound-interest/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[Lifelong learning is not a random accumulation of knowledge. It is the foundational capability to upgrade cognitive models, compound knowledge, and build a Life Operating System in an uncertain era.]]></description>
+</item>
+<item>
+  <title><![CDATA[深度与广度：为什么人生必须先有一口深井，再拥有一片森林]]></title>
+  <link>https://example.com/zh/articles/depth-and-breadth-deep-well-forest/</link>
+  <guid>https://example.com/zh/articles/depth-and-breadth-deep-well-forest/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[没有深度，广度只是信息堆积；没有广度，深度容易成为认知牢笼。最优路径是以深度立身，以广度破局。]]></description>
+</item>
+<item>
+  <title><![CDATA[做正确的事，把事做对：人生不是比谁更努力，而是比谁更少走错路]]></title>
+  <link>https://example.com/zh/articles/doing-the-right-thing-fewer-mistakes/</link>
+  <guid>https://example.com/zh/articles/doing-the-right-thing-fewer-mistakes/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[人生不是单纯比拼努力的短跑，而是一场由选择、努力与时间共同定义的无限游戏。方向错了，奔跑就是一种灾难。]]></description>
+</item>
+<item>
+  <title><![CDATA[人生定位：比努力更重要的，是找到你的坐标]]></title>
+  <link>https://example.com/zh/articles/life-positioning-find-your-coordinates/</link>
+  <guid>https://example.com/zh/articles/life-positioning-find-your-coordinates/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[努力解决的是速度问题，定位解决的是方向问题。人生最大的成本，不是走得慢，而是在错误的方向上走得太久。]]></description>
+</item>
+<item>
+  <title><![CDATA[终身学习：在不确定时代，构建属于你的认知复利系统]]></title>
+  <link>https://example.com/zh/articles/lifelong-learning-cognitive-compound-interest/</link>
+  <guid>https://example.com/zh/articles/lifelong-learning-cognitive-compound-interest/</guid>
+  <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[终身学习不是知识的零散堆砌，而是在不确定时代持续升级认知模型、形成知识复利与人生操作系统的底层能力。]]></description>
+</item>
+<item>
+  <title><![CDATA[First Principles Thinking: Rebuilding from the Ground Structure]]></title>
+  <link>https://example.com/en/articles/first-principles-thinking/</link>
+  <guid>https://example.com/en/articles/first-principles-thinking/</guid>
+  <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[First-principles thinking is not about sounding profound. It is about finding the basic facts that cannot be decomposed further.]]></description>
+</item>
+<item>
+  <title><![CDATA[第一性原理：从问题的底层结构重新开始]]></title>
+  <link>https://example.com/zh/articles/first-principles-thinking/</link>
+  <guid>https://example.com/zh/articles/first-principles-thinking/</guid>
+  <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[第一性原理不是为了显得深刻，而是为了在复杂问题中找到不能继续拆分的基础事实。]]></description>
+</item>
+<item>
+  <title><![CDATA[Life OS: Start from Long-Term Systems Engineering]]></title>
+  <link>https://example.com/en/articles/life-os-introduction/</link>
+  <guid>https://example.com/en/articles/life-os-introduction/</guid>
+  <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[Life OS is not a slogan. It is a practical framework that connects values, responsibility, models, methods, and tools.]]></description>
+</item>
+<item>
+  <title><![CDATA[人生操作系统：从长期系统工程开始]]></title>
+  <link>https://example.com/zh/articles/life-os-introduction/</link>
+  <guid>https://example.com/zh/articles/life-os-introduction/</guid>
+  <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+  <description><![CDATA[人生操作系统不是一个口号，而是一套把价值、责任、模型、方法与工具连接起来的实践框架。]]></description>
+</item>
+</channel>
+</rss>

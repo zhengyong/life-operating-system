@@ -1,0 +1,53 @@
+3:I[4707,[],""]
+6:I[6423,[],""]
+4:["locale","zh","d"]
+5:["slug","doing-the-right-thing-fewer-mistakes","d"]
+0:["HcmE5WHPk1d2wbBaSrIYr",[[["",{"children":[["locale","zh","d"],{"children":["articles",{"children":[["slug","doing-the-right-thing-fewer-mistakes","d"],{"children":["__PAGE__?{\"locale\":\"zh\",\"slug\":\"doing-the-right-thing-fewer-mistakes\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":[["locale","zh","d"],{"children":["articles",{"children":[["slug","doing-the-right-thing-fewer-mistakes","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","articles","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","articles","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[null,"$L7"],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/9dfeead2da2c1fe9.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]}]],null],null],["$L8",null]]]]
+9:I[8935,["972","static/chunks/972-529eab38dca8e57f.js","378","static/chunks/378-d3f0ea0c4c27f072.js","902","static/chunks/app/%5Blocale%5D/articles/%5Bslug%5D/page-a35769cf6751065e.js"],"Header"]
+a:I[2972,["972","static/chunks/972-529eab38dca8e57f.js","378","static/chunks/378-d3f0ea0c4c27f072.js","902","static/chunks/app/%5Blocale%5D/articles/%5Bslug%5D/page-a35769cf6751065e.js"],""]
+7:["$","div",null,{"data-locale":"zh","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]
+b:T161c,<p>在现实的洪流中，我们常目睹一种令人费解的“勤奋悖论”：有的人以透支生命为代价，日夜兼程，却在十年后发现自己仍在原地打转，收入与阶层未曾跃迁；而另一些人看似闲庭信步，却总能踩中时代的鼓点，人生轨迹螺旋上升。</p>
+<p>这种巨大的反差，往往被简单归结为“运气”或“命数”。然而，若我们剥离表象，运用第一性原理去审视人生的底层逻辑，会发现这并非运气的博弈，而是一场关于选择与复利的精密计算。</p>
+<p>人生从来不是一场单纯比拼爆发力的短跑，而是一场由 <strong>选择 × 努力 × 时间</strong> 共同定义的无限游戏。</p>
+<h2>一、选择的权重：方向错了，奔跑就是一种灾难</h2>
+<p>人生最大的隐性成本，从来不是试错带来的失败，而是长期在错误的道路上空耗。</p>
+<p>我们习惯将人生比作短跑，潜意识里认为只要跑得够快就能赢。但实际上，人生更像是一次长途航海。如果你的目的地是星辰大海，却将航向设定在死胡同，那么你的引擎动力越强、风帆张得越满，你离目标反而越远。</p>
+<p>这就是“选择大于努力”的残酷真相。</p>
+<p>选择解决的是方向问题，是战略层面的“做正确的事”；努力解决的是效率问题，是战术层面的“把事做对”。</p>
+<p>在错误的赛道上，努力不仅无效，甚至是一种负资产。行业周期的衰退、夕阳产业的黄昏、缺乏成长性的平台，这些宏观环境的碾压，往往是个人的微观勤奋无法对抗的。</p>
+<p>时间是最好的放大器。它会将最初那个微小的选择偏差，在十年的维度上放大成无法逾越的鸿沟。</p>
+<h2>二、努力的本质：不是为了感动自己，而是为了获取选择权</h2>
+<p>既然选择如此重要，我们是否就可以否定努力的价值？绝非如此。</p>
+<p>这里存在一个巨大的认知误区：许多人将“选择大于努力”当成了懒惰的借口。事实上，努力与选择并非二元对立，而是因果递进。</p>
+<p>努力的终极意义，在于扩大你的选择半径。</p>
+<p>在这个资源守恒的世界里，优质的高校、核心的岗位、稀缺的投资机会，从来都是留给有准备的人的。你此刻的每一次挑灯夜读，每一次技能打磨，每一次对认知的升级，本质上都是在为自己积累筹码。</p>
+<p>没有深厚的积累作为底座，所谓的“选择”不过是无奈的“被挑选”。只有当你具备了足够的能力储备，你才拥有了对平庸说“不”的权利，才能在人生的十字路口，从容地挑选那条通往高处的路径。</p>
+<p>因此，努力是获取选择权的手段，而选择是让努力价值最大化的杠杆。</p>
+<h2>三、避错的智慧：人生不需要次次做对，但绝不能次次踩坑</h2>
+<p>在充满不确定性的世界里，想要精准预判未来、每次都做出“最优解”，几乎是不可能的任务。许多年轻人因为害怕选错而陷入焦虑，迟迟不敢行动。</p>
+<p>其实，我们不妨换一种思维方式：既然无法确知什么绝对正确，那么可以先识别什么是绝对错误。</p>
+<p>这就是查理·芒格推崇的“逆向思维”。</p>
+<p>人生的进步，往往不是因为你做对了什么惊天动地的大事，而是因为你成功规避了那些毁灭性的深坑。</p>
+<p>长期透支健康、沉迷于短期多巴胺的快感、触碰法律红线、陷入赌博的泥潭、在无效社交中消耗精力，这些行为在任何时间维度下都是“负期望值”的。</p>
+<p>只要你能管住自己，不去做这些明显错误的事，你就已经跑赢了绝大多数人。</p>
+<p>人生很多时候不是赢在加速，而是赢在没有“爆缸”，赢在一直留在牌桌上。</p>
+<h2>四、复利的信仰：忍受枯燥的积累，静待质变的时刻</h2>
+<p>理解了选择与避错，最后的关键变量便是时间。</p>
+<p>在这个追求速成的时代，人们往往高估了一天的变化，却低估了三年的积累。这就像烧水，从 0 摄氏度到 99 摄氏度，水面可能依然平静无波，但只有熬过这漫长的加热过程，才能迎来 100 摄氏度时的沸腾。</p>
+<p>许多人的痛苦在于，他们总想直接吃掉“最后一个包子”来获得饱腹感，却不愿意吞咽前面九个看似无用的铺垫。</p>
+<p>无论是成为顶尖的工程师、投资人还是创业者，所有的光鲜亮丽背后，都是无数个日夜的枯燥重复与试错。</p>
+<p>真正的长期主义者，是那些看清了生活真相依然热爱生活的人，是那些在量变尚未引发质变之前，依然愿意默默扎根的人。</p>
+<h2>结语：先做正确的事，再把事做对</h2>
+<p>人生没有那么多横空出世的奇迹。绝大多数的高光时刻，不过是“正确方向 + 持续行动 + 足够时间”产生的化学反应。</p>
+<p>不要急着要结果，先问问自己是否在做正确的事，是否在把事做对。</p>
+<p>当你远离了错误，坚持了积累，剩下的，请交给时间。</p>
+<blockquote>
+<p><strong>人生操作系统（Life OS）核心观点</strong></p>
+<p>做正确的事，是选择问题；把事做对，是执行问题。</p>
+<p>选择决定方向，努力决定效率，时间决定复利。</p>
+<p>人生不是比谁更努力，而是比谁更少在错误方向上消耗自己。</p>
+<p>先避开大错，再长期积累，很多结果会在时间里自然显现。</p>
+</blockquote>
+2:[["$","$L9",null,{"locale":"zh"}],["$","main",null,{"className":"mx-auto max-w-3xl px-5 py-10 md:py-16","children":[["$","$La",null,{"href":"/zh/articles/","className":"inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-accent","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-left h-4 w-4","children":[["$","path","1wnfg3",{"d":"m15 18-6-6 6-6"}],"$undefined"]}],"返回文章列表"]}],["$","article",null,{"className":"mt-8","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-2 text-sm text-muted","children":[["$","span",null,{"children":"2026年5月31日"}],["$","span",null,{"aria-hidden":"true","children":"/"}],["$","span",null,{"children":"Life OS"}]]}],["$","h1",null,{"className":"mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl","children":"做正确的事，把事做对：人生不是比谁更努力，而是比谁更少走错路"}],["$","p",null,{"className":"mt-5 text-lg leading-8 text-muted","children":"人生不是单纯比拼努力的短跑，而是一场由选择、努力与时间共同定义的无限游戏。方向错了，奔跑就是一种灾难。"}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","span","Life Strategy",{"className":"rounded-md bg-soft px-2.5 py-1 text-xs text-muted","children":"Life Strategy"}],["$","span","Personal Growth",{"className":"rounded-md bg-soft px-2.5 py-1 text-xs text-muted","children":"Personal Growth"}],["$","span","First Principles",{"className":"rounded-md bg-soft px-2.5 py-1 text-xs text-muted","children":"First Principles"}],["$","span","Decision Making",{"className":"rounded-md bg-soft px-2.5 py-1 text-xs text-muted","children":"Decision Making"}],["$","span","Compound Interest",{"className":"rounded-md bg-soft px-2.5 py-1 text-xs text-muted","children":"Compound Interest"}],["$","span","Inversion Thinking",{"className":"rounded-md bg-soft px-2.5 py-1 text-xs text-muted","children":"Inversion Thinking"}],["$","span","Self Discipline",{"className":"rounded-md bg-soft px-2.5 py-1 text-xs text-muted","children":"Self Discipline"}]]}],["$","div",null,{"className":"prose prose-lg mt-10 prose-neutral","dangerouslySetInnerHTML":{"__html":"$b"}}]]}]]}],["$","footer",null,{"className":"mt-20 border-t border-line bg-soft","children":["$","div",null,{"className":"mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 md:flex-row md:items-center md:justify-between","children":[["$","div",null,{"children":[["$","p",null,{"className":"font-semibold text-ink","children":"郑勇的人生操作系统"}],["$","p",null,{"className":"mt-2 max-w-xl text-sm leading-6 text-muted","children":"一个面向长期成长的数字化思想资产库。"}]]}],["$","div",null,{"className":"flex flex-wrap gap-3 text-sm text-muted","children":[["$","$La",null,{"href":"/zh/articles/","className":"hover:text-accent","children":"文章"}],["$","$La",null,{"href":"/zh/books/","className":"hover:text-accent","children":"书籍"}],["$","$La",null,{"href":"/rss.xml","className":"hover:text-accent","children":"RSS"}]]}]]}]}]]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"做正确的事，把事做对：人生不是比谁更努力，而是比谁更少走错路 | Yong Zheng's Life Operating System"}],["$","meta","3",{"name":"description","content":"人生不是单纯比拼努力的短跑，而是一场由选择、努力与时间共同定义的无限游戏。方向错了，奔跑就是一种灾难。"}],["$","link","4",{"rel":"canonical","href":"https://example.com/"}]]
+1:null

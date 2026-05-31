@@ -1,0 +1,58 @@
+{
+  "brand": "郑勇的人生操作系统",
+  "brandShort": "Life OS",
+  "brandZh": "郑勇的人生操作系统",
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "books": "书籍",
+    "articles": "文章",
+    "categories": "分类",
+    "tags": "标签"
+  },
+  "home": {
+    "heroTitle": "Build Your Life Operating System",
+    "heroSubtitle": "用系统化思维构建人生、教育、投资、技术与文明的长期成长框架。",
+    "introTitle": "人生是一项长期系统工程。",
+    "introBody": "通过价值、责任、第一性原理以及模型-方法-工具体系，帮助普通人在成长、教育、投资、技术与文明中实现长期复利。",
+    "latest": "最新文章",
+    "systemTitle": "知识体系",
+    "systemBody": "本站围绕人生操作系统、第一性原理、心智模型、职场、投资、教育、技术、社会与文明持续展开。"
+  },
+  "about": {
+    "title": "关于郑勇",
+    "body": "我是郑勇（Yong Zheng），一名长期实践第一性原理与系统思维的研究者。多年来，我持续研究人生成长、教育、投资、科技与社会，希望构建一套适用于普通人的“人生操作系统（Life Operating System）”。",
+    "principles": "这里的写作以长期主义、责任、清晰、行动与复利为核心。"
+  },
+  "books": {
+    "title": "书籍体系",
+    "subtitle": "围绕人生操作系统展开的长期写作与出版路线。"
+  },
+  "articles": {
+    "title": "文章",
+    "subtitle": "来自 Life OS 知识库的文章、札记、模型与方法。",
+    "empty": "暂无文章。",
+    "readMore": "阅读全文"
+  },
+  "taxonomy": {
+    "categoriesTitle": "分类",
+    "tagsTitle": "标签",
+    "articleCount": "篇文章"
+  },
+  "search": {
+    "placeholder": "搜索知识库...",
+    "label": "搜索",
+    "empty": "没有找到匹配文章。",
+    "open": "搜索"
+  },
+  "common": {
+    "language": "语言",
+    "english": "English",
+    "chinese": "中文",
+    "updated": "更新于",
+    "category": "分类",
+    "tags": "标签",
+    "allArticles": "全部文章",
+    "backToArticles": "返回文章列表"
+  }
+}

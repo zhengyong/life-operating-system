@@ -1,0 +1,33 @@
+{
+  "name": "life-os-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Yong Zheng's Life Operating System - a bilingual personal knowledge website.",
+  "scripts": {
+    "dev": "npm run build:index && next dev",
+    "build:index": "tsx scripts/build-search-index.ts",
+    "build": "npm run build:index && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.468.0",
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
