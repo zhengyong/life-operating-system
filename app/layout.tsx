@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {siteUrl} from '@/lib/site';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   },
   description:
     'A bilingual personal knowledge website about Life OS, first principles, systems thinking, education, investing, technology, and civilization.',
-  metadataBase: new URL('https://example.com'),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/'
   }

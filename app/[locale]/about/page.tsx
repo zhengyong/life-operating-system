@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
-import {BriefcaseBusiness, GraduationCap, Lightbulb, Network, Sparkles} from 'lucide-react';
+import Link from 'next/link';
+import {BriefcaseBusiness, GraduationCap, Lightbulb, Mail, MessageCircle, Network, Sparkles} from 'lucide-react';
 import {PageShell} from '@/components/PageShell';
 import {getAboutProfile} from '@/lib/about';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
@@ -147,6 +148,39 @@ export default async function AboutPage({params}: {params: {locale: string}}) {
             ))}
           </div>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-ink">{profile.valuesClosing}</p>
+        </section>
+
+        <section className="border-t border-line py-12">
+          <div className="rounded-lg border border-line bg-white p-6 shadow-soft">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.contact.title}</h2>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">{t.contact.subtitle}</p>
+              </div>
+              <Link
+                href={`/${locale}/contact/`}
+                className="inline-flex items-center justify-center rounded-md bg-ink px-5 py-3 text-sm font-medium text-white transition hover:bg-accent"
+              >
+                {t.nav.contact}
+              </Link>
+            </div>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="flex items-center gap-3 rounded-md bg-soft p-4">
+                <MessageCircle className="h-5 w-5 text-accent" />
+                <div>
+                  <p className="text-xs font-medium text-muted">{t.contact.wechat}</p>
+                  <p className="mt-1 select-all font-mono text-sm text-ink">future_in_ai</p>
+                </div>
+              </div>
+              <a href="mailto:zhengyong8797@gmail.com" className="flex items-center gap-3 rounded-md bg-soft p-4 transition hover:text-accent">
+                <Mail className="h-5 w-5 text-accent" />
+                <div className="min-w-0">
+                  <p className="text-xs font-medium text-muted">{t.contact.email}</p>
+                  <p className="mt-1 break-all font-mono text-sm text-ink">zhengyong8797@gmail.com</p>
+                </div>
+              </a>
+            </div>
+          </div>
         </section>
       </main>
     </PageShell>

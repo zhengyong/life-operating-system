@@ -8,7 +8,8 @@
     "books": "Books",
     "articles": "Articles",
     "categories": "Categories",
-    "tags": "Tags"
+    "tags": "Tags",
+    "contact": "Contact"
   },
   "home": {
     "heroTitle": "Build Your Life Operating System",
@@ -54,5 +55,12 @@
     "tags": "Tags",
     "allArticles": "All articles",
     "backToArticles": "Back to articles"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "For conversations about Life OS, AI tools, product solutions, knowledge systems, or long-term collaboration, you can reach me here.",
+    "wechat": "WeChat",
+    "email": "Email",
+    "note": "When adding me on WeChat, please briefly mention why you are reaching out."
   }
 }

@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: http://127.0.0.1:4173/sitemap.xml

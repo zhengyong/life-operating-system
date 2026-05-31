@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {getAllArticles} from '../lib/content';
+import {siteUrl} from '../lib/site';
 
 const publicDirectory = path.join(process.cwd(), 'public');
 
@@ -21,7 +22,6 @@ const index = getAllArticles().map((article) => ({
 
 fs.writeFileSync(path.join(publicDirectory, 'search-index.json'), JSON.stringify(index, null, 2));
 
-const siteUrl = 'https://example.com';
 const rssItems = getAllArticles()
   .map((article) => {
     const title = article.locale === 'en' && article.title_en ? article.title_en : article.title;

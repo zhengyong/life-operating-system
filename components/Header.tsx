@@ -23,7 +23,8 @@ export function Header({locale}: HeaderProps) {
     {href: `/${locale}/books/`, label: t.nav.books},
     {href: `/${locale}/articles/`, label: t.nav.articles},
     {href: `/${locale}/categories/`, label: t.nav.categories},
-    {href: `/${locale}/tags/`, label: t.nav.tags}
+    {href: `/${locale}/tags/`, label: t.nav.tags},
+    {href: `/${locale}/contact/`, label: t.nav.contact}
   ];
 
   return (

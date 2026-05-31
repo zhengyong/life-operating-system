@@ -4,6 +4,7 @@ import {ArticleCard} from '@/components/ArticleCard';
 import {PageShell} from '@/components/PageShell';
 import {categories, getArticles} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {getCategoryHref, getCategoryLabel} from '@/lib/taxonomy';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
@@ -72,10 +73,10 @@ export default async function HomePage({params}: {params: {locale: string}}) {
                 {categories.map((category) => (
                   <Link
                     key={category}
-                    href={`/${locale}/categories/`}
+                    href={getCategoryHref(category, locale)}
                     className="rounded-md border border-line bg-soft px-3 py-2 text-sm text-muted transition hover:border-accent hover:text-accent"
                   >
-                    {category}
+                    {getCategoryLabel(category, locale)}
                   </Link>
                 ))}
               </div>

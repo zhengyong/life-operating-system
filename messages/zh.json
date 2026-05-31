@@ -8,7 +8,8 @@
     "books": "书籍",
     "articles": "文章",
     "categories": "分类",
-    "tags": "标签"
+    "tags": "标签",
+    "contact": "联系"
   },
   "home": {
     "heroTitle": "Build Your Life Operating System",
@@ -54,5 +55,12 @@
     "tags": "标签",
     "allArticles": "全部文章",
     "backToArticles": "返回文章列表"
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "如果你想交流人生操作系统、AI 工具、产品方案、知识体系或长期合作，可以通过以下方式联系我。",
+    "wechat": "微信",
+    "email": "邮箱",
+    "note": "添加微信时，请简单说明来意。"
   }
 }

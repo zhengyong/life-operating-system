@@ -22,6 +22,9 @@ export function Footer({locale}: {locale: Locale}) {
           <Link href={`/${locale}/books/`} className="hover:text-accent">
             {t.nav.books}
           </Link>
+          <Link href={`/${locale}/contact/`} className="hover:text-accent">
+            {t.nav.contact}
+          </Link>
           <Link href="/rss.xml" className="hover:text-accent">
             RSS
           </Link>

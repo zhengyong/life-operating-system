@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ChevronLeft} from 'lucide-react';
+import {ArticleInteractions} from '@/components/ArticleInteractions';
 import {PageShell} from '@/components/PageShell';
 import {getAllArticles, getArticle, markdownToHtml} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
@@ -85,6 +86,7 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
             dangerouslySetInnerHTML={{__html: contentHtml}}
           />
         </article>
+        <ArticleInteractions locale={locale} />
       </main>
     </PageShell>
   );
