@@ -5,6 +5,7 @@ import {ChevronLeft} from 'lucide-react';
 import {PageShell} from '@/components/PageShell';
 import {getAllArticles, getArticle, markdownToHtml} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {getCategoryHref, getCategoryLabel, getTagHref, getTagLabel} from '@/lib/taxonomy';
 import {formatDate} from '@/lib/utils';
 
 export function generateStaticParams() {
@@ -62,15 +63,21 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
             <span>{formatDate(article.date, locale)}</span>
             <span aria-hidden="true">/</span>
-            <span>{article.category}</span>
+            <Link href={getCategoryHref(article.category, locale)} className="hover:text-accent">
+              {getCategoryLabel(article.category, locale)}
+            </Link>
           </div>
           <h1 className="mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl">{title}</h1>
           <p className="mt-5 text-lg leading-8 text-muted">{summary}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {article.tags.map((tag) => (
-              <span key={tag} className="rounded-md bg-soft px-2.5 py-1 text-xs text-muted">
-                {tag}
-              </span>
+              <Link
+                key={tag}
+                href={getTagHref(tag, locale)}
+                className="rounded-md bg-soft px-2.5 py-1 text-xs text-muted transition hover:text-accent"
+              >
+                {getTagLabel(tag, locale)}
+              </Link>
             ))}
           </div>
           <div

@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import {remark} from 'remark';
 import html from 'remark-html';
 import {Locale, locales} from '@/lib/i18n';
+import {slugify} from '@/lib/utils';
 
 export {locales};
 
@@ -121,6 +122,15 @@ export function getTaxonomy(locale: Locale, key: 'category' | 'tags') {
   return Array.from(counts.entries())
     .map(([name, count]) => ({name, count}))
     .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function findCategoryBySlug(slug: string) {
+  return categories.find((category) => slugify(category) === slug) ?? null;
+}
+
+export function findTagBySlug(locale: Locale, slug: string) {
+  const tag = getTaxonomy(locale, 'tags').find((item) => slugify(item.name) === slug);
+  return tag?.name ?? null;
 }
 
 export const books = [

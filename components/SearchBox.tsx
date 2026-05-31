@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {X} from 'lucide-react';
 import {useEffect, useMemo, useState} from 'react';
 import {Locale, getDictionary} from '@/lib/i18n';
+import {getCategoryLabel} from '@/lib/taxonomy';
 
 type SearchItem = {
   title: string;
@@ -76,7 +77,7 @@ export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => voi
                 >
                   <p className="text-sm font-semibold text-ink">{item.title}</p>
                   <p className="mt-1 line-clamp-2 text-sm leading-6 text-muted">{item.summary}</p>
-                  <p className="mt-2 text-xs text-muted">{item.category}</p>
+                  <p className="mt-2 text-xs text-muted">{getCategoryLabel(item.category, locale)}</p>
                 </Link>
               ))}
             </div>

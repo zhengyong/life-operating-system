@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {PageShell} from '@/components/PageShell';
 import {getTaxonomy} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {getCategoryLabel} from '@/lib/taxonomy';
 import {slugify} from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -27,10 +28,10 @@ export default async function CategoriesPage({params}: {params: {locale: string}
           {taxonomy.map((item) => (
             <Link
               key={item.name}
-              href={`/${locale}/articles/?category=${slugify(item.name)}`}
+              href={`/${locale}/categories/${slugify(item.name)}/`}
               className="flex items-center justify-between rounded-lg border border-line bg-white p-5 transition hover:border-accent hover:shadow-soft"
             >
-              <span className="font-medium text-ink">{item.name}</span>
+              <span className="font-medium text-ink">{getCategoryLabel(item.name, locale)}</span>
               <span className="text-sm text-muted">
                 {item.count} {t.taxonomy.articleCount}
               </span>
