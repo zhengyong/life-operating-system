@@ -105,6 +105,28 @@ export function getArticle(locale: Locale, slug: string): Article | null {
   return article;
 }
 
+export function getRelatedArticles(article: ArticleMeta, limit = 3): ArticleMeta[] {
+  return getArticles(article.locale)
+    .filter((candidate) => candidate.slug !== article.slug)
+    .map((candidate) => {
+      const sharedTags = candidate.tags.filter((tag) => article.tags.includes(tag)).length;
+      const sameCategory = candidate.category === article.category ? 2 : 0;
+      const score = sameCategory + sharedTags;
+
+      return {article: candidate, score};
+    })
+    .filter((candidate) => candidate.score > 0)
+    .sort((a, b) => {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+
+      return new Date(b.article.date).getTime() - new Date(a.article.date).getTime();
+    })
+    .slice(0, limit)
+    .map(({article: relatedArticle}) => relatedArticle);
+}
+
 export async function markdownToHtml(markdown: string) {
   const result = await remark().use(html).process(markdown);
   return result.toString();

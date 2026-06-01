@@ -2,9 +2,11 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ChevronLeft} from 'lucide-react';
+import {ArticleCard} from '@/components/ArticleCard';
 import {ArticleInteractions} from '@/components/ArticleInteractions';
+import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
-import {getAllArticles, getArticle, markdownToHtml} from '@/lib/content';
+import {getAllArticles, getArticle, getRelatedArticles, markdownToHtml} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {siteUrl} from '@/lib/site';
 import {getCategoryHref, getCategoryLabel, getTagHref, getTagLabel} from '@/lib/taxonomy';
@@ -52,13 +54,22 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
   const contentHtml = await markdownToHtml(article.content);
   const title = locale === 'en' && article.title_en ? article.title_en : article.title;
   const summary = locale === 'en' && article.summary_en ? article.summary_en : article.summary;
+  const relatedArticles = getRelatedArticles(article);
 
   return (
     <PageShell locale={locale}>
       <main className="mx-auto max-w-3xl px-5 py-10 md:py-16">
+        <Breadcrumbs
+          items={[
+            {label: t.nav.home, href: `/${locale}/`},
+            {label: t.nav.articles, href: `/${locale}/articles/`},
+            {label: title}
+          ]}
+        />
+
         <Link
           href={`/${locale}/articles/`}
-          className="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-accent"
+          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-accent"
         >
           <ChevronLeft className="h-4 w-4" />
           {t.common.backToArticles}
@@ -91,6 +102,16 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
           />
         </article>
         <ArticleInteractions locale={locale} />
+        {relatedArticles.length > 0 ? (
+          <section className="mt-14 border-t border-line pt-10">
+            <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.articles.related}</h2>
+            <div className="mt-6 grid gap-5">
+              {relatedArticles.map((relatedArticle) => (
+                <ArticleCard key={relatedArticle.slug} article={relatedArticle} locale={locale} />
+              ))}
+            </div>
+          </section>
+        ) : null}
       </main>
     </PageShell>
   );

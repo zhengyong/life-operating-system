@@ -33,7 +33,8 @@
     "title": "Articles",
     "subtitle": "Essays, notes, models, and methods from the Life OS knowledge base.",
     "empty": "No articles yet.",
-    "readMore": "Read article"
+    "readMore": "Read article",
+    "related": "Related Articles"
   },
   "taxonomy": {
     "categoriesTitle": "Categories",
@@ -45,6 +46,12 @@
     "label": "Search",
     "empty": "No matching articles.",
     "open": "Search"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "page": "Page",
+    "previous": "Previous page",
+    "next": "Next page"
   },
   "common": {
     "language": "Language",

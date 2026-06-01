@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {ArticleCard} from '@/components/ArticleCard';
+import {ArticleListView} from '@/components/ArticleListView';
 import {PageShell} from '@/components/PageShell';
 import {getArticles} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
@@ -27,15 +27,7 @@ export default async function ArticlesPage({params}: {params: {locale: string}})
           <p className="mt-5 text-lg leading-8 text-muted">{t.articles.subtitle}</p>
         </div>
 
-        {articles.length > 0 ? (
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {articles.map((article) => (
-              <ArticleCard key={article.slug} article={article} locale={locale} />
-            ))}
-          </div>
-        ) : (
-          <p className="mt-10 rounded-lg border border-line bg-white p-8 text-center text-muted">{t.articles.empty}</p>
-        )}
+        <ArticleListView articles={articles} locale={locale} />
       </main>
     </PageShell>
   );
