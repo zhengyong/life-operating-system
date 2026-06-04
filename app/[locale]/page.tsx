@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {ArrowRight, BookOpen, Compass, Layers} from 'lucide-react';
+import {ArrowRight, BookOpen, Building2, Compass, Layers, LineChart, UserRound} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
 import {PageShell} from '@/components/PageShell';
 import {categories, getArticles} from '@/lib/content';
@@ -80,6 +80,35 @@ export default async function HomePage({params}: {params: {locale: string}}) {
                   </Link>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-5 py-14">
+          <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.home.topicsTitle}</h2>
+              <p className="mt-3 text-sm leading-7 text-muted">{t.home.topicsBody}</p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                {href: `/${locale}/people/`, label: t.nav.people, icon: UserRound},
+                {href: `/${locale}/companies/`, label: t.nav.companies, icon: Building2},
+                {href: `/${locale}/stocks/`, label: t.nav.stocks, icon: LineChart}
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg border border-line bg-white p-5 transition hover:border-accent hover:shadow-soft"
+                  >
+                    <Icon className="h-5 w-5 text-accent" />
+                    <p className="mt-4 font-semibold text-ink">{item.label}</p>
+                    <ArrowRight className="mt-4 h-4 w-4 text-muted" />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation';
 import {ChevronLeft} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
 import {ArticleInteractions} from '@/components/ArticleInteractions';
+import {ArticleSummaryImage} from '@/components/ArticleSummaryImage';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {getAllArticles, getArticle, getRelatedArticles, markdownToHtml} from '@/lib/content';
@@ -96,6 +97,7 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
               </Link>
             ))}
           </div>
+          <ArticleSummaryImage locale={locale} slug={article.slug} title={title} />
           <div
             className="prose prose-lg mt-10 prose-neutral"
             dangerouslySetInnerHTML={{__html: contentHtml}}

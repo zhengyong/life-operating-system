@@ -1,0 +1,14 @@
+Use case: infographic-diagram
+Asset type: static article summary image for a bilingual personal knowledge website
+Primary request: Create a polished editorial summary image for this article. It should help readers understand the core idea before reading.
+Article title: "Depth vs. Breadth: Why You Need a Deep Well Before You Can Have a Forest"
+Article summary: "Without depth, breadth is only information accumulation. Without breadth, depth can become a cognitive cage. The optimal path is to stand on depth and break through with breadth."
+Category: "Mental Models"
+Tags: "Depth vs. Breadth, T-Shaped Talent, Cognitive Compound Interest, First Principles, Career Development, Personal Growth, Lifelong Learning"
+Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
+Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
+Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy
+Color palette: warm white background, deep ink, teal accent, muted gold accent, restrained neutral tones
+Text: no text, no labels, no captions, no watermark
+Constraints: visually summarize the article concept; avoid literal mind maps, node-link diagrams, busy charts, tiny unreadable text, brand logos, people with identifiable faces
+Output target: save as public/article-summaries/en/depth-and-breadth-deep-well-forest.png, 1600x900

@@ -129,7 +129,7 @@ export function getRelatedArticles(article: ArticleMeta, limit = 3): ArticleMeta
 
 export async function markdownToHtml(markdown: string) {
   const result = await remark().use(html).process(markdown);
-  return result.toString();
+  return result.toString().replace(/<img /g, '<img loading="lazy" decoding="async" ');
 }
 
 export function getTaxonomy(locale: Locale, key: 'category' | 'tags') {

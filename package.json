@@ -5,9 +5,13 @@
   "description": "Yong Zheng's Life Operating System - a bilingual personal knowledge website.",
   "scripts": {
     "dev": "npm run build:index && next dev",
+    "dev:reset": "node scripts/clean-next-cache.mjs && npm run dev",
     "validate:content": "tsx scripts/validate-content.ts",
     "build:index": "tsx scripts/build-search-index.ts",
-    "build": "npm run validate:content && npm run build:index && next build",
+    "build:summary-prompts": "tsx scripts/build-summary-image-prompts.ts",
+    "build:summary-image-batch": "tsx scripts/build-summary-image-batch.ts",
+    "build:summary-manifest": "tsx scripts/build-summary-image-manifest.ts",
+    "build": "npm run validate:content && npm run build:index && npm run build:summary-prompts && npm run build:summary-manifest && next build",
     "start": "next start",
     "lint": "next lint"
   },

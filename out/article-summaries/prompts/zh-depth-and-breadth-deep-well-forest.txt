@@ -1,0 +1,14 @@
+Use case: infographic-diagram
+Asset type: static article summary image for a bilingual personal knowledge website
+Primary request: Create a polished editorial summary image for this article. It should help readers understand the core idea before reading.
+Article title: "深度与广度：为什么人生必须先有一口深井，再拥有一片森林"
+Article summary: "没有深度，广度只是信息堆积；没有广度，深度容易成为认知牢笼。最优路径是以深度立身，以广度破局。"
+Category: "心智模型"
+Tags: "深度与广度, T 型人才, 认知复利, 第一性原理, 职场成长, 个人成长, 终身学习"
+Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
+Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
+Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy
+Color palette: warm white background, deep ink, teal accent, muted gold accent, restrained neutral tones
+Text: no text, no labels, no captions, no watermark
+Constraints: visually summarize the article concept; avoid literal mind maps, node-link diagrams, busy charts, tiny unreadable text, brand logos, people with identifiable faces
+Output target: save as public/article-summaries/zh/depth-and-breadth-deep-well-forest.png, 1600x900

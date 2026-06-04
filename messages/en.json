@@ -7,6 +7,9 @@
     "about": "About",
     "books": "Books",
     "articles": "Articles",
+    "people": "People",
+    "companies": "Companies",
+    "stocks": "Stocks",
     "categories": "Categories",
     "tags": "Tags",
     "contact": "Contact"
@@ -18,7 +21,9 @@
     "introBody": "Through values, responsibility, first-principles thinking, and the integration of models, methods, and tools, this website helps people build a better life across growth, education, investing, technology, and civilization.",
     "latest": "Latest Articles",
     "systemTitle": "Knowledge Architecture",
-    "systemBody": "The site is organized around Life OS, first principles, mental models, career, investing, education, technology, society, and civilization."
+    "systemBody": "The site is organized around Life OS, first principles, mental models, career, investing, education, technology, society, and civilization.",
+    "topicsTitle": "Focused Studies",
+    "topicsBody": "Study a small set of people, companies, and stocks deeply enough to learn how judgment, products, culture, and markets work."
   },
   "about": {
     "title": "About Yong Zheng",
@@ -34,7 +39,50 @@
     "subtitle": "Essays, notes, models, and methods from the Life OS knowledge base.",
     "empty": "No articles yet.",
     "readMore": "Read article",
-    "related": "Related Articles"
+    "related": "Related Articles",
+    "summaryImage": "Article Summary Image"
+  },
+  "topics": {
+    "peopleTitle": "People Studies",
+    "peopleSubtitle": "Learn strategy, product sense, organization, communication, and long-term judgment from a small set of exceptional builders.",
+    "companiesTitle": "Company Studies",
+    "companiesSubtitle": "Understand how great companies build products, make money, form culture, and defend competitive advantages.",
+    "stocksTitle": "Stock Studies",
+    "stocksSubtitle": "Understand stocks through companies, business models, financial statements, valuation, and risk.",
+    "readTopic": "View topic",
+    "overview": "Overview",
+    "learnFrom": "What to learn",
+    "recentNews": "Recent one-week news",
+    "sourceRule": "Source principle",
+    "contentArchive": "Content archive",
+    "lifeAdvice": "Life / Career / Education / Growth",
+    "lifeAdviceSubtitle": "Extract transferable advice for personal life and growth systems from the person’s public communication, long-term choices, and organizational practice.",
+    "relatedCompanies": "Related companies",
+    "relatedCompaniesSubtitle": "Read the person’s strategic map through core company, acquisitions, and investment ecosystem.",
+    "officialLinks": "Official links",
+    "timeline": "Timeline",
+    "viewTimeline": "View full timeline",
+    "timelineSubtitle": "Review key company turning points from newest to oldest.",
+    "imagePlaceholder": "Image placeholder",
+    "products": "Products and services",
+    "businessModel": "Business model",
+    "culture": "Culture",
+    "cultureThesis": "Culture thesis",
+    "whyDifferent": "Why it is different",
+    "moat": "Competitive moat",
+    "watchlist": "Observation lenses",
+    "futureQuestions": "Deep questions",
+    "deepQuestionsIntro": "Use these questions while studying this section.",
+    "stockModules": "Learning modules",
+    "notAdvice": "This area is for study frameworks and research notes only. It is not investment advice.",
+    "contentTypes": {
+      "news": "News",
+      "speech": "Speeches",
+      "launch": "Product launches",
+      "interview": "Interviews",
+      "book": "Books / biographies"
+    },
+    "viewSource": "View source"
   },
   "taxonomy": {
     "categoriesTitle": "Categories",
