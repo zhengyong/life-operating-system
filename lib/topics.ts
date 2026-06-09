@@ -429,6 +429,403 @@ export const people: PersonProfile[] = [
   }
 ];
 
+const genericAdvice = (focus: LocalizedText): PersonAdviceItem[] => [
+  {
+    title: {zh: '人生', en: 'Life'},
+    summary: {
+      zh: `把${focus.zh}放进长期人生系统里看：选择重要问题，长期投入，并让复盘持续修正判断。`,
+      en: `Study ${focus.en} as part of a long-term life system: choose important problems, commit for years, and keep updating judgment.`
+    },
+    points: [
+      {zh: '选择长期重要、短期不一定热闹的方向。', en: 'Choose directions that matter long term, even if they are not loud short term.'},
+      {zh: '把压力、失败和外部质疑当成校准材料。', en: 'Use pressure, failure, and criticism as calibration material.'},
+      {zh: '持续把个人选择放进时代趋势和真实需求里。', en: 'Place personal choices inside major trends and real demand.'}
+    ]
+  },
+  {
+    title: {zh: '职场', en: 'Career'},
+    summary: {
+      zh: '职场学习重点不是头衔，而是他如何把个人能力连接到产品、组织、资本和客户结果。',
+      en: 'The career lesson is how personal capability connects to products, organization, capital, and customer outcomes.'
+    },
+    points: [
+      {zh: '先理解客户和组织真正要解决的问题。', en: 'Understand the real customer and organizational problem first.'},
+      {zh: '训练跨产品、技术、市场和财务的系统视角。', en: 'Build a systems view across product, technology, market, and finance.'},
+      {zh: '用高标准、反馈和长期作品积累可信度。', en: 'Build credibility through high standards, feedback, and long-term work.'}
+    ]
+  },
+  {
+    title: {zh: '教育', en: 'Education'},
+    summary: {
+      zh: '教育不是只学知识点，而是训练判断：看结构、看变量、看约束、看因果。',
+      en: 'Education is not only facts; it trains judgment about structure, variables, constraints, and causality.'
+    },
+    points: [
+      {zh: '优先学习底层原理和真实案例。', en: 'Prioritize fundamentals and real cases.'},
+      {zh: '把阅读、写作、项目和复盘连起来。', en: 'Connect reading, writing, projects, and review.'},
+      {zh: '用跨学科框架理解复杂世界。', en: 'Use multidisciplinary frames to understand complexity.'}
+    ]
+  },
+  {
+    title: {zh: '成长', en: 'Growth'},
+    summary: {
+      zh: '成长是不断升级自己的问题选择、判断框架和执行系统。',
+      en: 'Growth means upgrading problem selection, judgment frameworks, and execution systems.'
+    },
+    points: [
+      {zh: '从单点技能走向系统能力。', en: 'Move from single skills to system capability.'},
+      {zh: '让表达能力服务于判断能力。', en: 'Let communication sharpen judgment.'},
+      {zh: '长期观察自己的选择是否靠近复利。', en: 'Review whether choices move toward compounding.'}
+    ]
+  }
+];
+
+const archiveItems = (name: LocalizedText, sourceHref: string): PersonContentItem[] => [
+  {
+    title: {zh: `${name.zh}：最近 1 周新闻精选入口`, en: `${name.en}: recent one-week news watch`},
+    type: 'news',
+    date: '2026-06-09',
+    href: sourceHref,
+    source: {zh: '官方与一手资料入口', en: 'Official and primary source entry'},
+    note: {
+      zh: '这里先放可持续更新的资料入口，后续接入定时任务后只保留 3 条最重要新闻。',
+      en: 'This is a stable source entry for future scheduled updates; later it should keep only three important news items.'
+    }
+  },
+  {
+    title: {zh: `${name.zh}：公开演讲与访谈`, en: `${name.en}: speeches and interviews`},
+    type: 'speech',
+    href: sourceHref,
+    source: {zh: '官方页面 / 一手渠道', en: 'Official page / primary channel'},
+    note: {zh: '用于研究他如何表达战略、产品、组织和长期判断。', en: 'Use this to study strategy, product, organization, and long-term judgment.'}
+  },
+  {
+    title: {zh: `${name.zh}：传记与背景资料`, en: `${name.en}: biography and background material`},
+    type: 'book',
+    source: {zh: '图书、访谈、股东信、官方资料', en: 'Books, interviews, letters, and official material'},
+    note: {zh: '后续可以扩展成书籍页、章节摘要和关键概念索引。', en: 'Can later become book pages, chapter notes, and concept indexes.'}
+  }
+];
+
+const coreCompanyGroup = (companyName: string, companySlug: string, summary: LocalizedText): PersonCompanyGroup[] => [
+  {
+    title: {zh: '核心公司', en: 'Core company'},
+    summary,
+    links: [{name: companyName, companySlug}]
+  },
+  {
+    title: {zh: '相关生态', en: 'Related ecosystem'},
+    summary: {
+      zh: '从供应链、平台伙伴、投资对象和关键客户看人物背后的战略网络。',
+      en: 'Study the strategic network behind the person through supply chain, platform partners, investments, and key customers.'
+    },
+    links: []
+  },
+  {
+    title: {zh: '学习线索', en: 'Study threads'},
+    summary: {
+      zh: '把人物放回公司、行业、资本市场和技术周期里，观察其判断如何形成。',
+      en: 'Place the person back into company, industry, capital market, and technology cycles to see how judgment forms.'
+    },
+    links: []
+  }
+];
+
+const newPeople: PersonProfile[] = [
+  {
+    slug: 'tim-cook',
+    name: {zh: '蒂姆·库克', en: 'Tim Cook'},
+    role: {zh: 'Apple CEO，2026-09-01 起转任执行董事长', en: 'Apple CEO, becoming Executive Chairman on 2026-09-01'},
+    summary: {
+      zh: '库克适合研究运营、供应链、服务化、隐私价值观和大公司长期治理。Apple 已宣布 John Ternus 将于 2026-09-01 接任 CEO。',
+      en: 'Tim Cook is a case for operations, supply chain, services, privacy values, and large-company governance. Apple announced John Ternus will become CEO on 2026-09-01.'
+    },
+    learnFrom: [
+      {zh: '如何把产品公司扩展成全球运营系统', en: 'Scaling a product company into a global operating system'},
+      {zh: '如何用供应链和服务生态提高韧性', en: 'Using supply chain and services to build resilience'},
+      {zh: '如何在价值观与商业之间做长期治理', en: 'Governing long term between values and business'}
+    ],
+    relatedCompanies: ['apple'],
+    companyGroups: coreCompanyGroup('Apple', 'apple', {
+      zh: '核心公司是 Apple。库克的贡献主要在运营体系、供应链、服务业务、隐私叙事和全球治理。',
+      en: 'The core company is Apple. Cook’s contribution centers on operations, supply chain, services, privacy narrative, and global governance.'
+    }),
+    advice: genericAdvice({zh: '库克的运营与治理', en: 'Cook’s operating and governance style'}),
+    content: archiveItems({zh: '蒂姆·库克', en: 'Tim Cook'}, 'https://www.apple.com/newsroom/')
+  },
+  {
+    slug: 'sam-altman',
+    name: {zh: 'Sam Altman', en: 'Sam Altman'},
+    role: {zh: 'OpenAI CEO', en: 'CEO of OpenAI'},
+    summary: {
+      zh: 'Altman 适合研究前沿 AI、平台分发、资本组织、公共叙事和高不确定性治理。',
+      en: 'Sam Altman is useful for studying frontier AI, platform distribution, capital formation, public narrative, and high-uncertainty governance.'
+    },
+    learnFrom: [
+      {zh: '如何把前沿技术做成大众产品', en: 'Turning frontier technology into mass products'},
+      {zh: '如何组织资本、算力和生态伙伴', en: 'Organizing capital, compute, and ecosystem partners'},
+      {zh: '如何在高争议领域塑造公共叙事', en: 'Shaping public narrative in a contested field'}
+    ],
+    relatedCompanies: ['openai'],
+    companyGroups: coreCompanyGroup('OpenAI', 'openai', {
+      zh: '核心公司是 OpenAI。Altman 的关键线索是模型能力、ChatGPT 分发、开发者平台、企业市场和 AI 基础设施。',
+      en: 'The core company is OpenAI. Key threads include model capability, ChatGPT distribution, developer platform, enterprise market, and AI infrastructure.'
+    }),
+    advice: genericAdvice({zh: 'Altman 的技术与资本组织', en: 'Altman’s technology and capital formation'}),
+    content: archiveItems({zh: 'Sam Altman', en: 'Sam Altman'}, 'https://openai.com/news/')
+  },
+  {
+    slug: 'dario-amodei',
+    name: {zh: 'Dario Amodei', en: 'Dario Amodei'},
+    role: {zh: 'Anthropic 联合创始人兼 CEO', en: 'Co-founder and CEO of Anthropic'},
+    summary: {
+      zh: 'Dario Amodei 适合研究 AI 安全、模型能力、企业产品化和公益公司治理。',
+      en: 'Dario Amodei is useful for studying AI safety, model capability, enterprise productization, and public-benefit governance.'
+    },
+    learnFrom: [
+      {zh: '如何把安全理念变成产品差异化', en: 'Turning safety philosophy into product differentiation'},
+      {zh: '如何在模型竞赛中坚持可靠性叙事', en: 'Maintaining a reliability narrative in the model race'},
+      {zh: '如何组织研究、产品和治理结构', en: 'Organizing research, product, and governance'}
+    ],
+    relatedCompanies: ['anthropic'],
+    companyGroups: coreCompanyGroup('Anthropic', 'anthropic', {
+      zh: '核心公司是 Anthropic。其长期线索是 Claude、宪法式 AI、解释性研究、企业客户和安全治理。',
+      en: 'The core company is Anthropic. Long-term threads include Claude, Constitutional AI, interpretability research, enterprise customers, and safety governance.'
+    }),
+    advice: genericAdvice({zh: 'Dario 的安全与可靠性路线', en: 'Dario’s safety and reliability path'}),
+    content: archiveItems({zh: 'Dario Amodei', en: 'Dario Amodei'}, 'https://www.anthropic.com/news')
+  },
+  {
+    slug: 'morris-chang',
+    name: {zh: '张忠谋', en: 'Morris Chang'},
+    role: {zh: '台积电创始人', en: 'Founder of TSMC'},
+    summary: {
+      zh: '张忠谋适合研究晶圆代工模式、产业定位、客户信任和半导体长期周期。',
+      en: 'Morris Chang is a case for the foundry model, industry positioning, customer trust, and semiconductor cycles.'
+    },
+    learnFrom: [
+      {zh: '如何重新定义一个产业分工模式', en: 'Redefining industry specialization'},
+      {zh: '如何用客户信任建立长期壁垒', en: 'Building long-term moat through customer trust'},
+      {zh: '如何穿越半导体周期', en: 'Navigating semiconductor cycles'}
+    ],
+    relatedCompanies: ['tsmc'],
+    companyGroups: coreCompanyGroup('TSMC', 'tsmc', {
+      zh: '核心公司是台积电。张忠谋最重要的贡献是把晶圆代工做成全球半导体产业的基础设施。',
+      en: 'The core company is TSMC. Chang’s key contribution was turning foundry manufacturing into semiconductor infrastructure.'
+    }),
+    advice: genericAdvice({zh: '张忠谋的产业定位', en: 'Morris Chang’s industry positioning'}),
+    content: archiveItems({zh: '张忠谋', en: 'Morris Chang'}, 'https://pr.tsmc.com/english')
+  },
+  {
+    slug: 'cc-wei',
+    name: {zh: '魏哲家', en: 'C.C. Wei'},
+    role: {zh: '台积电董事长兼 CEO', en: 'Chairman and CEO of TSMC'},
+    summary: {
+      zh: '魏哲家适合研究先进制程扩张、客户协作、全球产能布局和台积电新一代治理。',
+      en: 'C.C. Wei is useful for studying advanced-node expansion, customer collaboration, global capacity, and next-generation TSMC governance.'
+    },
+    learnFrom: [
+      {zh: '如何管理全球最复杂制造系统之一', en: 'Managing one of the world’s most complex manufacturing systems'},
+      {zh: '如何在地缘风险下配置产能', en: 'Allocating capacity amid geopolitical risk'},
+      {zh: '如何保持客户中立与技术领先', en: 'Maintaining customer neutrality and technology leadership'}
+    ],
+    relatedCompanies: ['tsmc'],
+    companyGroups: coreCompanyGroup('TSMC', 'tsmc', {
+      zh: '核心公司是台积电。魏哲家的观察重点是先进制程、全球扩厂、AI 芯片需求和客户协同。',
+      en: 'The core company is TSMC. Key lenses include advanced nodes, global fabs, AI chip demand, and customer coordination.'
+    }),
+    advice: genericAdvice({zh: '魏哲家的制造与治理', en: 'C.C. Wei’s manufacturing and governance'}),
+    content: archiveItems({zh: '魏哲家', en: 'C.C. Wei'}, 'https://www.tsmc.com/english/aboutTSMC/executives')
+  },
+  {
+    slug: 'warren-buffett',
+    name: {zh: '巴菲特', en: 'Warren Buffett'},
+    role: {zh: 'Berkshire Hathaway 董事长，长期价值投资者', en: 'Chairman of Berkshire Hathaway and long-term value investor'},
+    summary: {
+      zh: '巴菲特适合研究商业质量、资本配置、安全边际、复利和长期持有。',
+      en: 'Buffett is a study case for business quality, capital allocation, margin of safety, compounding, and long-term ownership.'
+    },
+    learnFrom: [
+      {zh: '如何用企业所有权理解股票', en: 'Understanding stocks as business ownership'},
+      {zh: '如何评估护城河与管理层', en: 'Assessing moat and management'},
+      {zh: '如何把耐心变成投资优势', en: 'Turning patience into an investing edge'}
+    ],
+    relatedCompanies: ['berkshire-hathaway'],
+    companyGroups: coreCompanyGroup('Berkshire Hathaway', 'berkshire-hathaway', {
+      zh: '核心公司是 Berkshire Hathaway。它是研究资本配置、保险浮存金和长期持股的最佳样本之一。',
+      en: 'The core company is Berkshire Hathaway, a key case for capital allocation, insurance float, and long-term holdings.'
+    }),
+    advice: genericAdvice({zh: '巴菲特的投资原则', en: 'Buffett’s investing principles'}),
+    content: archiveItems({zh: '巴菲特', en: 'Warren Buffett'}, 'https://www.berkshirehathaway.com/letters/letters.html')
+  },
+  {
+    slug: 'charlie-munger',
+    name: {zh: '查理·芒格', en: 'Charlie Munger'},
+    role: {zh: '投资家，巴菲特长期合伙人', en: 'Investor and Warren Buffett’s long-time partner'},
+    summary: {
+      zh: '芒格适合研究多元思维模型、反向思考、能力圈和避免愚蠢错误。',
+      en: 'Munger is a case for multidisciplinary models, inversion, circle of competence, and avoiding stupidity.'
+    },
+    learnFrom: [
+      {zh: '如何建立多元思维模型', en: 'Building multidisciplinary mental models'},
+      {zh: '如何用反向思考降低错误', en: 'Reducing mistakes through inversion'},
+      {zh: '如何把常识变成投资纪律', en: 'Turning common sense into investing discipline'}
+    ],
+    relatedCompanies: ['berkshire-hathaway'],
+    companyGroups: coreCompanyGroup('Berkshire Hathaway', 'berkshire-hathaway', {
+      zh: '核心公司是 Berkshire Hathaway。芒格的价值在于把投资从数字游戏提升到商业、心理和常识判断。',
+      en: 'The core company is Berkshire Hathaway. Munger elevated investing into business, psychology, and common-sense judgment.'
+    }),
+    advice: genericAdvice({zh: '芒格的多元思维模型', en: 'Munger’s multidisciplinary models'}),
+    content: archiveItems({zh: '查理·芒格', en: 'Charlie Munger'}, 'https://www.berkshirehathaway.com/letters/letters.html')
+  },
+  {
+    slug: 'duan-yongping',
+    name: {zh: '段永平', en: 'Duan Yongping'},
+    role: {zh: '企业家与长期投资者', en: 'Entrepreneur and long-term investor'},
+    summary: {
+      zh: '段永平适合研究本分、长期主义、消费者品牌、企业文化和价值投资在中国语境下的表达。',
+      en: 'Duan Yongping is useful for studying integrity, long-termism, consumer brands, culture, and value investing in the Chinese context.'
+    },
+    learnFrom: [
+      {zh: '如何用“本分”理解企业文化', en: 'Understanding culture through integrity'},
+      {zh: '如何看消费者品牌与渠道', en: 'Reading consumer brands and channels'},
+      {zh: '如何把价值投资变成生活原则', en: 'Turning value investing into life principles'}
+    ],
+    relatedCompanies: ['apple'],
+    companyGroups: [
+      {
+        title: {zh: '投资参照', en: 'Investing reference'},
+        summary: {zh: '段永平长期公开讨论 Apple、贵州茅台、网易等案例，重点不是荐股，而是商业理解和价格纪律。', en: 'Duan has publicly discussed Apple, Kweichow Moutai, NetEase, and other cases; the lesson is business understanding and price discipline, not stock tips.'},
+        links: [{name: 'Apple', companySlug: 'apple'}]
+      },
+      {
+        title: {zh: '企业家线索', en: 'Entrepreneurial thread'},
+        summary: {zh: '从小霸王、步步高到 OPPO / vivo 生态，可观察品牌、渠道、授权和文化延续。', en: 'From Subor and BBK to the OPPO / vivo ecosystem, study brand, channel, delegation, and cultural continuity.'},
+        links: []
+      },
+      {
+        title: {zh: '学习线索', en: 'Study threads'},
+        summary: {zh: '重点学习“做对的事、长期、能力圈、不懂不做”。', en: 'Focus on doing the right thing, long-termism, circle of competence, and avoiding what you do not understand.'},
+        links: []
+      }
+    ],
+    advice: genericAdvice({zh: '段永平的本分与投资', en: 'Duan’s integrity and investing style'}),
+    content: archiveItems({zh: '段永平', en: 'Duan Yongping'}, 'https://finance.sina.com.cn/')
+  }
+];
+
+people.push(...newPeople);
+
+Object.assign(people.find((person) => person.slug === 'elon-musk') ?? {}, {
+  companyGroups: coreCompanyGroup('Tesla', 'tesla', {
+    zh: '核心公司是 Tesla，同时 SpaceX 是理解马斯克工程方法、垂直整合和第一性原理的重要参照。',
+    en: 'The core company is Tesla, while SpaceX is essential for understanding Musk’s engineering method, vertical integration, and first-principles thinking.'
+  }),
+  advice: genericAdvice({zh: '马斯克的工程速度', en: 'Musk’s engineering velocity'}),
+  content: [
+    ...archiveItems({zh: '马斯克', en: 'Elon Musk'}, 'https://www.tesla.com/blog'),
+    {
+      title: {zh: 'SpaceX 发射与星舰资料入口', en: 'SpaceX launches and Starship source entry'},
+      type: 'launch',
+      href: 'https://www.spacex.com/launches/',
+      source: {zh: 'SpaceX 官方', en: 'SpaceX official'},
+      note: {zh: '适合研究马斯克如何用快速迭代推动极难工程。', en: 'Useful for studying how Musk uses rapid iteration in difficult engineering.'}
+    },
+    {
+      title: {zh: 'Tesla 投资者活动与产品发布', en: 'Tesla investor events and product launches'},
+      type: 'interview',
+      href: 'https://ir.tesla.com/',
+      source: {zh: 'Tesla 投资者关系', en: 'Tesla Investor Relations'},
+      note: {zh: '适合观察自动驾驶、能源、机器人和制造叙事。', en: 'Useful for studying autonomy, energy, robotics, and manufacturing narrative.'}
+    }
+  ]
+});
+
+Object.assign(people.find((person) => person.slug === 'steve-jobs') ?? {}, {
+  companyGroups: coreCompanyGroup('Apple', 'apple', {
+    zh: '核心公司是 Apple。乔布斯的学习重点是产品审美、用户体验、组织聚焦和发布会表达。',
+    en: 'The core company is Apple. Jobs is a case for product taste, user experience, organizational focus, and launch communication.'
+  }),
+  advice: genericAdvice({zh: '乔布斯的产品与审美', en: 'Jobs’s product taste'}),
+  content: [
+    ...archiveItems({zh: '乔布斯', en: 'Steve Jobs'}, 'https://www.apple.com/apple-events/'),
+    {
+      title: {zh: 'Stanford 2005 毕业演讲', en: 'Stanford 2005 commencement address'},
+      type: 'speech',
+      date: '2005',
+      href: 'https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says',
+      source: {zh: 'Stanford 官方', en: 'Stanford official'},
+      note: {zh: '适合研究乔布斯如何把人生选择、死亡意识和热爱工作连成叙事。', en: 'Useful for studying how Jobs connects life choices, mortality, and love of work.'}
+    }
+  ]
+});
+
+const sourceMap: Record<string, string[]> = {
+  'elon-musk': ['https://www.tesla.com/blog', 'https://www.spacex.com/updates/', 'https://www.reuters.com/technology/'],
+  'steve-jobs': ['https://www.apple.com/apple-events/', 'https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says', 'https://www.apple.com/newsroom/'],
+  'tim-cook': ['https://www.apple.com/newsroom/', 'https://investor.apple.com/', 'https://www.apple.com/leadership/'],
+  'sam-altman': ['https://openai.com/news/', 'https://openai.com/research/', 'https://openai.com/sam-altman/'],
+  'dario-amodei': ['https://www.anthropic.com/news', 'https://www.anthropic.com/research', 'https://www.anthropic.com/company'],
+  'morris-chang': ['https://pr.tsmc.com/english', 'https://www.tsmc.com/english/aboutTSMC/company_profile', 'https://investor.tsmc.com/english'],
+  'cc-wei': ['https://www.tsmc.com/english/aboutTSMC/executives', 'https://pr.tsmc.com/english', 'https://investor.tsmc.com/english'],
+  'warren-buffett': ['https://www.berkshirehathaway.com/news/2025news.html', 'https://www.berkshirehathaway.com/letters/letters.html', 'https://www.berkshirehathaway.com/meet01/visguide2025.pdf'],
+  'charlie-munger': ['https://www.berkshirehathaway.com/letters/letters.html', 'https://www.djmco.com/', 'https://www.youtube.com/@DailyJournalCorp'],
+  'duan-yongping': ['https://www.apple.com/newsroom/', 'https://investor.apple.com/', 'https://finance.sina.com.cn/']
+};
+
+const typeLabels: Record<PersonContentItem['type'], string[]> = {
+  news: ['最近 1 周新闻精选 A', '最近 1 周新闻精选 B', '最近 1 周新闻精选 C'],
+  speech: ['公开演讲 / 主题表达 A', '公开演讲 / 主题表达 B', '公开演讲 / 主题表达 C'],
+  interview: ['深度访谈 / 对谈 A', '深度访谈 / 对谈 B', '深度访谈 / 对谈 C'],
+  launch: ['产品发布会 / 年度活动 A', '产品发布会 / 年度活动 B', '产品发布会 / 年度活动 C'],
+  book: ['书籍 / 传记资料 A', '书籍 / 传记资料 B', '书籍 / 传记资料 C']
+};
+
+const typeLabelsEn: Record<PersonContentItem['type'], string[]> = {
+  news: ['Recent one-week news A', 'Recent one-week news B', 'Recent one-week news C'],
+  speech: ['Speech / public communication A', 'Speech / public communication B', 'Speech / public communication C'],
+  interview: ['Interview / conversation A', 'Interview / conversation B', 'Interview / conversation C'],
+  launch: ['Launch / annual event A', 'Launch / annual event B', 'Launch / annual event C'],
+  book: ['Book / biography material A', 'Book / biography material B', 'Book / biography material C']
+};
+
+function ensureThreeContentItems(person: PersonProfile) {
+  const sources = sourceMap[person.slug] ?? ['https://www.reuters.com/technology/', 'https://www.bloomberg.com/technology', 'https://www.cnbc.com/technology/'];
+  const types: PersonContentItem['type'][] = ['news', 'speech', 'interview', 'launch', 'book'];
+
+  types.forEach((type) => {
+    const existing = person.content.filter((item) => item.type === type).length;
+    for (let index = existing; index < 3; index += 1) {
+      person.content.push({
+        title: {
+          zh: `${person.name.zh}：${typeLabels[type][index]}`,
+          en: `${person.name.en}: ${typeLabelsEn[type][index]}`
+        },
+        type,
+        date: type === 'news' ? '2026-06-09' : undefined,
+        href: sources[index % sources.length],
+        source: {
+          zh: type === 'news' ? '官方 / 一手 / 大媒体入口' : '官方 / 一手资料入口',
+          en: type === 'news' ? 'Official / primary / major media entry' : 'Official / primary source entry'
+        },
+        note: {
+          zh:
+            type === 'news'
+              ? '先保留可持续更新入口，后续定时任务接入后替换成最近 1 周内最重要的具体 3 条新闻。'
+              : '先作为资料归档入口，后续可补充原文、视频、时间戳、摘要和关键判断。',
+          en:
+            type === 'news'
+              ? 'A sustainable update entry for now; later automation can replace it with the three most important concrete items from the past week.'
+              : 'An archive entry for now; later it can include source text, video, timestamps, summaries, and key judgments.'
+        }
+      });
+    }
+  });
+}
+
+people.forEach(ensureThreeContentItems);
+
 export const companies: CompanyProfile[] = [
   {
     slug: 'nvidia',
@@ -761,6 +1158,678 @@ export const companies: CompanyProfile[] = [
     ]
   }
 ];
+
+function companyProfile(input: {
+  slug: string;
+  name: LocalizedText;
+  category: LocalizedText;
+  summary: LocalizedText;
+  officialLinks: PrimarySource[];
+  timeline: CompanyProfile['timeline'];
+  segments: NonNullable<CompanyProfile['productSegments']>;
+  businessModel: LocalizedText[];
+  cultureThesis: LocalizedText;
+  moat: LocalizedText[];
+  watchlist: LocalizedText[];
+}): CompanyProfile {
+  return {
+    slug: input.slug,
+    name: input.name,
+    category: input.category,
+    summary: input.summary,
+    officialLinks: input.officialLinks,
+    timeline: input.timeline,
+    products: input.segments.flatMap((segment) => segment.products.slice(0, 1)),
+    productSegments: input.segments,
+    businessModel: input.businessModel,
+    culture: [input.cultureThesis],
+    cultureModel: {
+      thesis: input.cultureThesis,
+      dimensions: [
+        {
+          title: {zh: '创始人 / CEO', en: 'Founder / CEO'},
+          summary: {zh: '观察核心领导者如何定义公司方向、资源优先级和外部叙事。', en: 'Observe how leadership defines direction, resource priorities, and external narrative.'},
+          practices: [
+            {zh: '长期重复核心战略关键词。', en: 'Repeats core strategic keywords over time.'},
+            {zh: '用产品路线图和客户问题校准组织。', en: 'Uses roadmaps and customer problems to align the organization.'},
+            {zh: '在高不确定性中保持资源聚焦。', en: 'Keeps resources focused under uncertainty.'}
+          ],
+          whyDifferent: {zh: '这类公司通常不是单点产品竞争，而是组织、生态和资本配置共同竞争。', en: 'These companies usually compete through organization, ecosystem, and capital allocation, not a single product.'}
+        },
+        {
+          title: {zh: '团队与协作', en: 'Team and collaboration'},
+          summary: {zh: '重点看跨职能团队如何把技术、产品、客户和商业化连接起来。', en: 'Study how cross-functional teams connect technology, product, customers, and commercialization.'},
+          practices: [
+            {zh: '围绕关键平台或客户场景协作。', en: 'Collaborates around key platforms or customer scenarios.'},
+            {zh: '把一线反馈带回研发和决策。', en: 'Feeds frontline feedback back into R&D and decisions.'},
+            {zh: '用高标准缩短学习周期。', en: 'Uses high standards to shorten learning cycles.'}
+          ],
+          whyDifferent: {zh: '协作方式决定复杂系统能否持续升级。', en: 'Collaboration determines whether complex systems keep improving.'}
+        },
+        {
+          title: {zh: '价值观与制度', en: 'Values and systems'},
+          summary: {zh: '看价值观是否真正影响产品取舍、客户关系、人才密度和风险管理。', en: 'See whether values actually shape product tradeoffs, customer relationships, talent density, and risk management.'},
+          practices: [
+            {zh: '把价值观落实到制度和产品选择。', en: 'Turns values into systems and product choices.'},
+            {zh: '在增长、监管和竞争之间做取舍。', en: 'Makes tradeoffs among growth, regulation, and competition.'},
+            {zh: '建立长期可信度，而不是只追短期速度。', en: 'Builds long-term credibility, not only short-term speed.'}
+          ],
+          whyDifferent: {zh: '长期壁垒往往来自制度化的价值观，而不是口号。', en: 'Durable moats often come from institutionalized values, not slogans.'}
+        }
+      ]
+    },
+    moat: input.moat,
+    watchlist: input.watchlist,
+    deepQuestions: {
+      timeline: [
+        {zh: '哪些节点真正改变了公司的性质？', en: 'Which events changed the nature of the company?'},
+        {zh: '公司是在什么时候形成平台化能力的？', en: 'When did the company form platform capability?'}
+      ],
+      products: [
+        {zh: '哪些产品是收入来源，哪些产品是生态入口？', en: 'Which products drive revenue and which create ecosystem entry?'},
+        {zh: '产品组合之间是否能互相增强？', en: 'Do the products reinforce one another?'}
+      ],
+      businessModel: [
+        {zh: '公司利润来自规模、定价权、软件，还是网络效应？', en: 'Do profits come from scale, pricing power, software, or network effects?'}
+      ],
+      culture: [
+        {zh: '文化如何影响资源配置和产品速度？', en: 'How does culture shape resource allocation and product speed?'}
+      ],
+      moat: [
+        {zh: '最难被复制的是技术、生态、品牌、资本，还是组织能力？', en: 'What is hardest to copy: technology, ecosystem, brand, capital, or organization?'}
+      ],
+      watchlist: [
+        {zh: '行业、政策、客户和竞争变量里，哪个最可能改变判断？', en: 'Which variable could most change the thesis: industry, policy, customers, or competition?'}
+      ]
+    },
+    futureQuestions: [
+      {zh: '未来 5 年最关键的增长变量是什么？', en: 'What is the key growth variable over the next five years?'},
+      {zh: '当前估值或市场叙事是否过度简化了公司？', en: 'Does the current market narrative oversimplify the company?'}
+    ]
+  };
+}
+
+const expandedCompanies: CompanyProfile[] = [
+  companyProfile({
+    slug: 'spacex',
+    name: {zh: 'SpaceX', en: 'SpaceX'},
+    category: {zh: '航天、发射与卫星互联网', en: 'Space launch and satellite internet'},
+    summary: {zh: 'SpaceX 的核心是用可复用火箭降低进入太空的成本，并用 Starlink 把发射能力转化为通信平台。', en: 'SpaceX lowers the cost of access to space through reusable rockets and turns launch capability into a communications platform through Starlink.'},
+    officialLinks: [
+      {label: {zh: '官网', en: 'Official site'}, href: 'https://www.spacex.com/'},
+      {label: {zh: '发射任务', en: 'Launches'}, href: 'https://www.spacex.com/launches/'},
+      {label: {zh: 'Starlink', en: 'Starlink'}, href: 'https://www.starlink.com/'}
+    ],
+    timeline: [
+      {year: '2020s', event: {zh: 'Starship、Starlink 和高频发射推动 SpaceX 从火箭公司走向太空基础设施公司。', en: 'Starship, Starlink, and high launch cadence moved SpaceX toward space infrastructure.'}},
+      {year: '2020', event: {zh: 'Crew Dragon 完成载人飞行，商业航天进入新阶段。', en: 'Crew Dragon completed crewed flight, marking a new stage for commercial space.'}},
+      {year: '2015', event: {zh: 'Falcon 9 一级火箭首次成功回收。', en: 'Falcon 9 first-stage booster landed successfully.'}},
+      {year: '2002', event: {zh: 'SpaceX 成立。', en: 'SpaceX was founded.'}}
+    ],
+    segments: [
+      {title: {zh: '发射服务', en: 'Launch services'}, revenueLabel: {zh: '商业与政府任务', en: 'Commercial and government missions'}, summary: {zh: '为商业卫星、NASA、国防和科研任务提供发射。', en: 'Launches commercial, NASA, defense, and science missions.'}, products: [{zh: 'Falcon 9 / Falcon Heavy 发射服务', en: 'Falcon 9 / Falcon Heavy launch services'}, {zh: 'Dragon 货运与载人飞船', en: 'Dragon cargo and crew spacecraft'}]},
+      {title: {zh: 'Starlink', en: 'Starlink'}, revenueLabel: {zh: '卫星互联网', en: 'Satellite internet'}, summary: {zh: '用低轨卫星网络提供全球宽带连接。', en: 'Provides global broadband through low-Earth-orbit satellites.'}, products: [{zh: '家庭、企业、海事、航空和移动连接', en: 'Residential, enterprise, maritime, aviation, and mobility connectivity'}]},
+      {title: {zh: 'Starship', en: 'Starship'}, revenueLabel: {zh: '下一代平台', en: 'Next-generation platform'}, summary: {zh: '目标是进一步降低发射成本并支持月球、火星和大规模轨道运输。', en: 'Aims to lower launch cost further and support lunar, Mars, and large orbital transport.'}, products: [{zh: 'Starship / Super Heavy 系统', en: 'Starship / Super Heavy system'}]}
+    ],
+    businessModel: [{zh: '发射收入、政府合同、Starlink 订阅和终端销售共同构成商业模式。', en: 'Launch revenue, government contracts, Starlink subscriptions, and terminal sales form the model.'}],
+    cultureThesis: {zh: 'SpaceX 的文化是极限工程、快速迭代、垂直整合和成本第一性原理。', en: 'SpaceX culture is extreme engineering, rapid iteration, vertical integration, and first-principles cost thinking.'},
+    moat: [{zh: '可复用火箭、发射频率、工程人才、Starlink 卫星网络和政府客户信任。', en: 'Reusable rockets, launch cadence, engineering talent, Starlink network, and government trust.'}],
+    watchlist: [{zh: 'Starship 进展、Starlink 盈利、监管频谱、发射安全和地缘需求。', en: 'Starship progress, Starlink profitability, spectrum regulation, launch safety, and geopolitical demand.'}]
+  }),
+  companyProfile({
+    slug: 'apple',
+    name: {zh: '苹果', en: 'Apple'},
+    category: {zh: '消费电子、软件与服务生态', en: 'Consumer electronics, software, and services ecosystem'},
+    summary: {zh: 'Apple 的核心不是单个硬件，而是设备、系统、芯片、服务、品牌和开发者生态形成的高粘性消费平台。', en: 'Apple is not a single hardware product; it is a sticky consumer platform of devices, systems, chips, services, brand, and developers.'},
+    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.apple.com/'}, {label: {zh: '新闻中心', en: 'Newsroom'}, href: 'https://www.apple.com/newsroom/'}, {label: {zh: '投资者关系', en: 'Investor relations'}, href: 'https://investor.apple.com/'}],
+    timeline: [
+      {year: '2026', event: {zh: 'Apple 宣布 John Ternus 将于 2026-09-01 接任 CEO，Tim Cook 转任执行董事长。', en: 'Apple announced John Ternus will become CEO on 2026-09-01, with Tim Cook becoming Executive Chairman.'}},
+      {year: '2020', event: {zh: 'Apple Silicon 推动 Mac 平台重构。', en: 'Apple Silicon reshaped the Mac platform.'}},
+      {year: '2007', event: {zh: 'iPhone 发布，移动互联网生态打开。', en: 'iPhone launched and opened the mobile internet ecosystem.'}},
+      {year: '1976', event: {zh: 'Apple 创立。', en: 'Apple was founded.'}}
+    ],
+    segments: [
+      {title: {zh: 'iPhone', en: 'iPhone'}, revenueLabel: {zh: '核心硬件', en: 'Core hardware'}, summary: {zh: '品牌、系统和服务入口。', en: 'Brand, system, and service entry.'}, products: [{zh: 'iPhone 与 iOS 生态', en: 'iPhone and iOS ecosystem'}]},
+      {title: {zh: 'Mac / iPad / Wearables', en: 'Mac / iPad / Wearables'}, revenueLabel: {zh: '设备矩阵', en: 'Device matrix'}, summary: {zh: '多设备协同提高用户粘性。', en: 'Multi-device integration increases stickiness.'}, products: [{zh: 'Mac、iPad、Apple Watch、AirPods', en: 'Mac, iPad, Apple Watch, AirPods'}]},
+      {title: {zh: 'Services', en: 'Services'}, revenueLabel: {zh: '高毛利业务', en: 'High-margin business'}, summary: {zh: '应用商店、订阅、支付、云和内容服务。', en: 'App Store, subscriptions, payments, cloud, and content.'}, products: [{zh: 'App Store、Apple Music、iCloud、Apple Pay', en: 'App Store, Apple Music, iCloud, Apple Pay'}]}
+    ],
+    businessModel: [{zh: '硬件销售建立用户基座，服务业务提高复购、毛利和生态粘性。', en: 'Hardware builds the user base; services increase repeat purchase, margin, and ecosystem stickiness.'}],
+    cultureThesis: {zh: 'Apple 的文化核心是端到端产品体验、隐私价值观、供应链纪律和极强的品牌控制。', en: 'Apple culture centers on end-to-end product experience, privacy values, supply-chain discipline, and strong brand control.'},
+    moat: [{zh: '品牌、软硬件一体化、开发者生态、供应链、服务粘性和用户迁移成本。', en: 'Brand, hardware-software integration, developer ecosystem, supply chain, services stickiness, and switching costs.'}],
+    watchlist: [{zh: 'AI 产品化、iPhone 周期、服务监管、供应链地缘风险和管理层交接。', en: 'AI productization, iPhone cycle, services regulation, supply-chain geopolitics, and leadership transition.'}]
+  }),
+  companyProfile({
+    slug: 'anthropic',
+    name: {zh: 'Anthropic', en: 'Anthropic'},
+    category: {zh: 'AI 模型与企业智能平台', en: 'AI model and enterprise intelligence platform'},
+    summary: {zh: 'Anthropic 以 Claude 为核心，强调安全、可靠、可解释和企业级 AI 工作流。', en: 'Anthropic centers on Claude, emphasizing safety, reliability, interpretability, and enterprise AI workflows.'},
+    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.anthropic.com/'}, {label: {zh: '新闻', en: 'News'}, href: 'https://www.anthropic.com/news'}, {label: {zh: '研究', en: 'Research'}, href: 'https://www.anthropic.com/research'}],
+    timeline: [
+      {year: '2025', event: {zh: 'Claude、企业产品和云平台合作持续扩展。', en: 'Claude, enterprise products, and cloud partnerships continued expanding.'}},
+      {year: '2023', event: {zh: 'Claude 进入更广泛商业使用。', en: 'Claude reached broader commercial use.'}},
+      {year: '2021', event: {zh: 'Anthropic 成立。', en: 'Anthropic was founded.'}}
+    ],
+    segments: [
+      {title: {zh: 'Claude', en: 'Claude'}, revenueLabel: {zh: '核心产品', en: 'Core product'}, summary: {zh: '面向个人和团队的 AI 助手。', en: 'AI assistant for individuals and teams.'}, products: [{zh: 'Claude 网页、移动端与团队产品', en: 'Claude web, mobile, and team products'}]},
+      {title: {zh: 'API / 企业', en: 'API / Enterprise'}, revenueLabel: {zh: '平台收入', en: 'Platform revenue'}, summary: {zh: '面向企业工作流、开发者和平台集成。', en: 'For enterprise workflows, developers, and platform integrations.'}, products: [{zh: 'Messages API、企业方案、云合作', en: 'Messages API, enterprise plans, cloud partnerships'}]},
+      {title: {zh: '安全研究', en: 'Safety research'}, revenueLabel: {zh: '信任基础', en: 'Trust foundation'}, summary: {zh: '解释性、对齐和安全评估支撑品牌差异。', en: 'Interpretability, alignment, and evaluations support differentiation.'}, products: [{zh: 'Constitutional AI、解释性研究、安全评估', en: 'Constitutional AI, interpretability, safety evaluations'}]}
+    ],
+    businessModel: [{zh: '订阅、API、企业合同和云平台合作。', en: 'Subscriptions, API usage, enterprise contracts, and cloud partnerships.'}],
+    cultureThesis: {zh: 'Anthropic 的文化以安全可信和研究深度为核心，用可靠性争取企业客户。', en: 'Anthropic culture centers on trustworthy safety and research depth, using reliability to win enterprise customers.'},
+    moat: [{zh: '模型质量、安全品牌、企业信任、研究能力和云合作渠道。', en: 'Model quality, safety brand, enterprise trust, research capability, and cloud channels.'}],
+    watchlist: [{zh: '模型竞赛、推理成本、企业采用、安全监管和云伙伴关系。', en: 'Model race, inference cost, enterprise adoption, safety regulation, and cloud partnerships.'}]
+  }),
+  companyProfile({
+    slug: 'tsmc',
+    name: {zh: '台积电', en: 'TSMC'},
+    category: {zh: '晶圆代工与半导体制造基础设施', en: 'Foundry and semiconductor manufacturing infrastructure'},
+    summary: {zh: '台积电是全球先进芯片制造的关键基础设施，核心是制程、良率、客户信任和超大规模资本开支。', en: 'TSMC is key infrastructure for advanced chip manufacturing, centered on process technology, yield, customer trust, and massive capital expenditure.'},
+    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.tsmc.com/'}, {label: {zh: '投资者关系', en: 'Investor relations'}, href: 'https://investor.tsmc.com/'}, {label: {zh: '新闻', en: 'News'}, href: 'https://pr.tsmc.com/english'}],
+    timeline: [
+      {year: '2024', event: {zh: '魏哲家接任董事长并继续担任 CEO。', en: 'C.C. Wei became Chairman while continuing as CEO.'}},
+      {year: '2020s', event: {zh: 'AI 芯片需求推动先进制程和先进封装扩张。', en: 'AI chip demand drove advanced-node and advanced-packaging expansion.'}},
+      {year: '1987', event: {zh: '张忠谋创立台积电，建立纯晶圆代工模式。', en: 'Morris Chang founded TSMC and established the pure-play foundry model.'}}
+    ],
+    segments: [
+      {title: {zh: '先进制程', en: 'Advanced nodes'}, revenueLabel: {zh: '核心能力', en: 'Core capability'}, summary: {zh: '面向高性能计算、手机和 AI 芯片。', en: 'For HPC, mobile, and AI chips.'}, products: [{zh: '3nm、5nm、7nm 等先进制程', en: '3nm, 5nm, 7nm advanced nodes'}]},
+      {title: {zh: '先进封装', en: 'Advanced packaging'}, revenueLabel: {zh: 'AI 关键瓶颈', en: 'AI bottleneck'}, summary: {zh: 'CoWoS 等能力支撑 AI 加速器。', en: 'CoWoS and related capabilities support AI accelerators.'}, products: [{zh: 'CoWoS、SoIC 等封装技术', en: 'CoWoS, SoIC, and packaging technologies'}]},
+      {title: {zh: '全球制造', en: 'Global fabs'}, revenueLabel: {zh: '产能布局', en: 'Capacity footprint'}, summary: {zh: '台湾、美国、日本、欧洲等产能布局。', en: 'Capacity footprint across Taiwan, the U.S., Japan, Europe, and more.'}, products: [{zh: '晶圆制造与客户协同', en: 'Wafer manufacturing and customer collaboration'}]}
+    ],
+    businessModel: [{zh: '按晶圆制造、先进制程和客户长期需求获得收入，资本开支和良率决定长期回报。', en: 'Revenue comes from wafer manufacturing and customer demand; capex and yield determine long-term return.'}],
+    cultureThesis: {zh: '台积电文化强调客户信任、制造纪律、技术路线和长期资本投入。', en: 'TSMC culture emphasizes customer trust, manufacturing discipline, technology roadmap, and long-term capital investment.'},
+    moat: [{zh: '制程领先、良率、客户中立、资本规模、工程人才和供应链协同。', en: 'Process leadership, yield, customer neutrality, capital scale, engineering talent, and supply chain coordination.'}],
+    watchlist: [{zh: 'AI 芯片需求、先进封装产能、地缘风险、客户集中度和制程迁移。', en: 'AI chip demand, advanced packaging capacity, geopolitical risk, customer concentration, and node migration.'}]
+  }),
+  companyProfile({
+    slug: 'google',
+    name: {zh: '谷歌 / Alphabet', en: 'Google / Alphabet'},
+    category: {zh: '搜索、广告、云与 AI 平台', en: 'Search, advertising, cloud, and AI platform'},
+    summary: {zh: 'Google 的核心是搜索与广告现金流、云基础设施、AI 研究和 Android / YouTube 等全球分发入口。', en: 'Google combines search and advertising cash flow, cloud infrastructure, AI research, and global distribution through Android and YouTube.'},
+    officialLinks: [{label: {zh: 'Google', en: 'Google'}, href: 'https://www.google.com/'}, {label: {zh: 'Alphabet 投资者关系', en: 'Alphabet Investor Relations'}, href: 'https://abc.xyz/investor/'}, {label: {zh: 'Google AI', en: 'Google AI'}, href: 'https://ai.google/'}],
+    timeline: [
+      {year: '2020s', event: {zh: 'Gemini、云和 AI 搜索重塑公司竞争焦点。', en: 'Gemini, cloud, and AI search reshaped Google’s competitive focus.'}},
+      {year: '2015', event: {zh: 'Alphabet 成立，Google 成为旗下核心业务。', en: 'Alphabet was formed with Google as the core business.'}},
+      {year: '1998', event: {zh: 'Google 成立。', en: 'Google was founded.'}}
+    ],
+    segments: [
+      {title: {zh: '搜索与广告', en: 'Search and ads'}, revenueLabel: {zh: '核心现金流', en: 'Core cash flow'}, summary: {zh: '搜索、YouTube 和广告网络。', en: 'Search, YouTube, and ad networks.'}, products: [{zh: 'Google Search、YouTube Ads、广告网络', en: 'Google Search, YouTube Ads, ad network'}]},
+      {title: {zh: 'Google Cloud', en: 'Google Cloud'}, revenueLabel: {zh: '企业平台', en: 'Enterprise platform'}, summary: {zh: '云基础设施、数据、AI 平台。', en: 'Cloud infrastructure, data, and AI platform.'}, products: [{zh: 'GCP、Vertex AI、Workspace', en: 'GCP, Vertex AI, Workspace'}]},
+      {title: {zh: 'AI 与生态', en: 'AI and ecosystem'}, revenueLabel: {zh: '长期变量', en: 'Long-term variable'}, summary: {zh: 'Gemini、Android、Chrome 和开发者生态。', en: 'Gemini, Android, Chrome, and developer ecosystem.'}, products: [{zh: 'Gemini、Android、Chrome、TPU', en: 'Gemini, Android, Chrome, TPU'}]}
+    ],
+    businessModel: [{zh: '广告现金流支撑云、AI、硬件和长期实验，云与订阅提高企业粘性。', en: 'Advertising cash flow funds cloud, AI, hardware, and long-term bets; cloud and subscriptions increase enterprise stickiness.'}],
+    cultureThesis: {zh: 'Google 文化是研究深度、工程规模、数据产品和开放生态的组合，但也面临大公司决策速度挑战。', en: 'Google culture combines research depth, engineering scale, data products, and open ecosystem, while facing large-company speed challenges.'},
+    moat: [{zh: '搜索默认入口、数据规模、广告网络、AI 人才、云基础设施和 Android 生态。', en: 'Search default position, data scale, ad network, AI talent, cloud infrastructure, and Android ecosystem.'}],
+    watchlist: [{zh: 'AI 搜索替代、广告增长、云盈利、反垄断监管和模型竞争。', en: 'AI search substitution, ad growth, cloud profitability, antitrust regulation, and model competition.'}]
+  }),
+  companyProfile({
+    slug: 'berkshire-hathaway',
+    name: {zh: 'Berkshire Hathaway', en: 'Berkshire Hathaway'},
+    category: {zh: '保险、投资与资本配置平台', en: 'Insurance, investing, and capital allocation platform'},
+    summary: {zh: 'Berkshire 是研究保险浮存金、长期持股、企业收购和资本配置的经典样本。', en: 'Berkshire is a classic case for insurance float, long-term holdings, acquisitions, and capital allocation.'},
+    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.berkshirehathaway.com/'}, {label: {zh: '股东信', en: 'Shareholder letters'}, href: 'https://www.berkshirehathaway.com/letters/letters.html'}],
+    timeline: [
+      {year: '2025', event: {zh: '巴菲特宣布将于 2025 年底卸任 CEO，Greg Abel 接任。', en: 'Buffett announced he would step down as CEO at the end of 2025, with Greg Abel succeeding him.'}},
+      {year: '1965', event: {zh: '巴菲特取得 Berkshire 控制权。', en: 'Buffett took control of Berkshire.'}},
+      {year: '1839', event: {zh: 'Berkshire 前身纺织企业历史可追溯至 19 世纪。', en: 'Berkshire’s predecessor textile roots trace back to the 19th century.'}}
+    ],
+    segments: [
+      {title: {zh: '保险', en: 'Insurance'}, revenueLabel: {zh: '浮存金来源', en: 'Float source'}, summary: {zh: 'GEICO、再保险和保险浮存金。', en: 'GEICO, reinsurance, and insurance float.'}, products: [{zh: '保险承保与浮存金投资', en: 'Insurance underwriting and float investment'}]},
+      {title: {zh: '控股公司', en: 'Operating businesses'}, revenueLabel: {zh: '多元现金流', en: 'Diversified cash flow'}, summary: {zh: '铁路、能源、制造、零售等。', en: 'Railroad, energy, manufacturing, retail, and more.'}, products: [{zh: 'BNSF、BHE、制造与服务企业', en: 'BNSF, BHE, manufacturing and service companies'}]},
+      {title: {zh: '股票投资', en: 'Equity portfolio'}, revenueLabel: {zh: '长期持股', en: 'Long-term holdings'}, summary: {zh: '以优质企业长期持有为核心。', en: 'Long-term ownership of high-quality businesses.'}, products: [{zh: 'Apple、金融、消费与能源持仓', en: 'Apple, financials, consumer, and energy holdings'}]}
+    ],
+    businessModel: [{zh: '保险浮存金、经营现金流和投资组合共同形成资本配置机器。', en: 'Insurance float, operating cash flow, and equity portfolio form a capital allocation machine.'}],
+    cultureThesis: {zh: 'Berkshire 文化强调理性、去中心化、声誉、长期主义和少犯大错。', en: 'Berkshire culture emphasizes rationality, decentralization, reputation, long-termism, and avoiding big mistakes.'},
+    moat: [{zh: '浮存金成本、资本配置信誉、长期股东基础、管理层信任和税务效率。', en: 'Float cost, capital allocation reputation, long-term shareholder base, management trust, and tax efficiency.'}],
+    watchlist: [{zh: '管理层交接、保险承保周期、现金规模、收购机会和核心持仓变化。', en: 'Succession, insurance cycle, cash balance, acquisition opportunities, and key holding changes.'}]
+  })
+];
+
+companies.push(...expandedCompanies);
+
+const tesla = companies.find((company) => company.slug === 'tesla');
+if (tesla) {
+  tesla.timeline = [
+    {year: '2025', event: {zh: '自动驾驶、机器人、储能和低成本车型继续构成市场核心争论。', en: 'Autonomy, robotics, energy storage, and lower-cost vehicles remained key debates.'}},
+    {year: '2023', event: {zh: 'Cybertruck 开始交付，储能业务扩张。', en: 'Cybertruck deliveries began and energy storage expanded.'}},
+    {year: '2020', event: {zh: 'Model Y 放量，特斯拉进入规模化盈利阶段。', en: 'Model Y scaled and Tesla entered sustained profitability.'}},
+    {year: '2012', event: {zh: 'Model S 帮助公司进入高端主流视野。', en: 'Model S brought Tesla into premium mainstream attention.'}},
+    {year: '2003', event: {zh: '公司成立，推动电动车商业化。', en: 'Founded to commercialize electric vehicles.'}}
+  ];
+  tesla.productSegments = [
+    {title: {zh: 'Automotive 汽车', en: 'Automotive'}, revenueLabel: {zh: '核心收入', en: 'Core revenue'}, summary: {zh: '电动车、车载软件和售后服务。', en: 'EVs, vehicle software, and services.'}, products: [{zh: 'Model 3 / Y / S / X、Cybertruck、FSD', en: 'Model 3 / Y / S / X, Cybertruck, FSD'}]},
+    {title: {zh: 'Energy 能源', en: 'Energy'}, revenueLabel: {zh: '第二曲线', en: 'Second curve'}, summary: {zh: '储能、太阳能和电网级能源产品。', en: 'Storage, solar, and grid-scale energy products.'}, products: [{zh: 'Megapack、Powerwall、Solar', en: 'Megapack, Powerwall, Solar'}]},
+    {title: {zh: 'AI / Robotics', en: 'AI / Robotics'}, revenueLabel: {zh: '长期期权', en: 'Long-term option'}, summary: {zh: '自动驾驶、机器人和车队数据。', en: 'Autonomy, robotics, and fleet data.'}, products: [{zh: 'FSD、Robotaxi、Optimus', en: 'FSD, Robotaxi, Optimus'}]}
+  ];
+  tesla.cultureModel = companyProfile({
+    slug: 'tmp',
+    name: tesla.name,
+    category: tesla.category,
+    summary: tesla.summary,
+    officialLinks: tesla.officialLinks,
+    timeline: tesla.timeline,
+    segments: tesla.productSegments,
+    businessModel: tesla.businessModel,
+    cultureThesis: {zh: 'Tesla 的文化是速度、垂直整合、成本压力、软件迭代和极高目标驱动。', en: 'Tesla culture is speed, vertical integration, cost pressure, software iteration, and extreme goal orientation.'},
+    moat: tesla.moat,
+    watchlist: tesla.watchlist
+  }).cultureModel;
+  tesla.deepQuestions = {
+    timeline: [
+      {zh: '特斯拉真正从“电动车公司”转向“能源与 AI 平台公司”的节点是哪一个？', en: 'When did Tesla truly shift from EV company toward energy and AI platform?'},
+      {zh: 'Model S、Model 3、Model Y、Cybertruck 和 Robotaxi 之间，哪一个最改变公司性质？', en: 'Among Model S, Model 3, Model Y, Cybertruck, and Robotaxi, which most changed the company?'},
+      {zh: '能源、自动驾驶和机器人叙事，是主业外延还是新平台？', en: 'Are energy, autonomy, and robotics extensions of the core business or new platforms?'}
+    ],
+    products: [
+      {zh: '汽车、FSD、能源、机器人这几类产品，哪个最可能带来利润结构变化？', en: 'Which product line could most change Tesla’s profit structure: cars, FSD, energy, or robotics?'},
+      {zh: 'FSD 是软件收入，还是车队数据、芯片、监管和保险共同组成的平台？', en: 'Is FSD software revenue, or a platform of fleet data, chips, regulation, and insurance?'},
+      {zh: 'Megapack 是否可能成为比汽车更稳定的工业产品线？', en: 'Could Megapack become a more stable industrial product line than vehicles?'}
+    ],
+    businessModel: [
+      {zh: '特斯拉的利润弹性来自制造规模、软件订阅，还是能源业务？', en: 'Does Tesla’s profit elasticity come from manufacturing scale, software subscription, or energy?'},
+      {zh: '如果电动车进入价格竞争，特斯拉还能靠哪些变量保持回报？', en: 'If EVs enter price competition, which variables can preserve Tesla’s returns?'}
+    ],
+    culture: [
+      {zh: '高速度、高压力和垂直整合，如何同时带来优势和组织风险？', en: 'How do speed, pressure, and vertical integration create both advantage and organizational risk?'},
+      {zh: '马斯克个人风格对 Tesla 的产品速度、品牌和治理分别有什么影响？', en: 'How does Musk’s style affect Tesla’s product speed, brand, and governance?'},
+      {zh: '第一性原理在制造、成本、自动驾驶和机器人里分别如何体现？', en: 'How does first-principles thinking show up in manufacturing, cost, autonomy, and robotics?'}
+    ],
+    moat: [
+      {zh: '特斯拉最难复制的是品牌、制造、数据、充电网络，还是组织速度？', en: 'What is hardest to copy: brand, manufacturing, data, charging network, or organizational speed?'},
+      {zh: '当传统车企和中国车企追上电动车能力后，特斯拉的壁垒会转向哪里？', en: 'When legacy and Chinese automakers catch up in EVs, where does Tesla’s moat move?'}
+    ],
+    watchlist: [
+      {zh: '电动车需求、价格战、监管、FSD 进展、能源装机，哪个最应该优先跟踪？', en: 'Which should be tracked first: EV demand, price war, regulation, FSD progress, or energy deployments?'},
+      {zh: 'Robotaxi 和 Optimus 的时间表应该如何防止被叙事带偏？', en: 'How should Robotaxi and Optimus timelines be tracked without being captured by narrative?'}
+    ]
+  };
+}
+
+const openai = companies.find((company) => company.slug === 'openai');
+if (openai) {
+  openai.productSegments = [
+    {title: {zh: 'ChatGPT', en: 'ChatGPT'}, revenueLabel: {zh: '用户入口', en: 'User entry'}, summary: {zh: '面向个人、团队和企业的通用 AI 助手。', en: 'General AI assistant for individuals, teams, and enterprises.'}, products: [{zh: 'ChatGPT、Teams、Enterprise', en: 'ChatGPT, Teams, Enterprise'}]},
+    {title: {zh: 'API / Platform', en: 'API / Platform'}, revenueLabel: {zh: '开发者平台', en: 'Developer platform'}, summary: {zh: '把模型能力开放给应用和企业工作流。', en: 'Exposes model capability to apps and enterprise workflows.'}, products: [{zh: 'Responses API、模型、工具调用、Agents', en: 'Responses API, models, tool use, Agents'}]},
+    {title: {zh: 'Research / Infrastructure', en: 'Research / Infrastructure'}, revenueLabel: {zh: '能力底座', en: 'Capability base'}, summary: {zh: '模型训练、推理、算力合作和安全研究。', en: 'Training, inference, compute partnerships, and safety research.'}, products: [{zh: '多模态模型、推理模型、安全系统', en: 'Multimodal models, reasoning models, safety systems'}]}
+  ];
+  openai.cultureModel = companyProfile({
+    slug: 'tmp-openai',
+    name: openai.name,
+    category: openai.category,
+    summary: openai.summary,
+    officialLinks: openai.officialLinks,
+    timeline: openai.timeline,
+    segments: openai.productSegments,
+    businessModel: openai.businessModel,
+    cultureThesis: {zh: 'OpenAI 的文化是前沿研究、产品速度、算力组织、安全争议和公共叙事同时存在。', en: 'OpenAI culture combines frontier research, product velocity, compute formation, safety debates, and public narrative.'},
+    moat: openai.moat,
+    watchlist: openai.watchlist
+  }).cultureModel;
+  openai.deepQuestions = {
+    timeline: [
+      {zh: 'ChatGPT 之后，OpenAI 是模型实验室、产品公司，还是 AI 平台公司？', en: 'After ChatGPT, is OpenAI a model lab, product company, or AI platform company?'},
+      {zh: 'OpenAI 的关键转折点是模型能力、用户分发、企业产品，还是算力组织？', en: 'Is OpenAI’s key turning point model capability, user distribution, enterprise product, or compute formation?'},
+      {zh: '治理事件如何影响外界对 OpenAI 长期可信度的判断？', en: 'How do governance events affect judgments about OpenAI’s long-term credibility?'}
+    ],
+    products: [
+      {zh: 'ChatGPT、API、企业产品和 Agents，哪个最可能成为长期利润中心？', en: 'Which is most likely to become a long-term profit center: ChatGPT, API, enterprise, or Agents?'},
+      {zh: '模型能力领先能否自然转化为应用层垄断？', en: 'Does model leadership naturally convert into application-layer dominance?'},
+      {zh: '开发者平台和企业工作流，哪一个更能形成迁移成本？', en: 'Which creates more switching cost: developer platform or enterprise workflow?'}
+    ],
+    businessModel: [
+      {zh: '订阅、API、企业合同和生态合作之间，收入质量有什么差异？', en: 'How does revenue quality differ among subscriptions, API, enterprise contracts, and partnerships?'},
+      {zh: '推理成本下降会扩大使用量，还是压缩模型公司的定价权？', en: 'Will falling inference cost expand usage or compress model-company pricing power?'}
+    ],
+    culture: [
+      {zh: '前沿研究速度、产品速度和安全治理之间如何平衡？', en: 'How should frontier research speed, product speed, and safety governance be balanced?'},
+      {zh: 'OpenAI 的公共叙事如何影响监管、客户和资本伙伴？', en: 'How does OpenAI’s public narrative affect regulators, customers, and capital partners?'},
+      {zh: '高密度人才和高争议环境，会如何影响组织稳定性？', en: 'How do dense talent and controversial context affect organizational stability?'}
+    ],
+    moat: [
+      {zh: 'OpenAI 最难复制的是模型、产品分发、品牌、数据反馈，还是算力合作？', en: 'What is hardest to copy: models, product distribution, brand, data feedback, or compute partnerships?'},
+      {zh: '开源模型和大厂模型会削弱 OpenAI，还是扩大整个市场？', en: 'Do open models and big-tech models weaken OpenAI or expand the whole market?'}
+    ],
+    watchlist: [
+      {zh: '企业采用、监管、推理成本、模型发布节奏和竞品表现，哪个最影响判断？', en: 'Which most affects the thesis: enterprise adoption, regulation, inference cost, model cadence, or competitors?'},
+      {zh: 'AI 助手会集中在通用入口，还是被垂直应用拆散？', en: 'Will AI assistants concentrate around general entry points or fragment into vertical apps?'}
+    ]
+  };
+}
+
+function enrichCompany(
+  slug: string,
+  patch: Partial<Pick<CompanyProfile, 'timeline' | 'businessModel' | 'moat' | 'watchlist'>>
+) {
+  const company = companies.find((item) => item.slug === slug);
+  if (!company) return;
+  Object.assign(company, patch);
+}
+
+enrichCompany('nvidia', {
+  timeline: [
+    {
+      year: '2024',
+      event: {zh: '发布 Blackwell 平台，把 GPU、CPU、网络、系统和软件打包成面向 AI 工厂的新一代计算平台。', en: 'Launched the Blackwell platform, packaging GPU, CPU, networking, systems, and software into a next-generation AI factory platform.'},
+      imageHint: {zh: 'Blackwell 芯片、GB200 NVL72 或 GTC 发布会舞台图。', en: 'Blackwell chip, GB200 NVL72, or GTC launch image.'},
+      href: 'https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing'
+    },
+    {
+      year: '2023',
+      event: {zh: '生成式 AI 需求爆发，数据中心成为最核心增长引擎，H100、DGX、网络和软件栈共同进入客户预算。', en: 'Generative AI demand surged, making Data Center the core growth engine across H100, DGX, networking, and software stack.'},
+      imageHint: {zh: 'AI 数据中心、H100 或 DGX 集群图。', en: 'AI data center, H100, or DGX cluster image.'}
+    },
+    {
+      year: '2020',
+      event: {zh: '完成收购 Mellanox，补齐高速网络能力，让英伟达从芯片公司进一步走向数据中心系统公司。', en: 'Completed the Mellanox acquisition, strengthening high-speed networking and moving further toward data center systems.'},
+      imageHint: {zh: 'Mellanox 网络设备或数据中心网络图。', en: 'Mellanox networking hardware or data center network image.'},
+      href: 'https://nvidianews.nvidia.com/news/nvidia-completes-acquisition-of-mellanox'
+    },
+    {
+      year: '2016',
+      event: {zh: '发布 DGX-1 并受益于深度学习训练需求，AI 计算从研究场景逐步进入产业场景。', en: 'Launched DGX-1 as deep learning training demand moved from research into industry.'},
+      imageHint: {zh: 'DGX-1 或早期 AI 训练系统图。', en: 'DGX-1 or early AI training system image.'}
+    },
+    {
+      year: '2012',
+      event: {zh: 'AlexNet 使用 GPU 在 ImageNet 竞赛中取得突破，GPU 训练神经网络的价值被行业看见。', en: 'AlexNet used GPUs for a breakthrough ImageNet result, making GPU neural-network training visible to the industry.'},
+      imageHint: {zh: '深度学习研究、ImageNet 或早期 GPU 训练示意图。', en: 'Deep learning research, ImageNet, or early GPU training image.'}
+    },
+    {
+      year: '2006',
+      event: {zh: '推出 CUDA，让 GPU 从图形处理进入通用并行计算，并开始积累开发者生态壁垒。', en: 'Launched CUDA, moving GPUs from graphics into general-purpose parallel computing and beginning a developer ecosystem moat.'},
+      imageHint: {zh: 'CUDA 标识、开发者大会或早期 GPU 编程资料图。', en: 'CUDA branding, developer conference, or early GPU programming material.'}
+    },
+    {
+      year: '1999',
+      event: {zh: '推出 GeForce 256 并强化 GPU 概念，为图形计算平台打下基础。', en: 'Launched GeForce 256 and strengthened the GPU concept, laying the foundation for a graphics computing platform.'},
+      imageHint: {zh: 'GeForce 256 产品图。', en: 'GeForce 256 product image.'}
+    },
+    {
+      year: '1993',
+      event: {zh: '黄仁勋、Chris Malachowsky 和 Curtis Priem 创立 NVIDIA，早期聚焦图形计算。', en: 'Jensen Huang, Chris Malachowsky, and Curtis Priem founded NVIDIA with an early focus on graphics computing.'},
+      imageHint: {zh: '创始人早期照片或 NVIDIA 早期办公室图。', en: 'Early founder or NVIDIA office image.'}
+    }
+  ],
+  businessModel: [
+    {zh: '硬件层：GPU、加速卡、整机系统和网络设备形成主要收入。', en: 'Hardware layer: GPUs, accelerators, full systems, and networking drive core revenue.'},
+    {zh: '平台层：CUDA、NIM、AI Enterprise、TensorRT 等软件提高客户迁移成本。', en: 'Platform layer: CUDA, NIM, AI Enterprise, TensorRT, and related software increase switching costs.'},
+    {zh: '客户层：云厂商、模型公司、企业和科研客户用资本开支购买 AI 基础设施。', en: 'Customer layer: clouds, model companies, enterprises, and research customers buy AI infrastructure through capex.'},
+    {zh: '扩张层：游戏、专业可视化、汽车和机器人把同一计算能力外溢到更多场景。', en: 'Expansion layer: gaming, professional visualization, automotive, and robotics extend the same compute capability into more markets.'}
+  ],
+  moat: [
+    {zh: '底层技术：GPU 架构、先进封装、网络互联和系统集成能力。', en: 'Core technology: GPU architecture, advanced packaging, networking interconnect, and systems integration.'},
+    {zh: '软件生态：CUDA、库、工具链、文档和开发者习惯形成长期锁定。', en: 'Software ecosystem: CUDA, libraries, toolchains, documentation, and developer habits create durable lock-in.'},
+    {zh: '客户关系：云厂商、模型公司和企业围绕英伟达路线图规划数据中心投资。', en: 'Customer relationships: clouds, model companies, and enterprises plan data center investment around NVIDIA roadmaps.'},
+    {zh: '供应链与规模：台积电、先进封装、HBM、整机伙伴和交付能力共同构成门槛。', en: 'Supply chain and scale: TSMC, advanced packaging, HBM, system partners, and delivery capacity create barriers.'},
+    {zh: '叙事能力：黄仁勋把“加速计算、AI 工厂、物理 AI”讲成行业共同语言。', en: 'Narrative power: Jensen Huang turns accelerated computing, AI factories, and physical AI into shared industry language.'}
+  ],
+  watchlist: [
+    {zh: '行业：AI 训练、推理、视频生成、机器人和企业 AI 的真实需求强度。', en: 'Industry: real demand for AI training, inference, video generation, robotics, and enterprise AI.'},
+    {zh: '客户：云厂商资本开支是否持续，企业客户是否进入规模化部署。', en: 'Customers: whether cloud capex continues and enterprises move into scaled deployment.'},
+    {zh: '竞争：AMD、云厂商自研芯片、ASIC、开源软件栈和中国替代。', en: 'Competition: AMD, cloud in-house chips, ASICs, open software stacks, and China alternatives.'},
+    {zh: '政策：出口管制、地缘风险、先进封装和 HBM 供应链约束。', en: 'Policy: export controls, geopolitics, advanced packaging, and HBM supply constraints.'},
+    {zh: '公司自身：Blackwell / 后续平台交付节奏、软件收入占比和毛利变化。', en: 'Company: Blackwell and next-platform delivery, software revenue mix, and margin changes.'}
+  ]
+});
+
+enrichCompany('tesla', {
+  timeline: [
+    {year: '2024', event: {zh: 'Robotaxi、Optimus、FSD 和储能业务继续成为市场判断特斯拉长期价值的核心变量。', en: 'Robotaxi, Optimus, FSD, and energy storage remained central variables in judging Tesla long-term value.'}, imageHint: {zh: 'Robotaxi 活动、Optimus 或 Tesla AI Day 风格图。', en: 'Robotaxi event, Optimus, or Tesla AI Day style image.'}},
+    {year: '2023', event: {zh: 'Cybertruck 开始交付，Supercharger 网络开放合作加速，储能业务持续放量。', en: 'Cybertruck deliveries began, Supercharger partnerships accelerated, and energy storage continued scaling.'}, imageHint: {zh: 'Cybertruck 交付、Supercharger 或 Megapack 图。', en: 'Cybertruck delivery, Supercharger, or Megapack image.'}},
+    {year: '2020', event: {zh: 'Model Y 放量，特斯拉进入规模化盈利阶段，并被纳入标普 500。', en: 'Model Y scaled, Tesla entered sustained profitability, and the company joined the S&P 500.'}, imageHint: {zh: 'Model Y 工厂、交付中心或上海超级工厂图。', en: 'Model Y factory, delivery center, or Gigafactory Shanghai image.'}},
+    {year: '2017', event: {zh: 'Model 3 投产，把特斯拉从高端车企推向大众化电动车制造挑战。', en: 'Model 3 production pushed Tesla from premium EV maker into mass-market manufacturing challenge.'}, imageHint: {zh: 'Model 3 产线或早期交付图。', en: 'Model 3 production line or early delivery image.'}},
+    {year: '2016', event: {zh: '收购 SolarCity，并发布 Master Plan Part Deux，将汽车、能源、自动驾驶和共享出行放进同一叙事。', en: 'Acquired SolarCity and released Master Plan Part Deux, connecting vehicles, energy, autonomy, and shared mobility.'}, imageHint: {zh: '太阳能屋顶、Powerwall 或 Master Plan 图片。', en: 'Solar roof, Powerwall, or Master Plan image.'}},
+    {year: '2012', event: {zh: 'Model S 发布并建设 Supercharger 网络，证明电动车可以兼具性能、体验和长途补能。', en: 'Model S launched and Supercharger network began, proving EVs could combine performance, experience, and long-distance charging.'}, imageHint: {zh: 'Model S 或早期 Supercharger 图。', en: 'Model S or early Supercharger image.'}},
+    {year: '2008', event: {zh: 'Roadster 交付，展示锂电电动车的性能潜力。', en: 'Roadster deliveries demonstrated the performance potential of lithium-ion EVs.'}, imageHint: {zh: 'Tesla Roadster 产品图。', en: 'Tesla Roadster product image.'}},
+    {year: '2003', event: {zh: '公司成立，目标是推动电动车商业化。', en: 'The company was founded to commercialize electric vehicles.'}, imageHint: {zh: '早期团队或 Roadster 原型图。', en: 'Early team or Roadster prototype image.'}}
+  ],
+  businessModel: [
+    {zh: '汽车层：整车销售、租赁、积分收入和售后服务构成现金流基础。', en: 'Vehicle layer: sales, leasing, regulatory credits, and service form the cash-flow base.'},
+    {zh: '软件层：FSD、连接服务、车载功能和未来 Robotaxi 决定利润弹性。', en: 'Software layer: FSD, connectivity, in-car features, and future Robotaxi shape profit elasticity.'},
+    {zh: '能源层：Megapack、Powerwall、太阳能和电网项目提供第二增长曲线。', en: 'Energy layer: Megapack, Powerwall, solar, and grid projects provide a second growth curve.'},
+    {zh: '网络层：Supercharger、车队数据、保险和服务网络提高生态粘性。', en: 'Network layer: Supercharger, fleet data, insurance, and service network increase ecosystem stickiness.'}
+  ],
+  moat: [
+    {zh: '制造规模：工厂效率、零部件整合、软件定义车辆和成本迭代。', en: 'Manufacturing scale: factory efficiency, component integration, software-defined vehicles, and cost iteration.'},
+    {zh: '品牌与用户心智：特斯拉仍是全球电动车品类的强符号。', en: 'Brand and mindshare: Tesla remains a strong global symbol for the EV category.'},
+    {zh: '补能网络：Supercharger 改善使用体验，并可能成为行业基础设施。', en: 'Charging network: Supercharger improves experience and may become industry infrastructure.'},
+    {zh: '数据闭环：真实车队数据、车端芯片、训练系统和 FSD 迭代互相增强。', en: 'Data loop: real fleet data, in-car chips, training systems, and FSD iteration reinforce each other.'},
+    {zh: '组织速度：垂直整合和高压目标让公司能快速试错，但也带来治理风险。', en: 'Organizational speed: vertical integration and aggressive goals enable fast iteration while adding governance risk.'}
+  ],
+  watchlist: [
+    {zh: '行业：电动车渗透率、价格战、补能标准和电池成本。', en: 'Industry: EV penetration, price competition, charging standards, and battery cost.'},
+    {zh: '客户：Model 3 / Y 老化后的换购需求，以及 Cybertruck 和低成本车型接受度。', en: 'Customers: replacement demand for aging Model 3 / Y, plus acceptance of Cybertruck and lower-cost models.'},
+    {zh: '政策：自动驾驶监管、补贴变化、关税和数据合规。', en: 'Policy: autonomy regulation, incentive changes, tariffs, and data compliance.'},
+    {zh: '竞争：中国车企、传统车企、Waymo 等自动驾驶路线和能源储能对手。', en: 'Competition: Chinese automakers, legacy automakers, autonomy players such as Waymo, and storage rivals.'},
+    {zh: '公司自身：FSD 里程碑、Megapack 毛利、产能利用率、CEO 注意力和治理结构。', en: 'Company: FSD milestones, Megapack margins, capacity utilization, CEO attention, and governance.'}
+  ]
+});
+
+enrichCompany('openai', {
+  timeline: [
+    {year: '2025', event: {zh: '推理模型、智能体工具和企业平台持续扩展，OpenAI 从聊天入口继续走向工作流平台。', en: 'Reasoning models, agent tools, and enterprise platform expanded, moving OpenAI from chat entry toward workflow platform.'}, imageHint: {zh: 'ChatGPT、Agents 或开发者平台界面图。', en: 'ChatGPT, Agents, or developer platform interface image.'}},
+    {year: '2024', event: {zh: 'GPT-4o、Sora 和多模态能力强化 OpenAI 在文本、语音、视觉和视频方向的产品叙事。', en: 'GPT-4o, Sora, and multimodal capabilities strengthened OpenAI product narrative across text, voice, vision, and video.'}, imageHint: {zh: 'GPT-4o 演示、Sora 视频生成或多模态界面图。', en: 'GPT-4o demo, Sora video generation, or multimodal interface image.'}},
+    {year: '2023', event: {zh: 'GPT-4、ChatGPT Enterprise 和开发者生态扩展，模型能力开始转化为企业产品和平台收入。', en: 'GPT-4, ChatGPT Enterprise, and developer ecosystem expansion began converting model capability into enterprise product and platform revenue.'}, imageHint: {zh: 'GPT-4 发布或企业产品界面图。', en: 'GPT-4 launch or enterprise product interface image.'}},
+    {year: '2022', event: {zh: 'ChatGPT 发布，生成式 AI 进入大众市场，OpenAI 获得全球用户入口。', en: 'ChatGPT launched, bringing generative AI to the mass market and giving OpenAI a global user entry point.'}, imageHint: {zh: 'ChatGPT 早期界面图。', en: 'Early ChatGPT interface image.'}},
+    {year: '2019', event: {zh: '与 Microsoft 深化合作，并形成算力、云平台和商业化的重要支撑。', en: 'Deepened Microsoft partnership, creating major support for compute, cloud platform, and commercialization.'}, imageHint: {zh: 'Microsoft Azure 与 OpenAI 合作图。', en: 'Microsoft Azure and OpenAI partnership image.'}},
+    {year: '2018', event: {zh: 'GPT 路线出现，基于大规模预训练的语言模型成为核心技术方向。', en: 'The GPT line emerged, making large-scale pretraining a core technical direction.'}, imageHint: {zh: '语言模型研究或论文示意图。', en: 'Language model research or paper image.'}},
+    {year: '2015', event: {zh: 'OpenAI 成立，早期以通用人工智能研究和安全为核心使命。', en: 'OpenAI was founded with an early mission around AGI research and safety.'}, imageHint: {zh: '早期团队或 OpenAI 标识图。', en: 'Early team or OpenAI logo image.'}}
+  ],
+  businessModel: [
+    {zh: '订阅层：ChatGPT Plus、Team、Enterprise 形成稳定用户和团队收入。', en: 'Subscription layer: ChatGPT Plus, Team, and Enterprise create recurring user and team revenue.'},
+    {zh: '平台层：API、工具调用、智能体和模型服务按使用量收费。', en: 'Platform layer: API, tool use, agents, and model services charge by usage.'},
+    {zh: '企业层：把模型嵌入客服、编程、办公、数据分析和内部知识工作流。', en: 'Enterprise layer: embeds models into support, coding, office work, analytics, and internal knowledge workflows.'},
+    {zh: '合作层：云、设备、应用和内容生态合作扩大分发，同时带来依赖关系。', en: 'Partnership layer: cloud, device, app, and content ecosystem partnerships expand distribution while adding dependencies.'}
+  ],
+  moat: [
+    {zh: '模型能力：训练方法、推理能力、多模态能力和评测体系。', en: 'Model capability: training methods, reasoning, multimodal systems, and evaluations.'},
+    {zh: '产品入口：ChatGPT 品牌和使用习惯让通用助手成为用户默认入口之一。', en: 'Product entry: ChatGPT brand and usage habits make the assistant a default user entry point.'},
+    {zh: '开发者生态：API、工具链、文档、示例和集成伙伴降低应用开发门槛。', en: 'Developer ecosystem: API, tooling, docs, examples, and integrations lower app-development friction.'},
+    {zh: '算力组织：与云伙伴、芯片供应和推理基础设施的组织能力决定迭代速度。', en: 'Compute formation: cloud partners, chip supply, and inference infrastructure shape iteration speed.'},
+    {zh: '信任与治理：安全、隐私、版权、监管和企业合规会决定长期客户关系。', en: 'Trust and governance: safety, privacy, copyright, regulation, and compliance determine durable customer relationships.'}
+  ],
+  watchlist: [
+    {zh: '行业：推理成本下降是否带来使用量爆发，还是压缩模型公司定价权。', en: 'Industry: whether falling inference cost expands usage or compresses model-company pricing power.'},
+    {zh: '客户：企业是否从试点进入核心流程，个人用户是否保持高频付费。', en: 'Customers: whether enterprises move from pilots into core workflows and users keep high-frequency paid usage.'},
+    {zh: '政策：版权、数据、模型安全、出口管制和各国 AI 法规。', en: 'Policy: copyright, data, model safety, export controls, and AI regulation across jurisdictions.'},
+    {zh: '竞争：Anthropic、Google、Meta、xAI、开源模型和垂直应用。', en: 'Competition: Anthropic, Google, Meta, xAI, open models, and vertical applications.'},
+    {zh: '公司自身：模型发布节奏、产品可靠性、算力成本、治理稳定和企业续费率。', en: 'Company: model cadence, product reliability, compute cost, governance stability, and enterprise renewals.'}
+  ]
+});
+
+enrichCompany('spacex', {
+  timeline: [
+    {year: '2024', event: {zh: 'Starship 试飞进入快速迭代阶段，超重型助推器回收尝试显示完全可复用系统的工程方向。', en: 'Starship flight tests accelerated, and Super Heavy recovery attempts showed the engineering path toward full reusability.'}, imageHint: {zh: 'Starship / Super Heavy 发射或回收图。', en: 'Starship / Super Heavy launch or recovery image.'}},
+    {year: '2020', event: {zh: 'Crew Dragon 完成载人飞行，美国商业载人航天进入新阶段。', en: 'Crew Dragon completed crewed flight, opening a new stage for U.S. commercial human spaceflight.'}, imageHint: {zh: 'Crew Dragon 与 NASA 发射图。', en: 'Crew Dragon and NASA launch image.'}},
+    {year: '2019', event: {zh: '首批 Starlink 卫星发射，SpaceX 开始把发射能力转化为通信网络。', en: 'The first Starlink satellites launched, turning launch capability into a communications network.'}, imageHint: {zh: 'Starlink 卫星堆叠或轨道示意图。', en: 'Starlink satellite stack or orbit image.'}},
+    {year: '2018', event: {zh: 'Falcon Heavy 首飞成功，证明重型商业发射能力。', en: 'Falcon Heavy completed its first flight, proving heavy commercial launch capability.'}, imageHint: {zh: 'Falcon Heavy 发射图。', en: 'Falcon Heavy launch image.'}},
+    {year: '2015', event: {zh: 'Falcon 9 一级火箭首次成功陆地回收，可复用火箭商业化路径被验证。', en: 'Falcon 9 first stage landed successfully, validating the reusable rocket path.'}, imageHint: {zh: 'Falcon 9 一级回收图。', en: 'Falcon 9 booster landing image.'}},
+    {year: '2012', event: {zh: 'Dragon 飞船抵达国际空间站，商业航天获得关键可信度。', en: 'Dragon reached the International Space Station, giving commercial space a major credibility milestone.'}, imageHint: {zh: 'Dragon 与国际空间站对接图。', en: 'Dragon docking with ISS image.'}},
+    {year: '2008', event: {zh: 'Falcon 1 成为首个进入轨道的私人液体燃料火箭，并获得 NASA 商业补给合同。', en: 'Falcon 1 became the first privately developed liquid-fueled rocket to reach orbit, followed by NASA commercial resupply support.'}, imageHint: {zh: 'Falcon 1 发射图。', en: 'Falcon 1 launch image.'}},
+    {year: '2002', event: {zh: 'SpaceX 成立，目标是降低进入太空的成本。', en: 'SpaceX was founded to lower the cost of access to space.'}, imageHint: {zh: 'SpaceX 早期团队或早期火箭图。', en: 'Early SpaceX team or early rocket image.'}}
+  ],
+  businessModel: [
+    {zh: '发射层：商业卫星、NASA、国防和科研任务提供高频发射收入。', en: 'Launch layer: commercial satellite, NASA, defense, and science missions drive launch revenue.'},
+    {zh: '通信层：Starlink 通过终端销售、个人订阅、企业、海事、航空和政府客户收费。', en: 'Communications layer: Starlink monetizes terminals, residential subscriptions, enterprise, maritime, aviation, and government customers.'},
+    {zh: '平台层：高频发射降低边际成本，反过来支撑更大规模卫星网络。', en: 'Platform layer: high launch cadence lowers marginal cost and supports a larger satellite network.'},
+    {zh: '未来层：Starship 若成熟，将打开重型运输、月球任务、火星任务和大规模在轨基础设施。', en: 'Future layer: mature Starship could open heavy transport, lunar missions, Mars missions, and large-scale orbital infrastructure.'}
+  ],
+  moat: [
+    {zh: '可复用技术：火箭回收、发动机、材料、控制系统和快速复飞能力。', en: 'Reusability technology: booster recovery, engines, materials, control systems, and rapid reflight.'},
+    {zh: '发射频率：高任务密度带来工程学习速度和成本优势。', en: 'Launch cadence: dense missions create learning speed and cost advantage.'},
+    {zh: '垂直整合：发动机、火箭、飞船、卫星、地面终端和运营体系高度自研。', en: 'Vertical integration: engines, rockets, spacecraft, satellites, terminals, and operations are deeply integrated.'},
+    {zh: 'Starlink 网络：卫星星座、频谱、终端、用户规模和政府客户构成网络壁垒。', en: 'Starlink network: constellation, spectrum, terminals, user scale, and government customers create a network moat.'},
+    {zh: '政府信任：NASA、国防和盟友客户的任务经验提高进入门槛。', en: 'Government trust: NASA, defense, and allied-customer mission history raises barriers.'}
+  ],
+  watchlist: [
+    {zh: '行业：全球发射需求、卫星互联网渗透率和低轨容量竞争。', en: 'Industry: launch demand, satellite-internet penetration, and LEO capacity competition.'},
+    {zh: '客户：Starlink 个人、企业、海事、航空、政府和战场通信需求。', en: 'Customers: Starlink residential, enterprise, maritime, aviation, government, and battlefield communications demand.'},
+    {zh: '政策：频谱、发射许可、太空碎片、出口管制和国家安全审查。', en: 'Policy: spectrum, launch licensing, space debris, export controls, and national-security review.'},
+    {zh: '竞争：Blue Origin、ULA、中国航天、OneWeb / Eutelsat、Amazon Kuiper。', en: 'Competition: Blue Origin, ULA, China space players, OneWeb / Eutelsat, and Amazon Kuiper.'},
+    {zh: '公司自身：Starship 试飞节奏、Starlink 盈利、事故率、产能和现金消耗。', en: 'Company: Starship flight cadence, Starlink profitability, accident rate, capacity, and cash burn.'}
+  ]
+});
+
+enrichCompany('apple', {
+  timeline: [
+    {year: '2024', event: {zh: '发布 Apple Intelligence，并推动 iPhone、Mac、iPad 与端侧 AI 能力结合。', en: 'Introduced Apple Intelligence, linking iPhone, Mac, iPad, and on-device AI capability.'}, imageHint: {zh: 'WWDC Apple Intelligence 或设备演示图。', en: 'WWDC Apple Intelligence or device demo image.'}},
+    {year: '2023', event: {zh: '发布 Vision Pro，尝试把空间计算作为下一代交互平台。', en: 'Introduced Vision Pro, positioning spatial computing as a next-generation interaction platform.'}, imageHint: {zh: 'Vision Pro 产品图。', en: 'Vision Pro product image.'}},
+    {year: '2020', event: {zh: 'Apple Silicon 迁移启动，Mac 从 Intel 转向自研芯片，软硬件一体化进一步增强。', en: 'Apple Silicon transition began, moving Mac from Intel to in-house chips and strengthening integration.'}, imageHint: {zh: 'M1 芯片或 Mac 发布会图。', en: 'M1 chip or Mac launch image.'}},
+    {year: '2015', event: {zh: 'Apple Watch 发布，设备生态从手机和电脑扩展到健康与可穿戴。', en: 'Apple Watch launched, extending the device ecosystem into health and wearables.'}, imageHint: {zh: 'Apple Watch 产品图。', en: 'Apple Watch product image.'}},
+    {year: '2008', event: {zh: 'App Store 上线，iPhone 从硬件产品变成开发者和服务平台。', en: 'App Store launched, turning iPhone from hardware product into developer and services platform.'}, imageHint: {zh: 'App Store 早期界面图。', en: 'Early App Store interface image.'}},
+    {year: '2007', event: {zh: 'iPhone 发布，重塑移动互联网入口。', en: 'iPhone launched, reshaping the mobile internet entry point.'}, imageHint: {zh: '乔布斯发布 iPhone 图。', en: 'Steve Jobs iPhone keynote image.'}},
+    {year: '1984', event: {zh: 'Macintosh 发布，把图形界面个人电脑推向大众认知。', en: 'Macintosh launched, bringing graphical personal computing into public awareness.'}, imageHint: {zh: 'Macintosh 产品或发布图。', en: 'Macintosh product or launch image.'}},
+    {year: '1976', event: {zh: 'Apple 创立，早期从个人电脑切入。', en: 'Apple was founded, beginning with personal computers.'}, imageHint: {zh: 'Apple I 或早期创始人图。', en: 'Apple I or early founders image.'}}
+  ],
+  businessModel: [
+    {zh: '硬件层：iPhone 是最大入口，Mac、iPad、Watch、AirPods 构成设备矩阵。', en: 'Hardware layer: iPhone is the main entry, with Mac, iPad, Watch, and AirPods forming a device matrix.'},
+    {zh: '服务层：App Store、iCloud、Apple Music、Apple Pay 和保修服务提升毛利与复购。', en: 'Services layer: App Store, iCloud, Apple Music, Apple Pay, and warranty services lift margin and repeat purchase.'},
+    {zh: '生态层：软硬件协同、账号体系、隐私定位和开发者生态提高迁移成本。', en: 'Ecosystem layer: hardware-software integration, accounts, privacy positioning, and developers raise switching costs.'},
+    {zh: '供应链层：规模采购、制造协同、芯片自研和渠道控制保障体验与成本。', en: 'Supply-chain layer: scale purchasing, manufacturing coordination, in-house chips, and channel control support experience and cost.'}
+  ],
+  moat: [
+    {zh: '品牌与信任：高端消费电子心智、隐私叙事和长期服务体验。', en: 'Brand and trust: premium consumer-electronics mindshare, privacy narrative, and long-term service experience.'},
+    {zh: '生态粘性：iOS、App Store、iCloud、Apple ID、多设备协同和家庭共享。', en: 'Ecosystem stickiness: iOS, App Store, iCloud, Apple ID, multi-device continuity, and family sharing.'},
+    {zh: '软硬件一体化：芯片、系统、工业设计、零售和售后共同控制体验。', en: 'Integration: chips, operating systems, industrial design, retail, and service jointly control experience.'},
+    {zh: '开发者网络：高付费用户群和应用生态吸引开发者持续投入。', en: 'Developer network: high-paying users and app ecosystem attract continued developer investment.'},
+    {zh: '供应链能力：超大规模、质量控制、库存管理和全球渠道构成隐形门槛。', en: 'Supply-chain capability: scale, quality control, inventory management, and global channels create hidden barriers.'}
+  ],
+  watchlist: [
+    {zh: '行业：智能手机换机周期、端侧 AI、空间计算和可穿戴健康场景。', en: 'Industry: smartphone replacement cycle, on-device AI, spatial computing, and wearable health.'},
+    {zh: '客户：高端用户忠诚度、服务付费率和新设备接受度。', en: 'Customers: premium-user loyalty, services attach rate, and adoption of new devices.'},
+    {zh: '政策：App Store 监管、反垄断、隐私规则和供应链地缘风险。', en: 'Policy: App Store regulation, antitrust, privacy rules, and supply-chain geopolitics.'},
+    {zh: '竞争：Android 阵营、AI 助手入口、云服务、可穿戴和混合现实设备。', en: 'Competition: Android ecosystem, AI assistant entry points, cloud services, wearables, and mixed-reality devices.'},
+    {zh: '公司自身：AI 产品化速度、服务收入质量、毛利率、创新节奏和管理层延续。', en: 'Company: AI productization speed, services revenue quality, margins, innovation cadence, and leadership continuity.'}
+  ]
+});
+
+enrichCompany('anthropic', {
+  timeline: [
+    {year: '2025', event: {zh: 'Claude、企业产品、代码工具和云平台合作继续扩展，安全可信叙事进入商业化阶段。', en: 'Claude, enterprise products, coding tools, and cloud partnerships expanded, taking the safety-and-trust narrative deeper into commercialization.'}, imageHint: {zh: 'Claude 产品界面或企业 AI 工作流图。', en: 'Claude product interface or enterprise AI workflow image.'}},
+    {year: '2024', event: {zh: 'Claude 3 系列和后续模型提升多模态、长上下文、代码和企业任务能力。', en: 'Claude 3 and subsequent models improved multimodal, long-context, coding, and enterprise-task capability.'}, imageHint: {zh: 'Claude 模型发布或长上下文界面图。', en: 'Claude model launch or long-context interface image.'}},
+    {year: '2023', event: {zh: 'Claude 进入更广泛商业使用，并获得云厂商和企业客户关注。', en: 'Claude reached broader commercial use and drew attention from cloud providers and enterprise customers.'}, imageHint: {zh: 'Claude 早期产品界面图。', en: 'Early Claude product interface image.'}},
+    {year: '2022', event: {zh: 'Constitutional AI 等安全研究强化公司差异化定位。', en: 'Safety research such as Constitutional AI strengthened the company differentiation.'}, imageHint: {zh: 'AI 安全研究或评测示意图。', en: 'AI safety research or evaluation diagram.'}},
+    {year: '2021', event: {zh: 'Anthropic 成立，定位为重视安全、可靠和可解释性的前沿 AI 公司。', en: 'Anthropic was founded as a frontier AI company focused on safety, reliability, and interpretability.'}, imageHint: {zh: 'Anthropic 标识或早期团队图。', en: 'Anthropic logo or early team image.'}}
+  ],
+  businessModel: [
+    {zh: '订阅层：Claude 面向个人、团队和企业提供付费入口。', en: 'Subscription layer: Claude provides paid entry points for individuals, teams, and enterprises.'},
+    {zh: 'API 层：按模型调用、上下文长度、工具调用和企业集成收费。', en: 'API layer: monetizes model calls, context length, tool use, and enterprise integration.'},
+    {zh: '企业层：以可靠、安全、合规和长上下文能力切入知识工作流。', en: 'Enterprise layer: enters knowledge workflows through reliability, safety, compliance, and long context.'},
+    {zh: '渠道层：云平台合作扩大分发，但也要求处理算力、定价和客户关系依赖。', en: 'Channel layer: cloud partnerships expand distribution while creating dependencies around compute, pricing, and customer ownership.'}
+  ],
+  moat: [
+    {zh: '安全品牌：把可靠、可控、可解释作为企业采用的信任资产。', en: 'Safety brand: turns reliability, controllability, and interpretability into trust assets for enterprise adoption.'},
+    {zh: '模型能力：长上下文、代码、复杂推理和工具使用能力。', en: 'Model capability: long context, coding, complex reasoning, and tool use.'},
+    {zh: '企业信任：面向高合规客户时，安全叙事比单纯性能更重要。', en: 'Enterprise trust: for high-compliance customers, safety narrative matters beyond raw performance.'},
+    {zh: '研究深度：解释性、安全评估和对齐研究形成长期差异化。', en: 'Research depth: interpretability, safety evaluation, and alignment research create long-term differentiation.'},
+    {zh: '云渠道：与大型云平台的合作提高触达，但也需要守住品牌和客户关系。', en: 'Cloud channels: major cloud partnerships increase reach while requiring control of brand and customer relationship.'}
+  ],
+  watchlist: [
+    {zh: '行业：模型性能趋同后，企业是否更重视可靠、安全和合规。', en: 'Industry: whether enterprises value reliability, safety, and compliance more as model performance converges.'},
+    {zh: '客户：Claude 在代码、文档、客服、法律、金融和内部知识库中的渗透。', en: 'Customers: Claude adoption in coding, documents, support, legal, finance, and internal knowledge bases.'},
+    {zh: '政策：AI 安全、数据隐私、模型评测和行业合规要求。', en: 'Policy: AI safety, data privacy, model evaluations, and sector compliance.'},
+    {zh: '竞争：OpenAI、Google、Meta、xAI、开源模型和企业软件厂商。', en: 'Competition: OpenAI, Google, Meta, xAI, open models, and enterprise software vendors.'},
+    {zh: '公司自身：算力成本、融资能力、模型节奏、企业续费率和安全承诺兑现。', en: 'Company: compute cost, financing capacity, model cadence, enterprise renewals, and delivery on safety promises.'}
+  ]
+});
+
+enrichCompany('tsmc', {
+  timeline: [
+    {year: '2024', event: {zh: '魏哲家接任董事长并继续担任 CEO，台积电进入 AI 需求和全球扩产并行阶段。', en: 'C.C. Wei became Chairman while continuing as CEO, as TSMC entered a phase of AI demand and global expansion.'}, imageHint: {zh: '魏哲家、晶圆厂或投资者大会图。', en: 'C.C. Wei, fab, or investor event image.'}},
+    {year: '2020s', event: {zh: 'AI 加速器需求推动先进制程、CoWoS 先进封装和 HBM 相关供应链扩张。', en: 'AI accelerator demand drove expansion in advanced nodes, CoWoS advanced packaging, and HBM-related supply chain.'}, imageHint: {zh: 'CoWoS、先进封装或 AI 芯片晶圆图。', en: 'CoWoS, advanced packaging, or AI chip wafer image.'}},
+    {year: '2020', event: {zh: '宣布美国亚利桑那晶圆厂计划，全球产能布局成为客户和政策共同关注点。', en: 'Announced Arizona fab plans, making global capacity footprint a shared customer and policy focus.'}, imageHint: {zh: '亚利桑那晶圆厂建设或厂区图。', en: 'Arizona fab construction or campus image.'}},
+    {year: '2018', event: {zh: '7nm 量产支撑智能手机、高性能计算和 AI 芯片客户，先进制程优势进一步拉开。', en: '7nm volume production supported smartphone, HPC, and AI chip customers, widening advanced-node leadership.'}, imageHint: {zh: '7nm 晶圆或先进制程示意图。', en: '7nm wafer or advanced-node image.'}},
+    {year: '2011', event: {zh: '开始大规模推进 28nm 等关键节点，纯晶圆代工模式服务更多无晶圆厂客户。', en: 'Scaled key nodes such as 28nm, serving more fabless customers through the pure-play foundry model.'}, imageHint: {zh: '晶圆制造产线图。', en: 'Wafer manufacturing line image.'}},
+    {year: '2005', event: {zh: '先进封装与客户协同能力逐步积累，为后来的 AI 芯片系统级封装打底。', en: 'Advanced packaging and customer co-design capabilities began compounding toward later AI system-level packaging.'}, imageHint: {zh: '封装工艺或客户协同示意图。', en: 'Packaging process or customer collaboration image.'}},
+    {year: '1987', event: {zh: '张忠谋创立台积电，建立纯晶圆代工模式，改变全球半导体分工。', en: 'Morris Chang founded TSMC and established the pure-play foundry model, changing global semiconductor specialization.'}, imageHint: {zh: '张忠谋或早期台积电厂区图。', en: 'Morris Chang or early TSMC fab image.'}}
+  ],
+  businessModel: [
+    {zh: '制造层：按晶圆、制程节点、良率和产能利用率获得收入。', en: 'Manufacturing layer: revenue comes from wafers, process nodes, yield, and capacity utilization.'},
+    {zh: '先进制程层：3nm、5nm、7nm 等节点服务手机、HPC、AI 和网络芯片客户。', en: 'Advanced-node layer: 3nm, 5nm, 7nm and related nodes serve mobile, HPC, AI, and networking chips.'},
+    {zh: '封装层：CoWoS、SoIC 等先进封装成为 AI 加速器的重要瓶颈和增量收入。', en: 'Packaging layer: CoWoS, SoIC, and advanced packaging become key AI accelerator bottlenecks and revenue opportunities.'},
+    {zh: '资本层：超大资本开支、长期客户承诺和技术路线图共同决定回报周期。', en: 'Capital layer: massive capex, long-term customer commitments, and technology roadmap determine return cycles.'}
+  ],
+  moat: [
+    {zh: '制程领先：先进节点研发、量产爬坡和良率管理持续积累。', en: 'Process leadership: advanced-node R&D, ramp, and yield management compound over time.'},
+    {zh: '客户中立：不与客户设计芯片竞争，获得苹果、英伟达、AMD 等客户信任。', en: 'Customer neutrality: avoids competing with chip-design customers, earning trust from Apple, NVIDIA, AMD, and others.'},
+    {zh: '制造纪律：工艺控制、设备协同、工程人才和运营细节形成隐形壁垒。', en: 'Manufacturing discipline: process control, equipment coordination, engineering talent, and operational detail form hidden barriers.'},
+    {zh: '资本规模：先进晶圆厂和封装产能需要巨额、长期、连续投资。', en: 'Capital scale: advanced fabs and packaging capacity require massive, long-duration investment.'},
+    {zh: '生态协同：EDA、设备、材料、封装、客户设计共同嵌入台积电路线图。', en: 'Ecosystem coordination: EDA, equipment, materials, packaging, and customer designs embed into TSMC roadmap.'}
+  ],
+  watchlist: [
+    {zh: '行业：AI 芯片、手机、HPC、汽车和工业芯片需求周期。', en: 'Industry: demand cycles for AI chips, smartphones, HPC, automotive, and industrial chips.'},
+    {zh: '客户：苹果、英伟达、AMD、高通、博通等大客户订单集中度。', en: 'Customers: order concentration across Apple, NVIDIA, AMD, Qualcomm, Broadcom, and other major customers.'},
+    {zh: '政策：台海风险、美国 / 日本 / 欧洲建厂、出口管制和补贴条件。', en: 'Policy: Taiwan Strait risk, U.S. / Japan / Europe fabs, export controls, and subsidy conditions.'},
+    {zh: '竞争：三星、Intel Foundry、中国成熟制程扩张和先进封装替代。', en: 'Competition: Samsung, Intel Foundry, China mature-node expansion, and packaging alternatives.'},
+    {zh: '公司自身：先进节点良率、CoWoS 产能、资本开支效率、毛利率和海外厂成本。', en: 'Company: advanced-node yield, CoWoS capacity, capex efficiency, margins, and overseas fab cost.'}
+  ]
+});
+
+enrichCompany('google', {
+  timeline: [
+    {year: '2024', event: {zh: 'Gemini、AI Overviews、TPU 和 Google Cloud AI 产品把搜索、云和模型能力放到同一竞争主线。', en: 'Gemini, AI Overviews, TPU, and Google Cloud AI products put search, cloud, and model capability on one competitive track.'}, imageHint: {zh: 'Gemini、Google I/O 或 TPU 图。', en: 'Gemini, Google I/O, or TPU image.'}},
+    {year: '2023', event: {zh: 'Gemini 发布，Google 将 DeepMind、搜索、云和生产力工具更紧密地围绕 AI 组织。', en: 'Gemini launched as Google organized DeepMind, Search, Cloud, and productivity tools more tightly around AI.'}, imageHint: {zh: 'Gemini 发布图。', en: 'Gemini launch image.'}},
+    {year: '2016', event: {zh: 'TPU 公开亮相，Google 的 AI 基础设施从软件和数据扩展到自研芯片。', en: 'TPU was publicly introduced, extending Google AI infrastructure from software and data into custom chips.'}, imageHint: {zh: 'TPU 芯片或数据中心图。', en: 'TPU chip or data center image.'}},
+    {year: '2015', event: {zh: 'Alphabet 成立，Google 成为核心业务，其他长期项目进入控股公司架构。', en: 'Alphabet was formed, with Google as the core business and other long-term bets organized under a holding-company structure.'}, imageHint: {zh: 'Alphabet / Google 总部图。', en: 'Alphabet / Google campus image.'}},
+    {year: '2008', event: {zh: 'Android 和 Chrome 推出，Google 从搜索入口扩展到移动和浏览器入口。', en: 'Android and Chrome launched, extending Google from search entry into mobile and browser entry points.'}, imageHint: {zh: 'Android 或 Chrome 早期图。', en: 'Early Android or Chrome image.'}},
+    {year: '2006', event: {zh: '收购 YouTube，为视频内容、广告和创作者生态打下基础。', en: 'Acquired YouTube, laying the foundation for video content, advertising, and creator ecosystem.'}, imageHint: {zh: 'YouTube 早期界面图。', en: 'Early YouTube interface image.'}},
+    {year: '2004', event: {zh: 'Google IPO，搜索广告商业模式进入公开市场视野。', en: 'Google went public, bringing the search advertising model into public markets.'}, imageHint: {zh: 'Google IPO 或早期办公室图。', en: 'Google IPO or early office image.'}},
+    {year: '1998', event: {zh: 'Google 成立，以 PageRank 和搜索质量切入互联网信息组织。', en: 'Google was founded, using PageRank and search quality to organize internet information.'}, imageHint: {zh: 'Google 早期首页或创始人图。', en: 'Early Google homepage or founders image.'}}
+  ],
+  businessModel: [
+    {zh: '广告层：搜索、YouTube、广告网络和商业意图流量构成最大现金流。', en: 'Ads layer: Search, YouTube, ad network, and commercial-intent traffic form the largest cash flow.'},
+    {zh: '云层：Google Cloud、数据平台、Workspace 和 Vertex AI 面向企业收费。', en: 'Cloud layer: Google Cloud, data platform, Workspace, and Vertex AI monetize enterprise customers.'},
+    {zh: '入口层：Android、Chrome、Google Play、地图和默认搜索协议维持分发。', en: 'Distribution layer: Android, Chrome, Google Play, Maps, and default-search deals maintain reach.'},
+    {zh: 'AI 层：Gemini、TPU、搜索 AI 化和开发者工具决定未来产品形态。', en: 'AI layer: Gemini, TPU, AI search, and developer tools shape future product form.'},
+    {zh: '长期项目层：Waymo、生命科学等 Other Bets 提供期权，但需要资本纪律。', en: 'Long-bet layer: Waymo, life sciences, and other bets provide options but require capital discipline.'}
+  ],
+  moat: [
+    {zh: '搜索入口：默认位置、用户习惯、索引规模和商业意图数据。', en: 'Search entry: default position, user habit, index scale, and commercial-intent data.'},
+    {zh: '广告网络：广告主、发布商、测量工具和竞价系统形成双边网络。', en: 'Ad network: advertisers, publishers, measurement tools, and auction systems form a two-sided network.'},
+    {zh: '数据与工程：全球基础设施、TPU、模型训练、反垃圾和排名系统。', en: 'Data and engineering: global infrastructure, TPU, model training, anti-spam, and ranking systems.'},
+    {zh: '生态入口：Android、Chrome、YouTube、Maps、Gmail 和 Workspace 高频触达用户。', en: 'Ecosystem entry: Android, Chrome, YouTube, Maps, Gmail, and Workspace reach users frequently.'},
+    {zh: 'AI 人才与研究：DeepMind、Google Research 和云平台把研究转化为产品。', en: 'AI talent and research: DeepMind, Google Research, and Cloud convert research into products.'}
+  ],
+  watchlist: [
+    {zh: '行业：AI 搜索是否改变用户习惯和广告点击结构。', en: 'Industry: whether AI search changes user habits and ad-click structure.'},
+    {zh: '客户：广告主 ROI、YouTube 创作者生态、云客户迁移和 Workspace 粘性。', en: 'Customers: advertiser ROI, YouTube creator ecosystem, cloud migration, and Workspace stickiness.'},
+    {zh: '政策：反垄断、默认搜索协议、隐私、内容版权和 AI 监管。', en: 'Policy: antitrust, default-search agreements, privacy, content copyright, and AI regulation.'},
+    {zh: '竞争：OpenAI、Microsoft、Meta、Amazon、Apple 和垂直 AI 搜索产品。', en: 'Competition: OpenAI, Microsoft, Meta, Amazon, Apple, and vertical AI search products.'},
+    {zh: '公司自身：Gemini 质量、AI Overviews 商业化、云利润率、资本开支和组织速度。', en: 'Company: Gemini quality, AI Overviews monetization, cloud margin, capex, and organizational speed.'}
+  ]
+});
+
+enrichCompany('berkshire-hathaway', {
+  timeline: [
+    {year: '2026', event: {zh: 'Greg Abel 接任 CEO，Berkshire 进入巴菲特之后的资本配置与文化延续阶段。', en: 'Greg Abel became CEO, moving Berkshire into a post-Buffett phase of capital allocation and cultural continuity.'}, imageHint: {zh: 'Greg Abel 与 Berkshire 年会图。', en: 'Greg Abel and Berkshire annual meeting image.'}},
+    {year: '2023', event: {zh: '查理·芒格去世，Berkshire 失去长期思想伙伴，公司文化传承受到更多关注。', en: 'Charlie Munger died, increasing attention on Berkshire cultural succession.'}, imageHint: {zh: '巴菲特与芒格年会图。', en: 'Buffett and Munger annual meeting image.'}},
+    {year: '2010', event: {zh: '完成收购 BNSF，Berkshire 获得大型铁路基础设施现金流。', en: 'Completed the BNSF acquisition, adding major railroad infrastructure cash flow.'}, imageHint: {zh: 'BNSF 铁路或货运列车图。', en: 'BNSF railroad or freight train image.'}},
+    {year: '1998', event: {zh: '收购 General Re，保险和再保险浮存金体系进一步扩大。', en: 'Acquired General Re, expanding insurance and reinsurance float.'}, imageHint: {zh: '保险业务或 Berkshire 年报图。', en: 'Insurance business or Berkshire annual report image.'}},
+    {year: '1988', event: {zh: '开始大量买入可口可乐，展示“好公司长期持有”的经典投资案例。', en: 'Began buying Coca-Cola, becoming a classic case of long-term ownership of a high-quality business.'}, imageHint: {zh: '可口可乐持仓或巴菲特资料图。', en: 'Coca-Cola holding or Buffett material image.'}},
+    {year: '1972', event: {zh: '收购 See’s Candies，让巴菲特和芒格更深理解品牌、定价权和轻资产现金流。', en: 'Acquired See’s Candies, deepening Buffett and Munger understanding of brand, pricing power, and asset-light cash flow.'}, imageHint: {zh: 'See’s Candies 门店或产品图。', en: 'See’s Candies store or product image.'}},
+    {year: '1967', event: {zh: '收购 National Indemnity，保险浮存金成为 Berkshire 资本配置机器的核心燃料。', en: 'Acquired National Indemnity, making insurance float core fuel for Berkshire capital allocation.'}, imageHint: {zh: '保险公司或早期 Berkshire 资料图。', en: 'Insurance company or early Berkshire material image.'}},
+    {year: '1965', event: {zh: '巴菲特取得 Berkshire 控制权，后续从纺织企业转型为投资控股平台。', en: 'Buffett took control of Berkshire, later transforming it from textile company into an investment holding platform.'}, imageHint: {zh: '早期 Berkshire 或巴菲特资料图。', en: 'Early Berkshire or Buffett material image.'}}
+  ],
+  businessModel: [
+    {zh: '保险层：承保利润和低成本浮存金提供可投资资金。', en: 'Insurance layer: underwriting profit and low-cost float provide investable capital.'},
+    {zh: '控股层：铁路、能源、制造、服务和零售公司提供多元现金流。', en: 'Operating layer: railroad, energy, manufacturing, service, and retail businesses provide diversified cash flow.'},
+    {zh: '投资层：长期持有优质上市公司，享受复利、分红和税务递延。', en: 'Investment layer: long-term ownership of public companies captures compounding, dividends, and tax deferral.'},
+    {zh: '资本配置层：在现金、股票、回购和收购之间做机会成本比较。', en: 'Capital-allocation layer: compares opportunity cost among cash, equities, buybacks, and acquisitions.'}
+  ],
+  moat: [
+    {zh: '低成本浮存金：保险业务在长期内提供独特资本来源。', en: 'Low-cost float: insurance provides a distinctive long-term capital source.'},
+    {zh: '声誉资产：卖家公司愿意把企业交给 Berkshire，因为它承诺长期持有和少干预。', en: 'Reputation asset: sellers choose Berkshire because it promises long-term ownership and limited interference.'},
+    {zh: '文化纪律：理性、耐心、少犯大错和去中心化管理降低组织摩擦。', en: 'Cultural discipline: rationality, patience, avoiding big mistakes, and decentralization reduce friction.'},
+    {zh: '股东结构：长期股东降低短期压力，让公司能等待大机会。', en: 'Shareholder base: long-term shareholders reduce short-term pressure and let the company wait for major opportunities.'},
+    {zh: '税务效率：长期持有和内部再配置提高资本复利效率。', en: 'Tax efficiency: long-term holding and internal reallocation improve compounding efficiency.'}
+  ],
+  watchlist: [
+    {zh: '行业：保险承保周期、利率、再保险价格和巨灾损失。', en: 'Industry: insurance underwriting cycle, interest rates, reinsurance pricing, and catastrophe losses.'},
+    {zh: '客户 / 资产：BNSF、Berkshire Hathaway Energy、GEICO 和核心持仓现金流。', en: 'Assets: cash flows from BNSF, Berkshire Hathaway Energy, GEICO, and key holdings.'},
+    {zh: '政策：能源监管、保险监管、税制变化和反垄断审查。', en: 'Policy: energy regulation, insurance regulation, tax changes, and antitrust review.'},
+    {zh: '竞争：私募股权、战略买家、保险资本和指数化资金争夺资产。', en: 'Competition: private equity, strategic buyers, insurance capital, and indexed money compete for assets.'},
+    {zh: '公司自身：Greg Abel 资本配置、现金规模、回购纪律、收购机会和文化传承。', en: 'Company: Greg Abel capital allocation, cash balance, buyback discipline, acquisition opportunities, and cultural succession.'}
+  ]
+});
 
 export const stockModules: StockModule[] = [
   {
