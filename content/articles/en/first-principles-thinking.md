@@ -4,10 +4,12 @@ title_en: "First Principles Thinking: Rebuilding from the Ground Structure"
 date: "2026-05-20"
 summary: "第一性原理不是为了显得深刻，而是为了在复杂问题中找到不能继续拆分的基础事实。"
 summary_en: "First-principles thinking is not about sounding profound. It is about finding the basic facts that cannot be decomposed further."
-category: "First Principles"
+category: "Methods and Judgment"
 tags:
-  - First Principles
+  - First-Principles Thinking
+  - Problem Decomposition
   - Analysis
+  - Decision Making
   - Mental Models
 language: "en"
 draft: false

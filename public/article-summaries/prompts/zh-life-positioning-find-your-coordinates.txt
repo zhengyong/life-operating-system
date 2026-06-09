@@ -4,7 +4,7 @@ Primary request: Create a polished editorial summary image for this article. It 
 Article title: "人生定位：比努力更重要的，是找到你的坐标"
 Article summary: "努力解决的是速度问题，定位解决的是方向问题。人生最大的成本，不是走得慢，而是在错误的方向上走得太久。"
 Category: "人生操作系统"
-Tags: "人生定位, 职场成长, 第一性原理, 个人成长, 思维模型, 价值交换"
+Tags: "人生定位, 职场成长, 第一性原理, 人生策略, 思维模型, 价值交换, 决策思维"
 Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
 Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
 Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy

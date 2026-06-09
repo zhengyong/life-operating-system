@@ -4,6 +4,14 @@ import matter from 'gray-matter';
 import {remark} from 'remark';
 import html from 'remark-html';
 import {Locale, locales} from '@/lib/i18n';
+import {
+  architectureCapabilities,
+  architectureFoundation,
+  architectureMiddle,
+  architectureTop,
+  t as bookText
+} from '@/lib/bookArchitecture';
+import {companies, people, stockModules, text as topicText} from '@/lib/topics';
 import {slugify} from '@/lib/utils';
 
 export {locales};
@@ -13,13 +21,13 @@ const articlesDirectory = path.join(rootDirectory, 'content', 'articles');
 
 export const categories = [
   'Life OS',
-  'First Principles',
-  'Mental Models',
-  'Career',
+  'World Models',
+  'Methods and Judgment',
+  'Learning and Growth',
+  'People and Leadership',
+  'Company Research',
   'Investing',
-  'Education',
-  'Technology',
-  'Society',
+  'AI and Technology',
   'Civilization'
 ] as const;
 
@@ -45,6 +53,20 @@ export type Article = ArticleFrontMatter & {
 };
 
 export type ArticleMeta = Omit<Article, 'content'>;
+
+export type TaxonomyRelatedItem = {
+  title: string;
+  summary: string;
+  href: string;
+  type: string;
+};
+
+export type TaxonomyEntry = {
+  name: string;
+  count: number;
+  articleCount: number;
+  relatedItems: TaxonomyRelatedItem[];
+};
 
 export function slugFromFilename(filename: string) {
   return filename.replace(/\.mdx?$/, '');
@@ -134,15 +156,43 @@ export async function markdownToHtml(markdown: string) {
 
 export function getTaxonomy(locale: Locale, key: 'category' | 'tags') {
   const articles = getArticles(locale);
-  const counts = new Map<string, number>();
+  const entries = new Map<string, TaxonomyEntry>();
+
+  function ensureEntry(name: string) {
+    const existing = entries.get(name);
+    if (existing) {
+      return existing;
+    }
+
+    const entry = {name, count: 0, articleCount: 0, relatedItems: []};
+    entries.set(name, entry);
+    return entry;
+  }
 
   articles.forEach((article) => {
     const values = key === 'category' ? [article.category] : article.tags;
-    values.forEach((value) => counts.set(value, (counts.get(value) ?? 0) + 1));
+    values.forEach((value) => {
+      const entry = ensureEntry(value);
+      entry.count += 1;
+      entry.articleCount += 1;
+    });
   });
 
-  return Array.from(counts.entries())
-    .map(([name, count]) => ({name, count}))
+  getSiteTaxonomyItems(locale).forEach((item) => {
+    const values = key === 'category' ? item.categories : item.tags;
+    values.forEach((value) => {
+      const entry = ensureEntry(value);
+      entry.count += 1;
+      entry.relatedItems.push({
+        title: item.title,
+        summary: item.summary,
+        href: item.href,
+        type: item.type
+      });
+    });
+  });
+
+  return Array.from(entries.values())
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
@@ -153,6 +203,190 @@ export function findCategoryBySlug(slug: string) {
 export function findTagBySlug(locale: Locale, slug: string) {
   const tag = getTaxonomy(locale, 'tags').find((item) => slugify(item.name) === slug);
   return tag?.name ?? null;
+}
+
+function getSiteTaxonomyItems(locale: Locale) {
+  const personTaxonomy: Record<string, {categories: Category[]; tags: string[]}> = {
+    'jensen-huang': {
+      categories: ['People and Leadership', 'Company Research', 'AI and Technology'],
+      tags: ['Great People', 'Leadership', 'Platform Strategy', 'Developer Ecosystem', 'Public Narrative', 'AI']
+    },
+    'elon-musk': {
+      categories: ['People and Leadership', 'Company Research', 'AI and Technology'],
+      tags: ['Great People', 'Product Strategy', 'Long-Term Strategy', 'Technology Trend', 'Company Culture']
+    },
+    'steve-jobs': {
+      categories: ['People and Leadership', 'Company Research'],
+      tags: ['Great People', 'Product Strategy', 'Public Narrative', 'Company Culture']
+    },
+    'tim-cook': {
+      categories: ['People and Leadership', 'Company Research'],
+      tags: ['Leadership', 'Company Culture', 'Business Model', 'Long-Term Strategy']
+    },
+    'sam-altman': {
+      categories: ['People and Leadership', 'AI and Technology', 'Company Research'],
+      tags: ['AI', 'Platform Strategy', 'Public Narrative', 'Leadership', 'Technology Trend']
+    },
+    'dario-amodei': {
+      categories: ['People and Leadership', 'AI and Technology', 'Company Research'],
+      tags: ['AI', 'Leadership', 'Company Culture', 'Technology Trend']
+    },
+    'morris-chang': {
+      categories: ['People and Leadership', 'Company Research'],
+      tags: ['Great People', 'Business Model', 'Competitive Moat', 'Long-Term Strategy']
+    },
+    'cc-wei': {
+      categories: ['People and Leadership', 'Company Research'],
+      tags: ['Leadership', 'Competitive Moat', 'Business Model', 'Long-Term Strategy']
+    },
+    'warren-buffett': {
+      categories: ['People and Leadership', 'Investing'],
+      tags: ['Great People', 'Investment Framework', 'Capital Allocation', 'Competitive Moat', 'Long-Term Strategy']
+    },
+    'charlie-munger': {
+      categories: ['People and Leadership', 'Investing', 'World Models'],
+      tags: ['Great People', 'Mental Models', 'Investment Framework', 'Capital Allocation', 'World Models']
+    },
+    'duan-yongping': {
+      categories: ['People and Leadership', 'Investing'],
+      tags: ['Investment Framework', 'Business Model', 'Company Culture', 'Long-Term Strategy']
+    }
+  };
+
+  const companyTaxonomy: Record<string, {categories: Category[]; tags: string[]}> = {
+    nvidia: {
+      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      tags: ['Great Companies', 'AI', 'Platform Strategy', 'Developer Ecosystem', 'Competitive Moat', 'Business Model']
+    },
+    tesla: {
+      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      tags: ['Great Companies', 'Product Strategy', 'Technology Trend', 'Business Model', 'Competitive Moat', 'Company Culture']
+    },
+    openai: {
+      categories: ['Company Research', 'AI and Technology'],
+      tags: ['AI', 'Platform Strategy', 'Developer Ecosystem', 'Business Model', 'Technology Trend']
+    },
+    spacex: {
+      categories: ['Company Research', 'AI and Technology'],
+      tags: ['Great Companies', 'Technology Trend', 'Business Model', 'Competitive Moat', 'Long-Term Strategy']
+    },
+    apple: {
+      categories: ['Company Research', 'Investing', 'AI and Technology'],
+      tags: ['Great Companies', 'Product Strategy', 'Business Model', 'Competitive Moat', 'Company Culture']
+    },
+    anthropic: {
+      categories: ['Company Research', 'AI and Technology'],
+      tags: ['AI', 'Business Model', 'Company Culture', 'Technology Trend', 'Competitive Moat']
+    },
+    tsmc: {
+      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      tags: ['Great Companies', 'Competitive Moat', 'Business Model', 'Technology Trend', 'Long-Term Strategy']
+    },
+    google: {
+      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      tags: ['Great Companies', 'AI', 'Platform Strategy', 'Business Model', 'Competitive Moat']
+    },
+    'berkshire-hathaway': {
+      categories: ['Company Research', 'Investing'],
+      tags: ['Great Companies', 'Investment Framework', 'Capital Allocation', 'Business Model', 'Competitive Moat']
+    }
+  };
+
+  const bookTaxonomy: Record<string, {categories: Category[]; tags: string[]}> = {
+    'life-operating-system': {
+      categories: ['Life OS', 'Civilization'],
+      tags: ['Life OS', 'Operating System', 'Civilization', 'Long-Term Strategy']
+    },
+    'cognitive-mindset': {
+      categories: ['Methods and Judgment', 'World Models'],
+      tags: ['Cognitive Models', 'Mental Models', 'First-Principles Thinking', 'Decision Making']
+    },
+    'world-models': {
+      categories: ['World Models'],
+      tags: ['World Models', 'Knowledge Foundation', 'Mental Models', 'Civilization']
+    },
+    'breakthrough-methods': {
+      categories: ['Methods and Judgment'],
+      tags: ['Problem Decomposition', 'Decision Making', 'Analysis', 'First-Principles Thinking']
+    },
+    'productivity-tools': {
+      categories: ['AI and Technology', 'Learning and Growth'],
+      tags: ['AI Tools', 'Operating System', 'Systems Thinking', 'Product Strategy']
+    },
+    'problem-decomposition': {
+      categories: ['Methods and Judgment'],
+      tags: ['Problem Decomposition', 'Public Narrative', 'Decision Making', 'Analysis']
+    },
+    'knowledge-foundation': {
+      categories: ['Learning and Growth', 'World Models'],
+      tags: ['Knowledge Foundation', 'World Models', 'Lifelong Learning', 'Civilization']
+    },
+    'cognition-system': {
+      categories: ['Learning and Growth', 'World Models'],
+      tags: ['Cognitive Models', 'Knowledge Foundation', 'Lifelong Learning']
+    },
+    'method-system': {
+      categories: ['Methods and Judgment'],
+      tags: ['Problem Decomposition', 'Systems Thinking', 'Decision Making']
+    },
+    'practice-system': {
+      categories: ['Learning and Growth', 'Life OS'],
+      tags: ['Lifelong Learning', 'Operating System', 'Compound Interest']
+    }
+  };
+
+  const stockItems = stockModules.map((module) => ({
+    title: topicText(module.title, locale),
+    summary: topicText(module.summary, locale),
+    href: `/${locale}/stocks/`,
+    type: locale === 'zh' ? '股票模块' : 'Stock module',
+    categories: ['Investing' as Category],
+    tags: ['Investment Framework', 'Business Model', 'Capital Allocation', 'Decision Making']
+  }));
+
+  const personItems = people.map((person) => {
+    const taxonomy = personTaxonomy[person.slug] ?? {
+      categories: ['People and Leadership' as Category],
+      tags: ['Great People', 'Leadership', 'Long-Term Strategy']
+    };
+    return {
+      title: topicText(person.name, locale),
+      summary: topicText(person.summary, locale),
+      href: `/${locale}/people/${person.slug}/`,
+      type: locale === 'zh' ? '人物专题' : 'Person study',
+      ...taxonomy
+    };
+  });
+
+  const companyItems = companies.map((company) => {
+    const taxonomy = companyTaxonomy[company.slug] ?? {
+      categories: ['Company Research' as Category],
+      tags: ['Great Companies', 'Business Model', 'Competitive Moat']
+    };
+    return {
+      title: topicText(company.name, locale),
+      summary: topicText(company.summary, locale),
+      href: `/${locale}/companies/${company.slug}/`,
+      type: locale === 'zh' ? '公司专题' : 'Company study',
+      ...taxonomy
+    };
+  });
+
+  const bookItems = [architectureTop, ...architectureMiddle, architectureFoundation, ...architectureCapabilities].map((node) => {
+    const taxonomy = bookTaxonomy[node.slug] ?? {
+      categories: ['Life OS' as Category],
+      tags: ['Life OS', 'Knowledge Foundation']
+    };
+    return {
+      title: bookText(node.label, locale),
+      summary: bookText(node.summary, locale),
+      href: `/${locale}/books/recommendations/${node.slug}/`,
+      type: locale === 'zh' ? '书籍架构' : 'Book architecture',
+      ...taxonomy
+    };
+  });
+
+  return [...personItems, ...companyItems, ...bookItems, ...stockItems];
 }
 
 export const books = [

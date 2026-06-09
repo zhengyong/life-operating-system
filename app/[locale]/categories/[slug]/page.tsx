@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation';
 import {ChevronLeft} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
 import {PageShell} from '@/components/PageShell';
+import {TopicCard} from '@/components/TopicCard';
 import {findCategoryBySlug, getArticles, getTaxonomy, locales} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {getCategoryLabel} from '@/lib/taxonomy';
@@ -35,6 +36,8 @@ export default async function CategoryDetailPage({params}: {params: {locale: str
   }
 
   const articles = getArticles(locale).filter((article) => article.category === category);
+  const taxonomyItem = getTaxonomy(locale, 'category').find((item) => item.name === category);
+  const relatedItems = taxonomyItem?.relatedItems ?? [];
 
   return (
     <PageShell locale={locale}>
@@ -52,14 +55,36 @@ export default async function CategoryDetailPage({params}: {params: {locale: str
             {getCategoryLabel(category, locale)}
           </h1>
           <p className="mt-4 text-sm text-muted">
-            {articles.length} {t.taxonomy.articleCount}
+            {(taxonomyItem?.count ?? articles.length)} {locale === 'zh' ? '项内容' : 'items'} / {articles.length} {t.taxonomy.articleCount}
           </p>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {articles.map((article) => (
-            <ArticleCard key={article.slug} article={article} locale={locale} />
-          ))}
-        </div>
+        {articles.length > 0 ? (
+          <section className="mt-10">
+            <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.nav.articles}</h2>
+            <div className="mt-5 grid gap-5 md:grid-cols-2">
+              {articles.map((article) => (
+                <ArticleCard key={article.slug} article={article} locale={locale} />
+              ))}
+            </div>
+          </section>
+        ) : null}
+        {relatedItems.length > 0 ? (
+          <section className="mt-12">
+            <h2 className="text-2xl font-semibold tracking-normal text-ink">{locale === 'zh' ? '相关专题' : 'Related topics'}</h2>
+            <div className="mt-5 grid gap-5 md:grid-cols-3">
+              {relatedItems.map((item) => (
+                <TopicCard
+                  key={`${item.type}-${item.href}-${item.title}`}
+                  href={item.href}
+                  eyebrow={item.type}
+                  title={item.title}
+                  summary={item.summary}
+                  actionLabel={t.topics.readTopic}
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
       </main>
     </PageShell>
   );

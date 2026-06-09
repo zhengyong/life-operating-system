@@ -3,8 +3,8 @@ Asset type: static article summary image for a bilingual personal knowledge webs
 Primary request: Create a polished editorial summary image for this article. It should help readers understand the core idea before reading.
 Article title: "First Principles Thinking: Rebuilding from the Ground Structure"
 Article summary: "First-principles thinking is not about sounding profound. It is about finding the basic facts that cannot be decomposed further."
-Category: "First Principles"
-Tags: "First Principles, Analysis, Mental Models"
+Category: "Methods and Judgment"
+Tags: "First-Principles Thinking, Problem Decomposition, Analysis, Decision Making, Mental Models"
 Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
 Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
 Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy

@@ -4,7 +4,7 @@ Primary request: Create a polished editorial summary image for this article. It 
 Article title: "Life OS: Start from Long-Term Systems Engineering"
 Article summary: "Life OS is not a slogan. It is a practical framework that connects values, responsibility, models, methods, and tools."
 Category: "Life OS"
-Tags: "First Principles, Systems Thinking, Life OS"
+Tags: "Operating System, First-Principles Thinking, Systems Thinking, World Models, Long-Term Strategy, Life OS"
 Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
 Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
 Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy

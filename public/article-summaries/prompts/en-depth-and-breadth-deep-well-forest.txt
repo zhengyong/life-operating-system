@@ -3,8 +3,8 @@ Asset type: static article summary image for a bilingual personal knowledge webs
 Primary request: Create a polished editorial summary image for this article. It should help readers understand the core idea before reading.
 Article title: "Depth vs. Breadth: Why You Need a Deep Well Before You Can Have a Forest"
 Article summary: "Without depth, breadth is only information accumulation. Without breadth, depth can become a cognitive cage. The optimal path is to stand on depth and break through with breadth."
-Category: "Mental Models"
-Tags: "Depth vs. Breadth, T-Shaped Talent, Cognitive Compound Interest, First Principles, Career Development, Personal Growth, Lifelong Learning"
+Category: "Learning and Growth"
+Tags: "Depth vs. Breadth, T-Shaped Talent, Knowledge Foundation, World Models, Cognitive Compound Interest, First-Principles Thinking, Career Development, Lifelong Learning"
 Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
 Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
 Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy

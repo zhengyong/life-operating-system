@@ -4,7 +4,7 @@ Primary request: Create a polished editorial summary image for this article. It 
 Article title: "Doing the Right Thing, and Doing Things Right: Life Is Not About Who Works Harder, But Who Makes Fewer Mistakes"
 Article summary: "Life is not a sprint defined by effort alone. It is an infinite game shaped by choice, effort, and time. When the direction is wrong, running harder becomes a disaster."
 Category: "Life OS"
-Tags: "Life Strategy, Personal Growth, First Principles, Decision Making, Compound Interest, Inversion Thinking, Self Discipline"
+Tags: "Life Strategy, Operating System, First-Principles Thinking, Decision Making, Compound Interest, Inversion Thinking, Long-Term Strategy"
 Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
 Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
 Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy

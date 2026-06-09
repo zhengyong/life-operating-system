@@ -7,12 +7,12 @@ summary_en: "Life is not a sprint defined by effort alone. It is an infinite gam
 category: "Life OS"
 tags:
   - Life Strategy
-  - Personal Growth
-  - First Principles
+  - Operating System
+  - First-Principles Thinking
   - Decision Making
   - Compound Interest
   - Inversion Thinking
-  - Self Discipline
+  - Long-Term Strategy
 keywords:
   - 人生策略
   - 个人成长

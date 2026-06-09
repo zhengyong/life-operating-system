@@ -33,7 +33,7 @@ export default async function CategoriesPage({params}: {params: {locale: string}
             >
               <span className="font-medium text-ink">{getCategoryLabel(item.name, locale)}</span>
               <span className="text-sm text-muted">
-                {item.count} {t.taxonomy.articleCount}
+                {item.count} {locale === 'zh' ? '项内容' : 'items'} / {item.articleCount} {t.taxonomy.articleCount}
               </span>
             </Link>
           ))}

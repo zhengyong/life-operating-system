@@ -4,14 +4,15 @@ title_en: "Depth vs. Breadth: Why You Need a Deep Well Before You Can Have a For
 date: "2026-05-31"
 summary: "没有深度，广度只是信息堆积；没有广度，深度容易成为认知牢笼。最优路径是以深度立身，以广度破局。"
 summary_en: "Without depth, breadth is only information accumulation. Without breadth, depth can become a cognitive cage. The optimal path is to stand on depth and break through with breadth."
-category: "Mental Models"
+category: "Learning and Growth"
 tags:
   - Depth vs Breadth
   - T-Shaped Talent
+  - Knowledge Foundation
+  - World Models
   - Cognitive Compound Interest
-  - First Principles
+  - First-Principles Thinking
   - Career Development
-  - Personal Growth
   - Lifelong Learning
 keywords:
   - 深度与广度

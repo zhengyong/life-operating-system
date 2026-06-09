@@ -8,10 +8,11 @@ category: "Life OS"
 tags:
   - Life Positioning
   - Career Development
-  - First Principles
-  - Personal Growth
+  - First-Principles Thinking
+  - Life Strategy
   - Mental Models
   - Value Exchange
+  - Decision Making
 keywords:
   - 人生定位
   - 职业规划

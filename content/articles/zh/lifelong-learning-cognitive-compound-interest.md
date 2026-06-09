@@ -4,15 +4,16 @@ title_en: "Lifelong Learning: Building Your Cognitive Compound Interest System i
 date: "2026-05-31"
 summary: "终身学习不是知识的零散堆砌，而是在不确定时代持续升级认知模型、形成知识复利与人生操作系统的底层能力。"
 summary_en: "Lifelong learning is not a random accumulation of knowledge. It is the foundational capability to upgrade cognitive models, compound knowledge, and build a Life Operating System in an uncertain era."
-category: "Education"
+category: "Learning and Growth"
 tags:
   - Lifelong Learning
   - Cognitive Models
   - Knowledge Compound Interest
-  - First Principles
+  - Knowledge Foundation
+  - First-Principles Thinking
   - Systems Thinking
   - AI
-  - Personal Growth
+  - Life OS
 keywords:
   - 终身学习
   - 认知升级
