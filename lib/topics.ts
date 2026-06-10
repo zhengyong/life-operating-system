@@ -2325,6 +2325,425 @@ export const personLessons: PersonLesson[] = [
   }
 ];
 
+const supplementalLessonConfig: Record<string, Array<{slug: string; summary: LocalizedText; focus: LocalizedText}>> = {
+  'elon-musk': [
+    {
+      slug: 'physics-constraints-to-products',
+      summary: {
+        zh: '从马斯克身上可以学习如何把产品问题还原到物理约束、成本结构、规模效率和真实用户需求，而不是只接受行业惯例。',
+        en: 'Musk is useful for learning how to reduce product questions to physics constraints, cost structure, scale efficiency, and real user demand.'
+      },
+      focus: {
+        zh: '关键不是模仿他的冒险，而是训练自己区分真实限制和习惯性限制。',
+        en: 'The key is not copying his risk appetite, but learning to separate real constraints from inherited assumptions.'
+      }
+    },
+    {
+      slug: 'vertical-integration-speed-control',
+      summary: {
+        zh: 'Tesla 和 SpaceX 的共同线索，是把关键瓶颈掌握在自己手里，用垂直整合缩短反馈链条。',
+        en: 'A shared Tesla and SpaceX pattern is controlling key bottlenecks through vertical integration and shorter feedback loops.'
+      },
+      focus: {
+        zh: '垂直整合不是所有事情都自己做，而是把决定速度、成本和质量的环节变成可控能力。',
+        en: 'Vertical integration does not mean doing everything; it means controlling what determines speed, cost, and quality.'
+      }
+    },
+    {
+      slug: 'manage-extreme-engineering-goals',
+      summary: {
+        zh: '马斯克的工程管理适合研究如何把极高难度目标拆成里程碑、试验、数据和快速迭代。',
+        en: 'Musk is a case for turning extremely difficult goals into milestones, tests, data, and rapid iteration.'
+      },
+      focus: {
+        zh: '值得学习的是目标拆解和反馈机制，同时也要看到高压组织方式的代价和边界。',
+        en: 'The transferable lesson is goal decomposition and feedback, while recognizing the cost and boundaries of high-pressure management.'
+      }
+    }
+  ],
+  'steve-jobs': [
+    {
+      slug: 'complex-tech-simple-experience',
+      summary: {
+        zh: '乔布斯最值得学习的能力，是把复杂技术、设计、软件和内容整合成普通人能理解的简单体验。',
+        en: 'Jobs is worth studying for turning complex technology, design, software, and content into simple experiences.'
+      },
+      focus: {
+        zh: '简单不是功能少，而是把用户理解成本降到最低。',
+        en: 'Simplicity is not fewer features; it is lower understanding cost for users.'
+      }
+    },
+    {
+      slug: 'product-launch-value',
+      summary: {
+        zh: '乔布斯发布会的核心不是讲参数，而是先定义问题，再定义类别，最后让产品价值自然出现。',
+        en: 'Jobs keynotes did not just present specs; they defined the problem, the category, and then the product value.'
+      },
+      focus: {
+        zh: '发布会是市场教育，也是战略表达。',
+        en: 'A launch is market education as well as strategic communication.'
+      }
+    },
+    {
+      slug: 'focus-against-complexity',
+      summary: {
+        zh: '乔布斯回归 Apple 后通过削减产品线和提高标准，让组织重新聚焦在少数真正重要的事情上。',
+        en: 'After returning to Apple, Jobs cut product lines and raised standards so the organization could focus on what mattered.'
+      },
+      focus: {
+        zh: '聚焦是一种战略能力，不只是时间管理技巧。',
+        en: 'Focus is strategic capability, not just a time-management trick.'
+      }
+    }
+  ],
+  'tim-cook': [
+    {
+      slug: 'global-operating-system',
+      summary: {
+        zh: '库克的样本适合研究如何把一家产品公司扩展成供应链、服务、零售和治理共同支撑的全球运营系统。',
+        en: 'Cook is useful for studying how a product company scales into a global operating system of supply chain, services, retail, and governance.'
+      },
+      focus: {
+        zh: '伟大产品要靠稳定运营系统持续交付。',
+        en: 'Great products need stable operating systems for repeated delivery.'
+      }
+    },
+    {
+      slug: 'supply-chain-services-resilience',
+      summary: {
+        zh: '库克时代的 Apple 通过供应链效率和服务生态，把硬件周期变成更有韧性的长期用户关系。',
+        en: 'Cook-era Apple uses supply-chain efficiency and services to turn hardware cycles into more resilient user relationships.'
+      },
+      focus: {
+        zh: '供应链管成本和交付，服务生态管留存和复购。',
+        en: 'Supply chain manages cost and delivery; services manage retention and repeat purchase.'
+      }
+    },
+    {
+      slug: 'values-business-governance',
+      summary: {
+        zh: '库克值得观察的一点，是如何把隐私、环境、供应商责任和商业增长放在同一套长期治理里。',
+        en: 'Cook is worth watching for how privacy, environment, supplier responsibility, and business growth fit into long-term governance.'
+      },
+      focus: {
+        zh: '价值观只有落到产品、制度和取舍里，才会变成长期资产。',
+        en: 'Values become assets only when they shape products, systems, and tradeoffs.'
+      }
+    }
+  ],
+  'sam-altman': [
+    {
+      slug: 'frontier-tech-to-mass-products',
+      summary: {
+        zh: 'Altman 和 OpenAI 的关键样本，是把前沿模型能力转化成 ChatGPT 这样的普通人入口。',
+        en: 'Altman and OpenAI are a key case in turning frontier models into mass-market products like ChatGPT.'
+      },
+      focus: {
+        zh: '技术影响力往往取决于入口、分发和真实工作流。',
+        en: 'Technology impact often depends on entry point, distribution, and real workflows.'
+      }
+    },
+    {
+      slug: 'capital-compute-ecosystem',
+      summary: {
+        zh: 'OpenAI 的发展说明，AI 公司不只是模型团队，还要组织资本、算力、云平台、开发者和企业客户。',
+        en: 'OpenAI shows that an AI company must organize capital, compute, cloud platforms, developers, and enterprise customers.'
+      },
+      focus: {
+        zh: '大模型竞争是技术能力和资源组织能力的共同竞争。',
+        en: 'Foundation-model competition is both technical capability and resource orchestration.'
+      }
+    },
+    {
+      slug: 'public-narrative-contested-field',
+      summary: {
+        zh: 'AI 是高争议领域，Altman 的公开表达适合研究如何同时面对用户期待、监管焦虑、竞争和安全问题。',
+        en: 'AI is contested, and Altman is useful for studying communication across user demand, regulation, competition, and safety.'
+      },
+      focus: {
+        zh: '越是影响巨大的技术，越需要主动解释风险、边界和长期目标。',
+        en: 'The more powerful the technology, the more actively it must explain risks, boundaries, and long-term goals.'
+      }
+    }
+  ],
+  'dario-amodei': [
+    {
+      slug: 'safety-as-product-difference',
+      summary: {
+        zh: 'Dario 和 Anthropic 的样本，是把 AI 安全、可靠性和可控性变成 Claude 的产品差异化。',
+        en: 'Dario and Anthropic show how AI safety, reliability, and controllability can become Claude product differentiation.'
+      },
+      focus: {
+        zh: '安全不是产品的反面，在企业和高风险场景里安全本身就是价值。',
+        en: 'Safety is not the opposite of product; in enterprise and high-risk contexts, safety is value.'
+      }
+    },
+    {
+      slug: 'reliability-narrative-model-race',
+      summary: {
+        zh: '在模型竞赛中，Anthropic 选择强调可靠性、长上下文、企业友好和边界清晰，形成不同定位。',
+        en: 'In the model race, Anthropic emphasizes reliability, long context, enterprise fit, and clear boundaries.'
+      },
+      focus: {
+        zh: '不是所有竞争都要抢最响亮的指标，稳定可信也可以成为心智位置。',
+        en: 'Not every competition is won by the loudest metric; reliability can become a market position.'
+      }
+    },
+    {
+      slug: 'research-product-governance',
+      summary: {
+        zh: 'Anthropic 适合研究 AI 公司如何同时推进前沿研究、产品商业化和安全治理。',
+        en: 'Anthropic is useful for studying how an AI company advances research, product commercialization, and safety governance together.'
+      },
+      focus: {
+        zh: '治理不是后补项，而是系统设计的一部分。',
+        en: 'Governance is part of system design, not an afterthought.'
+      }
+    }
+  ],
+  'morris-chang': [
+    {
+      slug: 'redefine-industry-specialization',
+      summary: {
+        zh: '张忠谋最重要的贡献，是把晶圆代工从行业边缘服务做成全球半导体创新的基础设施。',
+        en: 'Morris Chang turned foundry manufacturing from a peripheral service into infrastructure for global semiconductor innovation.'
+      },
+      focus: {
+        zh: '伟大公司有时不是做新终端，而是重新定义产业分工。',
+        en: 'Great companies sometimes redefine industry specialization rather than create a new end product.'
+      }
+    },
+    {
+      slug: 'customer-trust-moat',
+      summary: {
+        zh: '台积电的护城河不只是先进制程，也来自客户相信它中立、保密、稳定交付。',
+        en: 'TSMC moat is not only advanced process, but customer trust in neutrality, confidentiality, and delivery.'
+      },
+      focus: {
+        zh: '客户越关键，越重视中立性和长期可靠。',
+        en: 'The more critical the customer, the more neutrality and reliability matter.'
+      }
+    },
+    {
+      slug: 'semiconductor-cycles',
+      summary: {
+        zh: '半导体行业周期强、资本开支重，张忠谋和台积电适合研究如何在周期中坚持长期能力建设。',
+        en: 'Semiconductors are cyclical and capital-intensive; Chang and TSMC show long-term capability building through cycles.'
+      },
+      focus: {
+        zh: '周期里最重要的是资本纪律和技术路线的长期坚持。',
+        en: 'In cycles, capital discipline and long-term technology commitment matter most.'
+      }
+    }
+  ],
+  'cc-wei': [
+    {
+      slug: 'complex-manufacturing-system',
+      summary: {
+        zh: '魏哲家的观察重点，是在 AI 芯片需求、先进制程和全球扩厂压力下管理超复杂制造系统。',
+        en: 'C.C. Wei is a case for managing complex manufacturing amid AI chip demand, advanced nodes, and global expansion.'
+      },
+      focus: {
+        zh: '先进制造是设备、材料、良率、客户协同和人才系统的综合能力。',
+        en: 'Advanced manufacturing combines equipment, materials, yield, customer coordination, and talent systems.'
+      }
+    },
+    {
+      slug: 'capacity-geopolitical-risk',
+      summary: {
+        zh: '台积电的全球产能配置，需要在效率、客户需求、政策支持和供应链安全之间权衡。',
+        en: 'TSMC global capacity allocation balances efficiency, customer demand, policy support, and supply-chain security.'
+      },
+      focus: {
+        zh: '最便宜的方案不一定是长期最稳的方案。',
+        en: 'The cheapest option is not always the most resilient long-term option.'
+      }
+    },
+    {
+      slug: 'neutrality-tech-leadership',
+      summary: {
+        zh: '台积电既服务彼此竞争的客户，又持续推进技术节点，因此必须同时保持中立、保密和领先。',
+        en: 'TSMC serves competing customers while advancing technology nodes, so it must maintain neutrality, confidentiality, and leadership.'
+      },
+      focus: {
+        zh: '平台型公司必须让伙伴相信它既有能力，又不会滥用位置优势。',
+        en: 'Platform companies must convince partners they are capable and will not abuse their position.'
+      }
+    }
+  ],
+  'warren-buffett': [
+    {
+      slug: 'stocks-as-business-ownership',
+      summary: {
+        zh: '巴菲特最基础也最重要的投资教育，是把股票看成企业所有权，而不是短期价格符号。',
+        en: 'Buffett most basic lesson is seeing stocks as business ownership, not short-term price symbols.'
+      },
+      focus: {
+        zh: '先理解公司如何赚钱，再讨论股票是否值得买。',
+        en: 'Understand how the business earns money before asking whether the stock is worth buying.'
+      }
+    },
+    {
+      slug: 'moat-and-management',
+      summary: {
+        zh: '巴菲特投资体系的核心，是找到有持久护城河、优秀管理层和合理价格的好企业。',
+        en: 'Buffett system centers on businesses with durable moats, excellent management, and sensible prices.'
+      },
+      focus: {
+        zh: '护城河保护利润，管理层决定复利质量。',
+        en: 'Moat protects profit; management shapes compounding quality.'
+      }
+    },
+    {
+      slug: 'patience-investing-edge',
+      summary: {
+        zh: '巴菲特的优势不只是聪明，而是愿意等待、少犯大错，并让时间为好企业工作。',
+        en: 'Buffett edge is not only intelligence, but waiting, avoiding big mistakes, and letting time work for good businesses.'
+      },
+      focus: {
+        zh: '耐心不是不行动，而是在没有好机会时不乱动。',
+        en: 'Patience is not inaction; it is refusing bad action when opportunity is poor.'
+      }
+    }
+  ],
+  'charlie-munger': [
+    {
+      slug: 'multidisciplinary-models',
+      summary: {
+        zh: '芒格的核心贡献，是把投资判断扩展成跨学科常识系统。',
+        en: 'Munger core contribution is turning investing judgment into a multidisciplinary common-sense system.'
+      },
+      focus: {
+        zh: '现实问题不会按学科边界出现，多元模型能减少盲区。',
+        en: 'Reality does not follow academic boundaries; multiple models reduce blind spots.'
+      }
+    },
+    {
+      slug: 'inversion-reduce-mistakes',
+      summary: {
+        zh: '芒格反复强调反过来想：如果想成功，先问怎样会失败。',
+        en: 'Munger repeatedly uses inversion: if you want success, first ask how failure happens.'
+      },
+      focus: {
+        zh: '避免愚蠢常常比追求聪明更有价值。',
+        en: 'Avoiding stupidity is often more valuable than seeking brilliance.'
+      }
+    },
+    {
+      slug: 'common-sense-discipline',
+      summary: {
+        zh: '芒格的厉害之处，是把常识坚持成纪律：不懂不碰，诱惑越大越谨慎。',
+        en: 'Munger turns common sense into discipline: avoid what you do not understand and be careful with seductive opportunities.'
+      },
+      focus: {
+        zh: '常识人人知道，难的是在压力和诱惑下仍然执行。',
+        en: 'Common sense is widely known; the hard part is executing it under pressure and temptation.'
+      }
+    }
+  ],
+  'duan-yongping': [
+    {
+      slug: 'benfen-culture',
+      summary: {
+        zh: '段永平的“本分”适合放在企业文化和投资里一起理解：不骗用户、不骗伙伴、不骗自己。',
+        en: 'Duan Yongping concept of integrity is useful for both culture and investing: do not deceive users, partners, or yourself.'
+      },
+      focus: {
+        zh: '本分不是口号，而是降低长期交易成本的文化原则。',
+        en: 'Integrity is not a slogan; it lowers long-term transaction cost.'
+      }
+    },
+    {
+      slug: 'consumer-brands-channels',
+      summary: {
+        zh: '段永平的企业经历适合研究消费品牌、渠道、产品定位和用户心智如何形成商业价值。',
+        en: 'Duan business experience is useful for studying how consumer brands, channels, positioning, and mindshare create value.'
+      },
+      focus: {
+        zh: '消费品公司不只卖功能，也卖信任、渠道可得性和品牌心智。',
+        en: 'Consumer companies sell not only functions, but trust, availability, and brand mindshare.'
+      }
+    },
+    {
+      slug: 'value-investing-life-principles',
+      summary: {
+        zh: '段永平常把巴菲特、芒格体系转化成生活原则：能力圈、长期、价格、平常心和不做错事。',
+        en: 'Duan translates Buffett and Munger into life principles: competence, long-termism, price, calmness, and avoiding wrong things.'
+      },
+      focus: {
+        zh: '价值投资不只是买股票的方法，也是一套人生判断系统。',
+        en: 'Value investing is not only a stock method; it is a life judgment system.'
+      }
+    }
+  ]
+};
+
+function createSupplementalLesson(person: PersonProfile, item: LocalizedText, slug: string, summary: LocalizedText, focus: LocalizedText): PersonLesson {
+  return {
+    personSlug: person.slug,
+    slug,
+    title: item,
+    summary,
+    sections: [
+      {
+        title: {zh: '1. 为什么值得学', en: '1. Why it matters'},
+        paragraphs: [
+          {
+            zh: `${text(person.name, 'zh')}的这个学习点，核心不是把人物神化，而是把他的公开经历、公司实践和长期选择拆成可以迁移的判断框架。${summary.zh}`,
+            en: `This lesson from ${text(person.name, 'en')} is not about hero worship. It turns public experience, company practice, and long-term choices into a transferable judgment framework. ${summary.en}`
+          }
+        ]
+      },
+      {
+        title: {zh: '2. 具体看什么', en: '2. What to observe'},
+        paragraphs: [
+          {
+            zh: `${focus.zh} 研究时可以重点看三个层面：他如何定义问题，如何配置资源，如何在长期压力下保持一致性。`,
+            en: `${focus.en} Study three layers: how the person defines problems, allocates resources, and stays consistent under long-term pressure.`
+          }
+        ]
+      },
+      {
+        title: {zh: '3. 我们可以怎么学', en: '3. How we can learn from it'},
+        paragraphs: [
+          {
+            zh: `普通人学习「${item.zh}」，不是复制他的行业和位置，而是把它转成自己的方法：先找到真实问题，再建立可复用流程，最后用长期复盘校准判断。`,
+            en: `For us, learning "${item.en}" does not mean copying the same industry or position. It means finding the real problem, building repeatable processes, and using long-term review to calibrate judgment.`
+          }
+        ]
+      }
+    ],
+    keyTakeaways: [
+      {
+        zh: '先把人物经验还原成可迁移的方法，而不是只记故事。',
+        en: 'Turn personal stories into transferable methods, not just anecdotes.'
+      },
+      {
+        zh: focus.zh,
+        en: focus.en
+      },
+      {
+        zh: '真正有用的学习，最后要落到自己的选择、行动和复盘里。',
+        en: 'Useful learning must land in your own choices, actions, and reviews.'
+      }
+    ]
+  };
+}
+
+Object.entries(supplementalLessonConfig).forEach(([personSlug, configs]) => {
+  const person = people.find((item) => item.slug === personSlug);
+  if (!person) return;
+
+  configs.forEach((config, index) => {
+    const title = person.learnFrom[index];
+    if (!title) return;
+    const exists = personLessons.some((lesson) => lesson.personSlug === person.slug && text(lesson.title, 'zh') === title.zh);
+    if (!exists) {
+      personLessons.push(createSupplementalLesson(person, title, config.slug, config.summary, config.focus));
+    }
+  });
+});
+
 export function getPerson(slug: string) {
   return people.find((person) => person.slug === slug) ?? null;
 }

@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ArrowLeft} from 'lucide-react';
+import {ArticleInteractions} from '@/components/ArticleInteractions';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {getBookArchitectureNode, t as archText} from '@/lib/bookArchitecture';
@@ -122,6 +123,8 @@ export default async function BookPreviewChapterPage({
               : 'This page only opens the selected preview range. Other parts and chapters require paid access.'}
           </p>
         </section>
+
+        <ArticleInteractions locale={locale} />
       </main>
     </PageShell>
   );

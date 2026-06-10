@@ -3,13 +3,12 @@ import {Locale, getDictionary} from '@/lib/i18n';
 import {companies} from '@/lib/topics';
 
 const friendlyCompanies = [
-  'apple',
-  'google',
   'nvidia',
-  'openai',
-  'anthropic',
   'tesla',
   'spacex',
+  'anthropic',
+  'openai',
+  'apple',
   'tsmc',
   'berkshire-hathaway'
 ];
@@ -38,7 +37,7 @@ export function Footer({locale}: {locale: Locale}) {
             <p className="font-semibold text-ink">{t.brand}</p>
             <p className="mt-2 max-w-xl text-sm leading-6 text-muted">
               {locale === 'zh'
-                ? '一个面向长期成长的数字化思想资产库。'
+                ? '一个面向长期成长的数字化思想资产库。普通人的逆袭之路。'
                 : 'A digital thought asset base for long-term growth.'}
             </p>
           </div>
@@ -60,9 +59,6 @@ export function Footer({locale}: {locale: Locale}) {
             </Link>
             <Link href={`/${locale}/contact/`} className="hover:text-accent">
               {t.nav.contact}
-            </Link>
-            <Link href="/rss.xml" className="hover:text-accent">
-              RSS
             </Link>
           </div>
         </div>
