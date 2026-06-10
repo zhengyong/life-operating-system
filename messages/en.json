@@ -90,7 +90,7 @@
     "articleCount": "articles"
   },
   "search": {
-    "placeholder": "Search the knowledge base...",
+    "placeholder": "Search the whole site...",
     "label": "Search",
     "empty": "No matching articles.",
     "open": "Search"

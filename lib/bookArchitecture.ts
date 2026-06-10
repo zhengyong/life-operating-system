@@ -130,7 +130,7 @@ export const architectureMiddle: BookArchitectureNode[] = [
   },
   {
     slug: 'problem-decomposition',
-    label: {zh: '拆解', en: 'Framing'},
+    label: {zh: '高手拆解', en: 'Expert Framing'},
     summary: {zh: '表达、案例、判断', en: 'Expression, cases, judgment'},
     recommendations: [
       {

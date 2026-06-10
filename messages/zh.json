@@ -36,7 +36,7 @@
   },
   "articles": {
     "title": "文章",
-    "subtitle": "来自 Life OS 知识库的文章、札记、模型与方法。",
+    "subtitle": "热点事件的解读与亘古永恒的人生实践，面对复杂、多变、不确定性的未来，可以更加从容面对，实现普通人的人生逆袭。",
     "empty": "暂无文章。",
     "readMore": "阅读全文",
     "related": "相关文章",
@@ -44,7 +44,7 @@
   },
   "topics": {
     "peopleTitle": "人物专题",
-    "peopleSubtitle": "跟少数高手学习战略、产品、组织、表达和长期判断。",
+    "peopleSubtitle": "跟顶尖高手学习战略、产品、组织、表达和长期判断。",
     "companiesTitle": "公司专题",
     "companiesSubtitle": "理解伟大公司如何创造产品、赚钱、形成文化和竞争壁垒。",
     "stocksTitle": "股票专题",
@@ -90,7 +90,7 @@
     "articleCount": "篇文章"
   },
   "search": {
-    "placeholder": "搜索知识库...",
+    "placeholder": "搜索全站内容...",
     "label": "搜索",
     "empty": "没有找到匹配文章。",
     "open": "搜索"

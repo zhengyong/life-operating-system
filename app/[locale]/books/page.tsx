@@ -56,10 +56,10 @@ function NodeCard({
     <article
       className={`flex h-full min-w-0 flex-col justify-between rounded-lg border border-line bg-white shadow-sm ${
         isTop ? 'p-4 md:p-6' : 'p-2 md:p-4'
-      }`}
+      } ${isTop ? 'items-center text-center' : ''}`}
     >
       <div>
-        <div className={`flex min-w-0 items-center ${isTop ? 'gap-3' : 'gap-1.5 md:gap-3'}`}>
+        <div className={`flex min-w-0 items-center ${isTop ? 'justify-center gap-3' : 'gap-1.5 md:gap-3'}`}>
           <div className={`${isTop ? 'h-10 w-10' : 'hidden h-8 w-8 md:flex'} shrink-0 items-center justify-center rounded-md bg-soft text-accent`}>
             <BookOpen className={`${isTop ? 'h-5 w-5' : 'h-4 w-4'}`} />
           </div>

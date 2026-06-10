@@ -4,23 +4,27 @@ import Link from 'next/link';
 import {X} from 'lucide-react';
 import {useEffect, useMemo, useState} from 'react';
 import {Locale, getDictionary} from '@/lib/i18n';
-import {getCategoryLabel} from '@/lib/taxonomy';
 
 type SearchItem = {
+  id: string;
+  type: 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'stock';
+  typeLabel: string;
   title: string;
   summary: string;
-  category: string;
-  tags: string[];
+  href: string;
+  category?: string;
+  tags?: string[];
   keywords?: string[];
-  slug: string;
   locale: Locale;
-  date: string;
+  date?: string;
+  text: string;
 };
 
 export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => void}) {
   const t = getDictionary(locale);
   const [query, setQuery] = useState('');
   const [items, setItems] = useState<SearchItem[]>([]);
+  const [activeType, setActiveType] = useState<SearchItem['type'] | 'all'>('all');
 
   useEffect(() => {
     fetch('/search-index.json')
@@ -29,25 +33,61 @@ export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => voi
       .catch(() => setItems([]));
   }, [locale]);
 
+  const typeFilters = useMemo(() => {
+    const seen = new Map<SearchItem['type'], string>();
+    items.forEach((item) => {
+      seen.set(item.type, item.typeLabel);
+    });
+
+    return Array.from(seen.entries()).map(([type, label]) => ({type, label}));
+  }, [items]);
+
   const results = useMemo(() => {
     const normalized = query.trim().toLowerCase();
+    const scopedItems = activeType === 'all' ? items : items.filter((item) => item.type === activeType);
+
     if (!normalized) {
-      return items.slice(0, 8);
+      return scopedItems.slice(0, 10);
     }
 
-    return items
-      .filter((item) => {
-        const haystack = [item.title, item.summary, item.category, ...item.tags, ...(item.keywords ?? [])]
-          .join(' ')
-          .toLowerCase();
-        return haystack.includes(normalized);
+    const tokens = normalized.split(/\s+/).filter(Boolean);
+
+    return scopedItems
+      .map((item) => {
+        const title = item.title.toLowerCase();
+        const summary = item.summary.toLowerCase();
+        const metadata = [item.typeLabel, item.category, ...(item.tags ?? []), ...(item.keywords ?? [])].join(' ').toLowerCase();
+        const fullText = item.text.toLowerCase();
+        let score = 0;
+
+        tokens.forEach((token) => {
+          if (title.includes(token)) score += 12;
+          if (summary.includes(token)) score += 6;
+          if (metadata.includes(token)) score += 4;
+          if (fullText.includes(token)) score += 2;
+        });
+
+        if (title.includes(normalized)) score += 18;
+        if (summary.includes(normalized)) score += 8;
+        if (fullText.includes(normalized)) score += 4;
+
+        return {item, score};
       })
-      .slice(0, 12);
-  }, [items, query]);
+      .filter((result) => result.score > 0)
+      .sort((a, b) => {
+        if (b.score !== a.score) {
+          return b.score - a.score;
+        }
+
+        return a.item.title.localeCompare(b.item.title);
+      })
+      .slice(0, 16)
+      .map((result) => result.item);
+  }, [activeType, items, query]);
 
   return (
     <div className="fixed inset-0 z-50 bg-ink/20 px-4 py-4 backdrop-blur-sm" role="dialog" aria-modal="true">
-      <div className="mx-auto max-w-2xl rounded-lg border border-line bg-white shadow-soft">
+      <div className="mx-auto max-w-3xl rounded-lg border border-line bg-white shadow-soft">
         <div className="flex items-center gap-3 border-b border-line p-4">
           <input
             autoFocus
@@ -65,19 +105,49 @@ export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => voi
             <X className="h-4 w-4" />
           </button>
         </div>
+        <div className="flex gap-2 overflow-x-auto border-b border-line px-4 py-3">
+          <button
+            type="button"
+            onClick={() => setActiveType('all')}
+            className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-medium transition ${
+              activeType === 'all' ? 'bg-ink text-white' : 'bg-soft text-muted hover:text-accent'
+            }`}
+          >
+            {locale === 'zh' ? '全部' : 'All'}
+          </button>
+          {typeFilters.map((filter) => (
+            <button
+              key={filter.type}
+              type="button"
+              onClick={() => setActiveType(filter.type)}
+              className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-medium transition ${
+                activeType === filter.type ? 'bg-ink text-white' : 'bg-soft text-muted hover:text-accent'
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
         <div className="max-h-[70vh] overflow-y-auto p-3">
           {results.length > 0 ? (
             <div className="grid gap-2">
               {results.map((item) => (
                 <Link
-                  key={`${item.locale}-${item.slug}`}
-                  href={`/${item.locale}/articles/${item.slug}/`}
+                  key={item.id}
+                  href={item.href}
                   onClick={onClose}
                   className="rounded-md p-3 transition hover:bg-soft"
                 >
-                  <p className="text-sm font-semibold text-ink">{item.title}</p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-md bg-soft px-2 py-0.5 text-[11px] font-medium text-accent">
+                      {item.typeLabel}
+                    </span>
+                    {item.category ? (
+                      <span className="text-[11px] text-muted">{item.category}</span>
+                    ) : null}
+                  </div>
+                  <p className="mt-2 text-sm font-semibold text-ink">{item.title}</p>
                   <p className="mt-1 line-clamp-2 text-sm leading-6 text-muted">{item.summary}</p>
-                  <p className="mt-2 text-xs text-muted">{getCategoryLabel(item.category, locale)}</p>
                 </Link>
               ))}
             </div>

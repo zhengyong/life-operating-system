@@ -1,7 +1,6 @@
 'use client';
 
 import {useEffect, useMemo, useRef, useState} from 'react';
-import {useRouter} from 'next/navigation';
 import type {Locale} from '@/lib/i18n';
 
 type TagCloudItem = {
@@ -11,41 +10,89 @@ type TagCloudItem = {
   count: number;
 };
 
-type CloudNode = TagCloudItem & {
+type SphereNode = TagCloudItem & {
   x: number;
   y: number;
-  vx: number;
-  vy: number;
-  size: number;
+  z: number;
   tone: number;
 };
 
-type DragState = {
-  index: number;
+type PointerState = {
   pointerId: number;
-  offsetX: number;
-  offsetY: number;
+  startX: number;
+  startY: number;
   lastX: number;
   lastY: number;
-  lastTime: number;
   moved: boolean;
+  href?: string;
+};
+
+type Rotation = {
+  x: number;
+  y: number;
+  z: number;
 };
 
 const tones = [
-  'border-accent/25 bg-white text-accent shadow-soft',
-  'border-line bg-white text-ink shadow-soft',
-  'border-gold/25 bg-white text-gold shadow-soft',
-  'border-line bg-soft text-muted shadow-soft'
+  'border-accent/25 bg-white text-accent',
+  'border-line bg-white text-ink',
+  'border-gold/30 bg-white text-gold',
+  'border-line bg-soft text-muted'
 ];
 
-export function TagCloudPlayground({items, locale}: {items: TagCloudItem[]; locale: Locale}) {
-  const router = useRouter();
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const dragRef = useRef<DragState | null>(null);
-  const [bounds, setBounds] = useState({width: 0, height: 0});
-  const [nodes, setNodes] = useState<CloudNode[]>([]);
+function rotatePoint(point: Pick<SphereNode, 'x' | 'y' | 'z'>, rotation: Rotation) {
+  const cosX = Math.cos(rotation.x);
+  const sinX = Math.sin(rotation.x);
+  const cosY = Math.cos(rotation.y);
+  const sinY = Math.sin(rotation.y);
+  const cosZ = Math.cos(rotation.z);
+  const sinZ = Math.sin(rotation.z);
 
-  const sortedItems = useMemo(() => [...items].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label)), [items]);
+  const y1 = point.y * cosX - point.z * sinX;
+  const z1 = point.y * sinX + point.z * cosX;
+  const x1 = point.x;
+
+  const x2 = x1 * cosY + z1 * sinY;
+  const z2 = -x1 * sinY + z1 * cosY;
+  const y2 = y1;
+
+  return {
+    x: x2 * cosZ - y2 * sinZ,
+    y: x2 * sinZ + y2 * cosZ,
+    z: z2
+  };
+}
+
+function createSphereNodes(items: TagCloudItem[]) {
+  const sortedItems = [...items].sort((a, b) => a.label.localeCompare(b.label));
+  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+  const lastIndex = Math.max(1, sortedItems.length - 1);
+
+  return sortedItems.map((item, index) => {
+    const y = 1 - (index / lastIndex) * 2;
+    const radiusAtY = Math.sqrt(Math.max(0, 1 - y * y));
+    const theta = index * goldenAngle;
+
+    return {
+      ...item,
+      x: Math.cos(theta) * radiusAtY,
+      y,
+      z: Math.sin(theta) * radiusAtY,
+      tone: index % tones.length
+    };
+  });
+}
+
+export function TagCloudPlayground({items, locale}: {items: TagCloudItem[]; locale: Locale}) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const pointerRef = useRef<PointerState | null>(null);
+  const lastDragEndRef = useRef(0);
+  const lastFrameRef = useRef<number | null>(null);
+  const isHoveringRef = useRef(false);
+  const [diameter, setDiameter] = useState(0);
+  const [rotation, setRotation] = useState<Rotation>({x: -0.18, y: 0.42, z: 0});
+
+  const nodes = useMemo(() => createSphereNodes(items), [items]);
 
   useEffect(() => {
     const element = containerRef.current;
@@ -53,238 +100,165 @@ export function TagCloudPlayground({items, locale}: {items: TagCloudItem[]; loca
       return;
     }
 
-    const updateBounds = () => {
+    const updateSize = () => {
       const rect = element.getBoundingClientRect();
-      const width = Math.floor(rect.width);
-      const height = Math.floor(rect.height);
-      if (width < 240 || height < 300) {
-        return;
-      }
-
-      setBounds({
-        width,
-        height
-      });
+      setDiameter(Math.floor(Math.min(rect.width, rect.height)));
     };
 
-    window.requestAnimationFrame(updateBounds);
-    const observer = new ResizeObserver(updateBounds);
+    window.requestAnimationFrame(updateSize);
+    const observer = new ResizeObserver(updateSize);
     observer.observe(element);
-    window.addEventListener('orientationchange', updateBounds);
-    window.addEventListener('resize', updateBounds);
+    window.addEventListener('orientationchange', updateSize);
+    window.addEventListener('resize', updateSize);
     return () => {
       observer.disconnect();
-      window.removeEventListener('orientationchange', updateBounds);
-      window.removeEventListener('resize', updateBounds);
+      window.removeEventListener('orientationchange', updateSize);
+      window.removeEventListener('resize', updateSize);
     };
   }, []);
 
   useEffect(() => {
-    if (bounds.width === 0 || bounds.height === 0) {
-      return;
-    }
-
-    const centerX = bounds.width / 2;
-    const centerY = bounds.height / 2;
-    const isCompact = bounds.width < 520;
-    const padding = isCompact ? 10 : 14;
-    const radius = Math.min(bounds.width, bounds.height) * (isCompact ? 0.24 : 0.34);
-    const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-
-    setNodes(
-      sortedItems.map((item, index) => {
-        const spiralRadius = radius * Math.sqrt((index + 1) / Math.max(1, sortedItems.length));
-        const angle = index * goldenAngle;
-        const size = isCompact ? Math.min(58, Math.max(42, 38 + item.count * 4)) : Math.min(72, Math.max(44, 42 + item.count * 7));
-        const maxX = bounds.width - size - padding;
-        const maxY = bounds.height - size - padding;
-
-        return {
-          ...item,
-          x: Math.max(padding, Math.min(maxX, centerX + Math.cos(angle) * spiralRadius - size / 2)),
-          y: Math.max(padding, Math.min(maxY, centerY + Math.sin(angle) * spiralRadius - size / 2)),
-          vx: Math.cos(angle + 1) * (isCompact ? 0.06 : 0.18),
-          vy: Math.sin(angle + 1) * (isCompact ? 0.06 : 0.18),
-          size,
-          tone: index % tones.length
-        };
-      })
-    );
-  }, [bounds.height, bounds.width, sortedItems]);
-
-  useEffect(() => {
     let frame = 0;
 
-    const tick = () => {
-      if (bounds.width === 0 || bounds.height === 0) {
-        frame = window.requestAnimationFrame(tick);
-        return;
+    const tick = (time: number) => {
+      const lastFrame = lastFrameRef.current ?? time;
+      const delta = Math.min(32, time - lastFrame);
+      lastFrameRef.current = time;
+
+      if (!pointerRef.current && !isHoveringRef.current) {
+        setRotation((current) => ({
+          x: current.x,
+          y: current.y + delta * 0.000055,
+          z: current.z
+        }));
       }
-
-      setNodes((current) =>
-        current.map((node, index) => {
-          if (dragRef.current?.index === index) {
-            return node;
-          }
-
-          let nextX = node.x + node.vx;
-          let nextY = node.y + node.vy;
-          let nextVx = node.vx * 0.996;
-          let nextVy = node.vy * 0.996;
-          const padding = bounds.width < 520 ? 10 : 6;
-          const maxX = bounds.width - node.size - padding;
-          const maxY = bounds.height - node.size - padding;
-
-          nextVx += Math.sin(Date.now() / 1800 + index) * 0.002;
-          nextVy += Math.cos(Date.now() / 2100 + index) * 0.002;
-
-          if (nextX < 6 || nextX > maxX) {
-            nextVx *= -0.78;
-            nextX = Math.max(padding, Math.min(maxX, nextX));
-          }
-
-          if (nextY < padding || nextY > maxY) {
-            nextVy *= -0.78;
-            nextY = Math.max(padding, Math.min(maxY, nextY));
-          }
-
-          return {
-            ...node,
-            x: Math.max(padding, Math.min(maxX, nextX)),
-            y: Math.max(padding, Math.min(maxY, nextY)),
-            vx: Math.max(bounds.width < 520 ? -0.35 : -1.2, Math.min(bounds.width < 520 ? 0.35 : 1.2, nextVx)),
-            vy: Math.max(bounds.width < 520 ? -0.35 : -1.2, Math.min(bounds.width < 520 ? 0.35 : 1.2, nextVy))
-          };
-        })
-      );
 
       frame = window.requestAnimationFrame(tick);
     };
 
     frame = window.requestAnimationFrame(tick);
     return () => window.cancelAnimationFrame(frame);
-  }, [bounds.height, bounds.width]);
+  }, []);
 
-  function handlePointerDown(event: React.PointerEvent<HTMLButtonElement>, index: number) {
-    const rect = containerRef.current?.getBoundingClientRect();
-    if (!rect) {
-      return;
-    }
-
-    const node = nodes[index];
+  function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
+    const target = event.target instanceof Element ? event.target.closest('a') : null;
     event.currentTarget.setPointerCapture(event.pointerId);
-    dragRef.current = {
-      index,
+    pointerRef.current = {
       pointerId: event.pointerId,
-      offsetX: event.clientX - rect.left - node.x,
-      offsetY: event.clientY - rect.top - node.y,
+      startX: event.clientX,
+      startY: event.clientY,
       lastX: event.clientX,
       lastY: event.clientY,
-      lastTime: performance.now(),
-      moved: false
+      moved: false,
+      href: target?.getAttribute('href') ?? undefined
     };
   }
 
-  function handlePointerMove(event: React.PointerEvent<HTMLButtonElement>) {
-    const drag = dragRef.current;
-    const rect = containerRef.current?.getBoundingClientRect();
-    if (!drag || !rect || drag.pointerId !== event.pointerId) {
+  function handlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
+    const pointer = pointerRef.current;
+    if (!pointer || pointer.pointerId !== event.pointerId) {
       return;
     }
 
-    const now = performance.now();
-    const dx = event.clientX - drag.lastX;
-    const dy = event.clientY - drag.lastY;
-    const dt = Math.max(16, now - drag.lastTime);
+    const dx = event.clientX - pointer.lastX;
+    const dy = event.clientY - pointer.lastY;
+    const totalMove = Math.abs(event.clientX - pointer.startX) + Math.abs(event.clientY - pointer.startY);
 
-    if (Math.abs(dx) + Math.abs(dy) > 3) {
-      drag.moved = true;
+    if (totalMove > 6) {
+      event.preventDefault();
+      pointer.moved = true;
     }
 
-    setNodes((current) =>
-      current.map((node, index) => {
-        if (index !== drag.index) {
-          return node;
-        }
+    setRotation((current) => ({
+      x: current.x - dy * 0.008,
+      y: current.y + dx * 0.008,
+      z: current.z
+    }));
 
-        const padding = bounds.width < 520 ? 10 : 6;
-        const maxX = bounds.width - node.size - padding;
-        const maxY = bounds.height - node.size - padding;
-
-        return {
-          ...node,
-          x: Math.max(padding, Math.min(maxX, event.clientX - rect.left - drag.offsetX)),
-          y: Math.max(padding, Math.min(maxY, event.clientY - rect.top - drag.offsetY)),
-          vx: (dx / dt) * 18,
-          vy: (dy / dt) * 18
-        };
-      })
-    );
-
-    drag.lastX = event.clientX;
-    drag.lastY = event.clientY;
-    drag.lastTime = now;
+    pointer.lastX = event.clientX;
+    pointer.lastY = event.clientY;
   }
 
-  function handlePointerUp(event: React.PointerEvent<HTMLButtonElement>, item: TagCloudItem) {
-    const drag = dragRef.current;
-    dragRef.current = null;
-
-    if (!drag || drag.pointerId !== event.pointerId) {
-      return;
+  function handlePointerUp(event: React.PointerEvent<HTMLDivElement>) {
+    const pointer = pointerRef.current;
+    if (pointer?.pointerId === event.pointerId && pointer.moved) {
+      lastDragEndRef.current = Date.now();
+    } else if (pointer?.pointerId === event.pointerId && pointer.href) {
+      window.location.href = pointer.href;
     }
-
-    if (!drag.moved) {
-      router.push(item.href);
-    }
+    pointerRef.current = null;
   }
+
+  const radius = diameter * (diameter < 440 ? 0.34 : 0.38);
 
   return (
     <section className="mt-10">
-      <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <p className="max-w-2xl text-sm leading-6 text-muted">
-          {locale === 'zh'
-            ? '拖拽标签可以重新排列知识地图；轻点任意标签进入对应文章。'
-            : 'Drag tags to rearrange the knowledge map; tap any tag to open matching articles.'}
-        </p>
-        <p className="text-xs text-muted">
-          {items.length} {locale === 'zh' ? '个标签' : 'tags'}
-        </p>
-      </div>
-      <div
-        ref={containerRef}
-        className="relative h-[500px] w-full max-w-full overflow-hidden rounded-lg border border-line bg-white shadow-soft touch-none sm:h-[520px]"
-      >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(15,118,110,0.08),transparent_56%)]" />
-        {bounds.width === 0 ? (
-          <div className="absolute inset-0 flex items-center justify-center text-sm text-muted">
-            {locale === 'zh' ? '正在生成标签地图...' : 'Generating tag map...'}
-          </div>
-        ) : null}
-        {nodes.map((node, index) => (
-          <button
-            key={node.name}
-            type="button"
-            onPointerDown={(event) => handlePointerDown(event, index)}
-            onPointerMove={handlePointerMove}
-            onPointerUp={(event) => handlePointerUp(event, node)}
-            onPointerCancel={() => {
-              dragRef.current = null;
-            }}
-            className={`absolute flex select-none items-center justify-center rounded-lg border px-3 text-center text-xs font-semibold leading-tight transition-transform hover:scale-105 active:scale-95 ${tones[node.tone]}`}
-            style={{
-              width: node.size,
-              height: node.size,
-              transform: `translate3d(${node.x}px, ${node.y}px, 0)`
-            }}
-            aria-label={`${node.label}, ${node.count}`}
-          >
-            <span>
-              {node.label}
-              <span className="mt-1 block text-[10px] font-medium opacity-60">{node.count}</span>
-            </span>
-          </button>
-        ))}
+      <p className="mb-5 max-w-2xl text-sm leading-6 text-muted">
+        {locale === 'zh'
+          ? '拖动球体可以旋转知识标签；轻点任意关键词进入对应内容。'
+          : 'Drag the sphere to rotate the knowledge tags; tap any keyword to open its content.'}
+      </p>
+
+      <div className="rounded-lg border border-line bg-white p-4 shadow-soft sm:p-6">
+        <div
+          ref={containerRef}
+          className="relative mx-auto aspect-square w-full max-w-[640px] overflow-hidden rounded-full border border-line bg-white shadow-soft touch-none"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerEnter={(event) => {
+            if (event.pointerType === 'mouse') {
+              isHoveringRef.current = true;
+            }
+          }}
+          onPointerLeave={(event) => {
+            if (event.pointerType === 'mouse') {
+              isHoveringRef.current = false;
+            }
+          }}
+          onPointerCancel={() => {
+            pointerRef.current = null;
+          }}
+          aria-label={locale === 'zh' ? '可旋转标签球' : 'Rotatable tag sphere'}
+        >
+          <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_36%_30%,rgba(255,255,255,0.96),rgba(15,118,110,0.08)_48%,rgba(17,24,39,0.05)_100%)]" />
+          <div className="pointer-events-none absolute inset-[8%] rounded-full border border-line/60" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-line/70" />
+
+          {diameter === 0 ? (
+            <div className="absolute inset-0 flex items-center justify-center text-sm text-muted">
+              {locale === 'zh' ? '正在生成标签球...' : 'Generating tag sphere...'}
+            </div>
+          ) : null}
+
+          {nodes.map((node) => {
+            const point = rotatePoint(node, rotation);
+            const depth = (point.z + 1) / 2;
+            const scale = 0.72 + depth * 0.42;
+            const opacity = 0.34 + depth * 0.64;
+
+            return (
+              <a
+                key={node.name}
+                href={node.href}
+                onClick={(event) => {
+                  if (Date.now() - lastDragEndRef.current < 250) {
+                    event.preventDefault();
+                  }
+                }}
+                className={`absolute left-1/2 top-1/2 select-none whitespace-nowrap rounded-md border px-2.5 py-1 text-center text-[11px] font-semibold leading-5 shadow-sm transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/30 sm:px-3 sm:text-sm ${tones[node.tone]}`}
+                style={{
+                  opacity,
+                  zIndex: Math.round(depth * 1000),
+                  transform: `translate(-50%, -50%) translate3d(${point.x * radius}px, ${point.y * radius}px, 0) scale(${scale})`,
+                  willChange: 'transform, opacity'
+                }}
+              >
+                {node.label}
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
