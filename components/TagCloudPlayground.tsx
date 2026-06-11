@@ -3,11 +3,12 @@
 import {useEffect, useMemo, useRef, useState} from 'react';
 import type {Locale} from '@/lib/i18n';
 
-type TagCloudItem = {
+export type TagCloudItem = {
   name: string;
   label: string;
   href: string;
   count: number;
+  articleCount?: number;
 };
 
 type SphereNode = TagCloudItem & {
@@ -92,7 +93,9 @@ export function TagCloudPlayground({items, locale}: {items: TagCloudItem[]; loca
   const [diameter, setDiameter] = useState(0);
   const [rotation, setRotation] = useState<Rotation>({x: -0.18, y: 0.42, z: 0});
 
-  const nodes = useMemo(() => createSphereNodes(items), [items]);
+  const maxVisibleItems = diameter > 0 && diameter < 440 ? 24 : 72;
+  const visibleItems = useMemo(() => items.slice(0, maxVisibleItems), [items, maxVisibleItems]);
+  const nodes = useMemo(() => createSphereNodes(visibleItems), [visibleItems]);
 
   useEffect(() => {
     const element = containerRef.current;
@@ -189,20 +192,33 @@ export function TagCloudPlayground({items, locale}: {items: TagCloudItem[]; loca
     pointerRef.current = null;
   }
 
-  const radius = diameter * (diameter < 440 ? 0.34 : 0.38);
+  const radius = diameter * (diameter < 440 ? 0.32 : 0.38);
 
   return (
     <section className="mt-10">
-      <p className="mb-5 max-w-2xl text-sm leading-6 text-muted">
-        {locale === 'zh'
-          ? '拖动球体可以旋转知识标签；轻点任意关键词进入对应内容。'
-          : 'Drag the sphere to rotate the knowledge tags; tap any keyword to open its content.'}
-      </p>
+      <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h2 className="text-2xl font-semibold tracking-normal text-ink">
+            {locale === 'zh' ? '精选标签球' : 'Featured Tag Sphere'}
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
+            {locale === 'zh'
+              ? '标签球只保留核心与高频关键词，完整标签目录在下方持续承接新增内容。'
+              : 'The sphere keeps the core and high-signal keywords visible, while the directory below carries the full tag system as it grows.'}
+          </p>
+        </div>
+        <a
+          href="#all-tags"
+          className="inline-flex w-fit items-center justify-center rounded-md border border-line px-4 py-2 text-sm font-medium text-muted transition hover:border-accent hover:text-accent"
+        >
+          {locale === 'zh' ? `查看全部标签 ${items.length} 个` : `Browse all ${items.length} tags`}
+        </a>
+      </div>
 
       <div className="rounded-lg border border-line bg-white p-4 shadow-soft sm:p-6">
         <div
           ref={containerRef}
-          className="relative mx-auto aspect-square w-full max-w-[640px] overflow-hidden rounded-full border border-line bg-white shadow-soft touch-none"
+          className="relative mx-auto aspect-square w-full max-w-[640px] touch-none overflow-hidden rounded-full border border-line bg-white shadow-soft"
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
