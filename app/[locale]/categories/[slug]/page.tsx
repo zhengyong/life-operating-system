@@ -3,10 +3,12 @@ import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ChevronLeft} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
+import {LearningPathPanel} from '@/components/LearningPathPanel';
 import {PageShell} from '@/components/PageShell';
 import {TopicCard} from '@/components/TopicCard';
 import {findCategoryBySlug, getArticles, getTaxonomy, locales} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {getCategoryLearningPath} from '@/lib/learningPaths';
 import {getCategoryLabel} from '@/lib/taxonomy';
 import {slugify} from '@/lib/utils';
 
@@ -38,6 +40,7 @@ export default async function CategoryDetailPage({params}: {params: {locale: str
   const articles = getArticles(locale).filter((article) => article.category === category);
   const taxonomyItem = getTaxonomy(locale, 'category').find((item) => item.name === category);
   const relatedItems = taxonomyItem?.relatedItems ?? [];
+  const learningPath = getCategoryLearningPath(category, locale);
 
   return (
     <PageShell locale={locale}>
@@ -58,6 +61,7 @@ export default async function CategoryDetailPage({params}: {params: {locale: str
             {(taxonomyItem?.count ?? articles.length)} {locale === 'zh' ? '项内容' : 'items'} / {articles.length} {t.taxonomy.articleCount}
           </p>
         </div>
+        <LearningPathPanel {...learningPath} />
         {articles.length > 0 ? (
           <section className="mt-10">
             <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.nav.articles}</h2>

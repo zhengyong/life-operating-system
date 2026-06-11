@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ArrowRight, ExternalLink} from 'lucide-react';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
+import {LearningPathPanel} from '@/components/LearningPathPanel';
 import {PageShell} from '@/components/PageShell';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {companies, getPerson, getPersonLessons, people, text} from '@/lib/topics';
@@ -44,6 +45,43 @@ export default async function PersonPage({params}: {params: {locale: string; slu
   const archive = person.content.filter((item) => item.type !== 'news');
   const lessons = getPersonLessons(person.slug);
   const getMatchingLesson = (title: string) => lessons.find((lesson) => text(lesson.title, locale) === title);
+  const studyPath = {
+    title: locale === 'zh' ? `${text(person.name, locale)}学习路径` : `${text(person.name, locale)} Study Path`,
+    summary:
+      locale === 'zh'
+        ? '先看可迁移的判断，再读公开资料和相关公司，避免只停留在人物故事。'
+        : 'Start with transferable judgment, then read public sources and related companies instead of stopping at biography.',
+    stepsTitle: locale === 'zh' ? '推荐顺序' : 'Suggested Order',
+    linksTitle: locale === 'zh' ? '继续跳转' : 'Continue Reading',
+    practiceTitle: locale === 'zh' ? '静态练习' : 'Static Practice',
+    steps: [
+      locale === 'zh' ? '先读“向他学习什么”，抓住最值得迁移的原则。' : 'Read what to learn first and identify the transferable principles.',
+      locale === 'zh' ? '再看公开资料，区分事实、叙事和个人判断。' : 'Then read public sources and separate facts, narratives, and judgment.',
+      locale === 'zh' ? '最后进入相关公司或课程，把人物选择放回组织和产业里。' : 'Finally study related companies or lessons to place choices inside organizations and industries.'
+    ],
+    links: [
+      ...lessons.slice(0, 2).map((lesson) => ({
+        href: `/${locale}/people/${person.slug}/lessons/${lesson.slug}/`,
+        label: text(lesson.title, locale),
+        description: text(lesson.summary, locale)
+      })),
+      ...relatedCompanies.slice(0, 2).map((company) => ({
+        href: `/${locale}/companies/${company.slug}/`,
+        label: text(company.name, locale),
+        description: text(company.summary, locale)
+      })),
+      {
+        href: `/${locale}/people/`,
+        label: t.nav.people,
+        description: locale === 'zh' ? '回到人物专题，横向比较不同高手。' : 'Return to people studies and compare across builders.'
+      }
+    ].slice(0, 5),
+    exercises: [
+      locale === 'zh' ? '写下这个人物最值得学的一条原则，以及你不能照搬的一点。' : 'Write one principle worth learning and one thing you should not copy.',
+      locale === 'zh' ? '选一个他面对过的约束，换成你的处境重新判断。' : 'Pick one constraint they faced and translate it into your own context.',
+      locale === 'zh' ? '找一个本周可以应用的小场景。' : 'Find one small situation where you can apply the lesson this week.'
+    ]
+  };
   const archiveGroups = archiveTypes
     .map((type) => ({
       type,
@@ -69,6 +107,8 @@ export default async function PersonPage({params}: {params: {locale: string; slu
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">{text(person.summary, locale)}</p>
         </section>
+
+        <LearningPathPanel {...studyPath} />
 
         <section className="mt-10 rounded-lg border border-line bg-white p-6">
           <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.topics.learnFrom}</h2>

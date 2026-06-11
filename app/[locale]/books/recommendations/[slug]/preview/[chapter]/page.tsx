@@ -5,6 +5,7 @@ import {ArrowLeft} from 'lucide-react';
 import {ArticleInteractions} from '@/components/ArticleInteractions';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
+import {StaticPracticeBlock} from '@/components/StaticPracticeBlock';
 import {getBookArchitectureNode, t as archText} from '@/lib/bookArchitecture';
 import {bookPreviewConfigs, getBookPreviewChapter, getBookPreviewConfig} from '@/lib/bookPreview';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
@@ -71,6 +72,10 @@ export default async function BookPreviewChapterPage({
     notFound();
   }
 
+  const chapterIndex = previewConfig.chapters.findIndex((item) => item.slug === chapter.slug);
+  const previousChapter = chapterIndex > 0 ? previewConfig.chapters[chapterIndex - 1] : null;
+  const nextChapter = chapterIndex >= 0 && chapterIndex < previewConfig.chapters.length - 1 ? previewConfig.chapters[chapterIndex + 1] : null;
+
   return (
     <PageShell locale={locale}>
       <main className="mx-auto max-w-3xl px-5 py-10 md:py-16">
@@ -115,6 +120,39 @@ export default async function BookPreviewChapterPage({
             )}
           </div>
         </article>
+
+        <StaticPracticeBlock locale={locale} />
+
+        <nav className="mt-8 grid gap-3 sm:grid-cols-3" aria-label={locale === 'zh' ? '章节导航' : 'Chapter navigation'}>
+          {previousChapter ? (
+            <Link
+              href={`/${locale}/books/recommendations/${previewConfig.slug}/preview/${previousChapter.slug}/`}
+              className="rounded-lg border border-line bg-white p-4 text-sm transition hover:border-accent hover:text-accent"
+            >
+              <span className="block text-xs font-medium text-muted">{locale === 'zh' ? '上一章' : 'Previous'}</span>
+              <span className="mt-2 block font-semibold text-ink">{previousChapter.title}</span>
+            </Link>
+          ) : (
+            <span className="rounded-lg border border-line bg-soft p-4 text-sm text-muted">{locale === 'zh' ? '已经是第一章' : 'First chapter'}</span>
+          )}
+          <Link
+            href={`/${locale}/books/recommendations/${previewConfig.slug}/`}
+            className="rounded-lg border border-line bg-ink p-4 text-center text-sm font-semibold text-white transition hover:bg-accent"
+          >
+            {locale === 'zh' ? '返回书稿目录' : 'Back to Book Contents'}
+          </Link>
+          {nextChapter ? (
+            <Link
+              href={`/${locale}/books/recommendations/${previewConfig.slug}/preview/${nextChapter.slug}/`}
+              className="rounded-lg border border-line bg-white p-4 text-sm transition hover:border-accent hover:text-accent sm:text-right"
+            >
+              <span className="block text-xs font-medium text-muted">{locale === 'zh' ? '下一章' : 'Next'}</span>
+              <span className="mt-2 block font-semibold text-ink">{nextChapter.title}</span>
+            </Link>
+          ) : (
+            <span className="rounded-lg border border-line bg-soft p-4 text-sm text-muted sm:text-right">{locale === 'zh' ? '已经是最后一章' : 'Last chapter'}</span>
+          )}
+        </nav>
 
         <section className="mt-8 rounded-lg border border-line bg-soft p-5">
           <p className="text-sm leading-7 text-muted">
