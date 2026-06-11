@@ -42,9 +42,6 @@ export function Footer({locale}: {locale: Locale}) {
             </p>
           </div>
           <div className="flex flex-wrap gap-3 text-sm text-muted">
-            <Link href={`/${locale}/articles/`} className="hover:text-accent">
-              {t.nav.articles}
-            </Link>
             <Link href={`/${locale}/books/`} className="hover:text-accent">
               {t.nav.books}
             </Link>
@@ -57,14 +54,17 @@ export function Footer({locale}: {locale: Locale}) {
             <Link href={`/${locale}/education/`} className="hover:text-accent">
               {t.nav.education}
             </Link>
+            <Link href={`/${locale}/investment/`} className="hover:text-accent">
+              {t.nav.investment}
+            </Link>
             <Link href={`/${locale}/people/`} className="hover:text-accent">
               {t.nav.people}
             </Link>
             <Link href={`/${locale}/companies/`} className="hover:text-accent">
               {t.nav.companies}
             </Link>
-            <Link href={`/${locale}/investment/`} className="hover:text-accent">
-              {t.nav.investment}
+            <Link href={`/${locale}/articles/`} className="hover:text-accent">
+              {t.nav.articles}
             </Link>
             <Link href={`/${locale}/contact/`} className="hover:text-accent">
               {t.nav.contact}

@@ -471,10 +471,10 @@ function ReviewTimeline({items, locale}: {items: LifeReviewItem[]; locale: Local
     <div className="relative">
       <div className="absolute left-4 top-2 hidden h-[calc(100%-1rem)] w-px bg-line md:block" />
       <div className="space-y-5">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <article key={lt(item.period, locale)} className="relative rounded-lg border border-line bg-white p-5 md:ml-12">
-            <span className="absolute -left-12 top-6 hidden h-8 w-8 items-center justify-center rounded-md border border-line bg-white text-xs font-semibold text-accent md:flex">
-              {lt(item.period, locale).slice(0, 2)}
+            <span className="absolute -left-12 top-6 hidden h-8 w-8 items-center justify-center rounded-md border border-line bg-white text-sm font-semibold text-accent md:flex">
+              {index + 1}
             </span>
             <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
               <div>

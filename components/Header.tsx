@@ -24,10 +24,10 @@ export function Header({locale}: HeaderProps) {
     {href: `/${locale}/life/`, label: t.nav.life},
     {href: `/${locale}/career/`, label: t.nav.career},
     {href: `/${locale}/education/`, label: t.nav.education},
-    {href: `/${locale}/articles/`, label: t.nav.articles},
+    {href: `/${locale}/investment/`, label: t.nav.investment},
     {href: `/${locale}/people/`, label: t.nav.people},
     {href: `/${locale}/companies/`, label: t.nav.companies},
-    {href: `/${locale}/investment/`, label: t.nav.investment},
+    {href: `/${locale}/articles/`, label: t.nav.articles},
     {href: `/${locale}/categories/`, label: t.nav.categories},
     {href: `/${locale}/tags/`, label: t.nav.tags},
     {href: `/${locale}/contact/`, label: t.nav.contact}

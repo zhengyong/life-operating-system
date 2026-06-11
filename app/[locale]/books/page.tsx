@@ -65,14 +65,14 @@ function NodeCard({
           </div>
           <h2
             className={`font-semibold tracking-normal ${
-              isTop ? 'truncate text-2xl text-accent md:text-3xl' : 'text-[10px] leading-4 text-ink md:truncate md:text-base md:leading-6'
+              isTop ? 'text-2xl text-accent md:text-3xl' : 'text-[10px] leading-4 text-ink md:text-base md:leading-6'
             }`}
           >
             {label}
           </h2>
         </div>
         {summary ? (
-          <p className={`${isTop ? 'mt-3 text-lg md:mt-4 md:text-2xl' : 'mt-1 text-[9px] md:mt-3 md:text-sm'} font-semibold leading-4 text-ink md:truncate md:leading-7`}>
+          <p className={`${isTop ? 'mt-3 text-lg md:mt-4 md:text-2xl' : 'mt-1 text-[9px] md:mt-3 md:min-h-14 md:text-sm'} font-semibold leading-4 text-ink md:leading-7`}>
             {summary}
           </p>
         ) : null}
@@ -97,7 +97,7 @@ function KnowledgeFoundation({locale}: {locale: Locale}) {
             <div className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-md bg-soft text-accent md:flex">
               <BookOpen className="h-5 w-5" />
             </div>
-            <h2 className="truncate text-sm font-semibold tracking-normal text-ink md:text-base">
+            <h2 className="text-sm font-semibold tracking-normal text-ink md:text-base">
               {archText(architectureFoundation.label, locale)}
             </h2>
           </div>
@@ -112,8 +112,8 @@ function KnowledgeFoundation({locale}: {locale: Locale}) {
         <div className="mt-2 grid grid-cols-3 gap-1.5 md:mt-4 md:gap-2">
           {knowledgeLayers.map((layer) => (
             <section key={archText(layer.label, locale)} className="rounded-md bg-soft p-2 md:p-3">
-              <h3 className="truncate text-[11px] font-semibold text-ink md:text-sm">{archText(layer.label, locale)}</h3>
-              <p className="mt-1 truncate text-[10px] leading-4 text-muted md:mt-2 md:text-xs md:leading-5">
+              <h3 className="text-[11px] font-semibold text-ink md:text-sm">{archText(layer.label, locale)}</h3>
+              <p className="mt-1 text-[10px] leading-4 text-muted md:mt-2 md:min-h-10 md:text-xs md:leading-5">
                 {layer.items[locale].join(' / ')}
               </p>
             </section>
@@ -167,7 +167,7 @@ export default async function BooksPage({params}: {params: {locale: string}}) {
           </div>
 
           <div className="mx-auto mt-2 max-w-5xl md:mt-4">
-            <div className="grid grid-cols-5 gap-1.5 md:gap-3">
+            <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 md:grid-cols-5 md:gap-3">
               {architectureMiddle.map((node) => (
                 <NodeCard
                   key={node.slug}
