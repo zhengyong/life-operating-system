@@ -21,6 +21,7 @@ export function Header({locale}: HeaderProps) {
     {href: `/${locale}/`, label: t.nav.home},
     {href: `/${locale}/about/`, label: t.nav.about},
     {href: `/${locale}/books/`, label: t.nav.books},
+    {href: `/${locale}/education/`, label: t.nav.education},
     {href: `/${locale}/articles/`, label: t.nav.articles},
     {href: `/${locale}/people/`, label: t.nav.people},
     {href: `/${locale}/companies/`, label: t.nav.companies},
@@ -32,7 +33,7 @@ export function Header({locale}: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-white/92 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
         <Link href={`/${locale}/`} className="flex min-w-0 items-center gap-3">
           <img src="/brand-mark.svg" alt="Life OS" className="h-9 w-9 shrink-0" />
           <div className="min-w-0">
@@ -41,12 +42,12 @@ export function Header({locale}: HeaderProps) {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-1 xl:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted transition hover:bg-soft hover:text-ink"
+              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted transition hover:bg-soft hover:text-ink"
             >
               {item.label}
             </Link>
@@ -68,7 +69,7 @@ export function Header({locale}: HeaderProps) {
             {otherLocale === 'en' ? 'EN' : '中文'}
           </Link>
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-muted transition hover:border-accent hover:text-accent lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-muted transition hover:border-accent hover:text-accent xl:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-label="Menu"
           >
@@ -78,7 +79,7 @@ export function Header({locale}: HeaderProps) {
       </div>
 
       {open ? (
-        <div className="border-t border-line bg-white px-5 py-3 lg:hidden">
+        <div className="border-t border-line bg-white px-5 py-3 xl:hidden">
           <nav className="mx-auto grid max-w-6xl gap-1">
             {nav.map((item) => (
               <Link

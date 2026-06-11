@@ -12,7 +12,7 @@ import {
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 
 export const metadata: Metadata = {
-  title: 'Books'
+  title: 'Frameworks'
 };
 
 const knowledgeLayers = [

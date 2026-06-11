@@ -5,7 +5,8 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "books": "Books",
+    "books": "Frameworks",
+    "education": "Education",
     "articles": "Articles",
     "people": "People",
     "companies": "Companies",
@@ -31,8 +32,8 @@
     "principles": "The work here is centered on long-termism, responsibility, clarity, action, and compounding."
   },
   "books": {
-    "title": "Books System",
-    "subtitle": "A long-form publishing roadmap for the Life Operating System."
+    "title": "Framework System",
+    "subtitle": "A long-term roadmap of frameworks, books, resources, and practices for the Life Operating System."
   },
   "articles": {
     "title": "Articles",

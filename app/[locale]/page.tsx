@@ -51,7 +51,7 @@ export default async function HomePage({params}: {params: {locale: string}}) {
               <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
                 <div className="rounded-md bg-soft p-3">
                   <BookOpen className="mb-2 h-4 w-4 text-gold" />
-                  <span className="font-medium text-ink">Books</span>
+                  <span className="font-medium text-ink">{t.nav.books}</span>
                 </div>
                 <div className="rounded-md bg-soft p-3">
                   <Layers className="mb-2 h-4 w-4 text-accent" />

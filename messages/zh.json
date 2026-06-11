@@ -5,7 +5,8 @@
   "nav": {
     "home": "首页",
     "about": "关于",
-    "books": "书籍",
+    "books": "框架",
+    "education": "教育",
     "articles": "文章",
     "people": "人物",
     "companies": "公司",
@@ -31,8 +32,8 @@
     "principles": "这里的写作以长期主义、责任、清晰、行动与复利为核心。"
   },
   "books": {
-    "title": "书籍体系",
-    "subtitle": "围绕人生操作系统展开的长期写作与出版路线。"
+    "title": "框架体系",
+    "subtitle": "围绕人生操作系统展开的长期框架、书籍、资源与实践路线。"
   },
   "articles": {
     "title": "文章",

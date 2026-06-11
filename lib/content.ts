@@ -11,6 +11,7 @@ import {
   architectureTop,
   t as bookText
 } from '@/lib/bookArchitecture';
+import {educationContent, educationTaxonomy, et as educationText} from '@/lib/education';
 import {companies, people, stockModules, text as topicText} from '@/lib/topics';
 import {slugify} from '@/lib/utils';
 
@@ -24,6 +25,7 @@ export const categories = [
   'World Models',
   'Methods and Judgment',
   'Learning and Growth',
+  'Education',
   'People and Leadership',
   'Company Research',
   'Investing',
@@ -386,7 +388,41 @@ function getSiteTaxonomyItems(locale: Locale) {
     };
   });
 
-  return [...personItems, ...companyItems, ...bookItems, ...stockItems];
+  const educationModuleItems = educationTaxonomy.map((item) => ({
+    title: educationText(item.title, locale),
+    summary: educationText(item.summary, locale),
+    href: `/${locale}/education/${item.href}`,
+    type: locale === 'zh' ? '教育模块' : 'Education module',
+    categories: [...item.categories] as Category[],
+    tags: [...item.tags]
+  }));
+
+  const educationCardItems = [
+    ...educationContent.philosophy.map((item) => ({
+      item,
+      href: `/${locale}/education/#philosophy`,
+      type: locale === 'zh' ? '教育哲学' : 'Education philosophy'
+    })),
+    ...educationContent.practice.map((item) => ({
+      item,
+      href: `/${locale}/education/#practice`,
+      type: locale === 'zh' ? '教育实践' : 'Education practice'
+    })),
+    ...educationContent.caseStudies.map((item) => ({
+      item,
+      href: `/${locale}/education/#case-studies`,
+      type: locale === 'zh' ? '教育案例' : 'Education case'
+    }))
+  ].map(({item, href, type}) => ({
+    title: educationText(item.title, locale),
+    summary: educationText(item.summary, locale),
+    href,
+    type,
+    categories: ['Education' as Category, 'Learning and Growth' as Category],
+    tags: item.tags.map((tag) => educationText(tag, 'en'))
+  }));
+
+  return [...personItems, ...companyItems, ...bookItems, ...stockItems, ...educationModuleItems, ...educationCardItems];
 }
 
 export const books = [
