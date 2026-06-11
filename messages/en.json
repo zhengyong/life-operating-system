@@ -6,11 +6,14 @@
     "home": "Home",
     "about": "About",
     "books": "Frameworks",
+    "life": "Life",
+    "career": "Career",
     "education": "Education",
     "articles": "Articles",
     "people": "People",
     "companies": "Companies",
-    "stocks": "Stocks",
+    "investment": "Investment",
+    "stocks": "Investment",
     "categories": "Categories",
     "tags": "Tags",
     "contact": "Contact"
@@ -24,7 +27,7 @@
     "systemTitle": "Knowledge Architecture",
     "systemBody": "The site is organized around Life OS, first principles, mental models, career, investing, education, technology, society, and civilization.",
     "topicsTitle": "Focused Studies",
-    "topicsBody": "Study a small set of people, companies, and stocks deeply enough to learn how judgment, products, culture, and markets work."
+    "topicsBody": "Study a small set of people, companies, and investments deeply enough to learn how judgment, products, culture, and markets work."
   },
   "about": {
     "title": "About Yong Zheng",
@@ -48,8 +51,8 @@
     "peopleSubtitle": "Learn strategy, product sense, organization, communication, and long-term judgment from a small set of exceptional builders.",
     "companiesTitle": "Company Studies",
     "companiesSubtitle": "Understand how great companies build products, make money, form culture, and defend competitive advantages.",
-    "stocksTitle": "Stock Studies",
-    "stocksSubtitle": "Understand stocks through companies, business models, financial statements, valuation, and risk.",
+    "stocksTitle": "Investment Studies",
+    "stocksSubtitle": "Understand investing through companies, business models, financial statements, valuation, cash flow, and risk.",
     "readTopic": "View topic",
     "overview": "Overview",
     "learnFrom": "What to learn",

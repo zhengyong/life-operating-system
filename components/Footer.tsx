@@ -48,6 +48,12 @@ export function Footer({locale}: {locale: Locale}) {
             <Link href={`/${locale}/books/`} className="hover:text-accent">
               {t.nav.books}
             </Link>
+            <Link href={`/${locale}/life/`} className="hover:text-accent">
+              {t.nav.life}
+            </Link>
+            <Link href={`/${locale}/career/`} className="hover:text-accent">
+              {t.nav.career}
+            </Link>
             <Link href={`/${locale}/education/`} className="hover:text-accent">
               {t.nav.education}
             </Link>
@@ -57,8 +63,8 @@ export function Footer({locale}: {locale: Locale}) {
             <Link href={`/${locale}/companies/`} className="hover:text-accent">
               {t.nav.companies}
             </Link>
-            <Link href={`/${locale}/stocks/`} className="hover:text-accent">
-              {t.nav.stocks}
+            <Link href={`/${locale}/investment/`} className="hover:text-accent">
+              {t.nav.investment}
             </Link>
             <Link href={`/${locale}/contact/`} className="hover:text-accent">
               {t.nav.contact}

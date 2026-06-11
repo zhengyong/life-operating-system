@@ -2,14 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {bookArchitectureNodes, t as bookText} from '../lib/bookArchitecture';
 import {bookPreviewConfigs} from '../lib/bookPreview';
+import {careerContent, ct as careerText} from '../lib/career';
 import {getAllArticles, getArticle} from '../lib/content';
+import {investmentContent, it as investmentText} from '../lib/investment';
 import {siteUrl} from '../lib/site';
 import {companies, people, stockModules, text as topicText} from '../lib/topics';
 import {Locale, locales} from '../lib/i18n';
 
 const publicDirectory = path.join(process.cwd(), 'public');
 
-type SearchType = 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'stock';
+type SearchType = 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'stock' | 'career' | 'investment';
 
 type SearchIndexItem = {
   id: string;
@@ -33,7 +35,9 @@ const typeLabels: Record<Locale, Record<SearchType, string>> = {
     'book-chapter': '书籍章节',
     person: '人物',
     company: '公司',
-    stock: '股票'
+    stock: '投资',
+    career: '职场',
+    investment: '投资'
   },
   en: {
     article: 'Article',
@@ -41,7 +45,9 @@ const typeLabels: Record<Locale, Record<SearchType, string>> = {
     'book-chapter': 'Book chapter',
     person: 'Person',
     company: 'Company',
-    stock: 'Stock'
+    stock: 'Investment',
+    career: 'Career',
+    investment: 'Investment'
   }
 };
 
@@ -235,13 +241,78 @@ const stockIndex: SearchIndexItem[] = locales.flatMap((locale) =>
   })
 );
 
+const careerIndex: SearchIndexItem[] = locales.flatMap((locale) => {
+  const cards = [
+    ...careerContent.philosophy.map((item) => ({
+      title: careerText(item.title, locale),
+      summary: careerText(item.summary, locale),
+      href: `/${locale}/career/#career-philosophy`,
+      textParts: [careerText(item.category, locale), ...item.tags.map((tag) => careerText(tag, locale))]
+    })),
+    ...careerContent.talentPaths.map((item) => ({
+      title: careerText(item.title, locale),
+      summary: careerText(item.summary, locale),
+      href: `/${locale}/career/#career-path`,
+      textParts: [careerText(item.category, locale), ...item.tags.map((tag) => careerText(tag, locale))]
+    })),
+    ...careerContent.growth.map((item) => ({
+      title: careerText(item.title, locale),
+      summary: careerText(item.summary, locale),
+      href: `/${locale}/career/#career-growth`,
+      textParts: [...item.practices.map((practice) => careerText(practice, locale)), ...item.tags.map((tag) => careerText(tag, locale))]
+    })),
+    ...careerContent.entrepreneurship.map((item) => ({
+      title: careerText(item.title, locale),
+      summary: careerText(item.summary, locale),
+      href: `/${locale}/career/#entrepreneurship`,
+      textParts: [careerText(item.category, locale), ...item.tags.map((tag) => careerText(tag, locale))]
+    }))
+  ];
+
+  return cards.map((item, index) => ({
+    id: `${locale}:career:${index}`,
+    type: 'career' as SearchType,
+    typeLabel: typeLabels[locale].career,
+    title: item.title,
+    summary: item.summary,
+    href: item.href,
+    locale,
+    text: compactText([item.title, item.summary, ...item.textParts])
+  }));
+});
+
+const investmentIndex: SearchIndexItem[] = locales.flatMap((locale) =>
+  investmentContent.assets.map((asset, index) => {
+    const title = investmentText(asset.title, locale);
+    const summary = investmentText(asset.summary, locale);
+
+    return {
+      id: `${locale}:investment:${index}`,
+      type: 'investment',
+      typeLabel: typeLabels[locale].investment,
+      title,
+      summary,
+      href: `/${locale}/investment/#asset-classes`,
+      locale,
+      text: compactText([
+        title,
+        summary,
+        ...asset.items.map((item) => investmentText(item, locale)),
+        ...asset.tags.map((tag) => investmentText(tag, locale))
+      ])
+    };
+  })
+);
+
 const index: SearchIndexItem[] = [
   ...articleIndex,
   ...bookIndex,
   ...bookChapterIndex,
   ...personIndex,
   ...companyIndex,
-  ...stockIndex
+  ...stockIndex,
+  ...careerIndex,
+  ...investmentIndex
 ];
 
 fs.writeFileSync(path.join(publicDirectory, 'search-index.json'), JSON.stringify(index, null, 2));

@@ -11,7 +11,10 @@ import {
   architectureTop,
   t as bookText
 } from '@/lib/bookArchitecture';
+import {careerContent, careerTaxonomy, ct as careerText} from '@/lib/career';
 import {educationContent, educationTaxonomy, et as educationText} from '@/lib/education';
+import {investmentContent, investmentTaxonomy, it as investmentText} from '@/lib/investment';
+import {lifeContent, lifeTaxonomy, lt as lifeText} from '@/lib/life';
 import {companies, people, stockModules, text as topicText} from '@/lib/topics';
 import {slugify} from '@/lib/utils';
 
@@ -25,6 +28,8 @@ export const categories = [
   'World Models',
   'Methods and Judgment',
   'Learning and Growth',
+  'Life',
+  'Career',
   'Education',
   'People and Leadership',
   'Company Research',
@@ -422,7 +427,116 @@ function getSiteTaxonomyItems(locale: Locale) {
     tags: item.tags.map((tag) => educationText(tag, 'en'))
   }));
 
-  return [...personItems, ...companyItems, ...bookItems, ...stockItems, ...educationModuleItems, ...educationCardItems];
+  const lifeModuleItems = lifeTaxonomy.map((item) => ({
+    title: lifeText(item.title, locale),
+    summary: lifeText(item.summary, locale),
+    href: `/${locale}/life/${item.href}`,
+    type: locale === 'zh' ? '人生模块' : 'Life module',
+    categories: [...item.categories] as Category[],
+    tags: [...item.tags]
+  }));
+
+  const lifeCardItems = [
+    ...lifeContent.philosophy.map((item) => ({
+      item,
+      href: `/${locale}/life/#philosophy`,
+      type: locale === 'zh' ? '人生哲学' : 'Life philosophy'
+    })),
+    ...lifeContent.awareness.map((item) => ({
+      item,
+      href: `/${locale}/life/#self-awareness`,
+      type: locale === 'zh' ? '自我认知' : 'Self awareness'
+    })),
+    ...lifeContent.family.map((item) => ({
+      item,
+      href: `/${locale}/life/#marriage-family`,
+      type: locale === 'zh' ? '婚姻与家庭' : 'Marriage and family'
+    })),
+    ...lifeContent.wealth.map((item) => ({
+      item,
+      href: `/${locale}/life/#wealth-happiness`,
+      type: locale === 'zh' ? '财富与幸福' : 'Wealth and happiness'
+    })),
+    ...lifeContent.health.map((item) => ({
+      item,
+      href: `/${locale}/life/#health-growth`,
+      type: locale === 'zh' ? '健康与成长' : 'Health and growth'
+    }))
+  ].map(({item, href, type}) => ({
+    title: lifeText(item.title, locale),
+    summary: lifeText(item.summary, locale),
+    href,
+    type,
+    categories: ['Life' as Category, 'Life OS' as Category],
+    tags: item.tags.map((tag) => lifeText(tag, 'en'))
+  }));
+
+  const careerModuleItems = careerTaxonomy.map((item) => ({
+    title: careerText(item.title, locale),
+    summary: careerText(item.summary, locale),
+    href: `/${locale}/career/${item.href}`,
+    type: locale === 'zh' ? '职场模块' : 'Career module',
+    categories: [...item.categories] as Category[],
+    tags: [...item.tags]
+  }));
+
+  const careerCardItems = [
+    ...careerContent.philosophy.map((item) => ({
+      item,
+      href: `/${locale}/career/#career-philosophy`,
+      type: locale === 'zh' ? '职业认知' : 'Career philosophy'
+    })),
+    ...careerContent.talentPaths.map((item) => ({
+      item,
+      href: `/${locale}/career/#career-path`,
+      type: locale === 'zh' ? '职业路径' : 'Career path'
+    })),
+    ...careerContent.entrepreneurship.map((item) => ({
+      item,
+      href: `/${locale}/career/#entrepreneurship`,
+      type: locale === 'zh' ? '创业与管理' : 'Entrepreneurship'
+    }))
+  ].map(({item, href, type}) => ({
+    title: careerText(item.title, locale),
+    summary: careerText(item.summary, locale),
+    href,
+    type,
+    categories: ['Career' as Category, 'Learning and Growth' as Category],
+    tags: item.tags.map((tag) => careerText(tag, 'en'))
+  }));
+
+  const investmentModuleItems = investmentTaxonomy.map((item) => ({
+    title: investmentText(item.title, locale),
+    summary: investmentText(item.summary, locale),
+    href: `/${locale}/investment/${item.href}`,
+    type: locale === 'zh' ? '投资模块' : 'Investment module',
+    categories: [...item.categories] as Category[],
+    tags: [...item.tags]
+  }));
+
+  const investmentAssetItems = investmentContent.assets.map((asset) => ({
+    title: investmentText(asset.title, locale),
+    summary: investmentText(asset.summary, locale),
+    href: `/${locale}/investment/#asset-classes`,
+    type: locale === 'zh' ? '资产类别' : 'Asset class',
+    categories: ['Investing' as Category, 'Career' as Category],
+    tags: asset.tags.map((tag) => investmentText(tag, 'en'))
+  }));
+
+  return [
+    ...personItems,
+    ...companyItems,
+    ...bookItems,
+    ...stockItems,
+    ...educationModuleItems,
+    ...educationCardItems,
+    ...lifeModuleItems,
+    ...lifeCardItems,
+    ...careerModuleItems,
+    ...careerCardItems,
+    ...investmentModuleItems,
+    ...investmentAssetItems
+  ];
 }
 
 export const books = [

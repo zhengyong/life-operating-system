@@ -6,7 +6,7 @@ import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {companies, stockModules, text} from '@/lib/topics';
 
 export const metadata: Metadata = {
-  title: 'Stock Studies'
+  title: 'Investment Studies'
 };
 
 export function generateStaticParams() {
@@ -21,11 +21,14 @@ export default async function StocksPage({params}: {params: {locale: string}}) {
     <PageShell locale={locale}>
       <main className="mx-auto max-w-6xl px-5 py-14 md:py-20">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{t.nav.stocks}</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{t.nav.investment}</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl">
             {t.topics.stocksTitle}
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted">{t.topics.stocksSubtitle}</p>
+          <Link href={`/${locale}/investment/`} className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-ink">
+            {locale === 'zh' ? '进入新版投资体系' : 'Open the Investment system'} <ArrowRight className="h-4 w-4" />
+          </Link>
           <p className="mt-4 rounded-md border border-line bg-white px-4 py-3 text-sm leading-6 text-muted">
             {t.topics.notAdvice}
           </p>

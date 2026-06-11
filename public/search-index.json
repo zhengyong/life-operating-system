@@ -2330,7 +2330,7 @@
   {
     "id": "en:stock:0",
     "type": "stock",
-    "typeLabel": "Stock",
+    "typeLabel": "Investment",
     "title": "What a stock really is",
     "summary": "A stock is not a ticker; it is a fractional ownership claim on a company.",
     "href": "/en/stocks/",
@@ -2340,7 +2340,7 @@
   {
     "id": "en:stock:1",
     "type": "stock",
-    "typeLabel": "Stock",
+    "typeLabel": "Investment",
     "title": "How to read business models",
     "summary": "Start with what it sells, who pays, and why customers keep paying.",
     "href": "/en/stocks/",
@@ -2350,7 +2350,7 @@
   {
     "id": "en:stock:2",
     "type": "stock",
-    "typeLabel": "Stock",
+    "typeLabel": "Investment",
     "title": "Financial statements and valuation basics",
     "summary": "Financial statements show facts; valuation prices the future. Read them together.",
     "href": "/en/stocks/",
@@ -2360,7 +2360,7 @@
   {
     "id": "en:stock:3",
     "type": "stock",
-    "typeLabel": "Stock",
+    "typeLabel": "Investment",
     "title": "Risk and long-term observation",
     "summary": "Investing study is less about predicting moves and more about identifying variables and updating judgment.",
     "href": "/en/stocks/",
@@ -2370,7 +2370,7 @@
   {
     "id": "zh:stock:0",
     "type": "stock",
-    "typeLabel": "股票",
+    "typeLabel": "投资",
     "title": "股票到底是什么",
     "summary": "股票不是代码，而是公司所有权的一小部分。理解股票要先理解公司。",
     "href": "/zh/stocks/",
@@ -2380,7 +2380,7 @@
   {
     "id": "zh:stock:1",
     "type": "stock",
-    "typeLabel": "股票",
+    "typeLabel": "投资",
     "title": "如何看商业模式",
     "summary": "先看它卖什么、卖给谁、为什么客户愿意持续付费。",
     "href": "/zh/stocks/",
@@ -2390,7 +2390,7 @@
   {
     "id": "zh:stock:2",
     "type": "stock",
-    "typeLabel": "股票",
+    "typeLabel": "投资",
     "title": "财报与估值基础",
     "summary": "财报看事实，估值看市场对未来的定价。两者要一起看。",
     "href": "/zh/stocks/",
@@ -2400,11 +2400,411 @@
   {
     "id": "zh:stock:3",
     "type": "stock",
-    "typeLabel": "股票",
+    "typeLabel": "投资",
     "title": "风险与长期观察",
     "summary": "投资学习的重点不是预测涨跌，而是识别变量和更新判断。",
     "href": "/zh/stocks/",
     "locale": "zh",
     "text": "风险与长期观察 投资学习的重点不是预测涨跌，而是识别变量和更新判断。 看行业、市场、客户、政策、竞争和公司自己。 建立观察日志，不把短期波动误当成长期结论。"
+  },
+  {
+    "id": "en:career:0",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Why We Work",
+    "summary": "Work is not only income. It is a field for capability training, understanding society, creating value, and building long-term trust.",
+    "href": "/en/career/#career-philosophy",
+    "locale": "en",
+    "text": "Why We Work Work is not only income. It is a field for capability training, understanding society, creating value, and building long-term trust. Career Philosophy Career Development Value Creation"
+  },
+  {
+    "id": "en:career:1",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "The Nature of Work",
+    "summary": "The essence of work is creating value, solving problems, taking responsibility, and amplifying individual capability through organizations.",
+    "href": "/en/career/#career-philosophy",
+    "locale": "en",
+    "text": "The Nature of Work The essence of work is creating value, solving problems, taking responsibility, and amplifying individual capability through organizations. Value Creation Responsibility Collaboration"
+  },
+  {
+    "id": "en:career:2",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Career Growth Laws",
+    "summary": "Early career depends on learning speed, mid-career on transferable capability, and long-term career on value creation, trust, judgment, and resource integration.",
+    "href": "/en/career/#career-philosophy",
+    "locale": "en",
+    "text": "Career Growth Laws Early career depends on learning speed, mid-career on transferable capability, and long-term career on value creation, trust, judgment, and resource integration. Growth Laws Capability Compounding Long-Termism"
+  },
+  {
+    "id": "en:career:3",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Long-Termism",
+    "summary": "Career should not optimize only for the next salary. It should consider industry trend, capability accumulation, work artifacts, and future optionality.",
+    "href": "/en/career/#career-philosophy",
+    "locale": "en",
+    "text": "Long-Termism Career should not optimize only for the next salary. It should consider industry trend, capability accumulation, work artifacts, and future optionality. Career Strategy Long-Term Strategy Optionality"
+  },
+  {
+    "id": "en:career:4",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Exceptional Talent Path",
+    "summary": "People who can handle uncertainty, responsibility, and leverage may gradually move into entrepreneurship, management, or high-value roles.",
+    "href": "/en/career/#career-path",
+    "locale": "en",
+    "text": "Exceptional Talent Path People who can handle uncertainty, responsibility, and leverage may gradually move into entrepreneurship, management, or high-value roles. High-Leverage Path Entrepreneurship Management High-Value Roles"
+  },
+  {
+    "id": "en:career:5",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Ordinary Person Path",
+    "summary": "Most people are better served by deepening expertise, improving skills, stabilizing cash flow, and amplifying career results through long-term investing.",
+    "href": "/en/career/#career-path",
+    "locale": "en",
+    "text": "Ordinary Person Path Most people are better served by deepening expertise, improving skills, stabilizing cash flow, and amplifying career results through long-term investing. Steady Path Professional Depth Skill Development Long-Term Investing"
+  },
+  {
+    "id": "en:career:6",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Professional Capability",
+    "summary": "Professional capability determines whether you can reliably solve important problems. It is a core career asset.",
+    "href": "/en/career/#career-growth",
+    "locale": "en",
+    "text": "Professional Capability Professional capability determines whether you can reliably solve important problems. It is a core career asset. Build a professional knowledge map Ship demonstrable high-quality projects Professional Capability Depth"
+  },
+  {
+    "id": "en:career:7",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Learning Ability",
+    "summary": "The faster an industry changes, the more learning ability matters. Real learning turns new knowledge into transferable capability.",
+    "href": "/en/career/#career-growth",
+    "locale": "en",
+    "text": "Learning Ability The faster an industry changes, the more learning ability matters. Real learning turns new knowledge into transferable capability. Review knowledge gaps regularly Use projects to force learning Learning Ability Lifelong Learning"
+  },
+  {
+    "id": "en:career:8",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Project Experience",
+    "summary": "Project experience is evidence of capability. Strong projects demonstrate judgment, collaboration, execution, and outcomes.",
+    "href": "/en/career/#career-growth",
+    "locale": "en",
+    "text": "Project Experience Project experience is evidence of capability. Strong projects demonstrate judgment, collaboration, execution, and outcomes. Record context, role, actions, and results Distill reusable methods Project Experience Artifacts"
+  },
+  {
+    "id": "en:career:9",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Communication",
+    "summary": "Communication is not talkativeness. It makes goals, problems, facts, risks, and next actions clear.",
+    "href": "/en/career/#career-growth",
+    "locale": "en",
+    "text": "Communication Communication is not talkativeness. It makes goals, problems, facts, risks, and next actions clear. Report problems with structure Surface risks and dependencies early Communication Collaboration"
+  },
+  {
+    "id": "en:career:10",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Management",
+    "summary": "Management is not controlling others. It sets goals, allocates resources, builds mechanisms, and helps teams deliver outcomes.",
+    "href": "/en/career/#career-growth",
+    "locale": "en",
+    "text": "Management Management is not controlling others. It sets goals, allocates resources, builds mechanisms, and helps teams deliver outcomes. Break down goals and responsibility Build feedback and review cadence Management Leadership"
+  },
+  {
+    "id": "en:career:11",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Entrepreneurship Prerequisites",
+    "summary": "Before entrepreneurship, validate demand, circle of competence, cash flow, margin of safety, team, and family support.",
+    "href": "/en/career/#entrepreneurship",
+    "locale": "en",
+    "text": "Entrepreneurship Prerequisites Before entrepreneurship, validate demand, circle of competence, cash flow, margin of safety, team, and family support. Entrepreneurship Entrepreneurship Prerequisites Risk"
+  },
+  {
+    "id": "en:career:12",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Entrepreneurship Risk",
+    "summary": "Entrepreneurship has a high failure rate. The main risk is often not the idea, but mismatch among cash flow, team, execution, and market timing.",
+    "href": "/en/career/#entrepreneurship",
+    "locale": "en",
+    "text": "Entrepreneurship Risk Entrepreneurship has a high failure rate. The main risk is often not the idea, but mismatch among cash flow, team, execution, and market timing. Risk Management Risk Cash Flow"
+  },
+  {
+    "id": "en:career:13",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Entrepreneurial Capability",
+    "summary": "Entrepreneurship requires a combination of product, sales, organization, financing, finance, resilience, and continuous learning.",
+    "href": "/en/career/#entrepreneurship",
+    "locale": "en",
+    "text": "Entrepreneurial Capability Entrepreneurship requires a combination of product, sales, organization, financing, finance, resilience, and continuous learning. Capability Requirement Entrepreneurial Capability Psychological Resilience"
+  },
+  {
+    "id": "en:career:14",
+    "type": "career",
+    "typeLabel": "Career",
+    "title": "Management Capability",
+    "summary": "After starting a company, the biggest shift is from individual contributor to organizational system designer.",
+    "href": "/en/career/#entrepreneurship",
+    "locale": "en",
+    "text": "Management Capability After starting a company, the biggest shift is from individual contributor to organizational system designer. Management Management Organizational Capability"
+  },
+  {
+    "id": "zh:career:0",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "为什么工作",
+    "summary": "工作不仅是收入来源，也是训练能力、理解社会、创造价值和积累长期信用的场域。",
+    "href": "/zh/career/#career-philosophy",
+    "locale": "zh",
+    "text": "为什么工作 工作不仅是收入来源，也是训练能力、理解社会、创造价值和积累长期信用的场域。 职业认知 职业发展 价值创造"
+  },
+  {
+    "id": "zh:career:1",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "职场本质",
+    "summary": "职场的本质是创造价值、解决问题、承担责任，并在组织协作中放大个人能力。",
+    "href": "/zh/career/#career-philosophy",
+    "locale": "zh",
+    "text": "职场本质 职场的本质是创造价值、解决问题、承担责任，并在组织协作中放大个人能力。 价值创造 责任 协作"
+  },
+  {
+    "id": "zh:career:2",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "职业发展规律",
+    "summary": "早期看学习速度，中期看可迁移能力，长期看价值创造、信用、判断和资源整合。",
+    "href": "/zh/career/#career-philosophy",
+    "locale": "zh",
+    "text": "职业发展规律 早期看学习速度，中期看可迁移能力，长期看价值创造、信用、判断和资源整合。 成长规律 能力复利 长期主义"
+  },
+  {
+    "id": "zh:career:3",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "长期主义",
+    "summary": "职业不能只看下一份薪水，要看行业趋势、能力积累、作品沉淀和未来选择权。",
+    "href": "/zh/career/#career-philosophy",
+    "locale": "zh",
+    "text": "长期主义 职业不能只看下一份薪水，要看行业趋势、能力积累、作品沉淀和未来选择权。 职业策略 长期战略 选择权"
+  },
+  {
+    "id": "zh:career:4",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "优秀人才路径",
+    "summary": "适合承担高不确定性、高责任和高杠杆任务的人，可以逐步进入创业、管理或高价值岗位。",
+    "href": "/zh/career/#career-path",
+    "locale": "zh",
+    "text": "优秀人才路径 适合承担高不确定性、高责任和高杠杆任务的人，可以逐步进入创业、管理或高价值岗位。 高杠杆路径 创业 管理 高价值岗位"
+  },
+  {
+    "id": "zh:career:5",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "普通人成长路径",
+    "summary": "多数人更适合先深耕专业、提升技能、稳定现金流，再通过长期投资放大职业成果。",
+    "href": "/zh/career/#career-path",
+    "locale": "zh",
+    "text": "普通人成长路径 多数人更适合先深耕专业、提升技能、稳定现金流，再通过长期投资放大职业成果。 稳健路径 专业深耕 技能提升 长期投资"
+  },
+  {
+    "id": "zh:career:6",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "专业能力",
+    "summary": "专业能力决定你能否稳定解决关键问题，是职业竞争力的底层资产。",
+    "href": "/zh/career/#career-growth",
+    "locale": "zh",
+    "text": "专业能力 专业能力决定你能否稳定解决关键问题，是职业竞争力的底层资产。 建立专业知识地图 做可展示的高质量项目 专业能力 深度"
+  },
+  {
+    "id": "zh:career:7",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "学习能力",
+    "summary": "行业变化越快，学习能力越重要。真正的学习是把新知识转化为可迁移能力。",
+    "href": "/zh/career/#career-growth",
+    "locale": "zh",
+    "text": "学习能力 行业变化越快，学习能力越重要。真正的学习是把新知识转化为可迁移能力。 定期复盘知识缺口 用项目倒逼学习 学习能力 终身学习"
+  },
+  {
+    "id": "zh:career:8",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "项目经验",
+    "summary": "项目经验是能力的证据。优秀项目能展示判断、协作、执行和结果。",
+    "href": "/zh/career/#career-growth",
+    "locale": "zh",
+    "text": "项目经验 项目经验是能力的证据。优秀项目能展示判断、协作、执行和结果。 记录项目背景、角色、动作和结果 沉淀可复用方法 项目经验 作品"
+  },
+  {
+    "id": "zh:career:9",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "沟通能力",
+    "summary": "沟通能力不是会说话，而是能让目标、问题、事实、风险和下一步行动变清楚。",
+    "href": "/zh/career/#career-growth",
+    "locale": "zh",
+    "text": "沟通能力 沟通能力不是会说话，而是能让目标、问题、事实、风险和下一步行动变清楚。 用结构化表达汇报问题 提前同步风险和依赖 沟通能力 协作"
+  },
+  {
+    "id": "zh:career:10",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "管理能力",
+    "summary": "管理不是控制别人，而是设定目标、配置资源、建立机制并帮助团队交付结果。",
+    "href": "/zh/career/#career-growth",
+    "locale": "zh",
+    "text": "管理能力 管理不是控制别人，而是设定目标、配置资源、建立机制并帮助团队交付结果。 拆解目标与责任 建立反馈与复盘节奏 管理 领导力"
+  },
+  {
+    "id": "zh:career:11",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "创业前提",
+    "summary": "创业前需要验证需求、能力圈、现金流、安全边际、团队和家庭支持。",
+    "href": "/zh/career/#entrepreneurship",
+    "locale": "zh",
+    "text": "创业前提 创业前需要验证需求、能力圈、现金流、安全边际、团队和家庭支持。 创业 创业前提 风险"
+  },
+  {
+    "id": "zh:career:12",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "创业风险",
+    "summary": "创业失败率高，最大风险往往不是想法不好，而是现金流、团队、执行和市场节奏错配。",
+    "href": "/zh/career/#entrepreneurship",
+    "locale": "zh",
+    "text": "创业风险 创业失败率高，最大风险往往不是想法不好，而是现金流、团队、执行和市场节奏错配。 风险管理 风险 现金流"
+  },
+  {
+    "id": "zh:career:13",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "创业能力要求",
+    "summary": "创业要求产品、销售、组织、融资、财务、心理韧性和持续学习能力的组合。",
+    "href": "/zh/career/#entrepreneurship",
+    "locale": "zh",
+    "text": "创业能力要求 创业要求产品、销售、组织、融资、财务、心理韧性和持续学习能力的组合。 能力要求 创业能力 心理韧性"
+  },
+  {
+    "id": "zh:career:14",
+    "type": "career",
+    "typeLabel": "职场",
+    "title": "管理能力",
+    "summary": "创业后最大的变化，是从个人贡献者变成组织系统设计者。",
+    "href": "/zh/career/#entrepreneurship",
+    "locale": "zh",
+    "text": "管理能力 创业后最大的变化，是从个人贡献者变成组织系统设计者。 管理 管理 组织能力"
+  },
+  {
+    "id": "en:investment:0",
+    "type": "investment",
+    "typeLabel": "Investment",
+    "title": "Stocks",
+    "summary": "Stocks are fractional business ownership. The core is understanding companies, business models, valuation, and risk.",
+    "href": "/en/investment/#asset-classes",
+    "locale": "en",
+    "text": "Stocks Stocks are fractional business ownership. The core is understanding companies, business models, valuation, and risk. Company research Business model Financials and valuation Stocks Business Ownership"
+  },
+  {
+    "id": "en:investment:1",
+    "type": "investment",
+    "typeLabel": "Investment",
+    "title": "ETFs",
+    "summary": "ETFs are a low-cost, diversified way to participate in long-term economic growth.",
+    "href": "/en/investment/#asset-classes",
+    "locale": "en",
+    "text": "ETFs ETFs are a low-cost, diversified way to participate in long-term economic growth. Indexing Diversification Long-term holding ETF Long-Term Investing"
+  },
+  {
+    "id": "en:investment:2",
+    "type": "investment",
+    "typeLabel": "Investment",
+    "title": "Real Estate",
+    "summary": "Real estate requires judging living value, cash flow, leverage, city structure, and demographic change.",
+    "href": "/en/investment/#asset-classes",
+    "locale": "en",
+    "text": "Real Estate Real estate requires judging living value, cash flow, leverage, city structure, and demographic change. Living value Cash flow Leverage risk Real Estate Cash Flow"
+  },
+  {
+    "id": "en:investment:3",
+    "type": "investment",
+    "typeLabel": "Investment",
+    "title": "Businesses",
+    "summary": "Investing in businesses means investing in cash flow, team, business model, moat, and capital allocation.",
+    "href": "/en/investment/#asset-classes",
+    "locale": "en",
+    "text": "Businesses Investing in businesses means investing in cash flow, team, business model, moat, and capital allocation. Business model Competitive moat Capital allocation Business Capital Allocation"
+  },
+  {
+    "id": "en:investment:4",
+    "type": "investment",
+    "typeLabel": "Investment",
+    "title": "Self-Investment",
+    "summary": "For most people, the most important early investment is capability, health, cognition, artifacts, and career cash flow.",
+    "href": "/en/investment/#asset-classes",
+    "locale": "en",
+    "text": "Self-Investment For most people, the most important early investment is capability, health, cognition, artifacts, and career cash flow. Capability upgrade Health foundation Career cash flow Self-Investment Career Development"
+  },
+  {
+    "id": "zh:investment:0",
+    "type": "investment",
+    "typeLabel": "投资",
+    "title": "股票",
+    "summary": "股票是企业所有权的一部分，核心是理解公司、商业模式、估值和风险。",
+    "href": "/zh/investment/#asset-classes",
+    "locale": "zh",
+    "text": "股票 股票是企业所有权的一部分，核心是理解公司、商业模式、估值和风险。 公司研究 商业模式 财报与估值 股票 企业所有权"
+  },
+  {
+    "id": "zh:investment:1",
+    "type": "investment",
+    "typeLabel": "投资",
+    "title": "ETF",
+    "summary": "ETF 适合用低成本、分散化方式参与长期经济增长。",
+    "href": "/zh/investment/#asset-classes",
+    "locale": "zh",
+    "text": "ETF ETF 适合用低成本、分散化方式参与长期经济增长。 指数化 分散风险 长期持有 ETF 长期投资"
+  },
+  {
+    "id": "zh:investment:2",
+    "type": "investment",
+    "typeLabel": "投资",
+    "title": "房地产",
+    "summary": "房地产要同时看居住价值、现金流、杠杆、城市结构和人口变化。",
+    "href": "/zh/investment/#asset-classes",
+    "locale": "zh",
+    "text": "房地产 房地产要同时看居住价值、现金流、杠杆、城市结构和人口变化。 居住价值 现金流 杠杆风险 房地产 现金流"
+  },
+  {
+    "id": "zh:investment:3",
+    "type": "investment",
+    "typeLabel": "投资",
+    "title": "企业",
+    "summary": "投资企业本质上是投资现金流、团队、商业模式、护城河和资本配置能力。",
+    "href": "/zh/investment/#asset-classes",
+    "locale": "zh",
+    "text": "企业 投资企业本质上是投资现金流、团队、商业模式、护城河和资本配置能力。 商业模式 竞争壁垒 资本配置 企业 资本配置"
+  },
+  {
+    "id": "zh:investment:4",
+    "type": "investment",
+    "typeLabel": "投资",
+    "title": "自我投资",
+    "summary": "普通人最重要的早期投资，往往是提升能力、健康、认知、作品和职业现金流。",
+    "href": "/zh/investment/#asset-classes",
+    "locale": "zh",
+    "text": "自我投资 普通人最重要的早期投资，往往是提升能力、健康、认知、作品和职业现金流。 能力升级 健康基础 职业现金流 自我投资 职业发展"
   }
 ]
