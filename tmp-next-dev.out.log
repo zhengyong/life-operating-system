@@ -116,3 +116,19 @@ Built search index with 244 items.
  GET /_next/static/webpack/1e61502eedcdc7f3.webpack.hot-update.json 404 in 2682ms
  GET /zh/articles/why-life-is-not-an-exam/ 200 in 4784ms
  GET /zh/articles/why-life-is-not-an-exam/ 200 in 2144ms
+ ✓ Compiled in 2.7s (292 modules)
+ ✓ Compiled in 672ms (292 modules)
+ ✓ Compiled in 1525ms (934 modules)
+ ✓ Compiled in 1141ms (642 modules)
+ ✓ Compiled in 583ms (292 modules)
+ ✓ Compiled in 1082ms (934 modules)
+ ✓ Compiled in 1985ms (920 modules)
+ ✓ Compiled in 437ms (292 modules)
+ ✓ Compiled /_not-found in 495ms (923 modules)
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 1745ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 1648ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 1591ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 191ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 177ms
+ ○ Compiling /[locale]/articles/page/[page] ...
+ ✓ Compiled /[locale]/articles/page/[page] in 1970ms (644 modules)

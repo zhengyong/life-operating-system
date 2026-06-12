@@ -2,11 +2,12 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ChevronLeft} from 'lucide-react';
+import {ArticleBrief} from '@/components/ArticleBrief';
 import {ArticleCard} from '@/components/ArticleCard';
 import {ArticleInteractions} from '@/components/ArticleInteractions';
-import {ArticleSummaryImage} from '@/components/ArticleSummaryImage';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
+import {prepareArticleBrief} from '@/lib/articleBrief';
 import {getAllArticles, getArticle, getRelatedArticles, markdownToHtml} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {siteUrl} from '@/lib/site';
@@ -52,9 +53,10 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
   }
 
   const t = getDictionary(locale);
-  const contentHtml = await markdownToHtml(article.content);
   const title = locale === 'en' && article.title_en ? article.title_en : article.title;
   const summary = locale === 'en' && article.summary_en ? article.summary_en : article.summary;
+  const brief = prepareArticleBrief(article.content, summary);
+  const contentHtml = await markdownToHtml(brief.mainContent);
   const relatedArticles = getRelatedArticles(article);
 
   return (
@@ -90,7 +92,6 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
           >
             {title}
           </h1>
-          <p className="mt-5 text-lg leading-8 text-muted">{summary}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {article.tags.map((tag) => (
               <Link
@@ -102,9 +103,9 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
               </Link>
             ))}
           </div>
-          <ArticleSummaryImage locale={locale} slug={article.slug} title={title} />
+          <ArticleBrief brief={brief} locale={locale} />
           <div
-            className="prose prose-lg mt-10 prose-neutral"
+            className="prose prose-lg mt-8 prose-neutral"
             dangerouslySetInnerHTML={{__html: contentHtml}}
           />
         </article>

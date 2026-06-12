@@ -25,3 +25,31 @@ Error [PageNotFoundError]: Cannot find module for page: /[locale]/articles/[slug
  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
  ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
 <w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: EPERM: operation not permitted, rename 'C:\card\zyWeb\life-os-site\.next-dev\cache\webpack\client-development\6.pack.gz_' -> 'C:\card\zyWeb\life-os-site\.next-dev\cache\webpack\client-development\6.pack.gz'
+ ⨯ Failed to generate static paths for /[locale]/articles/[slug]:
+TypeError: __webpack_require__.C is not a function
+    at C:\card\zyWeb\life-os-site\.next-dev\server\app\[locale]\articles\[slug]\page.js:600:21
+    at Object.<anonymous> (C:\card\zyWeb\life-os-site\.next-dev\server\app\[locale]\articles\[slug]\page.js:605:3)
+    at Module._compile (node:internal/modules/cjs/loader:1830:14)
+    at Object..js (node:internal/modules/cjs/loader:1961:10)
+    at Module.load (node:internal/modules/cjs/loader:1553:32)
+    at Module._load (node:internal/modules/cjs/loader:1355:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1576:12)
+    at mod.require (C:\card\zyWeb\life-os-site\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'TypeError'
+}
+ ⨯ Failed to generate static paths for /[locale]/articles/[slug]:
+TypeError: __webpack_require__.C is not a function
+    at C:\card\zyWeb\life-os-site\.next-dev\server\app\[locale]\articles\[slug]\page.js:600:21
+    at Object.<anonymous> (C:\card\zyWeb\life-os-site\.next-dev\server\app\[locale]\articles\[slug]\page.js:605:3)
+    at Module._compile (node:internal/modules/cjs/loader:1830:14)
+    at Object..js (node:internal/modules/cjs/loader:1961:10)
+    at Module.load (node:internal/modules/cjs/loader:1553:32)
+    at Module._load (node:internal/modules/cjs/loader:1355:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1576:12)
+    at mod.require (C:\card\zyWeb\life-os-site\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:153:16) {
+  type: 'TypeError'
+}
