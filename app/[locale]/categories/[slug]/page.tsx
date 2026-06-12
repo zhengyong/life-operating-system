@@ -41,6 +41,7 @@ export default async function CategoryDetailPage({params}: {params: {locale: str
   const taxonomyItem = getTaxonomy(locale, 'category').find((item) => item.name === category);
   const relatedItems = taxonomyItem?.relatedItems ?? [];
   const learningPath = getCategoryLearningPath(category, locale);
+  const visibleArticles = articles.slice(0, 24);
 
   return (
     <PageShell locale={locale}>
@@ -64,9 +65,24 @@ export default async function CategoryDetailPage({params}: {params: {locale: str
         <LearningPathPanel {...learningPath} />
         {articles.length > 0 ? (
           <section className="mt-10">
-            <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.nav.articles}</h2>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.nav.articles}</h2>
+                <p className="mt-2 text-sm text-muted">
+                  {locale === 'zh'
+                    ? `先展示最新 ${visibleArticles.length} 篇，更多内容可通过文章中心和标签继续筛选。`
+                    : `Showing the latest ${visibleArticles.length} articles first. Use articles and tags to keep filtering.`}
+                </p>
+              </div>
+              <Link
+                href={`/${locale}/articles/`}
+                className="inline-flex items-center justify-center rounded-md border border-line px-4 py-2 text-sm font-medium text-muted transition hover:border-accent hover:text-accent"
+              >
+                {t.common.allArticles}
+              </Link>
+            </div>
             <div className="mt-5 grid gap-5 md:grid-cols-2">
-              {articles.map((article) => (
+              {visibleArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} locale={locale} />
               ))}
             </div>

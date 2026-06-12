@@ -34,8 +34,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: locale === 'en' && article.title_en ? article.title_en : article.title,
-    description: locale === 'en' && article.summary_en ? article.summary_en : article.summary,
+    title: article.seoTitle ?? (locale === 'en' && article.title_en ? article.title_en : article.title),
+    description: article.seoDescription ?? (locale === 'en' && article.summary_en ? article.summary_en : article.summary),
     alternates: {
       canonical: `${siteUrl}/${locale}/articles/${slug}/`
     }
@@ -84,7 +84,12 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
               {getCategoryLabel(article.category, locale)}
             </Link>
           </div>
-          <h1 className="mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl">{title}</h1>
+          <h1
+            className="mt-4 break-words text-4xl font-semibold tracking-normal text-ink md:text-5xl"
+            style={{overflowWrap: 'anywhere'}}
+          >
+            {title}
+          </h1>
           <p className="mt-5 text-lg leading-8 text-muted">{summary}</p>
           <div className="mt-6 flex flex-wrap gap-2">
             {article.tags.map((tag) => (

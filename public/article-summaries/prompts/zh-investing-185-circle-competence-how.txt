@@ -1,0 +1,14 @@
+Use case: infographic-diagram
+Asset type: static article summary image for a bilingual personal knowledge website
+Primary request: Create a polished editorial summary image for this article. It should help readers understand the core idea before reading.
+Article title: "能力圈如何扩展"
+Article summary: "从少数行业深挖，建立模型，再逐步迁移。 这篇文章从财富与投资视角讨论这个问题，并给出可执行的长期判断框架。"
+Category: "投资"
+Tags: "投资框架, 长期投资, 风险管理, 资本配置, 商业模式, 思维模型"
+Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
+Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
+Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy
+Color palette: warm white background, deep ink, teal accent, muted gold accent, restrained neutral tones
+Text: no text, no labels, no captions, no watermark
+Constraints: visually summarize the article concept; avoid literal mind maps, node-link diagrams, busy charts, tiny unreadable text, brand logos, people with identifiable faces
+Output target: save as public/article-summaries/zh/investing-185-circle-competence-how.png, 1600x900

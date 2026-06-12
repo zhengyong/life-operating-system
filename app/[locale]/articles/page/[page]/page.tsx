@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {notFound, redirect} from 'next/navigation';
+import {ArticleExplorePanel} from '@/components/ArticleExplorePanel';
 import {ArticleListView} from '@/components/ArticleListView';
 import {PageShell} from '@/components/PageShell';
 import {getArticles} from '@/lib/content';
@@ -49,6 +50,7 @@ export default async function ArticlesPaginatedPage({params}: {params: {locale: 
           <p className="mt-5 text-lg leading-8 text-muted">{t.articles.subtitle}</p>
         </div>
 
+        <ArticleExplorePanel articles={articles} locale={locale} />
         <ArticleListView articles={articles} locale={locale} page={currentPage} />
       </main>
     </PageShell>

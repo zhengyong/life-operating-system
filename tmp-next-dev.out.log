@@ -1,0 +1,118 @@
+
+> life-os-site@0.1.0 dev
+> npm run build:index && next dev -p 3000
+
+
+> life-os-site@0.1.0 build:index
+> tsx scripts/build-search-index.ts
+
+Built search index with 244 items.
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 5.9s
+ ○ Compiling / ...
+ ✓ Compiled / in 8.3s (504 modules)
+ GET / 200 in 9036ms
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 3s (877 modules)
+ ✓ Compiled /[locale]/books in 502ms (866 modules)
+ ○ Compiling /[locale]/books/recommendations/[slug] ...
+ ✓ Compiled /[locale]/books/recommendations/[slug] in 611ms (889 modules)
+ ○ Compiling /[locale]/books/recommendations/[slug]/preview/[chapter] ...
+ ✓ Compiled /[locale]/books/recommendations/[slug]/preview/[chapter] in 894ms (915 modules)
+ GET / 200 in 171ms
+ ○ Compiling /[locale]/articles ...
+ ✓ Compiled /[locale]/articles in 755ms (922 modules)
+ ○ Compiling /[locale]/articles/[slug] ...
+ ✓ Compiled /[locale]/articles/[slug] in 766ms (936 modules)
+ ✓ Compiled in 223ms (287 modules)
+ ✓ Compiled in 2.9s (944 modules)
+ GET /zh/articles/ 200 in 335ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 2.2s (933 modules)
+ GET /zh/articles/why-life-is-not-an-exam/ 404 in 2609ms
+ GET /_next/static/webpack/aca6451d4a4e258a.webpack.hot-update.json 404 in 2023ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 539ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 117ms
+ GET /en/articles/why-life-is-not-an-exam/ 200 in 302ms
+ GET /zh/articles/ 200 in 175ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 235ms
+ GET /zh/articles/ 200 in 309ms
+ ○ Compiling /[locale]/articles/page/[page] ...
+ ✓ Compiled /[locale]/articles/page/[page] in 4.6s (946 modules)
+ ✓ Compiled in 2.4s (292 modules)
+ GET /zh/articles/page/2/ 200 in 628ms
+ ○ Compiling /[locale]/categories/[slug] ...
+ ✓ Compiled /[locale]/categories/[slug] in 1789ms (946 modules)
+ ○ Compiling /[locale]/tags/[slug] ...
+ ✓ Compiled /[locale]/tags/[slug] in 1211ms (948 modules)
+ ○ Compiling /[locale]/categories ...
+ ✓ Compiled /[locale]/categories in 918ms (950 modules)
+ ○ Compiling /[locale]/about ...
+ ✓ Compiled /[locale]/about in 1085ms (931 modules)
+ ✓ Compiled /[locale]/books in 518ms (643 modules)
+ ○ Compiling /[locale]/books/recommendations/[slug] ...
+ ✓ Compiled /[locale]/books/recommendations/[slug] in 942ms (662 modules)
+ ○ Compiling /[locale]/career ...
+ ✓ Compiled /[locale]/career in 1046ms (967 modules)
+ ○ Compiling /[locale]/education ...
+ ✓ Compiled /[locale]/education in 2.3s (972 modules)
+ ○ Compiling /[locale]/investment ...
+ ✓ Compiled /[locale]/investment in 1493ms (975 modules)
+ ○ Compiling /[locale]/people ...
+ ✓ Compiled /[locale]/people in 1181ms (973 modules)
+ ✓ Compiled in 5.3s (924 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1827ms (913 modules)
+ GET /zh/articles/page/2/ 200 in 1094ms
+ ✓ Compiled in 724ms (292 modules)
+ GET /zh/articles/ 200 in 1036ms
+ GET /zh/articles/ai-technology-202-long-term-thinking/ 200 in 181ms
+ GET /en/articles/ai-technology-202-long-term-thinking/ 200 in 277ms
+ GET /zh/articles/ 200 in 512ms
+ GET /zh/articles/ai-technology-202-what-chatgpt-really-changed/ 200 in 189ms
+ GET /en/articles/ai-technology-202-what-chatgpt-really-changed/ 200 in 713ms
+ ○ Compiling /[locale]/categories/[slug] ...
+ ✓ Compiled /[locale]/categories/[slug] in 1189ms (636 modules)
+ GET /zh/categories/life-os/ 200 in 7385ms
+ GET /zh/articles/ 200 in 460ms
+ GET /en/articles/ai-technology-202-what-chatgpt-really-changed/ 200 in 375ms
+ GET /zh/articles/page/2/ 200 in 281ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 330ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 387ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 283ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /[locale]/companies in 4.5s (909 modules)
+ GET /zh/articles/ 200 in 1245ms
+ GET /_next/static/webpack/ebe7fc474a06733a.webpack.hot-update.json 404 in 5758ms
+ GET /_next/static/webpack/ebe7fc474a06733a.webpack.hot-update.json 404 in 5755ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 1045ms
+ GET /zh/articles/ 200 in 1047ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 1305ms
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 3.6s (635 modules)
+ ○ Compiling /[locale]/about ...
+ ✓ Compiled /[locale]/about in 2.9s (646 modules)
+ ○ Compiling /[locale]/books ...
+ ✓ Compiled /[locale]/books in 1462ms (636 modules)
+ ○ Compiling /[locale]/about ...
+ ✓ Compiled /[locale]/about in 536ms (647 modules)
+ ○ Compiling /[locale]/life ...
+ ✓ Compiled /[locale]/life in 1757ms (949 modules)
+ ○ Compiling /[locale]/career ...
+ ✓ Compiled /[locale]/career in 906ms (664 modules)
+ ✓ Compiled /[locale]/people in 471ms (652 modules)
+ ✓ Compiled /[locale]/companies in 391ms (654 modules)
+ ✓ Compiled /[locale]/articles in 241ms (662 modules)
+ ✓ Compiled in 1092ms (929 modules)
+ ✓ Compiled in 821ms (929 modules)
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 985ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 1203ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 201ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 3.4s (918 modules)
+ GET /_next/static/webpack/1e61502eedcdc7f3.webpack.hot-update.json 404 in 2682ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 4784ms
+ GET /zh/articles/why-life-is-not-an-exam/ 200 in 2144ms

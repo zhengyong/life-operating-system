@@ -1,0 +1,14 @@
+Use case: infographic-diagram
+Asset type: static article summary image for a bilingual personal knowledge website
+Primary request: Create a polished editorial summary image for this article. It should help readers understand the core idea before reading.
+Article title: "一个人的价值中心，决定了他如何使用时间"
+Article summary: "时间管理的深处不是技巧，而是价值排序；你真正认为重要的东西，最终会在时间账本里留下痕迹。"
+Category: "人生操作系统"
+Tags: "价值, 人生策略, 专注, 自我认知, 长期战略"
+Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
+Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
+Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy
+Color palette: warm white background, deep ink, teal accent, muted gold accent, restrained neutral tones
+Text: no text, no labels, no captions, no watermark
+Constraints: visually summarize the article concept; avoid literal mind maps, node-link diagrams, busy charts, tiny unreadable text, brand logos, people with identifiable faces
+Output target: save as public/article-summaries/zh/values-decide-time-use.png, 1600x900

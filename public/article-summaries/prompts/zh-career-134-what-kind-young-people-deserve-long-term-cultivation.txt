@@ -1,0 +1,14 @@
+Use case: infographic-diagram
+Asset type: static article summary image for a bilingual personal knowledge website
+Primary request: Create a polished editorial summary image for this article. It should help readers understand the core idea before reading.
+Article title: "什么样的年轻人值得长期培养"
+Article summary: "稳定、诚实、能学、能扛事、能复盘。 这篇文章从职场成长视角讨论这个问题，并给出可执行的长期判断框架。"
+Category: "职场"
+Tags: "职业成长, 职业规划, 专业能力, 职场操作系统, 长期战略, 复盘"
+Style/medium: premium editorial illustration blended with subtle infographic design, not a mind map, not a flowchart, not a screenshot
+Composition/framing: 16:9 landscape composition, clear central metaphor, generous spacing, suitable for an article header
+Lighting/mood: calm, intelligent, long-term thinking, refined and trustworthy
+Color palette: warm white background, deep ink, teal accent, muted gold accent, restrained neutral tones
+Text: no text, no labels, no captions, no watermark
+Constraints: visually summarize the article concept; avoid literal mind maps, node-link diagrams, busy charts, tiny unreadable text, brand logos, people with identifiable faces
+Output target: save as public/article-summaries/zh/career-134-what-kind-young-people-deserve-long-term-cultivation.png, 1600x900

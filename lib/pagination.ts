@@ -1,4 +1,4 @@
-export const ARTICLES_PER_PAGE = 4;
+export const ARTICLES_PER_PAGE = 12;
 
 export function getPageCount(totalItems: number, perPage = ARTICLES_PER_PAGE) {
   return Math.max(1, Math.ceil(totalItems / perPage));

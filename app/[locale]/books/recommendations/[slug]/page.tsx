@@ -5,7 +5,7 @@ import {ArrowLeft, ArrowUpRight, BookOpen, LockKeyhole, MessageCircle} from 'luc
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {bookArchitectureNodes, getBookArchitectureNode, t as archText} from '@/lib/bookArchitecture';
-import {getBookPreviewConfig} from '@/lib/bookPreview';
+import {getBookPreviewChapters, getBookPreviewConfig} from '@/lib/bookPreview';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 
 const supportQrCodes = [
@@ -45,6 +45,7 @@ export default async function BookRecommendationsPage({params}: {params: {locale
   }
 
   const previewConfig = getBookPreviewConfig(node.slug);
+  const previewChapters = previewConfig ? getBookPreviewChapters(node.slug, locale) : [];
   const previewTitle = previewConfig ? (locale === 'zh' ? previewConfig.zhTitle : previewConfig.enTitle) : '';
   const title = locale === 'zh' ? `${archText(node.label, locale)}：推荐书籍` : `${archText(node.label, locale)}: Recommended Books`;
   const previewIntro =
@@ -110,7 +111,7 @@ export default async function BookRecommendationsPage({params}: {params: {locale
               </div>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
-                {previewConfig.chapters.map((chapter) => (
+                {previewChapters.map((chapter) => (
                   <Link
                     key={chapter.slug}
                     href={`/${locale}/books/recommendations/${previewConfig.slug}/preview/${chapter.slug}/`}

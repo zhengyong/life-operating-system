@@ -43,6 +43,8 @@ export type Category = (typeof categories)[number];
 export type ArticleFrontMatter = {
   title: string;
   title_en?: string;
+  seoTitle?: string;
+  seoDescription?: string;
   date: string;
   summary: string;
   summary_en?: string;

@@ -19,7 +19,21 @@ export function ArticleSummaryImage({locale, slug, title}: {locale: Locale; slug
   const image = getManifest()[`${locale}/${slug}`];
 
   if (!image) {
-    return null;
+    return (
+      <figure className="mt-8 overflow-hidden rounded-lg border border-dashed border-line bg-white">
+        <div
+          aria-label={`${title} ${t.articles.summaryImage}`}
+          className="flex aspect-[16/9] w-full items-center justify-center bg-soft"
+        >
+          <span className="text-sm font-medium text-muted">
+            {locale === 'zh' ? '文章总结图待制作' : 'Summary image pending'}
+          </span>
+        </div>
+        <figcaption className="border-t border-line bg-white px-4 py-3 text-sm font-medium text-muted">
+          {t.articles.summaryImage}
+        </figcaption>
+      </figure>
+    );
   }
 
   return (

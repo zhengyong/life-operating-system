@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {bookArchitectureNodes, t as bookText} from '../lib/bookArchitecture';
-import {bookPreviewConfigs} from '../lib/bookPreview';
+import {bookPreviewConfigs, getBookPreviewChapters} from '../lib/bookPreview';
 import {careerContent, ct as careerText} from '../lib/career';
 import {getAllArticles, getArticle} from '../lib/content';
 import {investmentContent, it as investmentText} from '../lib/investment';
@@ -119,7 +119,7 @@ const bookIndex: SearchIndexItem[] = locales.flatMap((locale) =>
 
 const bookChapterIndex: SearchIndexItem[] = locales.flatMap((locale) =>
   bookPreviewConfigs.flatMap((book) =>
-    book.chapters.map((chapter) => {
+    getBookPreviewChapters(book.slug, locale).map((chapter) => {
       const title = chapter.title;
       const summary = chapter.summary;
       return {

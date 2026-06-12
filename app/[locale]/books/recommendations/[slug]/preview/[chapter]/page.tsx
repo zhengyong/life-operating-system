@@ -7,14 +7,19 @@ import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {StaticPracticeBlock} from '@/components/StaticPracticeBlock';
 import {getBookArchitectureNode, t as archText} from '@/lib/bookArchitecture';
-import {bookPreviewConfigs, getBookPreviewChapter, getBookPreviewConfig} from '@/lib/bookPreview';
+import {bookPreviewConfigs, getBookPreviewChapter, getBookPreviewChapters, getBookPreviewConfig} from '@/lib/bookPreview';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 
 function isHeading(paragraph: string, index: number) {
+  if (index === 0) {
+    return true;
+  }
+
   return (
-    index === 0 ||
     paragraph.startsWith('序言｜') ||
     paragraph.startsWith('第一部｜') ||
+    paragraph.startsWith('第一部分｜') ||
+    paragraph.startsWith('第二部｜') ||
     paragraph.startsWith('第二部分｜') ||
     paragraph.startsWith('第一章｜') ||
     paragraph.startsWith('第二章｜') ||
@@ -26,13 +31,16 @@ function isHeading(paragraph: string, index: number) {
     paragraph.startsWith('第八章｜') ||
     paragraph.startsWith('第九章｜') ||
     paragraph.startsWith('第十章｜') ||
-    paragraph.startsWith('第十一章｜')
+    paragraph.startsWith('第十一章｜') ||
+    paragraph.startsWith('Preface |') ||
+    paragraph.startsWith('Part ') ||
+    paragraph.startsWith('Chapter ')
   );
 }
 
 export function generateStaticParams() {
   return bookPreviewConfigs.flatMap((config) =>
-    config.chapters.flatMap((chapter) => [
+    config.chapters.zh.flatMap((chapter) => [
       {locale: 'en', slug: config.slug, chapter: chapter.slug},
       {locale: 'zh', slug: config.slug, chapter: chapter.slug}
     ])
@@ -44,7 +52,8 @@ export async function generateMetadata({
 }: {
   params: {locale: string; slug: string; chapter: string};
 }): Promise<Metadata> {
-  const chapter = getBookPreviewChapter(params.slug, params.chapter);
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const chapter = getBookPreviewChapter(params.slug, params.chapter, locale);
 
   if (!chapter) {
     return {};
@@ -65,16 +74,17 @@ export default async function BookPreviewChapterPage({
   const t = getDictionary(locale);
   const node = getBookArchitectureNode(params.slug);
   const previewConfig = getBookPreviewConfig(params.slug);
-  const chapter = getBookPreviewChapter(params.slug, params.chapter);
+  const chapters = getBookPreviewChapters(params.slug, locale);
+  const chapter = getBookPreviewChapter(params.slug, params.chapter, locale);
   const bookTitle = previewConfig ? (locale === 'zh' ? previewConfig.zhTitle : previewConfig.enTitle) : '';
 
   if (!node || !previewConfig || !chapter) {
     notFound();
   }
 
-  const chapterIndex = previewConfig.chapters.findIndex((item) => item.slug === chapter.slug);
-  const previousChapter = chapterIndex > 0 ? previewConfig.chapters[chapterIndex - 1] : null;
-  const nextChapter = chapterIndex >= 0 && chapterIndex < previewConfig.chapters.length - 1 ? previewConfig.chapters[chapterIndex + 1] : null;
+  const chapterIndex = chapters.findIndex((item) => item.slug === chapter.slug);
+  const previousChapter = chapterIndex > 0 ? chapters[chapterIndex - 1] : null;
+  const nextChapter = chapterIndex >= 0 && chapterIndex < chapters.length - 1 ? chapters[chapterIndex + 1] : null;
 
   return (
     <PageShell locale={locale}>

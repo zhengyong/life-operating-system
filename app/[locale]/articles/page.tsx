@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {ArticleExplorePanel} from '@/components/ArticleExplorePanel';
 import {ArticleListView} from '@/components/ArticleListView';
 import {PageShell} from '@/components/PageShell';
 import {getArticles} from '@/lib/content';
@@ -27,6 +28,7 @@ export default async function ArticlesPage({params}: {params: {locale: string}})
           <p className="mt-5 text-lg leading-8 text-muted">{t.articles.subtitle}</p>
         </div>
 
+        <ArticleExplorePanel articles={articles} locale={locale} />
         <ArticleListView articles={articles} locale={locale} />
       </main>
     </PageShell>

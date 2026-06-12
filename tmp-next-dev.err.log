@@ -1,0 +1,27 @@
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⨯ Failed to generate static paths for /[locale]:
+TypeError: Cannot read properties of undefined (reading 'call')
+    at __webpack_require__ (C:\card\zyWeb\life-os-site\.next-dev\server\webpack-runtime.js:33:43)
+    at eval (webpack-internal:///(rsc)/./app/[locale]/page.tsx:12:159)
+    at (rsc)/./app/[locale]/page.tsx (C:\card\zyWeb\life-os-site\.next-dev\server\app\[locale]\page.js:281:1)
+    at __webpack_require__ (C:\card\zyWeb\life-os-site\.next-dev\server\webpack-runtime.js:33:43)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async collectGenerateParams (C:\card\zyWeb\life-os-site\node_modules\next\dist\build\utils.js:921:21)
+    at async Object.loadStaticPaths (C:\card\zyWeb\life-os-site\node_modules\next\dist\server\dev\static-paths-worker.js:47:13) {
+  type: 'TypeError'
+}
+ ⨯ Failed to generate static paths for /[locale]/articles/[slug]:
+Error [PageNotFoundError]: Cannot find module for page: /[locale]/articles/[slug]/page
+    at getPagePath (C:\card\zyWeb\life-os-site\node_modules\next\dist\server\require.js:94:15)
+    at requirePage (C:\card\zyWeb\life-os-site\node_modules\next\dist\server\require.js:99:22)
+    at C:\card\zyWeb\life-os-site\node_modules\next\dist\server\load-components.js:103:84
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async loadComponentsImpl (C:\card\zyWeb\life-os-site\node_modules\next\dist\server\load-components.js:103:26)
+    at async Object.loadStaticPaths (C:\card\zyWeb\life-os-site\node_modules\next\dist\server\dev\static-paths-worker.js:23:24) {
+  type: 'PageNotFoundError',
+  code: 'ENOENT'
+}
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: EPERM: operation not permitted, rename 'C:\card\zyWeb\life-os-site\.next-dev\cache\webpack\client-development\6.pack.gz_' -> 'C:\card\zyWeb\life-os-site\.next-dev\cache\webpack\client-development\6.pack.gz'

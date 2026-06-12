@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">成熟不是变强，而是变稳</title>
+  <desc id="desc">真正的成熟，是在压力、诱惑和不确定中仍能稳定判断、稳定输出、稳定承担。</desc>
+  <defs>
+    <linearGradient id="headerGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#061b56"/>
+      <stop offset="0.52" stop-color="#06489a"/>
+      <stop offset="1" stop-color="#0a66bd"/>
+    </linearGradient>
+    <linearGradient id="footerGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#053a82"/>
+      <stop offset="1" stop-color="#075fbd"/>
+    </linearGradient>
+    <linearGradient id="barGradient" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0a66bd"/>
+      <stop offset="1" stop-color="#39a7f5"/>
+    </linearGradient>
+    <filter id="softShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#16335c" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="#edf5fb"/>
+  <path d="M0 160 H1600 M0 440 H1600 M0 742 H1600" stroke="#dce9f6" stroke-width="1"/>
+  <path d="M110 132 V760 M520 132 V760 M1046 132 V760 M1536 132 V760" stroke="#e4eef7" stroke-width="1"/>
+  
+    <rect x="0" y="0" width="1600" height="132" fill="url(#headerGradient)"/>
+    <path d="M960 94 C1100 30 1260 162 1580 30" fill="none" stroke="#74b8ff" stroke-width="5" opacity="0.55"/>
+    <path d="M970 108 C1130 52 1300 170 1585 62" fill="none" stroke="#d8eeff" stroke-width="2" opacity="0.72"/>
+    <circle cx="1435" cy="32" r="6" fill="#ffffff" opacity="0.65"/>
+    <circle cx="1505" cy="70" r="4" fill="#ffffff" opacity="0.55"/>
+    <text x="54" y="28" font-size="18" font-weight="800" fill="#a8d1ff" letter-spacing="2">文章总结图</text>
+    <text x="52" y="60" font-size="48" font-weight="800" fill="#ffffff"><tspan x="52" dy="0">成熟不是变强，而是变稳</tspan></text>
+    <text x="54" y="105" font-size="24" font-weight="600" fill="#dcecff"><tspan x="54" dy="0">真正的成熟，是在压力、诱惑和不确定中仍能稳定判断、稳定输出、稳定承担。</tspan></text>
+    <text x="1044" y="58" font-size="22" font-weight="800" fill="#ffffff">Life Operating System</text>
+    <text x="1044" y="82" font-size="18" font-weight="600" fill="#cfe4ff">人生操作系统 | 2026-06-08</text>
+    <rect x="1044" y="92" width="132" height="32" rx="16" fill="#e7f1ff" opacity="0.92"/>
+        <text x="1110" y="114" text-anchor="middle" font-size="18" font-weight="700" fill="#06489a">稳定输出</text><rect x="1192" y="92" width="132" height="32" rx="16" fill="#e7f1ff" opacity="0.92"/>
+        <text x="1258" y="114" text-anchor="middle" font-size="18" font-weight="700" fill="#06489a">边界管理</text><rect x="1340" y="92" width="132" height="32" rx="16" fill="#e7f1ff" opacity="0.92"/>
+        <text x="1406" y="114" text-anchor="middle" font-size="18" font-weight="700" fill="#06489a">长期复利</text>
+  
+    <g filter="url(#softShadow)">
+      <rect x="36" y="160" width="488" height="272" rx="16" fill="#ffffff" stroke="#bcd3ee" stroke-width="1.5"/>
+      <rect x="36" y="160" width="488" height="48" rx="16" fill="#06489a"/>
+      <rect x="36" y="192" width="488" height="16" fill="#06489a"/>
+      <text x="58" y="192" font-size="23" font-weight="800" fill="#ffffff">1. 核心判断</text>
+      <circle cx="68" cy="224" r="8" fill="#0b66c3"/>
+      <path d="M64 224 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="232" font-size="24" font-weight="600" fill="#19375f"><tspan x="90" dy="0">短期变强容易，长期变稳更难。</tspan></text><circle cx="68" cy="267" r="8" fill="#0b66c3"/>
+      <path d="M64 267 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="275" font-size="24" font-weight="600" fill="#19375f"><tspan x="90" dy="0">稳定不是平庸，而是一种系统能力。</tspan></text><circle cx="68" cy="310" r="8" fill="#0b66c3"/>
+      <path d="M64 310 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="318" font-size="24" font-weight="600" fill="#19375f"><tspan x="90" dy="0">复利喜欢稳定输入，不喜欢情绪化冲刺。</tspan></text>
+    </g>
+  
+    <g filter="url(#softShadow)">
+      <rect x="544" y="160" width="512" height="272" rx="16" fill="#ffffff" stroke="#bcd3ee" stroke-width="1.5"/>
+      <rect x="544" y="160" width="512" height="48" rx="16" fill="#06489a"/>
+      <rect x="544" y="192" width="512" height="16" fill="#06489a"/>
+      <text x="566" y="192" font-size="23" font-weight="800" fill="#ffffff">2. 模型结构</text>
+      
+    <text x="560" y="240" font-size="24" font-weight="800" fill="#073a78">稳定输出模型</text>
+    <rect x="560" y="260" width="456" height="132" rx="18" fill="#f4f9ff" stroke="#c9ddf2"/>
+    <path d="M590 356 C750 228, 836 415, 992 264" fill="none" stroke="#c8dff5" stroke-width="3" stroke-dasharray="10 12"/>
+    <path d="M702 345 H651.3333333333334" stroke="#1e8fe6" stroke-width="4" stroke-linecap="round"/>
+           <path d="M649.3333333333334 345 l-10 -7 v14 z" fill="#1e8fe6"/><rect x="560" y="310" width="128" height="70" rx="14" fill="#eaf4ff" stroke="#79b8ed" stroke-width="2"/>
+        <circle cx="624" cy="292" r="18" fill="#075bb4"/>
+        <text x="624" y="300" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">1</text>
+        <text text-anchor="middle" x="624" y="353" font-size="22" font-weight="800" fill="#07407f"><tspan x="624" dy="0">节奏</tspan></text><path d="M811.3333333333334 345 H760.6666666666667" stroke="#1e8fe6" stroke-width="4" stroke-linecap="round"/>
+           <path d="M758.6666666666667 345 l-10 -7 v14 z" fill="#1e8fe6"/><rect x="669.3333333333334" y="310" width="128" height="70" rx="14" fill="#eaf4ff" stroke="#79b8ed" stroke-width="2"/>
+        <circle cx="733.3333333333334" cy="292" r="18" fill="#075bb4"/>
+        <text x="733.3333333333334" y="300" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">2</text>
+        <text text-anchor="middle" x="733.3333333333334" y="353" font-size="22" font-weight="800" fill="#07407f"><tspan x="733.3333333333334" dy="0">边界</tspan></text><path d="M920.6666666666666 345 H870" stroke="#1e8fe6" stroke-width="4" stroke-linecap="round"/>
+           <path d="M868 345 l-10 -7 v14 z" fill="#1e8fe6"/><rect x="778.6666666666666" y="310" width="128" height="70" rx="14" fill="#eaf4ff" stroke="#79b8ed" stroke-width="2"/>
+        <circle cx="842.6666666666666" cy="292" r="18" fill="#075bb4"/>
+        <text x="842.6666666666666" y="300" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">3</text>
+        <text text-anchor="middle" x="842.6666666666666" y="353" font-size="22" font-weight="800" fill="#07407f"><tspan x="842.6666666666666" dy="0">余量</tspan></text><rect x="888" y="310" width="128" height="70" rx="14" fill="#eaf4ff" stroke="#79b8ed" stroke-width="2"/>
+        <circle cx="952" cy="292" r="18" fill="#075bb4"/>
+        <text x="952" y="300" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">4</text>
+        <text text-anchor="middle" x="952" y="353" font-size="22" font-weight="800" fill="#07407f"><tspan x="952" dy="0">复利</tspan></text>
+    </g>
+  
+    <g filter="url(#softShadow)">
+      <rect x="1076" y="160" width="488" height="272" rx="16" fill="#ffffff" stroke="#bcd3ee" stroke-width="1.5"/>
+      <rect x="1076" y="160" width="488" height="48" rx="16" fill="#06489a"/>
+      <rect x="1076" y="192" width="488" height="16" fill="#06489a"/>
+      <text x="1098" y="192" font-size="23" font-weight="800" fill="#ffffff">3. 对照与变量</text>
+      
+    <rect x="1100" y="226" width="396" height="176" rx="14" fill="#f7fbff" stroke="#c9ddf2"/>
+    <rect x="1110" y="238" width="184" height="32" rx="16" fill="#e8eef6"/>
+    <rect x="1302" y="238" width="184" height="32" rx="16" fill="#d8ecff"/>
+    <text x="1202" y="261" text-anchor="middle" font-size="18" font-weight="800" fill="#61718a">旧模型</text>
+    <text x="1394" y="261" text-anchor="middle" font-size="18" font-weight="800" fill="#075bb4">新模型</text>
+    <line x1="1298" y1="282" x2="1298" y2="388" stroke="#c8d7e8" stroke-width="2" stroke-dasharray="6 8"/>
+    <rect x="1100" y="257" width="396" height="32" rx="8" fill="#f5f9fd"/>
+        <text x="1116" y="282" font-size="21" font-weight="700" fill="#65758d">一时强度</text>
+        <text x="1318" y="282" font-size="21" font-weight="800" fill="#075bb4">长期节奏</text><rect x="1100" y="293" width="396" height="32" rx="8" fill="#ffffff"/>
+        <text x="1116" y="318" font-size="21" font-weight="700" fill="#65758d">情绪接管</text>
+        <text x="1318" y="318" font-size="21" font-weight="800" fill="#075bb4">情绪可恢复</text><rect x="1100" y="329" width="396" height="32" rx="8" fill="#f5f9fd"/>
+        <text x="1116" y="354" font-size="21" font-weight="700" fill="#65758d">透支证明自己</text>
+        <text x="1318" y="354" font-size="21" font-weight="800" fill="#075bb4">留余量持续建设</text><rect x="1100" y="365" width="396" height="32" rx="8" fill="#ffffff"/>
+        <text x="1116" y="390" font-size="21" font-weight="700" fill="#65758d">偶尔漂亮</text>
+        <text x="1318" y="390" font-size="21" font-weight="800" fill="#075bb4">跨周期可靠</text>
+    </g>
+  
+    <g filter="url(#softShadow)">
+      <rect x="36" y="462" width="730" height="282" rx="16" fill="#ffffff" stroke="#bcd3ee" stroke-width="1.5"/>
+      <rect x="36" y="462" width="730" height="48" rx="16" fill="#075f8d"/>
+      <rect x="36" y="494" width="730" height="16" fill="#075f8d"/>
+      <text x="58" y="494" font-size="23" font-weight="800" fill="#ffffff">4. 可执行练习</text>
+      <circle cx="72" cy="542" r="8" fill="#0d8e78"/>
+      <path d="M68 542 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="94" y="550" font-size="23" font-weight="600" fill="#19375f"><tspan x="94" dy="0">为睡眠、运动、阅读、输出各设一个最低可持续标准。</tspan></text><circle cx="72" cy="584" r="8" fill="#0d8e78"/>
+      <path d="M68 584 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="94" y="592" font-size="23" font-weight="600" fill="#19375f"><tspan x="94" dy="0">给时间、精力、现金流和关系留下余量。</tspan></text><circle cx="72" cy="626" r="8" fill="#0d8e78"/>
+      <path d="M68 626 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="94" y="634" font-size="23" font-weight="600" fill="#19375f"><tspan x="94" dy="0">减少用透支来证明自己的冲动。</tspan></text><circle cx="72" cy="668" r="8" fill="#0d8e78"/>
+      <path d="M68 668 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="94" y="676" font-size="23" font-weight="600" fill="#19375f"><tspan x="94" dy="0">记录每次波动后，自己多久能回到节奏。</tspan></text>
+    </g>
+  
+    <g filter="url(#softShadow)">
+      <rect x="786" y="462" width="778" height="282" rx="16" fill="#ffffff" stroke="#bcd3ee" stroke-width="1.5"/>
+      <rect x="786" y="462" width="778" height="48" rx="16" fill="#075f8d"/>
+      <rect x="786" y="494" width="778" height="16" fill="#075f8d"/>
+      <text x="808" y="494" font-size="23" font-weight="800" fill="#ffffff">5. 成熟度检查</text>
+      <circle cx="824" cy="542" r="8" fill="#e07a1f"/>
+      <path d="M820 542 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="846" y="550" font-size="23" font-weight="600" fill="#19375f"><tspan x="846" dy="0">压力下是否容易失控？</tspan></text><circle cx="824" cy="584" r="8" fill="#e07a1f"/>
+      <path d="M820 584 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="846" y="592" font-size="23" font-weight="600" fill="#19375f"><tspan x="846" dy="0">是否经常高估精力、低估恢复？</tspan></text><circle cx="824" cy="626" r="8" fill="#e07a1f"/>
+      <path d="M820 626 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="846" y="634" font-size="23" font-weight="600" fill="#19375f"><tspan x="846" dy="0">是否把生活安排到没有余量？</tspan></text><circle cx="824" cy="668" r="8" fill="#e07a1f"/>
+      <path d="M820 668 l3.2 3.6 l6.2 -7.1" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="846" y="676" font-size="23" font-weight="600" fill="#19375f"><tspan x="846" dy="0">是否能在波动后回到正确节奏？</tspan></text>
+    </g>
+  <rect x="36" y="770" width="1528" height="96" rx="18" fill="url(#footerGradient)" filter="url(#softShadow)"/>
+  <circle cx="98" cy="818" r="34" fill="#ffffff" opacity="0.16"/>
+  <path d="M82 820 h32 M98 804 v32 M87 807 l22 22 M109 807 l-22 22" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  <text x="150" y="800" font-size="19" font-weight="800" fill="#b9dbff">金句</text>
+  <line x1="212" y1="792" x2="212" y2="842" stroke="#82bff4" stroke-width="2" opacity="0.7"/>
+  <text x="236" y="812" font-size="30" font-weight="800" fill="#ffffff"><tspan x="236" dy="0">成熟不是没有波动，而是波动之后还能回到正确节奏。</tspan></text>
+</svg>
