@@ -1,1 +1,6 @@
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://life-operating-system-two.vercel.app').replace(/\/$/, '');
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zhengyong.world').replace(/\/$/, '');
+
+export function pageUrl(pathname = '') {
+  const normalizedPath = pathname ? `/${pathname.replace(/^\/+|\/+$/g, '')}/` : '';
+  return `${siteUrl}${normalizedPath}`;
+}

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {ArrowRight, BookOpen, Building2, Compass, Layers, LineChart, UserRound} from 'lucide-react';
+import {ArrowRight, BookOpen, Building2, Compass, Layers, LineChart, Newspaper, UserRound} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
 import {PageShell} from '@/components/PageShell';
 import {categories, getArticles} from '@/lib/content';
@@ -90,11 +90,12 @@ export default async function HomePage({params}: {params: {locale: string}}) {
               <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.home.topicsTitle}</h2>
               <p className="mt-3 text-sm leading-7 text-muted">{t.home.topicsBody}</p>
             </div>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2">
               {[
                 {href: `/${locale}/people/`, label: t.nav.people, icon: UserRound},
                 {href: `/${locale}/companies/`, label: t.nav.companies, icon: Building2},
-                {href: `/${locale}/investment/`, label: t.nav.investment, icon: LineChart}
+                {href: `/${locale}/investment/`, label: t.nav.investment, icon: LineChart},
+                {href: `/${locale}/news/`, label: t.nav.news, icon: Newspaper}
               ].map((item) => {
                 const Icon = item.icon;
                 return (

@@ -1,0 +1,992 @@
+{
+  "generatedAt": "2026-06-13T13:13:48.514Z",
+  "retentionDays": 7,
+  "sources": [
+    {
+      "id": "hacker-news",
+      "name": "Hacker News",
+      "url": "https://news.ycombinator.com/rss",
+      "homepage": "https://news.ycombinator.com/"
+    },
+    {
+      "id": "techcrunch",
+      "name": "TechCrunch",
+      "url": "https://techcrunch.com/feed/",
+      "homepage": "https://techcrunch.com/"
+    }
+  ],
+  "watchTopics": [
+    {
+      "id": "geo-tech",
+      "labelZh": "地缘冲突与科技绑定",
+      "labelEn": "Geopolitics and technology",
+      "keywords": [
+        "geopolitics",
+        "export control",
+        "chip ban",
+        "semiconductor",
+        "taiwan",
+        "china",
+        "sanction",
+        "supply chain"
+      ]
+    },
+    {
+      "id": "macro-finance",
+      "labelZh": "全球宏观和金融底层信号",
+      "labelEn": "Global macro and financial signals",
+      "keywords": [
+        "fed",
+        "inflation",
+        "rates",
+        "bond",
+        "treasury",
+        "dollar",
+        "market",
+        "recession",
+        "macro",
+        "finance"
+      ]
+    },
+    {
+      "id": "big-tech-stocks",
+      "labelZh": "科技巨头股票",
+      "labelEn": "Big tech stocks",
+      "keywords": [
+        "nvidia",
+        "apple",
+        "microsoft",
+        "google",
+        "alphabet",
+        "amazon",
+        "meta",
+        "tesla",
+        "stock",
+        "earnings"
+      ]
+    },
+    {
+      "id": "ai-education",
+      "labelZh": "AI教育",
+      "labelEn": "AI education",
+      "keywords": [
+        "ai education",
+        "learning",
+        "school",
+        "teacher",
+        "student",
+        "tutor",
+        "classroom"
+      ]
+    },
+    {
+      "id": "global-hotspots",
+      "labelZh": "全球热点",
+      "labelEn": "Global hotspots",
+      "keywords": [
+        "breaking",
+        "global",
+        "war",
+        "election",
+        "climate",
+        "energy",
+        "security"
+      ]
+    },
+    {
+      "id": "jensen-huang",
+      "labelZh": "黄仁勋",
+      "labelEn": "Jensen Huang",
+      "keywords": [
+        "jensen huang",
+        "huang",
+        "nvidia"
+      ]
+    },
+    {
+      "id": "ai-events",
+      "labelZh": "AI大事件",
+      "labelEn": "Major AI events",
+      "keywords": [
+        "openai",
+        "anthropic",
+        "deepmind",
+        "chatgpt",
+        "claude",
+        "llm",
+        "agent",
+        "model",
+        "artificial intelligence"
+      ]
+    },
+    {
+      "id": "elon-musk",
+      "labelZh": "马斯克",
+      "labelEn": "Elon Musk",
+      "keywords": [
+        "elon musk",
+        "musk",
+        "tesla",
+        "spacex",
+        "xai",
+        "starlink",
+        "neuralink"
+      ]
+    }
+  ],
+  "status": {
+    "ok": true,
+    "fallbackUsed": false,
+    "results": [
+      {
+        "ok": true,
+        "source": "hacker-news",
+        "count": 30
+      },
+      {
+        "ok": true,
+        "source": "techcrunch",
+        "count": 20
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "hacker-news:https://chipsandcheese.com/p/an-interview-with-intels-kira-boyko",
+      "title": "An Interview with Intel's Kira Boyko: Xeon 6's Product Director",
+      "summary": "Comments",
+      "url": "https://chipsandcheese.com/p/an-interview-with-intels-kira-boyko",
+      "publishedAt": "2026-06-13T12:20:05.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://hallucinate.site/gallery",
+      "title": "Show HN: 2 Weeks of Hallucinate – The Photo Gallery",
+      "summary": "Comments",
+      "url": "https://hallucinate.site/gallery",
+      "publishedAt": "2026-06-13T12:11:35.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://github.com/tensorzero/tensorzero",
+      "title": "AI OSS tool repo goes archived over night after raising $7.3M Seed",
+      "summary": "Comments",
+      "url": "https://github.com/tensorzero/tensorzero",
+      "publishedAt": "2026-06-13T12:10:47.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://www.phoronix.com/news/Arch-Linux-AUR-More-Than-1500",
+      "title": "Arch Linux Now Believes Malware Incident Under Control: More Than 1,500 Packages",
+      "summary": "Comments",
+      "url": "https://www.phoronix.com/news/Arch-Linux-AUR-More-Than-1500",
+      "publishedAt": "2026-06-13T11:55:30.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://wilsoniumite.com/2026/06/07/labor-is-a-market-distortion/",
+      "title": "Labor Is a Market Distortion, we need VAT and UBI",
+      "summary": "Comments",
+      "url": "https://wilsoniumite.com/2026/06/07/labor-is-a-market-distortion/",
+      "publishedAt": "2026-06-13T11:13:46.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "macro-finance",
+          "labelZh": "全球宏观和金融底层信号",
+          "labelEn": "Global macro and financial signals"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/13/the-fbi-built-its-own-replica-small-town-to-simulate-real-world-cyberattacks/",
+      "title": "The FBI built its own replica small town to simulate real-world cyberattacks",
+      "summary": "Hidden inside a building in Alabama, the FBI has created its own small town as a dedicated cyber training ground for simulating cyberattacks.",
+      "url": "https://techcrunch.com/2026/06/13/the-fbi-built-its-own-replica-small-town-to-simulate-real-world-cyberattacks/",
+      "publishedAt": "2026-06-13T11:00:00.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://github.com/Paca-AI/paca",
+      "title": "Show HN: Paca – Lightweight Jira alternative for human-AI collaboration",
+      "summary": "Comments",
+      "url": "https://github.com/Paca-AI/paca",
+      "publishedAt": "2026-06-13T09:44:25.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://research.google/blog/a-low-carbon-computing-platform-from-your-retired-phones/",
+      "title": "A low-carbon computing platform from your retired phones",
+      "summary": "Comments",
+      "url": "https://research.google/blog/a-low-carbon-computing-platform-from-your-retired-phones/",
+      "publishedAt": "2026-06-13T09:38:32.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://www.reuters.com/world/israeli-firm-blackcore-also-suspected-meddling-nyc-scotland-votes-french-2026-06-11/",
+      "title": "Israeli firm BlackCore suspected of meddling in New York and Scotland votes",
+      "summary": "Comments",
+      "url": "https://www.reuters.com/world/israeli-firm-blackcore-also-suspected-meddling-nyc-scotland-votes-french-2026-06-11/",
+      "publishedAt": "2026-06-13T07:45:39.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://blog.unitedheroes.net/5751",
+      "title": "Leaving Mozilla",
+      "summary": "Comments",
+      "url": "https://blog.unitedheroes.net/5751",
+      "publishedAt": "2026-06-13T05:57:14.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://koenvangilst.nl/lab/claude-fable-shepherds-dog",
+      "title": "Shepherd's Dog: A Game by the Most Dangerous AI Model",
+      "summary": "Comments",
+      "url": "https://koenvangilst.nl/lab/claude-fable-shepherds-dog",
+      "publishedAt": "2026-06-13T05:44:46.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "ai-events",
+          "labelZh": "AI大事件",
+          "labelEn": "Major AI events"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://12gramsofcarbon.com/p/tech-things-there-is-a-massive-shadow",
+      "title": "There is a shadow hanging over this Fable thing",
+      "summary": "Comments",
+      "url": "https://12gramsofcarbon.com/p/tech-things-there-is-a-massive-shadow",
+      "publishedAt": "2026-06-13T05:16:41.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://6it.dev/blog/on-cpu-physics-and-cpu-cycles-80730",
+      "title": "On CPU Physics and CPU Cycles",
+      "summary": "Comments",
+      "url": "https://6it.dev/blog/on-cpu-physics-and-cpu-cycles-80730",
+      "publishedAt": "2026-06-13T04:37:08.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/andrew-yang-thinks-the-next-big-startup-opportunity-is-lowering-the-cost-of-living/",
+      "title": "Andrew Yang thinks the next big startup opportunity is lowering the cost of living",
+      "summary": "Andrew Yang made a list of everything Americans overpay for — housing, food, wireless — and thinks the next startup gold rush is giving that money back.",
+      "url": "https://techcrunch.com/2026/06/12/andrew-yang-thinks-the-next-big-startup-opportunity-is-lowering-the-cost-of-living/",
+      "publishedAt": "2026-06-13T04:14:19.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/",
+      "title": "Anthropic’s safety warnings may have just backfired — the government has pulled the plug on its most powerful AI",
+      "summary": "Anthropic isn't hiding its frustration. \"We disagree that the finding of a narrow potential jailbreak should be cause for recalling a commercial model deployed to hundreds of millions of people,\" the company wrote in a blog post.",
+      "url": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/",
+      "publishedAt": "2026-06-13T02:26:30.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        },
+        {
+          "id": "ai-events",
+          "labelZh": "AI大事件",
+          "labelEn": "Major AI events"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://opensourceaimustwin.com/?share=v2",
+      "title": "Open source AI must win",
+      "summary": "Comments",
+      "url": "https://opensourceaimustwin.com/?share=v2",
+      "publishedAt": "2026-06-13T02:14:24.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://www.anthropic.com/news/fable-mythos-access",
+      "title": "Statement on US government directive to suspend access to Fable 5 and Mythos 5",
+      "summary": "Comments",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "publishedAt": "2026-06-13T00:51:30.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/spacex-ipo-live-updates-on-everything-you-need-to-know/",
+      "title": "SpaceX IPO: Live updates on everything you need to know",
+      "summary": "TechCrunch has followed SpaceX's start, struggles, and successes from the early days. And we're here for what happens next too. This package of SpaceX IPO coverage includes who stands to win (and maybe some who won't), pre-IPO deals, and what's tucked inside its S-1 registration document.",
+      "url": "https://techcrunch.com/2026/06/12/spacex-ipo-live-updates-on-everything-you-need-to-know/",
+      "publishedAt": "2026-06-12T23:15:14.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineers-stuck-inside-it/",
+      "title": "Meta’s months-old AI unit is a soul-crushing gulag, say the engineers stuck inside it",
+      "summary": "A new report suggests the unit, which employs 6,500 people, is on the verge of revolt.",
+      "url": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineers-stuck-inside-it/",
+      "publishedAt": "2026-06-12T23:00:54.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "big-tech-stocks",
+          "labelZh": "科技巨头股票",
+          "labelEn": "Big tech stocks"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://putt.day/",
+      "title": "Show HN: Putt.day a daily mini golf game",
+      "summary": "Comments",
+      "url": "https://putt.day/",
+      "publishedAt": "2026-06-12T22:56:06.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://depthfirst.com/research/21-zero-days-in-ffmpeg",
+      "title": "Twenty One Zero-Days in FFmpeg",
+      "summary": "Comments",
+      "url": "https://depthfirst.com/research/21-zero-days-in-ffmpeg",
+      "publishedAt": "2026-06-12T22:13:29.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://www.renaultgroup.com/en/magazine/energy-and-powertrains/all-about-electric-motors-with-no-rare-earths/",
+      "title": "Electric motors with no rare earths",
+      "summary": "Comments",
+      "url": "https://www.renaultgroup.com/en/magazine/energy-and-powertrains/all-about-electric-motors-with-no-rare-earths/",
+      "publishedAt": "2026-06-12T22:08:03.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/",
+      "title": "Chinese cybercrime operation that used AI to scam ‘hundreds of thousands of victims’ sued by Google",
+      "summary": "The tech giant said a group called \"Outsider Enterprise\" used AI to scam hundreds of thousands of victims, sending 2.5 million text messages over a span of two weeks.",
+      "url": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/",
+      "publishedAt": "2026-06-12T20:38:09.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "big-tech-stocks",
+          "labelZh": "科技巨头股票",
+          "labelEn": "Big tech stocks"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire/",
+      "title": "SpaceX IPO closes up 19% and delivers the world’s first trillionaire",
+      "summary": "The company made its heavily anticipated debut on Friday, trading higher than its initial $135 IPO price.",
+      "url": "https://techcrunch.com/2026/06/12/spacex-ipo-closes-up-19-and-delivers-the-worlds-first-trillionaire/",
+      "publishedAt": "2026-06-12T20:20:00.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://www.swift.org/blog/migrating-truetype-hinting-to-swift/",
+      "title": "Swift at Apple: Migrating the TrueType hinting interpreter",
+      "summary": "Comments",
+      "url": "https://www.swift.org/blog/migrating-truetype-hinting-to-swift/",
+      "publishedAt": "2026-06-12T19:54:27.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "big-tech-stocks",
+          "labelZh": "科技巨头股票",
+          "labelEn": "Big tech stocks"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/spacex-president-gwynne-shotwell-just-gave-another-hint-at-a-tesla-merger/",
+      "title": "SpaceX president Gwynne Shotwell just gave another hint at a Tesla merger",
+      "summary": "A SpaceX-Tesla merger seems inevitable.",
+      "url": "https://techcrunch.com/2026/06/12/spacex-president-gwynne-shotwell-just-gave-another-hint-at-a-tesla-merger/",
+      "publishedAt": "2026-06-12T19:28:31.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "big-tech-stocks",
+          "labelZh": "科技巨头股票",
+          "labelEn": "Big tech stocks"
+        },
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/",
+      "title": "Mistral is rumored to be raising €3B at €20B valuation",
+      "summary": "The funding round would value the company at around €20 billion (about $23.15 billion), nearly double its Series C valuation of €11.7 billion.",
+      "url": "https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/",
+      "publishedAt": "2026-06-12T17:38:11.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://ikyle.me/blog/2026/how-to-setup-a-local-coding-agent-on-macos",
+      "title": "How to setup a local coding agent on macOS",
+      "summary": "Comments",
+      "url": "https://ikyle.me/blog/2026/how-to-setup-a-local-coding-agent-on-macos",
+      "publishedAt": "2026-06-12T17:34:55.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "ai-events",
+          "labelZh": "AI大事件",
+          "labelEn": "Major AI events"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://piwodlaiwo.github.io/pirates/",
+      "title": "Pirates, a naval warfare game inspired by Sid Meier's Pirates",
+      "summary": "Comments",
+      "url": "https://piwodlaiwo.github.io/pirates/",
+      "publishedAt": "2026-06-12T17:07:46.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "macro-finance",
+          "labelZh": "全球宏观和金融底层信号",
+          "labelEn": "Global macro and financial signals"
+        },
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/robinhood-sees-record-breaking-traffic-after-spacex-stock-debuts/",
+      "title": "Robinhood sees ‘record-breaking’ traffic after SpaceX stock debuts",
+      "summary": "The trading platform says some customers experienced intermittent disruptions, but those issues have resolved.",
+      "url": "https://techcrunch.com/2026/06/12/robinhood-sees-record-breaking-traffic-after-spacex-stock-debuts/",
+      "publishedAt": "2026-06-12T17:05:06.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "big-tech-stocks",
+          "labelZh": "科技巨头股票",
+          "labelEn": "Big tech stocks"
+        },
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        },
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://bitboard.work/",
+      "title": "Launch HN: BitBoard (YC P25) – Analytics Workspace for Agents",
+      "summary": "Comments",
+      "url": "https://bitboard.work/",
+      "publishedAt": "2026-06-12T16:58:03.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "ai-events",
+          "labelZh": "AI大事件",
+          "labelEn": "Major AI events"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/video/spacex-anthropic-and-openais-hot-ipo-summer/",
+      "title": "SpaceX, Anthropic, and OpenAI’s hot IPO summer",
+      "summary": "The IPO market is back, and it’s not the same companies leading the charge. FAANG had a good run, but a new acronym is taking over: MANGOS — Meta (or Microsoft, depending on who you ask), Anthropic, Nvidia, Google, OpenAI, and SpaceX. Half of that bunch is heading to public markets in the same window, and it’s a stress test for investors, for valuations, and for […]",
+      "url": "https://techcrunch.com/video/spacex-anthropic-and-openais-hot-ipo-summer/",
+      "publishedAt": "2026-06-12T16:23:25.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "macro-finance",
+          "labelZh": "全球宏观和金融底层信号",
+          "labelEn": "Global macro and financial signals"
+        },
+        {
+          "id": "big-tech-stocks",
+          "labelZh": "科技巨头股票",
+          "labelEn": "Big tech stocks"
+        },
+        {
+          "id": "jensen-huang",
+          "labelZh": "黄仁勋",
+          "labelEn": "Jensen Huang"
+        },
+        {
+          "id": "ai-events",
+          "labelZh": "AI大事件",
+          "labelEn": "Major AI events"
+        },
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/elon-musk-becomes-the-worlds-first-trillionaire-after-spacexs-historic-ipo/",
+      "title": "Elon Musk becomes the world’s first trillionaire after SpaceX’s historic IPO",
+      "summary": "The SpaceX IPO has boosted Musk's paper wealth to more than $1,000,000,000,000 at a time when he is more hated -- and powerful -- than ever.",
+      "url": "https://techcrunch.com/2026/06/12/elon-musk-becomes-the-worlds-first-trillionaire-after-spacexs-historic-ipo/",
+      "publishedAt": "2026-06-12T15:55:06.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://innovativegenomics.org/news/crispr-technique-selectively-shreds-cancer-cells/",
+      "title": "CRISPR tech selectively shreds cancer cells, including \"undruggable\" cancers",
+      "summary": "Comments",
+      "url": "https://innovativegenomics.org/news/crispr-technique-selectively-shreds-cancer-cells/",
+      "publishedAt": "2026-06-12T15:15:24.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://envs.net/~volpe/blog/posts/reduce-slop.html",
+      "title": "Slightly reducing the sloppiness of AI generated front end",
+      "summary": "Comments",
+      "url": "https://envs.net/~volpe/blog/posts/reduce-slop.html",
+      "publishedAt": "2026-06-12T14:48:38.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/12/us-spy-law-to-expire-for-first-time-after-lawmakers-reject-trumps-controversial-pick-to-lead-spy-agencies/",
+      "title": "US surveillance law to expire for first time after lawmakers reject Trump’s controversial pick to lead spy agencies",
+      "summary": "The spy law known as Section 702, which authorizes the NSA and FBI's warrantless surveillance, will all but certainly expire on Friday for the first time.",
+      "url": "https://techcrunch.com/2026/06/12/us-spy-law-to-expire-for-first-time-after-lawmakers-reject-trumps-controversial-pick-to-lead-spy-agencies/",
+      "publishedAt": "2026-06-12T11:43:32.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/11/cheaper-faster-and-culturally-aware-avataars-video-ai-is-built-for-indias-scale/",
+      "title": "Cheaper, faster, and culturally aware, Avataar’s video AI is built for India’s scale",
+      "summary": "Avataar AI's distilled video model is priced at $0.005 for every second of generation.",
+      "url": "https://techcrunch.com/2026/06/11/cheaper-faster-and-culturally-aware-avataars-video-ai-is-built-for-indias-scale/",
+      "publishedAt": "2026-06-12T04:30:00.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        },
+        {
+          "id": "ai-events",
+          "labelZh": "AI大事件",
+          "labelEn": "Major AI events"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/11/equal-ai-raises-30m-to-screen-calls-so-indians-dont-have-to/",
+      "title": "Equal AI raises $30M to screen calls so Indians don’t have to",
+      "summary": "Equal AI said that its AI-powered call assistant now has over a million monthly active users.",
+      "url": "https://techcrunch.com/2026/06/11/equal-ai-raises-30m-to-screen-calls-so-indians-dont-have-to/",
+      "publishedAt": "2026-06-12T04:30:00.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/11/theker-just-raised-85m-to-build-the-factory-robot-that-doesnt-specialize-in-anything/",
+      "title": "Theker just raised $85M to build the factory robot that doesn’t specialize in anything",
+      "summary": "Unlike humanoid robots designed around a fixed form — think Boston Dynamics — Theker's machines are built to be reconfigured.",
+      "url": "https://techcrunch.com/2026/06/11/theker-just-raised-85m-to-build-the-factory-robot-that-doesnt-specialize-in-anything/",
+      "publishedAt": "2026-06-12T01:48:07.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/",
+      "title": "Jeff Bezos’s Prometheus raises $12B to build an ‘artificial general engineer’ for the physical world",
+      "summary": "The new round values the physical AI startup that aims to automate heavy engineering and drug design at $41 billion.",
+      "url": "https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/",
+      "publishedAt": "2026-06-12T01:04:38.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/",
+      "title": "SpaceX officially prices shares at $135 in the largest IPO ever",
+      "summary": "Wits its official share pricing announcement, SpaceX's IPO has begun.",
+      "url": "https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/",
+      "publishedAt": "2026-06-11T20:33:10.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/11/oracle-warns-of-security-bug-that-hackers-abused-to-breach-100-companies/",
+      "title": "Oracle warns of security bug that hackers abused to breach 100+ companies",
+      "summary": "The tech giant warned of a security flaw that a cybercrime gang said it's exploiting as part of a mass-hacking campaign. Google said it notified more than 100 organizations that had potentially vulnerable servers.",
+      "url": "https://techcrunch.com/2026/06/11/oracle-warns-of-security-bug-that-hackers-abused-to-breach-100-companies/",
+      "publishedAt": "2026-06-11T20:27:25.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "big-tech-stocks",
+          "labelZh": "科技巨头股票",
+          "labelEn": "Big tech stocks"
+        },
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://twitter.com/jsrailton/status/2064661778978533571",
+      "title": "Malware developers added nuclear and biological weapons text to to their spyware",
+      "summary": "Comments",
+      "url": "https://twitter.com/jsrailton/status/2064661778978533571",
+      "publishedAt": "2026-06-11T20:24:18.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": [
+        {
+          "id": "global-hotspots",
+          "labelZh": "全球热点",
+          "labelEn": "Global hotspots"
+        }
+      ]
+    },
+    {
+      "id": "techcrunch:https://techcrunch.com/2026/06/11/spacex-spv-investors-wont-know-their-true-holdings-until-post-ipo-lock-ups-lift/",
+      "title": "SpaceX SPV investors won’t know their true holdings until post-IPO lock-ups lift",
+      "summary": "After SpaceX makes its public debut, lower-tier SPV investors face hidden fees, lengthy payout delays, and the risk of outright fraud.",
+      "url": "https://techcrunch.com/2026/06/11/spacex-spv-investors-wont-know-their-true-holdings-until-post-ipo-lock-ups-lift/",
+      "publishedAt": "2026-06-11T19:58:01.000Z",
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch",
+        "homepage": "https://techcrunch.com/"
+      },
+      "topics": [
+        {
+          "id": "elon-musk",
+          "labelZh": "马斯克",
+          "labelEn": "Elon Musk"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news:https://www.eff.org/deeplinks/2026/06/congress-just-rushed-through-disastrous-copyright-office-overhaul",
+      "title": "H.R. 6028 would fundamentally change the U.S. Copyright Office",
+      "summary": "Comments",
+      "url": "https://www.eff.org/deeplinks/2026/06/congress-just-rushed-through-disastrous-copyright-office-overhaul",
+      "publishedAt": "2026-06-11T00:00:42.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://areweguiyet.com/",
+      "title": "The state of building user interfaces in Rust",
+      "summary": "Comments",
+      "url": "https://areweguiyet.com/",
+      "publishedAt": "2026-06-10T16:44:23.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://github.com/entGriff/ezra",
+      "title": "Show HN: Lightweight Task queue on Erlang/OTP, SQLite-backed, no overengineering",
+      "summary": "Comments",
+      "url": "https://github.com/entGriff/ezra",
+      "publishedAt": "2026-06-10T13:45:26.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://spectrum.ieee.org/computer-science-degree-isnt-dead",
+      "title": "The computer science degree isn’t dead",
+      "summary": "Comments",
+      "url": "https://spectrum.ieee.org/computer-science-degree-isnt-dead",
+      "publishedAt": "2026-06-10T01:33:43.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://tectonic-typesetting.github.io/en-US/",
+      "title": "Tectonic: A modernized, complete, self-contained TeX/LaTeX engine",
+      "summary": "Comments",
+      "url": "https://tectonic-typesetting.github.io/en-US/",
+      "publishedAt": "2026-06-09T21:00:39.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    },
+    {
+      "id": "hacker-news:https://www.thoughtfultechnologist.com/p/automating-myself-out-of-development",
+      "title": "Automating Myself Out of Development",
+      "summary": "Comments",
+      "url": "https://www.thoughtfultechnologist.com/p/automating-myself-out-of-development",
+      "publishedAt": "2026-06-09T18:59:19.000Z",
+      "source": {
+        "id": "hacker-news",
+        "name": "Hacker News",
+        "homepage": "https://news.ycombinator.com/"
+      },
+      "topics": []
+    }
+  ]
+}

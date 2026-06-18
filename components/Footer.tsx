@@ -57,6 +57,9 @@ export function Footer({locale}: {locale: Locale}) {
             <Link href={`/${locale}/investment/`} className="hover:text-accent">
               {t.nav.investment}
             </Link>
+            <Link href={`/${locale}/news/`} className="hover:text-accent">
+              {t.nav.news}
+            </Link>
             <Link href={`/${locale}/people/`} className="hover:text-accent">
               {t.nav.people}
             </Link>
