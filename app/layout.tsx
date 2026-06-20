@@ -1,4 +1,6 @@
 import type {Metadata} from 'next';
+import {Suspense} from 'react';
+import {GoogleAnalytics} from '@/components/GoogleAnalytics';
 import {JsonLd} from '@/components/JsonLd';
 import {siteUrl} from '@/lib/site';
 import './globals.css';
@@ -6,6 +8,7 @@ import './globals.css';
 const siteTitle = "Yong Zheng's Life Operating System";
 const siteDescription =
   'A bilingual personal knowledge website about Life OS, first principles, systems thinking, education, investing, technology, and civilization.';
+const googleAnalyticsMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? 'G-8XMBMD0T2L';
 
 export const metadata: Metadata = {
   title: {
@@ -57,6 +60,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body>
+        <Suspense fallback={null}>
+          <GoogleAnalytics measurementId={googleAnalyticsMeasurementId} />
+        </Suspense>
         <JsonLd data={websiteSchema} />
         {children}
       </body>
