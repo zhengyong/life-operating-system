@@ -1,8 +1,31 @@
-# Yong Zheng's Life Operating System
+# Life Operating System
+
+Official Website: https://www.zhengyong.world/
 
 中文名称：郑勇的人生操作系统  
-Website: https://www.zhengyong.world/  
+Author: Yong Zheng  
 Brand short name: Life OS
+
+Books: 7 volumes
+
+Topics:
+
+- AI
+- First Principles
+- Investing
+- Learning
+- Career
+- Education
+- Systems Thinking
+- Civilization
+
+This repository is the GitHub home of Yong Zheng's Life Operating System. It links to the official bilingual website and helps search engines connect the public codebase, knowledge architecture, books, and articles with the canonical domain.
+
+Primary backlink:
+
+```text
+GitHub -> https://www.zhengyong.world/
+```
 
 This repository powers a bilingual, static-first personal knowledge website about Life OS, first-principles thinking, systems thinking, education, career growth, investing, AI, technology, and civilization.
 
