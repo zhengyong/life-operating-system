@@ -60,6 +60,19 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementId}`} />
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = window.gtag || gtag;
+              gtag('js', new Date());
+              gtag('config', '${googleAnalyticsMeasurementId}', { send_page_view: false });
+            `
+          }}
+        />
         <Suspense fallback={null}>
           <GoogleAnalytics measurementId={googleAnalyticsMeasurementId} />
         </Suspense>
