@@ -20,18 +20,40 @@ export function GoogleAnalytics({measurementId}: GoogleAnalyticsProps) {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (!measurementId || typeof window.gtag !== 'function') {
+    if (!measurementId) {
       return;
     }
 
     const query = searchParams.toString();
     const pagePath = query ? `${pathname}?${query}` : pathname;
+    let attempts = 0;
 
-    window.gtag('event', 'page_view', {
-      page_path: pagePath,
-      page_location: window.location.href,
-      page_title: document.title
-    });
+    const reportPageView = () => {
+      if (typeof window.gtag !== 'function') {
+        attempts += 1;
+        return attempts >= 20;
+      }
+
+      window.gtag('event', 'page_view', {
+        page_path: pagePath,
+        page_location: window.location.href,
+        page_title: document.title
+      });
+
+      return true;
+    };
+
+    if (reportPageView()) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      if (reportPageView()) {
+        window.clearInterval(intervalId);
+      }
+    }, 250);
+
+    return () => window.clearInterval(intervalId);
   }, [measurementId, pathname, searchParams]);
 
   if (!measurementId) {
