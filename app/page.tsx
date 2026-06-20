@@ -1,5 +1,35 @@
+import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ArrowRight} from 'lucide-react';
+import {siteUrl} from '@/lib/site';
+
+const title = "Yong Zheng's Life Operating System";
+const description = 'A bilingual personal knowledge system for growth, education, investing, technology, and civilization.';
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/en/',
+      zh: '/zh/',
+      'x-default': '/'
+    }
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    title,
+    description,
+    siteName: title
+  },
+  twitter: {
+    card: 'summary',
+    title,
+    description
+  }
+};
 
 export default function RootPage() {
   return (

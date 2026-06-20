@@ -2,13 +2,22 @@ import type {Metadata} from 'next';
 import {Mail, MessageCircle} from 'lucide-react';
 import {PageShell} from '@/components/PageShell';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
-
-export const metadata: Metadata = {
-  title: 'Contact'
-};
+import {localizedPageMetadata} from '@/lib/seo';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const t = getDictionary(locale);
+
+  return localizedPageMetadata({
+    locale,
+    path: 'contact',
+    title: t.contact.title,
+    description: t.contact.subtitle
+  });
 }
 
 export default async function ContactPage({params}: {params: {locale: string}}) {

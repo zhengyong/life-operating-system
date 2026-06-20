@@ -6,10 +6,11 @@ import {ArticleBrief} from '@/components/ArticleBrief';
 import {ArticleCard} from '@/components/ArticleCard';
 import {ArticleInteractions} from '@/components/ArticleInteractions';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
+import {JsonLd} from '@/components/JsonLd';
 import {PageShell} from '@/components/PageShell';
 import {prepareArticleBrief} from '@/lib/articleBrief';
 import {getAllArticles, getArticle, getRelatedArticles, markdownToHtml} from '@/lib/content';
-import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {alternateLocale, getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {siteUrl} from '@/lib/site';
 import {getCategoryHref, getCategoryLabel, getTagHref, getTagLabel} from '@/lib/taxonomy';
 import {formatDate} from '@/lib/utils';
@@ -34,11 +35,38 @@ export async function generateMetadata({
     return {};
   }
 
+  const title = article.seoTitle ?? (locale === 'en' && article.title_en ? article.title_en : article.title);
+  const description = article.seoDescription ?? (locale === 'en' && article.summary_en ? article.summary_en : article.summary);
+  const canonical = `${siteUrl}/${locale}/articles/${slug}/`;
+  const otherLocale = alternateLocale(locale);
+  const hasAlternate = Boolean(getArticle(otherLocale, slug));
+
   return {
-    title: article.seoTitle ?? (locale === 'en' && article.title_en ? article.title_en : article.title),
-    description: article.seoDescription ?? (locale === 'en' && article.summary_en ? article.summary_en : article.summary),
+    title,
+    description,
+    keywords: article.keywords ?? article.tags,
     alternates: {
-      canonical: `${siteUrl}/${locale}/articles/${slug}/`
+      canonical,
+      languages: {
+        [locale]: canonical,
+        ...(hasAlternate ? {[otherLocale]: `${siteUrl}/${otherLocale}/articles/${slug}/`} : {})
+      }
+    },
+    openGraph: {
+      type: 'article',
+      url: canonical,
+      title,
+      description,
+      siteName: "Yong Zheng's Life Operating System",
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      publishedTime: new Date(article.date).toISOString(),
+      authors: ['Yong Zheng'],
+      tags: article.tags
+    },
+    twitter: {
+      card: 'summary',
+      title,
+      description
     }
   };
 }
@@ -58,9 +86,37 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
   const brief = prepareArticleBrief(article.content, summary);
   const contentHtml = await markdownToHtml(brief.mainContent);
   const relatedArticles = getRelatedArticles(article);
+  const canonical = `${siteUrl}/${locale}/articles/${slug}/`;
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: summary,
+    url: canonical,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en',
+    datePublished: new Date(article.date).toISOString(),
+    dateModified: new Date(article.date).toISOString(),
+    author: {
+      '@type': 'Person',
+      name: 'Yong Zheng',
+      url: `${siteUrl}/${locale}/about/`
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Yong Zheng',
+      url: `${siteUrl}/${locale}/about/`
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonical
+    },
+    articleSection: article.category,
+    keywords: [...article.tags, ...(article.keywords ?? [])].join(', ')
+  };
 
   return (
     <PageShell locale={locale}>
+      <JsonLd data={articleSchema} />
       <main className="mx-auto max-w-3xl px-5 py-10 md:py-16">
         <Breadcrumbs
           items={[

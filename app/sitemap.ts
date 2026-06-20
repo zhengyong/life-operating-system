@@ -1,6 +1,8 @@
+import {bookPreviewConfigs} from '@/lib/bookPreview';
 import type {MetadataRoute} from 'next';
 import {bookArchitectureNodes} from '@/lib/bookArchitecture';
 import {getAllArticles, getTaxonomy, locales} from '@/lib/content';
+import {getPageCount} from '@/lib/pagination';
 import {pageUrl} from '@/lib/site';
 import {companies, people, personLessons} from '@/lib/topics';
 import {slugify} from '@/lib/utils';
@@ -17,6 +19,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: pageUrl(`${article.locale}/articles/${article.slug}`),
     lastModified: new Date(article.date)
   }));
+
+  const articlePaginationRoutes = locales.flatMap((locale) => {
+    const articleCount = getAllArticles().filter((article) => article.locale === locale).length;
+    const pageCount = getPageCount(articleCount);
+
+    return Array.from({length: Math.max(0, pageCount - 1)}, (_, index) => ({
+      url: pageUrl(`${locale}/articles/page/${index + 2}`),
+      lastModified: new Date()
+    }));
+  });
 
   const taxonomyRoutes = locales.flatMap((locale) => [
     ...getTaxonomy(locale, 'category').map((category) => ({
@@ -63,14 +75,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  const bookPreviewRoutes = locales.flatMap((locale) =>
+    bookPreviewConfigs.flatMap((book) =>
+      book.chapters[locale].map((chapter) => ({
+        url: pageUrl(`${locale}/books/recommendations/${book.slug}/preview/${chapter.slug}`),
+        lastModified: new Date()
+      }))
+    )
+  );
+
   return [
     {url: pageUrl(), lastModified: new Date()},
     ...staticRoutes,
     ...articleRoutes,
+    ...articlePaginationRoutes,
     ...taxonomyRoutes,
     ...peopleRoutes,
     ...companyRoutes,
     ...personLessonRoutes,
-    ...bookRecommendationRoutes
+    ...bookRecommendationRoutes,
+    ...bookPreviewRoutes
   ];
 }

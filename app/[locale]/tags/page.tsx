@@ -4,14 +4,26 @@ import {TagDirectory} from '@/components/TagDirectory';
 import {TagCloudPlayground} from '@/components/TagCloudPlayground';
 import {getTaxonomy} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {localizedPageMetadata} from '@/lib/seo';
 import {getTagHref, getTagLabel} from '@/lib/taxonomy';
-
-export const metadata: Metadata = {
-  title: 'Tags'
-};
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const t = getDictionary(locale);
+
+  return localizedPageMetadata({
+    locale,
+    path: 'tags',
+    title: t.taxonomy.tagsTitle,
+    description:
+      locale === 'zh'
+        ? '通过标签探索人生操作系统、第一性原理、系统思维、教育、投资、AI 与文明主题。'
+        : 'Explore Life OS, first-principles thinking, systems thinking, education, investing, AI, and civilization by tag.'
+  });
 }
 
 export default async function TagsPage({params}: {params: {locale: string}}) {

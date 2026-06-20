@@ -4,13 +4,22 @@ import {ArticleListView} from '@/components/ArticleListView';
 import {PageShell} from '@/components/PageShell';
 import {getArticles} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
-
-export const metadata: Metadata = {
-  title: 'Articles'
-};
+import {localizedPageMetadata} from '@/lib/seo';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const t = getDictionary(locale);
+
+  return localizedPageMetadata({
+    locale,
+    path: 'articles',
+    title: t.articles.title,
+    description: t.articles.subtitle
+  });
 }
 
 export default async function ArticlesPage({params}: {params: {locale: string}}) {

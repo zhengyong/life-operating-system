@@ -2,14 +2,23 @@ import type {Metadata} from 'next';
 import {PageShell} from '@/components/PageShell';
 import {TopicCard} from '@/components/TopicCard';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {localizedPageMetadata} from '@/lib/seo';
 import {companies, text} from '@/lib/topics';
-
-export const metadata: Metadata = {
-  title: 'Company Studies'
-};
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const t = getDictionary(locale);
+
+  return localizedPageMetadata({
+    locale,
+    path: 'companies',
+    title: t.topics.companiesTitle,
+    description: t.topics.companiesSubtitle
+  });
 }
 
 export default async function CompaniesPage({params}: {params: {locale: string}}) {

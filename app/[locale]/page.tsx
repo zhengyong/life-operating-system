@@ -1,13 +1,48 @@
+import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ArrowRight, BookOpen, Building2, Compass, Layers, LineChart, Newspaper, UserRound} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
 import {PageShell} from '@/components/PageShell';
 import {categories, getArticles} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {siteUrl} from '@/lib/site';
 import {getCategoryHref, getCategoryLabel} from '@/lib/taxonomy';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const t = getDictionary(locale);
+  const canonical = `${siteUrl}/${locale}/`;
+
+  return {
+    title: t.home.heroTitle,
+    description: t.home.heroSubtitle,
+    alternates: {
+      canonical,
+      languages: {
+        en: `${siteUrl}/en/`,
+        zh: `${siteUrl}/zh/`,
+        'x-default': siteUrl
+      }
+    },
+    openGraph: {
+      type: 'website',
+      url: canonical,
+      title: t.home.heroTitle,
+      description: t.home.heroSubtitle,
+      siteName: "Yong Zheng's Life Operating System",
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      alternateLocale: [locale === 'zh' ? 'en_US' : 'zh_CN']
+    },
+    twitter: {
+      card: 'summary',
+      title: t.home.heroTitle,
+      description: t.home.heroSubtitle
+    }
+  };
 }
 
 export default async function HomePage({params}: {params: {locale: string}}) {

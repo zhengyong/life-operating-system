@@ -10,10 +10,7 @@ import {
   t as archText
 } from '@/lib/bookArchitecture';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
-
-export const metadata: Metadata = {
-  title: 'Frameworks'
-};
+import {localizedPageMetadata} from '@/lib/seo';
 
 const knowledgeLayers = [
   {
@@ -141,6 +138,18 @@ function KnowledgeFoundation({locale}: {locale: Locale}) {
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const t = getDictionary(locale);
+
+  return localizedPageMetadata({
+    locale,
+    path: 'books',
+    title: t.books.title,
+    description: t.books.subtitle
+  });
 }
 
 export default async function BooksPage({params}: {params: {locale: string}}) {

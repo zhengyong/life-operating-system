@@ -3,15 +3,27 @@ import Link from 'next/link';
 import {PageShell} from '@/components/PageShell';
 import {getTaxonomy} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {localizedPageMetadata} from '@/lib/seo';
 import {getCategoryLabel} from '@/lib/taxonomy';
 import {slugify} from '@/lib/utils';
 
-export const metadata: Metadata = {
-  title: 'Categories'
-};
-
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const t = getDictionary(locale);
+
+  return localizedPageMetadata({
+    locale,
+    path: 'categories',
+    title: t.taxonomy.categoriesTitle,
+    description:
+      locale === 'zh'
+        ? '按主题分类浏览郑勇的人生操作系统知识库。'
+        : "Browse Yong Zheng's Life Operating System knowledge base by category."
+  });
 }
 
 export default async function CategoriesPage({params}: {params: {locale: string}}) {

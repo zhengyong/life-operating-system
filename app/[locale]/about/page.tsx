@@ -4,13 +4,22 @@ import {BriefcaseBusiness, GraduationCap, Lightbulb, Mail, MessageCircle, Networ
 import {PageShell} from '@/components/PageShell';
 import {getAboutProfile} from '@/lib/about';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
-
-export const metadata: Metadata = {
-  title: 'About'
-};
+import {localizedPageMetadata} from '@/lib/seo';
 
 export function generateStaticParams() {
   return [{locale: 'en'}, {locale: 'zh'}];
+}
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
+  const profile = getAboutProfile(locale);
+
+  return localizedPageMetadata({
+    locale,
+    path: 'about',
+    title: profile.title,
+    description: profile.summary
+  });
 }
 
 export default async function AboutPage({params}: {params: {locale: string}}) {
