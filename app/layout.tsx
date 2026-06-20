@@ -69,7 +69,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               function gtag(){dataLayer.push(arguments);}
               window.gtag = window.gtag || gtag;
               gtag('js', new Date());
-              gtag('config', '${googleAnalyticsMeasurementId}', { send_page_view: false });
+              gtag('config', '${googleAnalyticsMeasurementId}');
             `
           }}
         />

@@ -1,7 +1,7 @@
 'use client';
 
 import {usePathname, useSearchParams} from 'next/navigation';
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 
 declare global {
   interface Window {
@@ -17,9 +17,15 @@ type GoogleAnalyticsProps = {
 export function GoogleAnalytics({measurementId}: GoogleAnalyticsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const hasSkippedInitialPageView = useRef(false);
 
   useEffect(() => {
     if (!measurementId) {
+      return;
+    }
+
+    if (!hasSkippedInitialPageView.current) {
+      hasSkippedInitialPageView.current = true;
       return;
     }
 
