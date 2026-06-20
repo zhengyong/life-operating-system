@@ -72,6 +72,9 @@ export function Footer({locale}: {locale: Locale}) {
             <Link href={`/${locale}/contact/`} className="hover:text-accent">
               {t.nav.contact}
             </Link>
+            <Link href={`/${locale}/privacy/`} className="hover:text-accent">
+              {locale === 'zh' ? '隐私政策' : 'Privacy Policy'}
+            </Link>
           </div>
         </div>
 

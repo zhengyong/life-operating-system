@@ -9,7 +9,7 @@ import {slugify} from '@/lib/utils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = locales.flatMap((locale) =>
-    ['', '/about', '/books', '/life', '/career', '/education', '/news', '/articles', '/people', '/companies', '/investment', '/stocks', '/categories', '/tags', '/contact'].map((path) => ({
+    ['', '/about', '/books', '/life', '/career', '/education', '/news', '/articles', '/people', '/companies', '/investment', '/stocks', '/categories', '/tags', '/contact', '/privacy'].map((path) => ({
       url: pageUrl(`${locale}${path}`),
       lastModified: new Date()
     }))
