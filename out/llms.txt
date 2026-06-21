@@ -1,0 +1,39 @@
+# Yong Zheng's Life Operating System
+
+> A bilingual personal knowledge website by Yong Zheng about Life OS, first principles, systems thinking, education, investing, technology, and civilization.
+
+Site: https://www.zhengyong.world/
+Sitemap: https://www.zhengyong.world/sitemap.xml
+RSS: https://www.zhengyong.world/rss.xml
+
+## Primary Sections
+
+- English home: https://www.zhengyong.world/en/
+- Chinese home: https://www.zhengyong.world/zh/
+- Articles: https://www.zhengyong.world/en/articles/ and https://www.zhengyong.world/zh/articles/
+- Frameworks and books: https://www.zhengyong.world/en/books/ and https://www.zhengyong.world/zh/books/
+- Life: https://www.zhengyong.world/en/life/ and https://www.zhengyong.world/zh/life/
+- Career: https://www.zhengyong.world/en/career/ and https://www.zhengyong.world/zh/career/
+- Education: https://www.zhengyong.world/en/education/ and https://www.zhengyong.world/zh/education/
+- People studies: https://www.zhengyong.world/en/people/ and https://www.zhengyong.world/zh/people/
+- Company studies: https://www.zhengyong.world/en/companies/ and https://www.zhengyong.world/zh/companies/
+- Investment studies: https://www.zhengyong.world/en/investment/ and https://www.zhengyong.world/zh/investment/
+
+## Core Topics
+
+- Life Operating System
+- First-principles thinking
+- Systems thinking
+- Mental models
+- Long-term growth
+- Education and family education
+- Career development
+- Investing frameworks
+- AI and technology
+- Civilization and society
+
+## Content Notes
+
+- The site is static, public, and bilingual.
+- Article URLs are canonical under `/en/articles/` and `/zh/articles/`.
+- Content is written for human readers first; summaries, tags, categories, RSS, sitemap, and structured data are provided to help search engines and AI systems understand the knowledge structure.

@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://life-operating-system-two.vercel.app/sitemap.xml
+Sitemap: https://www.zhengyong.world/sitemap.xml
