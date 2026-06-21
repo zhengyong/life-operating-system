@@ -2,43 +2,26 @@
 
 import Link from 'next/link';
 import {Search} from 'lucide-react';
-import {useMemo, useState} from 'react';
+import {useState} from 'react';
 import {SearchBox} from '@/components/SearchBox';
-import type {ArticleMeta} from '@/lib/content';
 import type {Locale} from '@/lib/i18n';
 import {getCategoryHref, getCategoryLabel, getTagHref, getTagLabel} from '@/lib/taxonomy';
 
-function byCountThenName(a: {name: string; count: number}, b: {name: string; count: number}) {
-  if (b.count !== a.count) {
-    return b.count - a.count;
-  }
+type ExploreFacet = {
+  name: string;
+  count: number;
+};
 
-  return a.name.localeCompare(b.name);
-}
-
-export function ArticleExplorePanel({articles, locale}: {articles: ArticleMeta[]; locale: Locale}) {
+export function ArticleExplorePanel({
+  categories,
+  tags,
+  locale
+}: {
+  categories: ExploreFacet[];
+  tags: ExploreFacet[];
+  locale: Locale;
+}) {
   const [searchOpen, setSearchOpen] = useState(false);
-
-  const {categories, tags} = useMemo(() => {
-    const categoryCounts = new Map<string, number>();
-    const tagCounts = new Map<string, number>();
-
-    articles.forEach((article) => {
-      categoryCounts.set(article.category, (categoryCounts.get(article.category) ?? 0) + 1);
-      article.tags.forEach((tag) => tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1));
-    });
-
-    return {
-      categories: [...categoryCounts.entries()]
-        .map(([name, count]) => ({name, count}))
-        .sort(byCountThenName)
-        .slice(0, 8),
-      tags: [...tagCounts.entries()]
-        .map(([name, count]) => ({name, count}))
-        .sort(byCountThenName)
-        .slice(0, 12)
-    };
-  }, [articles]);
 
   return (
     <section className="mt-10 rounded-lg border border-line bg-white p-4 shadow-soft sm:p-5">
@@ -73,6 +56,7 @@ export function ArticleExplorePanel({articles, locale}: {articles: ArticleMeta[]
               <Link
                 key={category.name}
                 href={getCategoryHref(category.name, locale)}
+                prefetch={false}
                 className="inline-flex min-h-9 items-center gap-2 rounded-md bg-soft px-3 py-1.5 text-sm font-medium text-ink transition hover:text-accent"
               >
                 <span>{getCategoryLabel(category.name, locale)}</span>
@@ -81,6 +65,7 @@ export function ArticleExplorePanel({articles, locale}: {articles: ArticleMeta[]
             ))}
             <Link
               href={`/${locale}/categories/`}
+              prefetch={false}
               className="inline-flex min-h-9 items-center rounded-md border border-line px-3 py-1.5 text-sm font-medium text-muted transition hover:border-accent hover:text-accent"
             >
               {locale === 'zh' ? '全部分类' : 'All Categories'}
@@ -97,6 +82,7 @@ export function ArticleExplorePanel({articles, locale}: {articles: ArticleMeta[]
               <Link
                 key={tag.name}
                 href={getTagHref(tag.name, locale)}
+                prefetch={false}
                 className="inline-flex min-h-9 items-center gap-2 rounded-md bg-soft px-3 py-1.5 text-sm font-medium text-ink transition hover:text-accent"
               >
                 <span>{getTagLabel(tag.name, locale)}</span>
@@ -105,6 +91,7 @@ export function ArticleExplorePanel({articles, locale}: {articles: ArticleMeta[]
             ))}
             <Link
               href={`/${locale}/tags/`}
+              prefetch={false}
               className="inline-flex min-h-9 items-center rounded-md border border-line px-3 py-1.5 text-sm font-medium text-muted transition hover:border-accent hover:text-accent"
             >
               {locale === 'zh' ? '全部标签' : 'All Tags'}

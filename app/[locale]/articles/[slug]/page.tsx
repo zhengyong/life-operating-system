@@ -11,6 +11,7 @@ import {PageShell} from '@/components/PageShell';
 import {prepareArticleBrief} from '@/lib/articleBrief';
 import {getAllArticles, getArticle, getRelatedArticles, markdownToHtml} from '@/lib/content';
 import {alternateLocale, getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {breadcrumbJsonLd} from '@/lib/seo';
 import {siteUrl} from '@/lib/site';
 import {getCategoryHref, getCategoryLabel, getTagHref, getTagLabel} from '@/lib/taxonomy';
 import {formatDate} from '@/lib/utils';
@@ -87,6 +88,11 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
   const contentHtml = await markdownToHtml(brief.mainContent);
   const relatedArticles = getRelatedArticles(article);
   const canonical = `${siteUrl}/${locale}/articles/${slug}/`;
+  const breadcrumbs = [
+    {label: t.nav.home, href: `/${locale}/`},
+    {label: t.nav.articles, href: `/${locale}/articles/`},
+    {label: title}
+  ];
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -113,18 +119,17 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
     articleSection: article.category,
     keywords: [...article.tags, ...(article.keywords ?? [])].join(', ')
   };
+  const breadcrumbSchema = breadcrumbJsonLd([
+    {name: t.nav.home, url: `${siteUrl}/${locale}/`},
+    {name: t.nav.articles, url: `${siteUrl}/${locale}/articles/`},
+    {name: title, url: canonical}
+  ]);
 
   return (
     <PageShell locale={locale}>
-      <JsonLd data={articleSchema} />
+      <JsonLd data={[articleSchema, breadcrumbSchema]} />
       <main className="mx-auto max-w-3xl px-5 py-10 md:py-16">
-        <Breadcrumbs
-          items={[
-            {label: t.nav.home, href: `/${locale}/`},
-            {label: t.nav.articles, href: `/${locale}/articles/`},
-            {label: title}
-          ]}
-        />
+        <Breadcrumbs items={breadcrumbs} />
 
         <Link
           href={`/${locale}/articles/`}

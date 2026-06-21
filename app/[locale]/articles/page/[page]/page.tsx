@@ -3,6 +3,7 @@ import {notFound, redirect} from 'next/navigation';
 import {ArticleExplorePanel} from '@/components/ArticleExplorePanel';
 import {ArticleListView} from '@/components/ArticleListView';
 import {PageShell} from '@/components/PageShell';
+import {getArticleExploreFacets} from '@/lib/articleExplore';
 import {getArticles} from '@/lib/content';
 import {getDictionary, isLocale, Locale, locales} from '@/lib/i18n';
 import {getPageCount} from '@/lib/pagination';
@@ -36,6 +37,7 @@ export default async function ArticlesPaginatedPage({params}: {params: {locale: 
   const t = getDictionary(locale);
   const articles = getArticles(locale);
   const pageCount = getPageCount(articles.length);
+  const exploreFacets = getArticleExploreFacets(articles);
 
   if (currentPage > pageCount) {
     notFound();
@@ -50,7 +52,7 @@ export default async function ArticlesPaginatedPage({params}: {params: {locale: 
           <p className="mt-5 text-lg leading-8 text-muted">{t.articles.subtitle}</p>
         </div>
 
-        <ArticleExplorePanel articles={articles} locale={locale} />
+        <ArticleExplorePanel categories={exploreFacets.categories} tags={exploreFacets.tags} locale={locale} />
         <ArticleListView articles={articles} locale={locale} page={currentPage} />
       </main>
     </PageShell>

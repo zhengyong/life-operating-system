@@ -7,7 +7,7 @@ import {Locale, getDictionary} from '@/lib/i18n';
 
 type SearchItem = {
   id: string;
-  type: 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'stock';
+  type: 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'stock' | 'career' | 'investment';
   typeLabel: string;
   title: string;
   summary: string;
@@ -20,16 +20,33 @@ type SearchItem = {
   text: string;
 };
 
+type PreparedSearchItem = SearchItem & {
+  searchTitle: string;
+  searchSummary: string;
+  searchMetadata: string;
+  searchText: string;
+};
+
+function prepareSearchItem(item: SearchItem): PreparedSearchItem {
+  return {
+    ...item,
+    searchTitle: item.title.toLowerCase(),
+    searchSummary: item.summary.toLowerCase(),
+    searchMetadata: [item.typeLabel, item.category, ...(item.tags ?? []), ...(item.keywords ?? [])].join(' ').toLowerCase(),
+    searchText: item.text.toLowerCase()
+  };
+}
+
 export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => void}) {
   const t = getDictionary(locale);
   const [query, setQuery] = useState('');
-  const [items, setItems] = useState<SearchItem[]>([]);
+  const [items, setItems] = useState<PreparedSearchItem[]>([]);
   const [activeType, setActiveType] = useState<SearchItem['type'] | 'all'>('all');
 
   useEffect(() => {
-    fetch('/search-index.json')
+    fetch(`/search-index.json?v=${Date.now()}`, {cache: 'no-store'})
       .then((response) => response.json())
-      .then((data: SearchItem[]) => setItems(data.filter((item) => item.locale === locale)))
+      .then((data: SearchItem[]) => setItems(data.filter((item) => item.locale === locale).map(prepareSearchItem)))
       .catch(() => setItems([]));
   }, [locale]);
 
@@ -54,22 +71,18 @@ export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => voi
 
     return scopedItems
       .map((item) => {
-        const title = item.title.toLowerCase();
-        const summary = item.summary.toLowerCase();
-        const metadata = [item.typeLabel, item.category, ...(item.tags ?? []), ...(item.keywords ?? [])].join(' ').toLowerCase();
-        const fullText = item.text.toLowerCase();
         let score = 0;
 
         tokens.forEach((token) => {
-          if (title.includes(token)) score += 12;
-          if (summary.includes(token)) score += 6;
-          if (metadata.includes(token)) score += 4;
-          if (fullText.includes(token)) score += 2;
+          if (item.searchTitle.includes(token)) score += 12;
+          if (item.searchSummary.includes(token)) score += 6;
+          if (item.searchMetadata.includes(token)) score += 4;
+          if (item.searchText.includes(token)) score += 2;
         });
 
-        if (title.includes(normalized)) score += 18;
-        if (summary.includes(normalized)) score += 8;
-        if (fullText.includes(normalized)) score += 4;
+        if (item.searchTitle.includes(normalized)) score += 18;
+        if (item.searchSummary.includes(normalized)) score += 8;
+        if (item.searchText.includes(normalized)) score += 4;
 
         return {item, score};
       })

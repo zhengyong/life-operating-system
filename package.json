@@ -9,6 +9,7 @@
     "news:update": "node scripts/fetch-news.mjs",
     "validate:content": "tsx scripts/validate-content.ts",
     "build:index": "tsx scripts/build-search-index.ts",
+    "seo:indexnow": "node scripts/submit-indexnow.mjs",
     "build": "npm run validate:content && npm run build:index && next build",
     "start": "next start",
     "lint": "next lint"

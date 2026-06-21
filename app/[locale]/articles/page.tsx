@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {ArticleExplorePanel} from '@/components/ArticleExplorePanel';
 import {ArticleListView} from '@/components/ArticleListView';
 import {PageShell} from '@/components/PageShell';
+import {getArticleExploreFacets} from '@/lib/articleExplore';
 import {getArticles} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {localizedPageMetadata} from '@/lib/seo';
@@ -27,6 +28,7 @@ export default async function ArticlesPage({params}: {params: {locale: string}})
   const locale: Locale = isLocale(rawLocale) ? rawLocale : 'en';
   const t = getDictionary(locale);
   const articles = getArticles(locale);
+  const exploreFacets = getArticleExploreFacets(articles);
 
   return (
     <PageShell locale={locale}>
@@ -37,7 +39,7 @@ export default async function ArticlesPage({params}: {params: {locale: string}})
           <p className="mt-5 text-lg leading-8 text-muted">{t.articles.subtitle}</p>
         </div>
 
-        <ArticleExplorePanel articles={articles} locale={locale} />
+        <ArticleExplorePanel categories={exploreFacets.categories} tags={exploreFacets.tags} locale={locale} />
         <ArticleListView articles={articles} locale={locale} />
       </main>
     </PageShell>

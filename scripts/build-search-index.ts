@@ -69,6 +69,10 @@ function stripMarkdown(markdown: string) {
     .trim();
 }
 
+function searchableArticleText(markdown: string) {
+  return stripMarkdown(markdown).slice(0, 1200);
+}
+
 if (!fs.existsSync(publicDirectory)) {
   fs.mkdirSync(publicDirectory, {recursive: true});
 }
@@ -90,7 +94,7 @@ const articleIndex: SearchIndexItem[] = getAllArticles().map((article) => {
     tags: article.tags,
     keywords: article.keywords ?? [],
     date: article.date,
-    text: compactText([title, summary, article.category, ...article.tags, ...(article.keywords ?? []), stripMarkdown(fullArticle?.content ?? '')])
+    text: compactText([title, summary, article.category, ...article.tags, ...(article.keywords ?? []), searchableArticleText(fullArticle?.content ?? '')])
   };
 });
 

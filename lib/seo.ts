@@ -2,6 +2,11 @@ import type {Metadata} from 'next';
 import type {Locale} from '@/lib/i18n';
 import {siteUrl} from '@/lib/site';
 
+type BreadcrumbJsonLdItem = {
+  name: string;
+  url: string;
+};
+
 type PageSeoInput = {
   locale: Locale;
   path: string;
@@ -38,5 +43,18 @@ export function localizedPageMetadata({locale, path, title, description}: PageSe
       title,
       description
     }
+  };
+}
+
+export function breadcrumbJsonLd(items: BreadcrumbJsonLdItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
   };
 }
