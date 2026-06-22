@@ -7,7 +7,7 @@ import {Locale, getDictionary} from '@/lib/i18n';
 
 type SearchItem = {
   id: string;
-  type: 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'stock' | 'career' | 'investment';
+  type: 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'career';
   typeLabel: string;
   title: string;
   summary: string;

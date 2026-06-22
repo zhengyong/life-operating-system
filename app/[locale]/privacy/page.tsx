@@ -56,7 +56,7 @@ const content = {
       {
         title: 'Third-Party Services',
         body: [
-          'The site may link to third-party websites, tools, social platforms, payment providers, analytics services, or advertising services. Their privacy practices are governed by their own policies.',
+          'The site may link to third-party websites, tools, social platforms, analytics services or advertising services. Their privacy practices are governed by their own policies.',
           'This site is not responsible for the content or privacy practices of external websites.'
         ]
       },
@@ -132,7 +132,7 @@ const content = {
       {
         title: '第三方服务',
         body: [
-          '本站可能链接到第三方网站、工具、社交平台、支付服务、分析服务或广告服务。这些服务的隐私实践由其各自的隐私政策约束。',
+          '本站可能链接到第三方网站、工具、社交平台、服务服务、分析服务或广告服务。这些服务的隐私实践由其各自的隐私政策约束。',
           '本站不对外部网站的内容或隐私实践负责。'
         ]
       },

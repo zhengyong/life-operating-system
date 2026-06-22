@@ -5,7 +5,7 @@ seoTitle: "How to Distinguish Bubbles From Real Value in Technology Trends | Lif
 seoDescription: "A practical note on how to distinguish bubbles from real value in technology trends from a first-principles and long-term perspective."
 slug: "ai-technology-246-how-distinguish-bubbles-from-real-value-technology-trends"
 date: "2025-10-10"
-summary: "看真实需求、付费意愿、成本下降和组织采用。 这篇文章从AI与科技视角讨论这个问题，并给出可执行的长期判断框架。"
+summary: "看真实需求、订阅意愿、成本下降和组织采用。 这篇文章从AI与科技视角讨论这个问题，并给出可执行的长期判断框架。"
 summary_en: "A practical note on how to distinguish bubbles from real value in technology trends from a first-principles and long-term perspective."
 category: "AI and Technology"
 tags:
@@ -38,7 +38,7 @@ With the same AI tool, one person creates more noise while another improves work
 
 A practical way to use this idea is to do three things. First, write down the real constraints behind the problem, not only the wish. Second, choose one small action that can produce feedback within a week. Third, review whether the action improves the structure, instead of asking only whether it feels comfortable in the short term. This looks slower, but it reduces the cost of restarting again and again.
 
-This topic connects naturally with the [productivity tools framework](/en/books/recommendations/productivity-tools/), the [AI tag](/en/tags/ai/), and the [company research](/en/companies/). The point is to keep articles, frameworks, categories, and tags connected rather than scattered. The value of the site is not simply to publish more articles. It is to connect each article back to a larger knowledge architecture, because life, career, investing, AI, education, and first principles are not separate subjects in practice.
+This topic connects naturally with the [productivity tools framework](/en/books/recommendations/productivity-tools/), the [AI tag](/en/tags/ai/), and the [company research](/en/companies/). The point is to keep articles, frameworks, categories, and tags connected rather than scattered. The value of the site is not simply to publish more articles. It is to connect each article back to a larger knowledge architecture, because life, career, resource allocation, AI, education, and first principles are not separate subjects in practice.
 
 Reliable growth rarely comes from one dramatic insight. It comes from many small corrections that eventually become a better system. How to Distinguish Bubbles From Real Value in Technology Trends deserves attention because it points beyond collecting knowledge. It points toward a calmer, more stable, more long-term way to live and decide.
 

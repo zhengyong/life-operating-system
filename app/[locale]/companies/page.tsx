@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {PageShell} from '@/components/PageShell';
 import {TopicCard} from '@/components/TopicCard';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {isPublicCompanySlug} from '@/lib/publicTopics';
 import {localizedPageMetadata} from '@/lib/seo';
 import {companies, text} from '@/lib/topics';
 
@@ -24,6 +25,7 @@ export async function generateMetadata({params}: {params: {locale: string}}): Pr
 export default async function CompaniesPage({params}: {params: {locale: string}}) {
   const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
   const t = getDictionary(locale);
+  const visibleCompanies = companies.filter((company) => isPublicCompanySlug(company.slug));
 
   return (
     <PageShell locale={locale}>
@@ -37,7 +39,7 @@ export default async function CompaniesPage({params}: {params: {locale: string}}
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {companies.map((company) => (
+          {visibleCompanies.map((company) => (
             <TopicCard
               key={company.slug}
               href={`/${locale}/companies/${company.slug}/`}

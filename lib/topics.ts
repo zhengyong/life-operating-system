@@ -12,7 +12,7 @@ export type PrimarySource = {
 
 export type PersonContentItem = {
   title: LocalizedText;
-  type: 'news' | 'speech' | 'launch' | 'interview' | 'book';
+  type: 'source' | 'speech' | 'launch' | 'interview' | 'book';
   date?: string;
   source: LocalizedText;
   href?: string;
@@ -78,12 +78,6 @@ export type CompanyProfile = {
   futureQuestions: LocalizedText[];
 };
 
-export type StockModule = {
-  title: LocalizedText;
-  summary: LocalizedText;
-  lessons: LocalizedText[];
-};
-
 export type PersonLesson = {
   personSlug: string;
   slug: string;
@@ -131,17 +125,17 @@ export const people: PersonProfile[] = [
           en: 'Acquisitions mainly fill platform gaps: networking, systems software, cloud-native AI orchestration, and model capabilities, moving NVIDIA beyond chips toward a full computing platform.'
         },
         links: [
-          {name: 'Mellanox', href: 'https://nvidianews.nvidia.com/news/nvidia-completes-acquisition-of-mellanox'},
-          {name: 'Cumulus Networks', href: 'https://nvidianews.nvidia.com/news/nvidia-to-acquire-cumulus-networks'},
+          {name: 'Mellanox', href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-completes-acquisition-of-mellanox'},
+          {name: 'Cumulus Networks', href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-to-acquire-cumulus-networks'},
           {name: 'Run:ai', href: 'https://blogs.nvidia.com/blog/runai/'},
           {name: 'Deci', href: 'https://blogs.nvidia.com/blog/deci/'}
         ]
       },
       {
-        title: {zh: '投资与生态公司', en: 'Investments and ecosystem companies'},
+        title: {zh: '投入与生态公司', en: 'Ecosystem partner companies'},
         summary: {
-          zh: '投资主要是扩大 AI 需求和生态入口：云算力、模型公司和 AI 应用越繁荣，对 NVIDIA 计算平台的需求越强。',
-          en: 'Investments mainly expand AI demand and ecosystem access: stronger cloud compute providers, model companies, and AI applications increase demand for NVIDIA’s computing platform.'
+          zh: '投入主要是扩大 AI 需求和生态入口：云算力、模型公司和 AI 应用越繁荣，对 NVIDIA 计算平台的需求越强。',
+          en: 'Ecosystems mainly expand AI demand and ecosystem access: stronger cloud compute providers, model companies, and AI applications increase demand for NVIDIA’s computing platform.'
         },
         links: [
           {name: 'CoreWeave', href: 'https://www.coreweave.com/'},
@@ -204,21 +198,21 @@ export const people: PersonProfile[] = [
     content: [
       {
         title: {zh: 'NVIDIA 与 Microsoft 扩大合作，面向 Agentic AI 构建统一部署栈', en: 'NVIDIA and Microsoft expand a unified deployment stack for agentic AI'},
-        type: 'news',
+        type: 'source',
         date: '2026-06-02',
         href: 'https://blogs.nvidia.com/blog/microsoft-build-windows-local-cloud-devices/',
         source: {zh: 'NVIDIA 官方博客', en: 'NVIDIA Blog'},
         note: {
-          zh: '黄仁勋在台北连线 Satya Nadella 的 Microsoft Build 主题演讲，讨论从 Windows 设备、Azure 云到本地部署的加速计算栈。这条新闻可以放在“平台战略”和“开发者生态”两个角度看。',
+          zh: '黄仁勋在台北连线 Satya Nadella 的 Microsoft Build 主题演讲，讨论从 Windows 设备、Azure 云到本地部署的加速计算栈。这条资讯可以放在“平台战略”和“开发者生态”两个角度看。',
           en: 'Jensen Huang joined Satya Nadella’s Microsoft Build keynote by livestream from Taipei to discuss accelerated computing across Windows devices, Azure cloud, and local deployments.'
         }
       },
       {
         title: {zh: 'NVIDIA 发布 Isaac GR00T 人形机器人参考设计', en: 'NVIDIA announces Isaac GR00T humanoid robot reference design'},
-        type: 'news',
+        type: 'source',
         date: '2026-06-01',
-        href: 'https://nvidianews.nvidia.com/news/nvidia-announces-nvidia-isaac-gr00t-reference-humanoid-robot-for-academic-research',
-        source: {zh: 'NVIDIA Newsroom', en: 'NVIDIA Newsroom'},
+        href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-announces-nvidia-isaac-gr00t-reference-humanoid-robot-for-academic-research',
+        source: {zh: 'NVIDIA Company updates', en: 'NVIDIA Company updates'},
         note: {
           zh: 'NVIDIA 在 GTC Taipei 发布面向学术研究的人形机器人参考设计，基于 Jetson Thor 和 Isaac GR00T 开放开发平台。重点不是单个机器人，而是把物理 AI 做成开发平台。',
           en: 'NVIDIA announced a humanoid robot reference design for academic research, built on Jetson Thor and the Isaac GR00T open development platform.'
@@ -226,10 +220,10 @@ export const people: PersonProfile[] = [
       },
       {
         title: {zh: 'COMPUTEX 2026：黄仁勋发布 RTX Spark 与新一代个人 AI PC 方向', en: 'COMPUTEX 2026: Jensen Huang introduces RTX Spark and the personal AI PC direction'},
-        type: 'news',
+        type: 'source',
         date: '2026-05-31',
-        href: 'https://www.nvidia.com/en-au/geforce/news/computex-2026-nvidia-geforce-rtx-announcements/',
-        source: {zh: 'NVIDIA GeForce 官方新闻', en: 'NVIDIA GeForce News'},
+        href: 'https://www.nvidia.com/en-au/geforce/updates/computex-2026-nvidia-geforce-rtx-announcements/',
+        source: {zh: 'NVIDIA GeForce 官方资讯', en: 'NVIDIA GeForce Updates'},
         note: {
           zh: 'NVIDIA 在 COMPUTEX 主题演讲中提出 RTX Spark，把 CUDA、RTX、TensorRT 等能力带到 Windows 笔记本和小型桌面设备，延续“计算平台进入更多场景”的叙事。',
           en: 'At COMPUTEX, NVIDIA introduced RTX Spark, bringing CUDA, RTX, TensorRT, and related technologies into Windows laptops and compact desktops.'
@@ -283,8 +277,8 @@ export const people: PersonProfile[] = [
         title: {zh: 'Blackwell 平台发布：从芯片到 AI 工厂', en: 'Blackwell platform launch: from chip to AI factory'},
         type: 'launch',
         date: '2024-03-18',
-        href: 'https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing',
-        source: {zh: 'NVIDIA Newsroom', en: 'NVIDIA Newsroom'},
+        href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing',
+        source: {zh: 'NVIDIA Company updates', en: 'NVIDIA Company updates'},
         note: {
           zh: 'Blackwell 是研究 NVIDIA 平台叙事的重要节点：性能、系统、网络、软件和客户部署被放在一起讲。',
           en: 'Blackwell is a key node for studying NVIDIA’s platform narrative: performance, systems, networking, software, and customer deployment are presented together.'
@@ -331,7 +325,7 @@ export const people: PersonProfile[] = [
         source: {zh: 'Stanford GSB 官方频道', en: 'Stanford GSB official channel'},
         note: {
           zh: '适合放在人物学习里，看黄仁勋如何谈创业早期、组织管理、痛苦决策和长期坚持。',
-          en: 'Useful for person study, especially Jensen Huang’s comments on early entrepreneurship, management, painful decisions, and persistence.'
+          en: 'Useful for person study, especially Jensen Huang’s discussion on early entrepreneurship, management, painful decisions, and persistence.'
         }
       },
       {
@@ -385,8 +379,8 @@ export const people: PersonProfile[] = [
     relatedCompanies: ['tesla', 'spacex'],
     content: [
       {
-        title: {zh: '最近 1 周新闻精选', en: 'Recent one-week news watch'},
-        type: 'news',
+        title: {zh: '最近 1 周资料精选', en: 'Recent public updates watch'},
+        type: 'source',
         source: {zh: '公司官网、监管文件、Reuters / Bloomberg / CNBC 等', en: 'Company sites, regulatory filings, Reuters, Bloomberg, CNBC, and similar outlets'},
         note: {zh: '只保留会影响产品、组织、监管、市场和战略判断的消息。', en: 'Keep items that affect products, organization, regulation, market, or strategic judgment.'}
       },
@@ -482,14 +476,14 @@ const genericAdvice = (focus: LocalizedText): PersonAdviceItem[] => [
 
 const archiveItems = (name: LocalizedText, sourceHref: string): PersonContentItem[] => [
   {
-    title: {zh: `${name.zh}：最近 1 周新闻精选入口`, en: `${name.en}: recent one-week news watch`},
-    type: 'news',
+    title: {zh: `${name.zh}：最近 1 周资料精选入口`, en: `${name.en}: recent one-week updates watch`},
+    type: 'source',
     date: '2026-06-09',
     href: sourceHref,
     source: {zh: '官方与一手资料入口', en: 'Official and primary source entry'},
     note: {
-      zh: '这里先放可持续更新的资料入口，后续接入定时任务后只保留 3 条最重要新闻。',
-      en: 'This is a stable source entry for future scheduled updates; later it should keep only three important news items.'
+      zh: '这里先放可持续更新的资料入口，后续接入定时任务后只保留 3 条最重要资讯。',
+      en: 'This is a stable source entry for future scheduled updates; later it should keep only three important public items.'
     }
   },
   {
@@ -502,7 +496,7 @@ const archiveItems = (name: LocalizedText, sourceHref: string): PersonContentIte
   {
     title: {zh: `${name.zh}：传记与背景资料`, en: `${name.en}: biography and background material`},
     type: 'book',
-    source: {zh: '图书、访谈、股东信、官方资料', en: 'Books, interviews, letters, and official material'},
+    source: {zh: '图书、访谈、持有人信、官方资料', en: 'Books, interviews, letters, and official material'},
     note: {zh: '后续可以扩展成书籍页、章节摘要和关键概念索引。', en: 'Can later become book pages, chapter notes, and concept indexes.'}
   }
 ];
@@ -516,8 +510,8 @@ const coreCompanyGroup = (companyName: string, companySlug: string, summary: Loc
   {
     title: {zh: '相关生态', en: 'Related ecosystem'},
     summary: {
-      zh: '从供应链、平台伙伴、投资对象和关键客户看人物背后的战略网络。',
-      en: 'Study the strategic network behind the person through supply chain, platform partners, investments, and key customers.'
+      zh: '从供应链、平台伙伴、投入对象和关键客户看人物背后的战略网络。',
+      en: 'Study the strategic network behind the person through supply chain, platform partners, ecosystem partners, and key customers.'
     },
     links: []
   },
@@ -551,7 +545,7 @@ const newPeople: PersonProfile[] = [
       en: 'The core company is Apple. Cook’s contribution centers on operations, supply chain, services, privacy narrative, and global governance.'
     }),
     advice: genericAdvice({zh: '库克的运营与治理', en: 'Cook’s operating and governance style'}),
-    content: archiveItems({zh: '蒂姆·库克', en: 'Tim Cook'}, 'https://www.apple.com/newsroom/')
+    content: archiveItems({zh: '蒂姆·库克', en: 'Tim Cook'}, 'https://www.apple.com/updates/')
   },
   {
     slug: 'sam-altman',
@@ -572,7 +566,7 @@ const newPeople: PersonProfile[] = [
       en: 'The core company is OpenAI. Key threads include model capability, ChatGPT distribution, developer platform, enterprise market, and AI infrastructure.'
     }),
     advice: genericAdvice({zh: 'Altman 的技术与资本组织', en: 'Altman’s technology and capital formation'}),
-    content: archiveItems({zh: 'Sam Altman', en: 'Sam Altman'}, 'https://openai.com/news/')
+    content: archiveItems({zh: 'Sam Altman', en: 'Sam Altman'}, 'https://openai.com/updates/')
   },
   {
     slug: 'dario-amodei',
@@ -593,7 +587,7 @@ const newPeople: PersonProfile[] = [
       en: 'The core company is Anthropic. Long-term threads include Claude, Constitutional AI, interpretability research, enterprise customers, and safety governance.'
     }),
     advice: genericAdvice({zh: 'Dario 的安全与可靠性路线', en: 'Dario’s safety and reliability path'}),
-    content: archiveItems({zh: 'Dario Amodei', en: 'Dario Amodei'}, 'https://www.anthropic.com/news')
+    content: archiveItems({zh: 'Dario Amodei', en: 'Dario Amodei'}, 'https://www.anthropic.com/updates')
   },
   {
     slug: 'morris-chang',
@@ -637,82 +631,6 @@ const newPeople: PersonProfile[] = [
     advice: genericAdvice({zh: '魏哲家的制造与治理', en: 'C.C. Wei’s manufacturing and governance'}),
     content: archiveItems({zh: '魏哲家', en: 'C.C. Wei'}, 'https://www.tsmc.com/english/aboutTSMC/executives')
   },
-  {
-    slug: 'warren-buffett',
-    name: {zh: '巴菲特', en: 'Warren Buffett'},
-    role: {zh: 'Berkshire Hathaway 董事长，长期价值投资者', en: 'Chairman of Berkshire Hathaway and long-term value investor'},
-    summary: {
-      zh: '巴菲特适合研究商业质量、资本配置、安全边际、复利和长期持有。',
-      en: 'Buffett is a study case for business quality, capital allocation, margin of safety, compounding, and long-term ownership.'
-    },
-    learnFrom: [
-      {zh: '如何用企业所有权理解股票', en: 'Understanding stocks as business ownership'},
-      {zh: '如何评估护城河与管理层', en: 'Assessing moat and management'},
-      {zh: '如何把耐心变成投资优势', en: 'Turning patience into an investing edge'}
-    ],
-    relatedCompanies: ['berkshire-hathaway'],
-    companyGroups: coreCompanyGroup('Berkshire Hathaway', 'berkshire-hathaway', {
-      zh: '核心公司是 Berkshire Hathaway。它是研究资本配置、保险浮存金和长期持股的最佳样本之一。',
-      en: 'The core company is Berkshire Hathaway, a key case for capital allocation, insurance float, and long-term holdings.'
-    }),
-    advice: genericAdvice({zh: '巴菲特的投资原则', en: 'Buffett’s investing principles'}),
-    content: archiveItems({zh: '巴菲特', en: 'Warren Buffett'}, 'https://www.berkshirehathaway.com/letters/letters.html')
-  },
-  {
-    slug: 'charlie-munger',
-    name: {zh: '查理·芒格', en: 'Charlie Munger'},
-    role: {zh: '投资家，巴菲特长期合伙人', en: 'Investor and Warren Buffett’s long-time partner'},
-    summary: {
-      zh: '芒格适合研究多元思维模型、反向思考、能力圈和避免愚蠢错误。',
-      en: 'Munger is a case for multidisciplinary models, inversion, circle of competence, and avoiding stupidity.'
-    },
-    learnFrom: [
-      {zh: '如何建立多元思维模型', en: 'Building multidisciplinary mental models'},
-      {zh: '如何用反向思考降低错误', en: 'Reducing mistakes through inversion'},
-      {zh: '如何把常识变成投资纪律', en: 'Turning common sense into investing discipline'}
-    ],
-    relatedCompanies: ['berkshire-hathaway'],
-    companyGroups: coreCompanyGroup('Berkshire Hathaway', 'berkshire-hathaway', {
-      zh: '核心公司是 Berkshire Hathaway。芒格的价值在于把投资从数字游戏提升到商业、心理和常识判断。',
-      en: 'The core company is Berkshire Hathaway. Munger elevated investing into business, psychology, and common-sense judgment.'
-    }),
-    advice: genericAdvice({zh: '芒格的多元思维模型', en: 'Munger’s multidisciplinary models'}),
-    content: archiveItems({zh: '查理·芒格', en: 'Charlie Munger'}, 'https://www.berkshirehathaway.com/letters/letters.html')
-  },
-  {
-    slug: 'duan-yongping',
-    name: {zh: '段永平', en: 'Duan Yongping'},
-    role: {zh: '企业家与长期投资者', en: 'Entrepreneur and long-term investor'},
-    summary: {
-      zh: '段永平适合研究本分、长期主义、消费者品牌、企业文化和价值投资在中国语境下的表达。',
-      en: 'Duan Yongping is useful for studying integrity, long-termism, consumer brands, culture, and value investing in the Chinese context.'
-    },
-    learnFrom: [
-      {zh: '如何用“本分”理解企业文化', en: 'Understanding culture through integrity'},
-      {zh: '如何看消费者品牌与渠道', en: 'Reading consumer brands and channels'},
-      {zh: '如何把价值投资变成生活原则', en: 'Turning value investing into life principles'}
-    ],
-    relatedCompanies: ['apple'],
-    companyGroups: [
-      {
-        title: {zh: '投资参照', en: 'Investing reference'},
-        summary: {zh: '段永平长期公开讨论 Apple、贵州茅台、网易等案例，重点不是荐股，而是商业理解和价格纪律。', en: 'Duan has publicly discussed Apple, Kweichow Moutai, NetEase, and other cases; the lesson is business understanding and price discipline, not stock tips.'},
-        links: [{name: 'Apple', companySlug: 'apple'}]
-      },
-      {
-        title: {zh: '企业家线索', en: 'Entrepreneurial thread'},
-        summary: {zh: '从小霸王、步步高到 OPPO / vivo 生态，可观察品牌、渠道、授权和文化延续。', en: 'From Subor and BBK to the OPPO / vivo ecosystem, study brand, channel, delegation, and cultural continuity.'},
-        links: []
-      },
-      {
-        title: {zh: '学习线索', en: 'Study threads'},
-        summary: {zh: '重点学习“做对的事、长期、能力圈、不懂不做”。', en: 'Focus on doing the right thing, long-termism, circle of competence, and avoiding what you do not understand.'},
-        links: []
-      }
-    ],
-    advice: genericAdvice({zh: '段永平的本分与投资', en: 'Duan’s integrity and investing style'}),
-    content: archiveItems({zh: '段永平', en: 'Duan Yongping'}, 'https://finance.sina.com.cn/')
-  }
 ];
 
 people.push(...newPeople);
@@ -733,10 +651,10 @@ Object.assign(people.find((person) => person.slug === 'elon-musk') ?? {}, {
       note: {zh: '适合研究马斯克如何用快速迭代推动极难工程。', en: 'Useful for studying how Musk uses rapid iteration in difficult engineering.'}
     },
     {
-      title: {zh: 'Tesla 投资者活动与产品发布', en: 'Tesla investor events and product launches'},
+      title: {zh: 'Tesla 公司活动与产品发布', en: 'Tesla observer events and product launches'},
       type: 'interview',
       href: 'https://ir.tesla.com/',
-      source: {zh: 'Tesla 投资者关系', en: 'Tesla Investor Relations'},
+      source: {zh: 'Tesla 公司资料', en: 'Tesla Company Materials'},
       note: {zh: '适合观察自动驾驶、能源、机器人和制造叙事。', en: 'Useful for studying autonomy, energy, robotics, and manufacturing narrative.'}
     }
   ]
@@ -754,7 +672,7 @@ Object.assign(people.find((person) => person.slug === 'steve-jobs') ?? {}, {
       title: {zh: 'Stanford 2005 毕业演讲', en: 'Stanford 2005 commencement address'},
       type: 'speech',
       date: '2005',
-      href: 'https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says',
+      href: 'https://updates.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says',
       source: {zh: 'Stanford 官方', en: 'Stanford official'},
       note: {zh: '适合研究乔布斯如何把人生选择、死亡意识和热爱工作连成叙事。', en: 'Useful for studying how Jobs connects life choices, mortality, and love of work.'}
     }
@@ -763,19 +681,16 @@ Object.assign(people.find((person) => person.slug === 'steve-jobs') ?? {}, {
 
 const sourceMap: Record<string, string[]> = {
   'elon-musk': ['https://www.tesla.com/blog', 'https://www.spacex.com/updates/', 'https://www.reuters.com/technology/'],
-  'steve-jobs': ['https://www.apple.com/apple-events/', 'https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says', 'https://www.apple.com/newsroom/'],
-  'tim-cook': ['https://www.apple.com/newsroom/', 'https://investor.apple.com/', 'https://www.apple.com/leadership/'],
-  'sam-altman': ['https://openai.com/news/', 'https://openai.com/research/', 'https://openai.com/sam-altman/'],
-  'dario-amodei': ['https://www.anthropic.com/news', 'https://www.anthropic.com/research', 'https://www.anthropic.com/company'],
-  'morris-chang': ['https://pr.tsmc.com/english', 'https://www.tsmc.com/english/aboutTSMC/company_profile', 'https://investor.tsmc.com/english'],
-  'cc-wei': ['https://www.tsmc.com/english/aboutTSMC/executives', 'https://pr.tsmc.com/english', 'https://investor.tsmc.com/english'],
-  'warren-buffett': ['https://www.berkshirehathaway.com/news/2025news.html', 'https://www.berkshirehathaway.com/letters/letters.html', 'https://www.berkshirehathaway.com/meet01/visguide2025.pdf'],
-  'charlie-munger': ['https://www.berkshirehathaway.com/letters/letters.html', 'https://www.djmco.com/', 'https://www.youtube.com/@DailyJournalCorp'],
-  'duan-yongping': ['https://www.apple.com/newsroom/', 'https://investor.apple.com/', 'https://finance.sina.com.cn/']
+  'steve-jobs': ['https://www.apple.com/apple-events/', 'https://updates.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says', 'https://www.apple.com/updates/'],
+  'tim-cook': ['https://www.apple.com/updates/', 'https://www.apple.com/', 'https://www.apple.com/leadership/'],
+  'sam-altman': ['https://openai.com/updates/', 'https://openai.com/research/', 'https://openai.com/sam-altman/'],
+  'dario-amodei': ['https://www.anthropic.com/updates', 'https://www.anthropic.com/research', 'https://www.anthropic.com/company'],
+  'morris-chang': ['https://pr.tsmc.com/english', 'https://www.tsmc.com/english/aboutTSMC/company_profile', 'https://www.tsmc.com/english/aboutTSMC/company_profile'],
+  'cc-wei': ['https://www.tsmc.com/english/aboutTSMC/executives', 'https://pr.tsmc.com/english', 'https://www.tsmc.com/english/aboutTSMC/company_profile'],
 };
 
 const typeLabels: Record<PersonContentItem['type'], string[]> = {
-  news: ['最近 1 周新闻精选 A', '最近 1 周新闻精选 B', '最近 1 周新闻精选 C'],
+  source: ['公开资料入口 A', '公开资料入口 B', '公开资料入口 C'],
   speech: ['公开演讲 / 主题表达 A', '公开演讲 / 主题表达 B', '公开演讲 / 主题表达 C'],
   interview: ['深度访谈 / 对谈 A', '深度访谈 / 对谈 B', '深度访谈 / 对谈 C'],
   launch: ['产品发布会 / 年度活动 A', '产品发布会 / 年度活动 B', '产品发布会 / 年度活动 C'],
@@ -783,7 +698,7 @@ const typeLabels: Record<PersonContentItem['type'], string[]> = {
 };
 
 const typeLabelsEn: Record<PersonContentItem['type'], string[]> = {
-  news: ['Recent one-week news A', 'Recent one-week news B', 'Recent one-week news C'],
+  source: ['Public source entry A', 'Public source entry B', 'Public source entry C'],
   speech: ['Speech / public communication A', 'Speech / public communication B', 'Speech / public communication C'],
   interview: ['Interview / conversation A', 'Interview / conversation B', 'Interview / conversation C'],
   launch: ['Launch / annual event A', 'Launch / annual event B', 'Launch / annual event C'],
@@ -792,7 +707,7 @@ const typeLabelsEn: Record<PersonContentItem['type'], string[]> = {
 
 function ensureThreeContentItems(person: PersonProfile) {
   const sources = sourceMap[person.slug] ?? ['https://www.reuters.com/technology/', 'https://www.bloomberg.com/technology', 'https://www.cnbc.com/technology/'];
-  const types: PersonContentItem['type'][] = ['news', 'speech', 'interview', 'launch', 'book'];
+  const types: PersonContentItem['type'][] = ['source', 'speech', 'interview', 'launch', 'book'];
 
   types.forEach((type) => {
     const existing = person.content.filter((item) => item.type === type).length;
@@ -803,19 +718,19 @@ function ensureThreeContentItems(person: PersonProfile) {
           en: `${person.name.en}: ${typeLabelsEn[type][index]}`
         },
         type,
-        date: type === 'news' ? '2026-06-09' : undefined,
+        date: type === 'source' ? '2026-06-09' : undefined,
         href: sources[index % sources.length],
         source: {
-          zh: type === 'news' ? '官方 / 一手 / 大媒体入口' : '官方 / 一手资料入口',
-          en: type === 'news' ? 'Official / primary / major media entry' : 'Official / primary source entry'
+          zh: type === 'source' ? '官方 / 一手 / 公开资料入口' : '官方 / 一手资料入口',
+          en: type === 'source' ? 'Official / primary / public source entry' : 'Official / primary source entry'
         },
         note: {
           zh:
-            type === 'news'
-              ? '先保留可持续更新入口，后续定时任务接入后替换成最近 1 周内最重要的具体 3 条新闻。'
+            type === 'source'
+              ? '先保留可持续资料入口，后续可替换成更具体的公开资料。'
               : '先作为资料归档入口，后续可补充原文、视频、时间戳、摘要和关键判断。',
           en:
-            type === 'news'
+            type === 'source'
               ? 'A sustainable update entry for now; later automation can replace it with the three most important concrete items from the past week.'
               : 'An archive entry for now; later it can include source text, video, timestamps, summaries, and key judgments.'
         }
@@ -845,9 +760,9 @@ function replacePersonContent(slug: string, content: PersonContentItem[]) {
 }
 
 replacePersonContent('jensen-huang', [
-  pc('news', '2026-06-08', {zh: '英伟达与 LG 合作推进人形机器人和数据中心', en: 'NVIDIA and LG work on humanoid robots and data centers'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '用于观察黄仁勋如何把物理 AI、机器人和数据中心继续并入英伟达平台叙事。', en: 'Use this to study how Jensen Huang folds physical AI, robotics, and data centers into NVIDIA platform narrative.'}),
-  pc('news', '2026-06-02', {zh: '黄仁勋称英伟达有产能支撑 AI 增长，但仍受供应约束', en: 'Jensen Huang says NVIDIA can support robust AI growth while still supply constrained'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '这条新闻适合放在供给、先进封装、客户需求和 AI 基础设施资本开支的观察维度里。', en: 'Useful for tracking supply, advanced packaging, customer demand, and AI infrastructure capex.'}),
-  pc('news', '2026-06-01', {zh: 'COMPUTEX：英伟达推出面向个人 AI 电脑的新芯片方向', en: 'COMPUTEX: NVIDIA pushes new chips for personal AI PCs'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '用于观察英伟达是否把 AI 从数据中心继续推进到个人设备和本地智能体。', en: 'Use this to track whether NVIDIA extends AI from data centers into personal devices and local agents.'}),
+  pc('source', '2026-06-08', {zh: '英伟达与 LG 合作推进人形机器人和数据中心', en: 'NVIDIA and LG work on humanoid robots and data centers'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '用于观察黄仁勋如何把物理 AI、机器人和数据中心继续并入英伟达平台叙事。', en: 'Use this to study how Jensen Huang folds physical AI, robotics, and data centers into NVIDIA platform narrative.'}),
+  pc('source', '2026-06-02', {zh: '黄仁勋称英伟达有产能支撑 AI 增长，但仍受供应约束', en: 'Jensen Huang says NVIDIA can support robust AI growth while still supply constrained'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '这条资讯适合放在供给、先进封装、客户需求和 AI 基础设施资本开支的观察维度里。', en: 'Useful for tracking supply, advanced packaging, customer demand, and AI infrastructure capex.'}),
+  pc('source', '2026-06-01', {zh: 'COMPUTEX：英伟达推出面向个人 AI 电脑的新芯片方向', en: 'COMPUTEX: NVIDIA pushes new chips for personal AI PCs'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '用于观察英伟达是否把 AI 从数据中心继续推进到个人设备和本地智能体。', en: 'Use this to track whether NVIDIA extends AI from data centers into personal devices and local agents.'}),
   pc('speech', '2026-03-16', {zh: 'GTC 2026 黄仁勋主题演讲', en: 'GTC 2026 Jensen Huang keynote'}, 'https://www.nvidia.com/en-us/gtc/keynote/?video=1', {zh: 'NVIDIA 官方视频', en: 'NVIDIA official video'}, {zh: '看他如何把芯片、网络、软件、AI 工厂和机器人放在同一张战略地图里。', en: 'Watch how he maps chips, networking, software, AI factories, and robotics into one strategy.'}),
   pc('speech', '2025-03-18', {zh: 'GTC 2025：AI 基础设施与 Blackwell 平台', en: 'GTC 2025: AI infrastructure and Blackwell platform'}, 'https://www.nvidia.com/en-us/gtc/keynote/', {zh: 'NVIDIA 官方页面', en: 'NVIDIA official page'}, {zh: '适合研究英伟达如何把单个 GPU 升级成完整 AI 基础设施平台。', en: 'Useful for studying how NVIDIA turns GPUs into full AI infrastructure.'}),
   pc('speech', '2024-06-02', {zh: 'COMPUTEX 2024：加速计算与 AI 工厂路线图', en: 'COMPUTEX 2024: accelerated computing and AI factory roadmap'}, 'https://blogs.nvidia.com/blog/computex-2024-jensen-huang/', {zh: 'NVIDIA 官方博客', en: 'NVIDIA official blog'}, {zh: '经典材料，适合看黄仁勋如何用公开表达稳定客户和开发者预期。', en: 'A classic source for seeing how Huang uses public communication to align customers and developers.'}),
@@ -855,36 +770,36 @@ replacePersonContent('jensen-huang', [
   pc('interview', '2023-10-16', {zh: 'Acquired 访谈：NVIDIA 历史、CUDA 与 AI 平台', en: 'Acquired interview: NVIDIA history, CUDA, and AI platform'}, 'https://www.acquired.fm/episodes/nvidia-ceo-jensen-huang', {zh: 'Acquired 原始访谈', en: 'Acquired original interview'}, {zh: '系统理解从图形芯片到 AI 平台的长期路径。', en: 'A systematic source for NVIDIA path from graphics chips to AI platform.'}),
   pc('interview', '2024', {zh: 'Stanford GSB 访谈：创业、管理与长期判断', en: 'Stanford GSB interview: entrepreneurship, management, and long-term judgment'}, 'https://www.youtube.com/@stanfordgsb/search?query=Jensen%20Huang', {zh: 'Stanford GSB 官方 YouTube', en: 'Stanford GSB official YouTube'}, {zh: '用于学习创始人心法、组织管理和面对不被理解时的坚持。', en: 'Useful for studying founder mentality, management, and persistence when misunderstood.'}),
   pc('launch', '2026-06-01', {zh: 'GTC Taipei / COMPUTEX：个人 AI、机器人与物理 AI 发布', en: 'GTC Taipei / COMPUTEX: personal AI, robotics, and physical AI launches'}, 'https://www.nvidia.com/en-tw/gtc/taipei/keynote/', {zh: 'NVIDIA 官方页面', en: 'NVIDIA official page'}, {zh: '适合看 RTX Spark、Isaac GR00T、Jetson Thor 如何进入同一平台叙事。', en: 'Useful for seeing RTX Spark, Isaac GR00T, and Jetson Thor in one platform narrative.'}),
-  pc('launch', '2024-03-18', {zh: 'Blackwell 平台发布：从芯片到 AI 工厂', en: 'Blackwell platform launch: from chip to AI factory'}, 'https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing', {zh: 'NVIDIA Newsroom', en: 'NVIDIA Newsroom'}, {zh: '核心发布会资料，适合拆解“平台战略”而不是只看芯片性能。', en: 'A core launch source for studying platform strategy beyond chip performance.'}),
-  pc('launch', '2023-08-08', {zh: 'GH200 Grace Hopper 与数据中心平台发布资料', en: 'GH200 Grace Hopper and data center platform launch material'}, 'https://nvidianews.nvidia.com/news/nvidia-announces-next-generation-grace-hopper-superchip-platform', {zh: 'NVIDIA Newsroom', en: 'NVIDIA Newsroom'}, {zh: '适合观察 CPU、GPU、内存、网络和系统如何组合为数据中心平台。', en: 'Useful for seeing CPU, GPU, memory, networking, and systems as a data center platform.'}),
+  pc('launch', '2024-03-18', {zh: 'Blackwell 平台发布：从芯片到 AI 工厂', en: 'Blackwell platform launch: from chip to AI factory'}, 'https://nvidiaupdates.nvidia.com/updates/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing', {zh: 'NVIDIA Company updates', en: 'NVIDIA Company updates'}, {zh: '核心发布会资料，适合拆解“平台战略”而不是只看芯片性能。', en: 'A core launch source for studying platform strategy beyond chip performance.'}),
+  pc('launch', '2023-08-08', {zh: 'GH200 Grace Hopper 与数据中心平台发布资料', en: 'GH200 Grace Hopper and data center platform launch material'}, 'https://nvidiaupdates.nvidia.com/updates/nvidia-announces-next-generation-grace-hopper-superchip-platform', {zh: 'NVIDIA Company updates', en: 'NVIDIA Company updates'}, {zh: '适合观察 CPU、GPU、内存、网络和系统如何组合为数据中心平台。', en: 'Useful for seeing CPU, GPU, memory, networking, and systems as a data center platform.'}),
   pc('book', '2024', {zh: '《The Nvidia Way》：公司文化与高强度执行', en: 'The Nvidia Way: company culture and high-intensity execution'}, 'https://www.penguinrandomhouse.com/books/734533/the-nvidia-way-by-tae-kim/', {zh: 'Penguin Random House', en: 'Penguin Random House'}, {zh: '用于补充英伟达组织文化、管理方式和执行系统。', en: 'Useful for NVIDIA culture, management style, and execution system.'}),
   pc('book', '2025', {zh: '《The Thinking Machine》与黄仁勋传记材料', en: 'The Thinking Machine and Jensen Huang biography material'}, 'https://www.c-span.org/program/book-tv/after-words-with-stephen-witt/657769', {zh: 'C-SPAN 作者访谈', en: 'C-SPAN author interview'}, {zh: '用于复盘英伟达和黄仁勋的长期决策，不替代原书阅读。', en: 'Useful for reviewing NVIDIA and Jensen Huang long-term decisions.'}),
   pc('book', '2006', {zh: '《The Man Behind the Microchip》：半导体人物史参照', en: 'The Man Behind the Microchip: semiconductor biography reference'}, 'https://mitpress.mit.edu/9780262633471/the-man-behind-the-microchip/', {zh: 'MIT Press', en: 'MIT Press'}, {zh: '不是黄仁勋传记，但适合补充半导体创业者、产业周期和芯片商业史背景。', en: 'Not a Huang biography, but useful semiconductor-founder and industry-history context.'})
 ]);
 
 replacePersonContent('elon-musk', [
-  pc('news', '2026-06-04', {zh: 'SpaceX Terafab 税收协议获批，引发地方争议', en: 'SpaceX Terafab tax agreement approved amid local debate'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '用于观察马斯克如何把 AI 芯片、制造和航天基础设施放进同一资源体系。', en: 'Use this to study how Musk links AI chips, manufacturing, and space infrastructure.'}),
-  pc('news', '2026-05-06', {zh: 'SpaceX 提出在得州建设 Terafab 芯片设施计划', en: 'SpaceX files plan for Texas Terafab chip facility'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '适合放在垂直整合、算力需求和供应链控制的观察维度里。', en: 'Useful for vertical integration, compute demand, and supply-chain control.'}),
-  pc('news', '2026-04-23', {zh: '马斯克披露 Terafab AI 芯片项目设想', en: 'Musk lays out Terafab AI chip project plan'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '用于判断 Tesla、SpaceX 和 AI 算力之间是否形成新的平台叙事。', en: 'Use this to judge whether Tesla, SpaceX, and AI compute form a new platform narrative.'}),
-  pc('speech', '2024', {zh: 'Tesla 股东大会：马斯克谈自动驾驶、机器人与能源', en: 'Tesla shareholder meeting: Musk on autonomy, robots, and energy'}, 'https://www.youtube.com/@Tesla/search?query=shareholder%20meeting', {zh: 'Tesla 官方 YouTube', en: 'Tesla official YouTube'}, {zh: '投资人视角下最适合持续跟踪马斯克公开表达的材料。', en: 'A strong recurring source for Musk public communication from an investor lens.'}),
+  pc('source', '2026-06-04', {zh: 'SpaceX Terafab 税收协议获批，引发地方争议', en: 'SpaceX Terafab tax agreement approved amid local debate'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '用于观察马斯克如何把 AI 芯片、制造和航天基础设施放进同一资源体系。', en: 'Use this to study how Musk links AI chips, manufacturing, and space infrastructure.'}),
+  pc('source', '2026-05-06', {zh: 'SpaceX 提出在得州建设 Terafab 芯片设施计划', en: 'SpaceX files plan for Texas Terafab chip facility'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '适合放在垂直整合、算力需求和供应链控制的观察维度里。', en: 'Useful for vertical integration, compute demand, and supply-chain control.'}),
+  pc('source', '2026-04-23', {zh: '马斯克披露 Terafab AI 芯片项目设想', en: 'Musk lays out Terafab AI chip project plan'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '用于判断 Tesla、SpaceX 和 AI 算力之间是否形成新的平台叙事。', en: 'Use this to judge whether Tesla, SpaceX, and AI compute form a new platform narrative.'}),
+  pc('speech', '2024', {zh: 'Tesla 年度会议：马斯克谈自动驾驶、机器人与能源', en: 'Tesla annual meeting: Musk on autonomy, robots, and energy'}, 'https://www.youtube.com/@Tesla/search?query=holder%20meeting', {zh: 'Tesla 官方 YouTube', en: 'Tesla official YouTube'}, {zh: '观察者视角下最适合持续跟踪马斯克公开表达的材料。', en: 'A strong recurring source for Musk public communication from an observer lens.'}),
   pc('speech', '2022', {zh: 'TED 访谈 / 演讲：未来、Tesla、SpaceX 与 Twitter', en: 'TED conversation: future, Tesla, SpaceX, and Twitter'}, 'https://www.ted.com/speakers/elon_musk', {zh: 'TED 官方页面', en: 'TED official page'}, {zh: '适合看马斯克如何把多个公司放进同一个未来叙事。', en: 'Useful for seeing how Musk places multiple companies into one future narrative.'}),
   pc('speech', '2017', {zh: 'SpaceX 火星计划与可复用火箭公开演讲', en: 'SpaceX Mars plan and reusable rocket public talk'}, 'https://www.spacex.com/updates/', {zh: 'SpaceX 官方资料', en: 'SpaceX official material'}, {zh: '用于理解第一性原理、可复用火箭和长期任务牵引。', en: 'Useful for first principles, reusable rockets, and mission-driven strategy.'}),
   pc('interview', '2021', {zh: 'Everyday Astronaut：Starbase 与星舰工程访谈', en: 'Everyday Astronaut: Starbase and Starship engineering interview'}, 'https://www.youtube.com/@EverydayAstronaut/search?query=Elon%20Musk%20Starbase', {zh: 'Everyday Astronaut YouTube', en: 'Everyday Astronaut YouTube'}, {zh: '经典工程访谈，适合看马斯克如何现场拆解制造、迭代和约束。', en: 'A classic engineering interview for manufacturing, iteration, and constraints.'}),
   pc('interview', '2021', {zh: 'Lex Fridman 访谈：Tesla、SpaceX、AI 与意识', en: 'Lex Fridman interview: Tesla, SpaceX, AI, and consciousness'}, 'https://www.youtube.com/@lexfridman/search?query=Elon%20Musk', {zh: 'Lex Fridman YouTube', en: 'Lex Fridman YouTube'}, {zh: '适合研究马斯克的 AI、机器人、自动驾驶和长期风险框架。', en: 'Useful for studying Musk framework around AI, robotics, autonomy, and long-term risk.'}),
-  pc('interview', '2018', {zh: '60 Minutes：Tesla、SpaceX 与高压管理访谈', en: '60 Minutes: Tesla, SpaceX, and high-pressure management interview'}, 'https://www.cbsnews.com/60-minutes/', {zh: 'CBS 60 Minutes', en: 'CBS 60 Minutes'}, {zh: '适合补充马斯克品牌、争议、组织压力和公众形象。', en: 'Useful for Musk brand, controversy, organizational pressure, and public image.'}),
+  pc('interview', '2018', {zh: '60 Minutes：Tesla、SpaceX 与高压管理访谈', en: '60 Minutes: Tesla, SpaceX, and high-pressure management interview'}, 'https://www.cbsupdates.com/60-minutes/', {zh: 'CBS 60 Minutes', en: 'CBS 60 Minutes'}, {zh: '适合补充马斯克品牌、争议、组织压力和公众形象。', en: 'Useful for Musk brand, controversy, organizational pressure, and public image.'}),
   pc('launch', '2024', {zh: 'Tesla Robotaxi / We, Robot 发布活动', en: 'Tesla Robotaxi / We, Robot launch event'}, 'https://www.youtube.com/@Tesla/search?query=Robotaxi%20We%20Robot', {zh: 'Tesla 官方 YouTube', en: 'Tesla official YouTube'}, {zh: '用于研究特斯拉是否从汽车销售转向自动驾驶出行平台。', en: 'Useful for studying whether Tesla shifts from vehicle sales to autonomy platform.'}),
   pc('launch', '2023', {zh: 'Cybertruck 交付活动', en: 'Cybertruck delivery event'}, 'https://www.youtube.com/@Tesla/search?query=Cybertruck%20delivery', {zh: 'Tesla 官方 YouTube', en: 'Tesla official YouTube'}, {zh: '适合看产品叙事、制造难度、品牌符号和市场预期。', en: 'Useful for product narrative, manufacturing difficulty, brand symbol, and expectations.'}),
   pc('launch', '2023', {zh: 'Starship 试飞与 SpaceX 发射资料', en: 'Starship flight tests and SpaceX launch material'}, 'https://www.spacex.com/launches/', {zh: 'SpaceX 官方发射页', en: 'SpaceX official launches'}, {zh: '用于观察极限工程如何通过试飞、失败和快速迭代推进。', en: 'Use this to observe extreme engineering through tests, failures, and rapid iteration.'}),
   pc('book', '2023', {zh: 'Walter Isaacson《Elon Musk》', en: 'Walter Isaacson: Elon Musk'}, 'https://www.simonandschuster.com/books/Elon-Musk/Walter-Isaacson/9781982181284', {zh: 'Simon & Schuster', en: 'Simon & Schuster'}, {zh: '最重要的近年传记，适合补充性格、组织、公司交叉和争议背景。', en: 'A major recent biography for character, organization, company overlaps, and controversy.'}),
-  pc('book', '2015', {zh: 'Ashlee Vance《Elon Musk》', en: 'Ashlee Vance: Elon Musk'}, 'https://www.harpercollins.com/products/elon-musk-ashlee-vance', {zh: 'HarperCollins', en: 'HarperCollins'}, {zh: '适合看 PayPal、Tesla、SpaceX 早期阶段和创业路径。', en: 'Useful for PayPal, early Tesla, early SpaceX, and entrepreneurial path.'}),
+  pc('book', '2015', {zh: 'Ashlee Vance《Elon Musk》', en: 'Ashlee Vance: Elon Musk'}, 'https://www.harpercollins.com/products/elon-musk-ashlee-vance', {zh: 'HarperCollins', en: 'HarperCollins'}, {zh: '适合看 early fintech company、Tesla、SpaceX 早期阶段和创业路径。', en: 'Useful for early fintech company, early Tesla, early SpaceX, and entrepreneurial path.'}),
   pc('book', '2021', {zh: '《Liftoff》：SpaceX 早期创业史', en: 'Liftoff: SpaceX early history'}, 'https://www.harpercollins.com/products/liftoff-eric-berger', {zh: 'HarperCollins', en: 'HarperCollins'}, {zh: '用于理解 SpaceX 初创阶段的工程、资金、人才和任务压力。', en: 'Useful for SpaceX early engineering, funding, talent, and mission pressure.'})
 ]);
 
 replacePersonContent('steve-jobs', [
-  pc('news', '2011-10-05', {zh: '乔布斯去世，Apple 发布官方悼念', en: 'Steve Jobs dies; Apple publishes official remembrance'}, 'https://www.apple.com/stevejobs/', {zh: 'Apple 官方纪念页', en: 'Apple official memorial page'}, {zh: '他已去世，新闻区第一条放离世新闻，作为人物专题的时间锚点。', en: 'Because Jobs has died, this first news item anchors the person study around his passing.'}),
-  pc('news', '2011-08-24', {zh: '乔布斯辞任 Apple CEO，库克接任', en: 'Steve Jobs resigns as Apple CEO; Tim Cook succeeds him'}, 'https://www.apple.com/newsroom/2011/08/24Steve-Jobs-Resigns-as-CEO-of-Apple/', {zh: 'Apple Newsroom', en: 'Apple Newsroom'}, {zh: '典型新闻，适合研究创始人交接、组织连续性和 Apple 治理。', en: 'A key story for founder succession, organizational continuity, and Apple governance.'}),
-  pc('news', '2007-01-09', {zh: 'iPhone 发布，重塑移动互联网入口', en: 'iPhone launch reshapes mobile internet entry point'}, 'https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/', {zh: 'Apple Newsroom', en: 'Apple Newsroom'}, {zh: '典型新闻，代表乔布斯产品发布和公司性质变化的关键节点。', en: 'A signature launch story showing Jobs product communication and a change in Apple identity.'}),
-  pc('speech', '2005-06-12', {zh: 'Stanford 毕业演讲：连接点、爱与死亡', en: 'Stanford commencement: connecting dots, love, and death'}, 'https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says', {zh: 'Stanford 官方全文', en: 'Stanford official transcript'}, {zh: '乔布斯最经典公开演讲，适合放在人生、职场和成长建议里。', en: 'Jobs most classic public speech, useful for life, career, and growth advice.'}),
+  pc('source', '2011-10-05', {zh: '乔布斯去世，Apple 发布官方悼念', en: 'Steve Jobs dies; Apple publishes official remembrance'}, 'https://www.apple.com/stevejobs/', {zh: 'Apple 官方纪念页', en: 'Apple official memorial page'}, {zh: '他已去世，资料区第一条放离世资讯，作为人物专题的时间锚点。', en: 'Because Jobs has died, this first updates item anchors the person study around his passing.'}),
+  pc('source', '2011-08-24', {zh: '乔布斯辞任 Apple CEO，库克接任', en: 'Steve Jobs resigns as Apple CEO; Tim Cook succeeds him'}, 'https://www.apple.com/updates/2011/08/24Steve-Jobs-Resigns-as-CEO-of-Apple/', {zh: 'Apple Company updates', en: 'Apple Company updates'}, {zh: '典型资讯，适合研究创始人交接、组织连续性和 Apple 治理。', en: 'A key story for founder succession, organizational continuity, and Apple governance.'}),
+  pc('source', '2007-01-09', {zh: 'iPhone 发布，重塑移动互联网入口', en: 'iPhone launch reshapes mobile internet entry point'}, 'https://www.apple.com/updates/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/', {zh: 'Apple Company updates', en: 'Apple Company updates'}, {zh: '典型资讯，代表乔布斯产品发布和公司性质变化的关键节点。', en: 'A signature launch story showing Jobs product communication and a change in Apple identity.'}),
+  pc('speech', '2005-06-12', {zh: 'Stanford 毕业演讲：连接点、爱与死亡', en: 'Stanford commencement: connecting dots, love, and death'}, 'https://updates.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says', {zh: 'Stanford 官方全文', en: 'Stanford official transcript'}, {zh: '乔布斯最经典公开演讲，适合放在人生、职场和成长建议里。', en: 'Jobs most classic public speech, useful for life, career, and growth advice.'}),
   pc('speech', '2007-01-09', {zh: 'Macworld 2007：iPhone 发布演讲', en: 'Macworld 2007: iPhone keynote'}, 'https://www.apple.com/apple-events/', {zh: 'Apple Events', en: 'Apple Events'}, {zh: '产品发布表达的教科书案例：先重构问题，再推出产品。', en: 'A textbook product keynote: reframe the problem before presenting the product.'}),
   pc('speech', '1983', {zh: 'International Design Conference：早期产品愿景演讲', en: 'International Design Conference: early product vision talk'}, 'https://www.youtube.com/results?search_query=Steve+Jobs+1983+International+Design+Conference', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '适合看乔布斯早期对个人电脑、网络和用户体验的预判。', en: 'Useful for Jobs early views on personal computers, networks, and user experience.'}),
   pc('interview', '2010', {zh: 'D8 访谈：Apple、平台、隐私与产品判断', en: 'D8 interview: Apple, platforms, privacy, and product judgment'}, 'https://allthingsd.com/20100607/steve-jobs-session/', {zh: 'AllThingsD 原始访谈', en: 'AllThingsD original interview'}, {zh: '经典访谈，适合研究乔布斯如何回答平台、竞争和产品取舍。', en: 'Classic interview for platforms, competition, and product tradeoffs.'}),
@@ -892,24 +807,24 @@ replacePersonContent('steve-jobs', [
   pc('interview', '1996', {zh: 'PBS Triumph of the Nerds 访谈片段', en: 'PBS Triumph of the Nerds interview clips'}, 'https://www.pbs.org/nerds/', {zh: 'PBS', en: 'PBS'}, {zh: '用于理解乔布斯对个人电脑革命、微软和产业结构的看法。', en: 'Useful for Jobs views on the PC revolution, Microsoft, and industry structure.'}),
   pc('launch', '2007-01-09', {zh: 'iPhone 发布会', en: 'iPhone launch keynote'}, 'https://www.apple.com/apple-events/', {zh: 'Apple Events', en: 'Apple Events'}, {zh: '最值得反复拆解的产品发布会之一：类别定义、节奏、演示和叙事都非常完整。', en: 'One of the best product launches to decompose: category definition, pacing, demo, and narrative.'}),
   pc('launch', '2010-01-27', {zh: 'iPad 发布会', en: 'iPad launch keynote'}, 'https://www.apple.com/apple-events/', {zh: 'Apple Events', en: 'Apple Events'}, {zh: '适合研究 Apple 如何定义手机和电脑之间的新类别。', en: 'Useful for how Apple defined a new category between phone and computer.'}),
-  pc('launch', '2001-10-23', {zh: 'iPod 发布会', en: 'iPod launch event'}, 'https://www.apple.com/newsroom/2001/10/23Apple-Presents-iPod/', {zh: 'Apple Newsroom', en: 'Apple Newsroom'}, {zh: '用于研究 Apple 如何用音乐体验把硬件、软件和内容生态连接起来。', en: 'Useful for how Apple connected hardware, software, and content through music experience.'}),
+  pc('launch', '2001-10-23', {zh: 'iPod 发布会', en: 'iPod launch event'}, 'https://www.apple.com/updates/2001/10/23Apple-Presents-iPod/', {zh: 'Apple Company updates', en: 'Apple Company updates'}, {zh: '用于研究 Apple 如何用音乐体验把硬件、软件和内容生态连接起来。', en: 'Useful for how Apple connected hardware, software, and content through music experience.'}),
   pc('book', '2011', {zh: 'Walter Isaacson《Steve Jobs》', en: 'Walter Isaacson: Steve Jobs'}, 'https://www.simonandschuster.com/books/Steve-Jobs/Walter-Isaacson/9781451648539', {zh: 'Simon & Schuster', en: 'Simon & Schuster'}, {zh: '最重要的乔布斯传记之一，适合补充人生经历、产品判断和管理争议。', en: 'A major biography for life story, product judgment, and management controversy.'}),
   pc('book', '2015', {zh: '《Becoming Steve Jobs》', en: 'Becoming Steve Jobs'}, 'https://www.penguinrandomhouse.com/books/237922/becoming-steve-jobs-by-brent-schlender-and-rick-tetzeli/', {zh: 'Penguin Random House', en: 'Penguin Random House'}, {zh: '相比单纯天才叙事，更适合研究乔布斯如何成长和改变。', en: 'Useful for studying how Jobs changed and matured beyond the genius narrative.'}),
   pc('book', '2023', {zh: '《Make Something Wonderful》乔布斯文字档案', en: 'Make Something Wonderful: Steve Jobs archive'}, 'https://stevejobsarchive.com/book', {zh: 'Steve Jobs Archive', en: 'Steve Jobs Archive'}, {zh: '一手文字档案，适合补充乔布斯公开表达和私人思考。', en: 'Primary archive useful for Jobs public expression and private reflections.'})
 ]);
 
 replacePersonContent('tim-cook', [
-  pc('news', '2026-06-08', {zh: 'WWDC 2026：库克最后一次以 CEO 身份主持开发者大会', en: 'WWDC 2026: Cook hosts his final WWDC as CEO'}, 'https://www.apple.com/newsroom/', {zh: 'Apple Newsroom / 大媒体入口', en: 'Apple Newsroom / major media entry'}, {zh: '用于观察 Apple 在 CEO 交接前如何处理 AI、平台和开发者叙事。', en: 'Use this to study Apple AI, platform, and developer narrative before CEO transition.'}),
-  pc('news', '2026-04-20', {zh: 'Apple 宣布库克将转任执行董事长，John Ternus 接任 CEO', en: 'Apple says Cook will become executive chairman and John Ternus CEO'}, 'https://www.apple.com/newsroom/', {zh: 'Apple Newsroom / 大媒体入口', en: 'Apple Newsroom / major media entry'}, {zh: '关键新闻，适合研究 Apple 后乔布斯时代之后的第二次重大权力交接。', en: 'A key story for Apple second major succession after the post-Jobs transition.'}),
-  pc('news', '2026-04-30', {zh: 'Apple 财报与交接期运营表现', en: 'Apple earnings and operating performance during transition'}, 'https://investor.apple.com/', {zh: 'Apple Investor Relations', en: 'Apple Investor Relations'}, {zh: '用于观察库克式运营、服务收入、现金流和供应链韧性。', en: 'Useful for Cook-style operations, services revenue, cash flow, and supply-chain resilience.'}),
+  pc('source', '2026-06-08', {zh: 'WWDC 2026：库克最后一次以 CEO 身份主持开发者大会', en: 'WWDC 2026: Cook hosts his final WWDC as CEO'}, 'https://www.apple.com/updates/', {zh: 'Apple Company updates / 大媒体入口', en: 'Apple Company updates / public source entry'}, {zh: '用于观察 Apple 在 CEO 交接前如何处理 AI、平台和开发者叙事。', en: 'Use this to study Apple AI, platform, and developer narrative before CEO transition.'}),
+  pc('source', '2026-04-20', {zh: 'Apple 宣布库克将转任执行董事长，John Ternus 接任 CEO', en: 'Apple says Cook will become executive chairman and John Ternus CEO'}, 'https://www.apple.com/updates/', {zh: 'Apple Company updates / 大媒体入口', en: 'Apple Company updates / public source entry'}, {zh: '关键资讯，适合研究 Apple 后乔布斯时代之后的第二次重大权力交接。', en: 'A key story for Apple second major succession after the post-Jobs transition.'}),
+  pc('source', '2026-04-30', {zh: 'Apple 财报与交接期运营表现', en: 'Apple earnings and operating performance during transition'}, 'https://www.apple.com/', {zh: 'Apple Company Materials', en: 'Apple Company Materials'}, {zh: '用于观察库克式运营、服务收入、现金流和供应链韧性。', en: 'Useful for Cook-style operations, services revenue, cash flow, and supply-chain resilience.'}),
   pc('speech', '2024-06-10', {zh: 'WWDC 2024：Apple Intelligence 发布', en: 'WWDC 2024: Apple Intelligence introduction'}, 'https://www.apple.com/apple-events/', {zh: 'Apple Events', en: 'Apple Events'}, {zh: '适合看库克时代 Apple 如何把 AI 纳入隐私、设备和生态叙事。', en: 'Useful for how Cook-era Apple integrates AI with privacy, devices, and ecosystem.'}),
-  pc('speech', '2018', {zh: 'Brussels 隐私演讲：数据、信任与监管', en: 'Brussels privacy speech: data, trust, and regulation'}, 'https://www.apple.com/newsroom/', {zh: 'Apple Newsroom', en: 'Apple Newsroom'}, {zh: '库克公开价值观表达的代表材料，适合研究隐私如何变成商业和品牌护城河。', en: 'A representative Cook values speech for privacy as business and brand moat.'}),
-  pc('speech', '2017', {zh: 'MIT 毕业演讲：技术、人性与责任', en: 'MIT commencement: technology, humanity, and responsibility'}, 'https://news.mit.edu/2017/apple-ceo-tim-cook-commencement-address-0609', {zh: 'MIT 官方全文', en: 'MIT official transcript'}, {zh: '适合放在人生、教育和技术责任板块。', en: 'Useful for life, education, and technology responsibility.'}),
+  pc('speech', '2018', {zh: 'Brussels 隐私演讲：数据、信任与监管', en: 'Brussels privacy speech: data, trust, and regulation'}, 'https://www.apple.com/updates/', {zh: 'Apple Company updates', en: 'Apple Company updates'}, {zh: '库克公开价值观表达的代表材料，适合研究隐私如何变成商业和品牌护城河。', en: 'A representative Cook values speech for privacy as business and brand moat.'}),
+  pc('speech', '2017', {zh: 'MIT 毕业演讲：技术、人性与责任', en: 'MIT commencement: technology, humanity, and responsibility'}, 'https://updates.mit.edu/2017/apple-ceo-tim-cook-commencement-address-0609', {zh: 'MIT 官方全文', en: 'MIT official transcript'}, {zh: '适合放在人生、教育和技术责任板块。', en: 'Useful for life, education, and technology responsibility.'}),
   pc('interview', '2024', {zh: 'Apple 领导层谈 Apple Intelligence 与隐私', en: 'Apple leadership on Apple Intelligence and privacy'}, 'https://www.youtube.com/@Apple/search?query=Tim%20Cook%20Apple%20Intelligence%20interview', {zh: 'Apple 官方 YouTube / 访谈入口', en: 'Apple official YouTube / interview entry'}, {zh: '适合看库克如何把 AI 产品化和隐私价值观同时表达。', en: 'Useful for Cook communication around AI productization and privacy.'}),
-  pc('interview', '2023', {zh: 'CBS / 60 Minutes：Apple、创新与社会责任', en: 'CBS / 60 Minutes: Apple, innovation, and social responsibility'}, 'https://www.cbsnews.com/60-minutes/', {zh: 'CBS 60 Minutes', en: 'CBS 60 Minutes'}, {zh: '适合补充库克在大众媒体中的品牌和治理表达。', en: 'Useful for Cook brand and governance communication in mainstream media.'}),
+  pc('interview', '2023', {zh: 'CBS / 60 Minutes：Apple、创新与社会责任', en: 'CBS / 60 Minutes: Apple, innovation, and social responsibility'}, 'https://www.cbsupdates.com/60-minutes/', {zh: 'CBS 60 Minutes', en: 'CBS 60 Minutes'}, {zh: '适合补充库克在大众媒体中的品牌和治理表达。', en: 'Useful for Cook brand and governance communication in mainstream media.'}),
   pc('interview', '2017', {zh: 'Bloomberg / CNBC 访谈：运营、供应链与服务化', en: 'Bloomberg / CNBC interviews: operations, supply chain, and services'}, 'https://www.cnbc.com/tim-cook/', {zh: 'CNBC 人物入口', en: 'CNBC person entry'}, {zh: '适合研究库克怎样把 Apple 从产品公司扩展成运营和服务系统。', en: 'Useful for how Cook extended Apple from product company to operating and services system.'}),
   pc('launch', '2024-06-10', {zh: 'Apple Intelligence 发布', en: 'Apple Intelligence launch'}, 'https://www.apple.com/apple-events/', {zh: 'Apple Events', en: 'Apple Events'}, {zh: '库克时代关键 AI 发布，适合跟踪 Apple 的 AI 产品化速度。', en: 'A key Cook-era AI launch for tracking Apple AI productization.'}),
-  pc('launch', '2023-06-05', {zh: 'Vision Pro 发布', en: 'Vision Pro launch'}, 'https://www.apple.com/newsroom/2023/06/introducing-apple-vision-pro/', {zh: 'Apple Newsroom', en: 'Apple Newsroom'}, {zh: '适合研究 Apple 是否能在 iPhone 之后开辟新交互平台。', en: 'Useful for whether Apple can open a new interaction platform after iPhone.'}),
+  pc('launch', '2023-06-05', {zh: 'Vision Pro 发布', en: 'Vision Pro launch'}, 'https://www.apple.com/updates/2023/06/introducing-apple-vision-pro/', {zh: 'Apple Company updates', en: 'Apple Company updates'}, {zh: '适合研究 Apple 是否能在 iPhone 之后开辟新交互平台。', en: 'Useful for whether Apple can open a new interaction platform after iPhone.'}),
   pc('launch', '2020-11-10', {zh: 'Apple Silicon Mac 发布', en: 'Apple Silicon Mac launch'}, 'https://www.apple.com/apple-events/', {zh: 'Apple Events', en: 'Apple Events'}, {zh: '库克时代最重要的平台迁移之一，体现供应链、芯片和系统整合能力。', en: 'One of Cook era most important platform transitions: chips, supply chain, and systems integration.'}),
   pc('book', '2019', {zh: '《Tim Cook》：库克传记', en: 'Tim Cook biography'}, 'https://www.penguinrandomhouse.com/books/611466/tim-cook-by-leander-kahney/', {zh: 'Penguin Random House', en: 'Penguin Random House'}, {zh: '适合补充库克的供应链、运营、价值观和 Apple 后乔布斯时代。', en: 'Useful for Cook supply chain, operations, values, and post-Jobs Apple.'}),
   pc('book', '2019', {zh: '《Creative Selection》：Apple 产品开发内部视角', en: 'Creative Selection: inside Apple product development'}, 'https://us.macmillan.com/books/9781250194466/creativeselection', {zh: 'Macmillan', en: 'Macmillan'}, {zh: '不是库克传记，但适合理解 Apple 产品文化和协作机制。', en: 'Not a Cook biography, but useful for Apple product culture and collaboration.'}),
@@ -917,12 +832,12 @@ replacePersonContent('tim-cook', [
 ]);
 
 replacePersonContent('sam-altman', [
-  pc('news', '2026-06-03', {zh: 'Altman 赴华盛顿讨论 AI 模型发布监管', en: 'Altman goes to Washington to discuss AI model release regulation'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '用于观察 OpenAI 如何在前沿模型、监管和公共叙事之间做平衡。', en: 'Use this to study OpenAI balance among frontier models, regulation, and public narrative.'}),
-  pc('news', '2026-02-27', {zh: 'OpenAI 与美国政府网络部署合作相关报道', en: 'OpenAI government deployment cooperation reporting'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '适合放在企业与政府客户、AI 安全和商业化边界的观察维度里。', en: 'Useful for enterprise/government customers, AI safety, and commercialization boundaries.'}),
-  pc('news', '2025', {zh: 'OpenAI 企业 AI 报告：企业采用与工作流变化', en: 'OpenAI enterprise AI report: enterprise adoption and workflow change'}, 'https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf', {zh: 'OpenAI 官方报告', en: 'OpenAI official report'}, {zh: '用于补充 ChatGPT 和 OpenAI 平台进入企业工作流的事实基础。', en: 'Useful for factual basis on ChatGPT and OpenAI platform in enterprise workflows.'}),
+  pc('source', '2026-06-03', {zh: 'Altman 赴华盛顿讨论 AI 模型发布监管', en: 'Altman goes to Washington to discuss AI model release regulation'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '用于观察 OpenAI 如何在前沿模型、监管和公共叙事之间做平衡。', en: 'Use this to study OpenAI balance among frontier models, regulation, and public narrative.'}),
+  pc('source', '2026-02-27', {zh: 'OpenAI 与美国政府网络部署合作相关报道', en: 'OpenAI government deployment cooperation reporting'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '适合放在企业与政府客户、AI 安全和商业化边界的观察维度里。', en: 'Useful for enterprise/government customers, AI safety, and commercialization boundaries.'}),
+  pc('source', '2025', {zh: 'OpenAI 企业 AI 报告：企业采用与工作流变化', en: 'OpenAI enterprise AI report: enterprise adoption and workflow change'}, 'https://cdn.openai.com/pdf/7ef17d82-96bf-4dd1-9df2-228f7f377a29/the-state-of-enterprise-ai_2025-report.pdf', {zh: 'OpenAI 官方报告', en: 'OpenAI official report'}, {zh: '用于补充 ChatGPT 和 OpenAI 平台进入企业工作流的事实基础。', en: 'Useful for factual basis on ChatGPT and OpenAI platform in enterprise workflows.'}),
   pc('speech', '2023-11-06', {zh: 'OpenAI DevDay 主题演讲', en: 'OpenAI DevDay keynote'}, 'https://www.youtube.com/@OpenAI/search?query=DevDay%20Sam%20Altman', {zh: 'OpenAI 官方 YouTube', en: 'OpenAI official YouTube'}, {zh: '适合看 Altman 如何向开发者讲平台、API、工具调用和生态。', en: 'Useful for Altman platform, API, tool use, and developer ecosystem message.'}),
   pc('speech', '2023', {zh: '美国国会 AI 听证会证词', en: 'U.S. Senate AI hearing testimony'}, 'https://www.judiciary.senate.gov/committee-activity/hearings/oversight-of-ai-rules-for-artificial-intelligence', {zh: '美国参议院官方页面', en: 'U.S. Senate official page'}, {zh: '适合研究 Altman 的监管叙事和公共责任表达。', en: 'Useful for Altman regulatory narrative and public responsibility.'}),
-  pc('speech', '2024', {zh: 'OpenAI Spring Update / GPT-4o 发布表达', en: 'OpenAI Spring Update / GPT-4o launch communication'}, 'https://openai.com/news/', {zh: 'OpenAI News', en: 'OpenAI News'}, {zh: '用于观察 OpenAI 如何把多模态能力产品化。', en: 'Useful for how OpenAI productizes multimodal capability.'}),
+  pc('speech', '2024', {zh: 'OpenAI Spring Update / GPT-4o 发布表达', en: 'OpenAI Spring Update / GPT-4o launch communication'}, 'https://openai.com/updates/', {zh: 'OpenAI Updates', en: 'OpenAI Updates'}, {zh: '用于观察 OpenAI 如何把多模态能力产品化。', en: 'Useful for how OpenAI productizes multimodal capability.'}),
   pc('interview', '2024', {zh: 'Lex Fridman 访谈：OpenAI、AGI 与治理', en: 'Lex Fridman interview: OpenAI, AGI, and governance'}, 'https://www.youtube.com/@lexfridman/search?query=Sam%20Altman', {zh: 'Lex Fridman YouTube', en: 'Lex Fridman YouTube'}, {zh: '经典长访谈，适合研究 Altman 的 AGI、风险和公司治理框架。', en: 'Classic long-form interview on AGI, risk, and governance.'}),
   pc('interview', '2023', {zh: 'Stratechery 访谈：OpenAI 商业模式与平台', en: 'Stratechery interview: OpenAI business model and platform'}, 'https://stratechery.com/?s=Sam+Altman+OpenAI', {zh: 'Stratechery 检索入口', en: 'Stratechery search entry'}, {zh: '适合研究 OpenAI 从模型公司到平台公司的商业逻辑。', en: 'Useful for OpenAI transition from model company to platform company.'}),
   pc('interview', '2023', {zh: 'Y Combinator / Startup 访谈：创业与长期主义', en: 'Y Combinator / Startup interviews: entrepreneurship and long-termism'}, 'https://www.youtube.com/@ycombinator/search?query=Sam%20Altman', {zh: 'Y Combinator YouTube', en: 'Y Combinator YouTube'}, {zh: '用于补充 Altman 在创业、融资和组织判断上的早期表达。', en: 'Useful for Altman early views on startups, funding, and organization.'}),
@@ -935,112 +850,61 @@ replacePersonContent('sam-altman', [
 ]);
 
 replacePersonContent('dario-amodei', [
-  pc('news', '2026-06-03', {zh: 'Dario Amodei 警示超人类 AI 权力与社会成熟度', en: 'Dario Amodei warns about beyond-human AI power and social maturity'}, 'https://www.anthropic.com/news', {zh: 'Anthropic / 大媒体入口', en: 'Anthropic / major media entry'}, {zh: '用于观察 Anthropic 如何把 AI 安全和公共风险放进公司叙事。', en: 'Use this to study Anthropic safety and public-risk narrative.'}),
-  pc('news', '2025', {zh: 'Claude Code 进入 Team 与 Enterprise 计划', en: 'Claude Code comes to Team and Enterprise plans'}, 'https://www.anthropic.com/news/claude-code-on-team-and-enterprise', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '适合观察 Anthropic 如何把模型能力转成企业开发者工作流。', en: 'Useful for how Anthropic turns model capability into enterprise developer workflows.'}),
-  pc('news', '2024', {zh: 'Claude 3 系列发布，强化企业级模型竞争', en: 'Claude 3 family launch strengthens enterprise model competition'}, 'https://www.anthropic.com/news/claude-3-family', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '用于研究 Anthropic 的模型能力、安全品牌和企业客户策略。', en: 'Useful for Anthropic model capability, safety brand, and enterprise customer strategy.'}),
+  pc('source', '2026-06-03', {zh: 'Dario Amodei 警示超人类 AI 权力与社会成熟度', en: 'Dario Amodei warns about beyond-human AI power and social maturity'}, 'https://www.anthropic.com/updates', {zh: 'Anthropic / 大媒体入口', en: 'Anthropic / public source entry'}, {zh: '用于观察 Anthropic 如何把 AI 安全和公共风险放进公司叙事。', en: 'Use this to study Anthropic safety and public-risk narrative.'}),
+  pc('source', '2025', {zh: 'Claude Code 进入 Team 与 Enterprise 计划', en: 'Claude Code comes to Team and Enterprise plans'}, 'https://www.anthropic.com/updates/claude-code-on-team-and-enterprise', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '适合观察 Anthropic 如何把模型能力转成企业开发者工作流。', en: 'Useful for how Anthropic turns model capability into enterprise developer workflows.'}),
+  pc('source', '2024', {zh: 'Claude 3 系列发布，强化企业级模型竞争', en: 'Claude 3 family launch strengthens enterprise model competition'}, 'https://www.anthropic.com/updates/claude-3-family', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '用于研究 Anthropic 的模型能力、安全品牌和企业客户策略。', en: 'Useful for Anthropic model capability, safety brand, and enterprise customer strategy.'}),
   pc('speech', '2025', {zh: 'AI 安全、能力跃迁与治理公开表达', en: 'Public talks on AI safety, capability jumps, and governance'}, 'https://www.youtube.com/results?search_query=Dario+Amodei+AI+safety+talk', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '适合系统整理 Dario 对 AI 风险和治理的表达。', en: 'Useful for organizing Dario views on AI risk and governance.'}),
   pc('speech', '2024', {zh: 'Anthropic 研究与安全主题资料', en: 'Anthropic research and safety material'}, 'https://www.anthropic.com/research', {zh: 'Anthropic Research', en: 'Anthropic Research'}, {zh: '演讲不如论文密集时，可用官方研究资料补足安全与解释性主线。', en: 'When talks are fewer, official research material supports the safety and interpretability thread.'}),
   pc('speech', '2023', {zh: '国会 / 政策讨论中的 AI 安全表达', en: 'AI safety remarks in policy discussions'}, 'https://www.anthropic.com/policy', {zh: 'Anthropic Policy', en: 'Anthropic Policy'}, {zh: '适合看 Anthropic 如何面向政策制定者讲模型安全。', en: 'Useful for how Anthropic communicates model safety to policymakers.'}),
   pc('interview', '2024', {zh: 'Lex Fridman 访谈：Claude、AI 安全与未来', en: 'Lex Fridman interview: Claude, AI safety, and the future'}, 'https://www.youtube.com/@lexfridman/search?query=Dario%20Amodei', {zh: 'Lex Fridman YouTube', en: 'Lex Fridman YouTube'}, {zh: '经典长访谈入口，适合理解 Dario 的安全、模型和治理框架。', en: 'Classic long-form entry for Dario safety, model, and governance framework.'}),
   pc('interview', '2023', {zh: 'Dwarkesh Patel 访谈：前沿模型与安全', en: 'Dwarkesh Patel interview: frontier models and safety'}, 'https://www.youtube.com/@DwarkeshPatel/search?query=Dario%20Amodei', {zh: 'Dwarkesh Patel YouTube', en: 'Dwarkesh Patel YouTube'}, {zh: '适合研究前沿模型能力、对齐和经济影响。', en: 'Useful for frontier model capability, alignment, and economic impact.'}),
-  pc('interview', '2024', {zh: '企业 AI 与 Claude 访谈资料入口', en: 'Enterprise AI and Claude interview material'}, 'https://www.anthropic.com/news', {zh: 'Anthropic News', en: 'Anthropic News'}, {zh: '用于后续补充 Dario 或 Anthropic 高管围绕 Claude 企业化的访谈。', en: 'A source entry for future Dario or Anthropic executive interviews around Claude enterprise adoption.'}),
-  pc('launch', '2025', {zh: 'Claude Code Team / Enterprise 发布', en: 'Claude Code Team / Enterprise launch'}, 'https://www.anthropic.com/news/claude-code-on-team-and-enterprise', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '适合看 Anthropic 如何切入程序员和企业知识工作流。', en: 'Useful for Anthropic entry into developer and enterprise knowledge workflows.'}),
-  pc('launch', '2024', {zh: 'Claude 3.5 Sonnet 发布', en: 'Claude 3.5 Sonnet launch'}, 'https://www.anthropic.com/news/claude-3-5-sonnet', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '用于观察模型性能、代码能力和产品节奏。', en: 'Useful for model performance, coding capability, and product cadence.'}),
-  pc('launch', '2024', {zh: 'Claude 3 系列发布', en: 'Claude 3 family launch'}, 'https://www.anthropic.com/news/claude-3-family', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: 'Anthropic 从安全品牌走向主流模型竞争的重要节点。', en: 'A key point in Anthropic move from safety brand into mainstream model competition.'}),
+  pc('interview', '2024', {zh: '企业 AI 与 Claude 访谈资料入口', en: 'Enterprise AI and Claude interview material'}, 'https://www.anthropic.com/updates', {zh: 'Anthropic Updates', en: 'Anthropic Updates'}, {zh: '用于后续补充 Dario 或 Anthropic 高管围绕 Claude 企业化的访谈。', en: 'A source entry for future Dario or Anthropic executive interviews around Claude enterprise adoption.'}),
+  pc('launch', '2025', {zh: 'Claude Code Team / Enterprise 发布', en: 'Claude Code Team / Enterprise launch'}, 'https://www.anthropic.com/updates/claude-code-on-team-and-enterprise', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '适合看 Anthropic 如何切入程序员和企业知识工作流。', en: 'Useful for Anthropic entry into developer and enterprise knowledge workflows.'}),
+  pc('launch', '2024', {zh: 'Claude 3.5 Sonnet 发布', en: 'Claude 3.5 Sonnet launch'}, 'https://www.anthropic.com/updates/claude-3-5-sonnet', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: '用于观察模型性能、代码能力和产品节奏。', en: 'Useful for model performance, coding capability, and product cadence.'}),
+  pc('launch', '2024', {zh: 'Claude 3 系列发布', en: 'Claude 3 family launch'}, 'https://www.anthropic.com/updates/claude-3-family', {zh: 'Anthropic 官方发布', en: 'Anthropic official launch'}, {zh: 'Anthropic 从安全品牌走向主流模型竞争的重要节点。', en: 'A key point in Anthropic move from safety brand into mainstream model competition.'}),
   pc('book', '2023', {zh: '《Constitutional AI》研究论文', en: 'Constitutional AI research paper'}, 'https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback', {zh: 'Anthropic Research', en: 'Anthropic Research'}, {zh: '不是传记，但这是理解 Dario / Anthropic 路线的核心阅读。', en: 'Not a biography, but core reading for Dario / Anthropic approach.'}),
   pc('book', '2024', {zh: 'Anthropic 解释性研究资料', en: 'Anthropic interpretability research material'}, 'https://www.anthropic.com/research', {zh: 'Anthropic Research', en: 'Anthropic Research'}, {zh: '用于补充安全、解释性和对齐研究底座。', en: 'Useful for safety, interpretability, and alignment research foundation.'}),
-  pc('book', '2025', {zh: 'Anthropic 官方新闻与研究归档', en: 'Anthropic news and research archive'}, 'https://www.anthropic.com/news', {zh: 'Anthropic News', en: 'Anthropic News'}, {zh: '后续可拆成 Claude 产品史、安全研究史和企业化路线。', en: 'Can later become Claude product history, safety research history, and enterprise route.'})
+  pc('book', '2025', {zh: 'Anthropic 官方资讯与研究归档', en: 'Anthropic updates and research archive'}, 'https://www.anthropic.com/updates', {zh: 'Anthropic Updates', en: 'Anthropic Updates'}, {zh: '后续可拆成 Claude 产品史、安全研究史和企业化路线。', en: 'Can later become Claude product history, safety research history, and enterprise route.'})
 ]);
 
 replacePersonContent('morris-chang', [
-  pc('news', '2024-06-04', {zh: '张忠谋交棒后，魏哲家接任台积电董事长', en: 'After Morris Chang era, C.C. Wei becomes TSMC chairman'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方新闻 / 大媒体入口', en: 'TSMC official news / major media entry'}, {zh: '用于观察台积电从创始人时代进入职业经理人与全球扩产时代。', en: 'Use this to study TSMC transition from founder era to professional management and global expansion.'}),
-  pc('news', '2022', {zh: '张忠谋公开谈台积电、地缘政治与美国建厂', en: 'Morris Chang discusses TSMC, geopolitics, and U.S. fabs'}, 'https://www.brookings.edu/events/a-conversation-with-morris-chang/', {zh: 'Brookings 活动资料', en: 'Brookings event material'}, {zh: '典型材料，适合研究半导体产业、地缘风险和晶圆代工模式。', en: 'A representative source for semiconductors, geopolitics, and the foundry model.'}),
-  pc('news', '2020', {zh: '张忠谋对台积电全球产能和产业分工的长期判断', en: 'Morris Chang long-term view on global capacity and industry specialization'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方资料入口', en: 'TSMC official source entry'}, {zh: '作为创始人专题，新闻区保留典型公开材料而不是追逐短期动态。', en: 'For a founder page, this keeps representative public material rather than short-term headlines.'}),
+  pc('source', '2024-06-04', {zh: '张忠谋交棒后，魏哲家接任台积电董事长', en: 'After Morris Chang era, C.C. Wei becomes TSMC chairman'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方资讯 / 大媒体入口', en: 'TSMC official updates / public source entry'}, {zh: '用于观察台积电从创始人时代进入职业经理人与全球扩产时代。', en: 'Use this to study TSMC transition from founder era to professional management and global expansion.'}),
+  pc('source', '2022', {zh: '张忠谋公开谈台积电、地缘政治与美国建厂', en: 'Morris Chang discusses TSMC, geopolitics, and U.S. fabs'}, 'https://www.brookings.edu/events/a-conversation-with-morris-chang/', {zh: 'Brookings 活动资料', en: 'Brookings event material'}, {zh: '典型材料，适合研究半导体产业、地缘风险和晶圆代工模式。', en: 'A representative source for semiconductors, geopolitics, and the foundry model.'}),
+  pc('source', '2020', {zh: '张忠谋对台积电全球产能和产业分工的长期判断', en: 'Morris Chang long-term view on global capacity and industry specialization'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方资料入口', en: 'TSMC official source entry'}, {zh: '作为创始人专题，资料区保留典型公开材料而不是追逐短期动态。', en: 'For a founder page, this keeps representative public material rather than short-term headlines.'}),
   pc('speech', '2022', {zh: 'Brookings 对谈：半导体、地缘政治与台积电', en: 'Brookings conversation: semiconductors, geopolitics, and TSMC'}, 'https://www.brookings.edu/events/a-conversation-with-morris-chang/', {zh: 'Brookings 官方活动页', en: 'Brookings official event page'}, {zh: '适合看张忠谋如何解释半导体产业结构和台积电定位。', en: 'Useful for how Chang explains semiconductor structure and TSMC positioning.'}),
   pc('speech', '2018', {zh: '台积电创立与晶圆代工模式回顾', en: 'TSMC founding and foundry model retrospective'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 官方公司资料', en: 'TSMC official company profile'}, {zh: '演讲资料较分散时，用官方公司史补足其产业定位表达。', en: 'When speeches are scattered, official company history supports his positioning narrative.'}),
   pc('speech', '2017', {zh: '退休前公开演讲与产业回顾资料', en: 'Public talks and industry retrospectives before retirement'}, 'https://www.youtube.com/results?search_query=Morris+Chang+speech+TSMC', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '适合补充创始人如何复盘职业、产业和组织建设。', en: 'Useful for how the founder reviewed career, industry, and organization building.'}),
   pc('interview', '2022', {zh: 'Brookings 深度对谈：芯片、国家竞争与台积电', en: 'Brookings interview: chips, national competition, and TSMC'}, 'https://www.brookings.edu/events/a-conversation-with-morris-chang/', {zh: 'Brookings 官方页面', en: 'Brookings official page'}, {zh: '经典访谈，适合理解张忠谋对半导体全球分工的判断。', en: 'Classic interview source for Chang view on global semiconductor specialization.'}),
   pc('interview', '2017', {zh: '张忠谋退休访谈资料入口', en: 'Morris Chang retirement interview material'}, 'https://www.youtube.com/results?search_query=Morris+Chang+retirement+interview', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '适合补充他对台积电文化、接班和客户信任的看法。', en: 'Useful for his views on TSMC culture, succession, and customer trust.'}),
   pc('interview', '2007', {zh: 'Computer History Museum 相关访谈资料', en: 'Computer History Museum related interview material'}, 'https://computerhistory.org/', {zh: 'Computer History Museum', en: 'Computer History Museum'}, {zh: '用于把张忠谋放回全球半导体人物史里研究。', en: 'Useful for placing Chang in global semiconductor history.'}),
-  pc('launch', '1987', {zh: '台积电成立：纯晶圆代工模式启动', en: 'TSMC founding: pure-play foundry model begins'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 官方公司资料', en: 'TSMC official company profile'}, {zh: '投资人 / 创始人专题里最重要的“发布会”是商业模式本身的推出。', en: 'For an investor/founder page, the key launch is the business model itself.'}),
-  pc('launch', '1994', {zh: '台积电上市与资本市场化', en: 'TSMC listing and capital-market expansion'}, 'https://investor.tsmc.com/english', {zh: 'TSMC 投资者关系', en: 'TSMC investor relations'}, {zh: '用于研究资本市场如何支持先进制造长期资本开支。', en: 'Useful for how capital markets support long-term advanced manufacturing capex.'}),
-  pc('launch', '2018', {zh: '张忠谋退休与台积电治理交接', en: 'Morris Chang retirement and TSMC governance transition'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方新闻入口', en: 'TSMC official news entry'}, {zh: '适合研究创始人退出后，公司文化和客户信任如何延续。', en: 'Useful for founder exit, cultural continuity, and customer trust.'}),
+  pc('launch', '1987', {zh: '台积电成立：纯晶圆代工模式启动', en: 'TSMC founding: pure-play foundry model begins'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 官方公司资料', en: 'TSMC official company profile'}, {zh: '观察者 / 创始人专题里最重要的“发布会”是商业模式本身的推出。', en: 'For an observer/founder page, the key launch is the business model itself.'}),
+  pc('launch', '1994', {zh: '台积电上市与资本市场化', en: 'TSMC listing and capital-market expansion'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 公司资料', en: 'TSMC company materials'}, {zh: '用于研究资本市场如何支持先进制造长期资本开支。', en: 'Useful for how capital markets support long-term advanced manufacturing capex.'}),
+  pc('launch', '2018', {zh: '张忠谋退休与台积电治理交接', en: 'Morris Chang retirement and TSMC governance transition'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方资讯入口', en: 'TSMC official updates entry'}, {zh: '适合研究创始人退出后，公司文化和客户信任如何延续。', en: 'Useful for founder exit, cultural continuity, and customer trust.'}),
   pc('book', '1998', {zh: '《张忠谋自传》上册', en: 'Morris Chang autobiography, volume 1'}, 'https://www.google.com/search?q=%E5%BC%A0%E5%BF%A0%E8%B0%8B%E8%87%AA%E4%BC%A0', {zh: '图书检索入口', en: 'Book search entry'}, {zh: '用于补充早年教育、职业路径和进入半导体产业的关键选择。', en: 'Useful for early education, career path, and entry into semiconductors.'}),
   pc('book', '2024', {zh: '《张忠谋自传》下册', en: 'Morris Chang autobiography, volume 2'}, 'https://www.google.com/search?q=%E5%BC%A0%E5%BF%A0%E8%B0%8B%E8%87%AA%E4%BC%A0%E4%B8%8B%E5%86%8C', {zh: '图书检索入口', en: 'Book search entry'}, {zh: '用于系统研究台积电创立、纯晶圆代工模式和创始人治理。', en: 'Useful for TSMC founding, pure-play foundry model, and founder governance.'}),
-  pc('book', '2024', {zh: '台积电年报与公司史', en: 'TSMC annual reports and company history'}, 'https://investor.tsmc.com/english/annual-reports', {zh: 'TSMC 投资者关系', en: 'TSMC investor relations'}, {zh: '不是传记，但能用数据和公司史校准张忠谋路线的长期成果。', en: 'Not a biography, but useful for calibrating Chang path with company history and data.'})
+  pc('book', '2024', {zh: '台积电年报与公司史', en: 'TSMC annual reports and company history'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 公司资料', en: 'TSMC company materials'}, {zh: '不是传记，但能用数据和公司史校准张忠谋路线的长期成果。', en: 'Not a biography, but useful for calibrating Chang path with company history and data.'})
 ]);
 
 replacePersonContent('cc-wei', [
-  pc('news', '2026-06-04', {zh: '魏哲家称 AI 需求强劲，先进制程产能仍难完全满足客户', en: 'C.C. Wei says AI demand remains strong and advanced-node capacity is still tight'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Reuters / major media entry'}, {zh: '用于观察 AI 芯片需求、先进制程、价格纪律和客户关系。', en: 'Use this for AI chip demand, advanced nodes, pricing discipline, and customer relationships.'}),
-  pc('news', '2025-11-25', {zh: '魏哲家谈先进制程产能“仍然不够”', en: 'C.C. Wei says advanced-node capacity remains not enough'}, 'https://www.tomshardware.com/tech-industry/semiconductors/tsmc-csays-advanced-node-capacity-falls-short-of-ai-demand', {zh: '大媒体 / 行业媒体入口', en: 'Major / trade media entry'}, {zh: '适合放在台积电竞争壁垒和先进封装瓶颈观察里。', en: 'Useful for TSMC moat and advanced-packaging bottleneck observation.'}),
-  pc('news', '2024-06-04', {zh: '魏哲家接任台积电董事长并继续担任 CEO', en: 'C.C. Wei becomes TSMC chairman while continuing as CEO'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方新闻入口', en: 'TSMC official news entry'}, {zh: '关键新闻，标志台积电进入新一代领导层阶段。', en: 'A key leadership-transition story for TSMC.'}),
-  pc('speech', '2026', {zh: 'TSMC 股东会：AI 需求、产能与价格纪律', en: 'TSMC annual meeting: AI demand, capacity, and pricing discipline'}, 'https://investor.tsmc.com/english', {zh: 'TSMC 投资者关系', en: 'TSMC investor relations'}, {zh: '适合把魏哲家当作制造业 CEO 来研究：产能、客户、价格和资本开支。', en: 'Useful for Wei as manufacturing CEO: capacity, customers, pricing, and capex.'}),
-  pc('speech', '2025', {zh: 'TSMC 法说会：先进制程与全球扩产', en: 'TSMC earnings call: advanced nodes and global expansion'}, 'https://investor.tsmc.com/english/quarterly-results', {zh: 'TSMC 法说会资料', en: 'TSMC quarterly results'}, {zh: '适合跟踪魏哲家如何对投资者解释 AI 需求和产能投资。', en: 'Useful for how Wei explains AI demand and capacity investment to investors.'}),
+  pc('source', '2026-06-04', {zh: '魏哲家称 AI 需求强劲，先进制程产能仍难完全满足客户', en: 'C.C. Wei says AI demand remains strong and advanced-node capacity is still tight'}, 'https://www.reuters.com/technology/', {zh: 'Reuters / 大媒体入口', en: 'Public source entry'}, {zh: '用于观察 AI 芯片需求、先进制程、价格纪律和客户关系。', en: 'Use this for AI chip demand, advanced nodes, pricing discipline, and customer relationships.'}),
+  pc('source', '2025-11-25', {zh: '魏哲家谈先进制程产能“仍然不够”', en: 'C.C. Wei says advanced-node capacity remains not enough'}, 'https://www.tomshardware.com/tech-industry/semiconductors/tsmc-csays-advanced-node-capacity-falls-short-of-ai-demand', {zh: '大媒体 / 行业媒体入口', en: 'Major / trade media entry'}, {zh: '适合放在台积电竞争壁垒和先进封装瓶颈观察里。', en: 'Useful for TSMC moat and advanced-packaging bottleneck observation.'}),
+  pc('source', '2024-06-04', {zh: '魏哲家接任台积电董事长并继续担任 CEO', en: 'C.C. Wei becomes TSMC chairman while continuing as CEO'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方资讯入口', en: 'TSMC official updates entry'}, {zh: '关键资讯，标志台积电进入新一代领导层阶段。', en: 'A key leadership-transition story for TSMC.'}),
+  pc('speech', '2026', {zh: 'TSMC 年度会议：AI 需求、产能与价格纪律', en: 'TSMC annual meeting: AI demand, capacity, and pricing discipline'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 公司资料', en: 'TSMC company materials'}, {zh: '适合把魏哲家当作制造业 CEO 来研究：产能、客户、价格和资本开支。', en: 'Useful for Wei as manufacturing CEO: capacity, customers, pricing, and capex.'}),
+  pc('speech', '2025', {zh: 'TSMC 法说会：先进制程与全球扩产', en: 'TSMC earnings call: advanced nodes and global expansion'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 法说会资料', en: 'TSMC quarterly results'}, {zh: '适合跟踪魏哲家如何对观察者解释 AI 需求和产能投入。', en: 'Useful for how Wei explains AI demand and capacity ecosystem to observers.'}),
   pc('speech', '2024', {zh: 'TIME100 AI：魏哲家与 AI 芯片基础设施', en: 'TIME100 AI: C.C. Wei and AI chip infrastructure'}, 'https://time.com/7012769/cc-wei/', {zh: 'TIME 人物资料', en: 'TIME profile'}, {zh: '适合补充魏哲家在 AI 基础设施中的全球角色。', en: 'Useful for Wei global role in AI infrastructure.'}),
-  pc('interview', '2026', {zh: '股东会问答：价格、产能与客户需求', en: 'Annual meeting Q&A: pricing, capacity, and customer demand'}, 'https://investor.tsmc.com/english', {zh: 'TSMC 投资者关系', en: 'TSMC investor relations'}, {zh: '适合研究 CEO 如何在供不应求时维护客户信任和长期关系。', en: 'Useful for how a CEO maintains trust during supply shortage.'}),
+  pc('interview', '2026', {zh: '年度会议问答：价格、产能与客户需求', en: 'Annual meeting Q&A: pricing, capacity, and customer demand'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 公司资料', en: 'TSMC company materials'}, {zh: '适合研究 CEO 如何在供不应求时维护客户信任和长期关系。', en: 'Useful for how a CEO maintains trust during supply shortage.'}),
   pc('interview', '2024', {zh: '魏哲家行业访谈资料入口', en: 'C.C. Wei industry interview material'}, 'https://www.youtube.com/results?search_query=C.C.+Wei+TSMC+interview', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '用于后续补全公开视频访谈、论坛和媒体对话。', en: 'Source entry for future public video interviews, forums, and media conversations.'}),
-  pc('interview', '2024', {zh: 'TSMC 高管访谈与投资者会议资料', en: 'TSMC executive interviews and investor conference material'}, 'https://investor.tsmc.com/english/events', {zh: 'TSMC 投资者活动', en: 'TSMC investor events'}, {zh: '适合跟踪魏哲家如何讲先进制程、海外厂和客户结构。', en: 'Useful for advanced nodes, overseas fabs, and customer mix.'}),
-  pc('launch', '2024', {zh: '魏哲家接任董事长：治理交接', en: 'C.C. Wei becomes chairman: governance transition'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方新闻入口', en: 'TSMC official news entry'}, {zh: '对职业经理人来说，领导权交接就是最重要的“发布会”之一。', en: 'For a professional CEO, leadership transition is one of the key launches.'}),
+  pc('interview', '2024', {zh: 'TSMC 高管访谈与公司资料会议资料', en: 'TSMC executive interviews and observer conference material'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 公司活动', en: 'TSMC observer events'}, {zh: '适合跟踪魏哲家如何讲先进制程、海外厂和客户结构。', en: 'Useful for advanced nodes, overseas fabs, and customer mix.'}),
+  pc('launch', '2024', {zh: '魏哲家接任董事长：治理交接', en: 'C.C. Wei becomes chairman: governance transition'}, 'https://pr.tsmc.com/english', {zh: 'TSMC 官方资讯入口', en: 'TSMC official updates entry'}, {zh: '对职业经理人来说，领导权交接就是最重要的“发布会”之一。', en: 'For a professional CEO, leadership transition is one of the key launches.'}),
   pc('launch', '2025', {zh: 'A16 / 2nm 等先进制程路线资料', en: 'A16 / 2nm and advanced-node roadmap material'}, 'https://www.tsmc.com/english/dedicatedFoundry/technology/logic', {zh: 'TSMC 技术路线', en: 'TSMC technology roadmap'}, {zh: '用于研究台积电产品不是终端产品，而是制程路线和制造能力。', en: 'Useful because TSMC product launches are process roadmaps and manufacturing capability.'}),
   pc('launch', '2024', {zh: 'CoWoS / SoIC 先进封装能力扩张', en: 'CoWoS / SoIC advanced packaging expansion'}, 'https://www.tsmc.com/english/dedicatedFoundry/technology/3DFabric', {zh: 'TSMC 3DFabric', en: 'TSMC 3DFabric'}, {zh: '适合观察 AI 芯片瓶颈如何从制程扩展到先进封装。', en: 'Useful for how AI chip bottlenecks expand from nodes into advanced packaging.'}),
-  pc('book', '2025', {zh: 'TSMC 年报：魏哲家时代的经营数据', en: 'TSMC annual report: operating data under C.C. Wei'}, 'https://investor.tsmc.com/english/annual-reports', {zh: 'TSMC 投资者关系', en: 'TSMC investor relations'}, {zh: '最适合补充量化数据：收入结构、先进制程占比、资本开支和客户集中度。', en: 'Best for quantitative data: revenue mix, advanced-node share, capex, and customer concentration.'}),
+  pc('book', '2025', {zh: 'TSMC 年报：魏哲家时代的经营数据', en: 'TSMC annual report: operating data under C.C. Wei'}, 'https://www.tsmc.com/english/aboutTSMC/company_profile', {zh: 'TSMC 公司资料', en: 'TSMC company materials'}, {zh: '最适合补充量化数据：收入结构、先进制程占比、资本开支和客户集中度。', en: 'Best for quantitative data: revenue mix, advanced-node share, capex, and customer concentration.'}),
   pc('book', '2024', {zh: 'TSMC 技术白皮书与技术路线资料', en: 'TSMC technology papers and roadmap material'}, 'https://www.tsmc.com/english/dedicatedFoundry/technology', {zh: 'TSMC 技术资料', en: 'TSMC technology material'}, {zh: '用于补充制造能力、工艺路线和先进封装底层知识。', en: 'Useful for manufacturing capability, process roadmap, and advanced packaging foundation.'}),
   pc('book', '2024', {zh: 'TIME100 AI 人物资料', en: 'TIME100 AI profile'}, 'https://time.com/7012769/cc-wei/', {zh: 'TIME', en: 'TIME'}, {zh: '适合快速理解魏哲家在 AI 基础设施中的位置。', en: 'A concise profile for Wei role in AI infrastructure.'})
 ]);
 
-replacePersonContent('warren-buffett', [
-  pc('news', '2026-01-01', {zh: 'Greg Abel 接任 Berkshire CEO，巴菲特进入董事长与精神领袖阶段', en: 'Greg Abel becomes Berkshire CEO as Buffett moves into chairman / elder statesman role'}, 'https://www.berkshirehathaway.com/2025ar/2025ar.pdf', {zh: 'Berkshire 官方年报', en: 'Berkshire official annual report'}, {zh: '最近关键新闻，适合研究巴菲特之后 Berkshire 的资本配置和文化延续。', en: 'A key recent story for Berkshire capital allocation and cultural continuity after Buffett.'}),
-  pc('news', '2025-05-03', {zh: '巴菲特宣布将卸任 CEO，Greg Abel 接班', en: 'Buffett announces he will step down as CEO with Greg Abel succeeding'}, 'https://www.berkshirehathaway.com/news/2025news.html', {zh: 'Berkshire 官方新闻', en: 'Berkshire official news'}, {zh: '巴菲特人物专题的核心新闻：长期主义最终要接受接班检验。', en: 'A core Buffett story: long-termism eventually faces succession.'}),
-  pc('news', '2024-02-24', {zh: '巴菲特在股东信中纪念芒格并总结 Berkshire 原则', en: 'Buffett honors Munger and summarizes Berkshire principles in shareholder letter'}, 'https://www.berkshirehathaway.com/letters/letters.html', {zh: 'Berkshire 股东信', en: 'Berkshire shareholder letters'}, {zh: '典型新闻 / 原始资料，适合研究巴菲特如何表达合伙人、文化和资本配置。', en: 'Representative primary material for Buffett on partner, culture, and capital allocation.'}),
-  pc('speech', '2025-05-03', {zh: 'Berkshire 2025 股东大会：接班与资本配置', en: 'Berkshire 2025 annual meeting: succession and capital allocation'}, 'https://www.berkshirehathaway.com/meet01/visguide2025.pdf', {zh: 'Berkshire 股东大会资料', en: 'Berkshire annual meeting material'}, {zh: '投资人没有产品发布会，股东大会就是最重要的公开表达场。', en: 'For an investor, the annual meeting is the main public communication event.'}),
-  pc('speech', '2024', {zh: 'Berkshire 2024 股东大会：没有芒格后的第一次大会', en: 'Berkshire 2024 annual meeting: first meeting after Munger'}, 'https://www.berkshirehathaway.com/meet01/visguide2024.pdf', {zh: 'Berkshire 股东大会资料', en: 'Berkshire annual meeting material'}, {zh: '适合观察巴菲特如何在缺少芒格后继续解释公司原则。', en: 'Useful for how Buffett explains principles after Munger.'}),
-  pc('speech', '2023', {zh: 'Berkshire 2023 股东大会：巴菲特与芒格最后几次公开同台之一', en: 'Berkshire 2023 annual meeting: one of Buffett and Munger final public sessions'}, 'https://www.berkshirehathaway.com/meet01/visguide2023.pdf', {zh: 'Berkshire 股东大会资料', en: 'Berkshire annual meeting material'}, {zh: '适合作为巴菲特与芒格共同思维方式的经典材料。', en: 'A classic source for Buffett and Munger shared thinking.'}),
-  pc('interview', '2024', {zh: 'CNBC Buffett Archive：商业、市场与长期持有', en: 'CNBC Buffett Archive: business, markets, and long-term ownership'}, 'https://www.cnbc.com/warren-buffett-archive/', {zh: 'CNBC Buffett Archive', en: 'CNBC Buffett Archive'}, {zh: '长期访谈资料入口，适合持续补充巴菲特对市场和企业的判断。', en: 'Long-running interview archive for Buffett market and business judgment.'}),
-  pc('interview', '2019', {zh: 'Yahoo Finance / CNBC 访谈：苹果、现金与市场', en: 'Yahoo Finance / CNBC interviews: Apple, cash, and markets'}, 'https://www.cnbc.com/warren-buffett/', {zh: 'CNBC 人物入口', en: 'CNBC person entry'}, {zh: '适合补充巴菲特如何看 Apple、现金和估值纪律。', en: 'Useful for Buffett views on Apple, cash, and valuation discipline.'}),
-  pc('interview', '2017', {zh: 'PBS / Charlie Rose 访谈资料', en: 'PBS / Charlie Rose interview material'}, 'https://charlierose.com/guests/870', {zh: 'Charlie Rose Archive', en: 'Charlie Rose Archive'}, {zh: '适合看巴菲特如何用普通语言解释商业和投资。', en: 'Useful for how Buffett explains business and investing in plain language.'}),
-  pc('launch', '2025', {zh: 'Berkshire 股东大会：接班方案公开化', en: 'Berkshire annual meeting: succession plan made explicit'}, 'https://www.berkshirehathaway.com/news/2025news.html', {zh: 'Berkshire 官方新闻', en: 'Berkshire official news'}, {zh: '投资人专题里，股东大会和股东信就是“发布会”。', en: 'For investors, meetings and letters are the launches.'}),
-  pc('launch', '2024', {zh: '年度股东信发布', en: 'Annual shareholder letter release'}, 'https://www.berkshirehathaway.com/letters/letters.html', {zh: 'Berkshire 股东信', en: 'Berkshire shareholder letters'}, {zh: '每年最重要的思想产品，适合跟踪资本配置、现金和风险观。', en: 'The yearly thought product for capital allocation, cash, and risk view.'}),
-  pc('launch', '1965', {zh: '巴菲特取得 Berkshire 控制权', en: 'Buffett takes control of Berkshire'}, 'https://www.berkshirehathaway.com/', {zh: 'Berkshire 官方网站', en: 'Berkshire official site'}, {zh: '巴菲特最重要的商业“发布”：把纺织公司转成资本配置平台。', en: 'Buffett key business launch: turning a textile company into a capital allocation platform.'}),
-  pc('book', '1977-', {zh: 'Berkshire 股东信全集', en: 'Berkshire shareholder letters'}, 'https://www.berkshirehathaway.com/letters/letters.html', {zh: 'Berkshire 官方股东信', en: 'Berkshire official letters'}, {zh: '最重要的一手资料，优先级高于任何二手传记。', en: 'The most important primary material, above secondary biographies.'}),
-  pc('book', '1995', {zh: '《The Essays of Warren Buffett》', en: 'The Essays of Warren Buffett'}, 'https://www.lawrencecunningham.com/books/the-essays-of-warren-buffett/', {zh: 'Lawrence Cunningham', en: 'Lawrence Cunningham'}, {zh: '把股东信按主题重组，适合系统学习巴菲特原则。', en: 'Organizes letters by theme for systematic study.'}),
-  pc('book', '2008', {zh: '《The Snowball》巴菲特传记', en: 'The Snowball: Warren Buffett biography'}, 'https://www.penguinrandomhouse.com/books/288891/the-snowball-by-alice-schroeder/', {zh: 'Penguin Random House', en: 'Penguin Random House'}, {zh: '重要传记，适合补充人生、性格、家庭和投资生涯。', en: 'Major biography for life, character, family, and investing career.'})
-]);
 
-replacePersonContent('charlie-munger', [
-  pc('news', '2023-11-28', {zh: '查理·芒格去世，享年 99 岁', en: 'Charlie Munger dies at 99'}, 'https://www.berkshirehathaway.com/news/2023news.html', {zh: 'Berkshire 官方新闻', en: 'Berkshire official news'}, {zh: '他已去世，新闻区第一条放离世新闻，作为人物专题时间锚点。', en: 'Because Munger has died, this first news item anchors the person study around his passing.'}),
-  pc('news', '2024-02-24', {zh: '巴菲特在股东信中称芒格是 Berkshire 的“建筑师”', en: 'Buffett calls Munger the architect of Berkshire in shareholder letter'}, 'https://www.berkshirehathaway.com/letters/letters.html', {zh: 'Berkshire 股东信', en: 'Berkshire shareholder letters'}, {zh: '典型新闻 / 原始材料，适合理解芒格在 Berkshire 中的真实角色。', en: 'Representative primary material for Munger real role at Berkshire.'}),
-  pc('news', '2023-02-15', {zh: 'Daily Journal 股东会：芒格最后阶段的公开问答', en: 'Daily Journal annual meeting: Munger late-stage public Q&A'}, 'https://www.djmco.com/', {zh: 'Daily Journal 官方入口', en: 'Daily Journal official entry'}, {zh: '典型材料，适合研究芒格晚年的投资、常识和反向思维。', en: 'Representative source for late Munger investing, common sense, and inversion.'}),
-  pc('speech', '1995', {zh: '哈佛演讲：人类误判心理学', en: 'Harvard talk: psychology of human misjudgment'}, 'https://fs.blog/great-talks/psychology-human-misjudgment/', {zh: '演讲整理入口', en: 'Talk transcript entry'}, {zh: '芒格最重要的演讲之一，适合学习误判、激励和心理偏差。', en: 'One of Munger most important talks on misjudgment, incentives, and bias.'}),
-  pc('speech', '2007', {zh: 'USC 法学院毕业演讲', en: 'USC Law commencement speech'}, 'https://www.youtube.com/results?search_query=Charlie+Munger+USC+commencement+speech', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '适合人生建议、逆向思维和避免愚蠢的主题。', en: 'Useful for life advice, inversion, and avoiding stupidity.'}),
-  pc('speech', '2023', {zh: 'Daily Journal 股东会公开问答', en: 'Daily Journal annual meeting public Q&A'}, 'https://www.youtube.com/@DailyJournalCorp', {zh: 'Daily Journal YouTube', en: 'Daily Journal YouTube'}, {zh: '投资人专题里，年度股东会就是芒格最重要的公开表达场。', en: 'For an investor page, annual meetings are Munger main public communication venue.'}),
-  pc('interview', '2017', {zh: 'Yahoo Finance 访谈：投资、人生和常识', en: 'Yahoo Finance interview: investing, life, and common sense'}, 'https://www.youtube.com/results?search_query=Charlie+Munger+Yahoo+Finance+interview', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '适合看芒格如何用朴素语言解释复杂判断。', en: 'Useful for how Munger explains complex judgment in plain language.'}),
-  pc('interview', '2021', {zh: 'Caltech 访谈：多元模型与世界理解', en: 'Caltech conversation: multidisciplinary models and understanding the world'}, 'https://www.youtube.com/results?search_query=Charlie+Munger+Caltech+interview', {zh: 'YouTube 检索入口', en: 'YouTube search entry'}, {zh: '适合连接书籍体系里的世界模型和知识底座。', en: 'Useful for connecting world models and knowledge foundation.'}),
-  pc('interview', '2019', {zh: 'CNBC 访谈资料：Berkshire、市场与长期持有', en: 'CNBC interview material: Berkshire, markets, and long-term ownership'}, 'https://www.cnbc.com/charlie-munger/', {zh: 'CNBC 人物入口', en: 'CNBC person entry'}, {zh: '适合补充芒格对市场周期、银行、科技股和中国的判断。', en: 'Useful for Munger views on cycles, banks, tech stocks, and China.'}),
-  pc('launch', '2023', {zh: 'Daily Journal 股东大会', en: 'Daily Journal annual meeting'}, 'https://www.djmco.com/', {zh: 'Daily Journal 官方入口', en: 'Daily Journal official entry'}, {zh: '投资人没有产品发布会，股东大会就是思想产品发布。', en: 'For investors, annual meetings are thought-product launches.'}),
-  pc('launch', '2023', {zh: 'Berkshire 股东大会：巴菲特与芒格同台问答', en: 'Berkshire annual meeting: Buffett and Munger Q&A'}, 'https://www.berkshirehathaway.com/meet01/visguide2023.pdf', {zh: 'Berkshire 股东大会资料', en: 'Berkshire annual meeting material'}, {zh: '适合反复学习两人如何用商业常识回答复杂问题。', en: 'Useful for how they answer complex questions with business common sense.'}),
-  pc('launch', '1994', {zh: '《Worldly Wisdom》多元思维模型公开表达', en: 'Worldly wisdom and multidisciplinary models public expression'}, 'https://fs.blog/mental-models/', {zh: '学习资料入口', en: 'Study material entry'}, {zh: '把芒格当作“世界模型发布者”来研究。', en: 'Study Munger as a publisher of world models.'}),
-  pc('book', '2005', {zh: '《Poor Charlie’s Almanack》', en: 'Poor Charlie’s Almanack'}, 'https://www.poorcharliesalmanack.com/', {zh: '图书官方入口', en: 'Book official entry'}, {zh: '芒格最重要的系统性阅读材料。', en: 'The most important systematic reading material for Munger.'}),
-  pc('book', '2023', {zh: '《Poor Charlie’s Almanack》新版', en: 'Poor Charlie’s Almanack new edition'}, 'https://www.penguinrandomhouse.com/books/738335/poor-charlies-almanack-by-charles-t-munger/', {zh: 'Penguin Random House', en: 'Penguin Random House'}, {zh: '适合后续拆成多元模型、误判心理学和投资原则专题。', en: 'Can later be decomposed into mental models, psychology of misjudgment, and investing principles.'}),
-  pc('book', '2024', {zh: 'Berkshire 股东信中的芒格纪念', en: 'Munger remembrance in Berkshire shareholder letters'}, 'https://www.berkshirehathaway.com/letters/letters.html', {zh: 'Berkshire 股东信', en: 'Berkshire shareholder letters'}, {zh: '一手材料，适合理解芒格对 Berkshire 文化的贡献。', en: 'Primary material for Munger contribution to Berkshire culture.'})
-]);
 
-replacePersonContent('duan-yongping', [
-  pc('news', '2024', {zh: '段永平公开讨论 Apple、茅台等长期投资案例', en: 'Duan Yongping publicly discusses Apple, Moutai, and long-term investing cases'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+Apple+%E8%8C%85%E5%8F%B0+%E6%8A%95%E8%B5%84', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '段永平近期公开新闻较少，先放典型公开讨论入口，后续可替换成具体新闻源。', en: 'Duan has fewer recent public news items; this keeps a representative public-discussion entry for later replacement.'}),
-  pc('news', '2023', {zh: '段永平投资理念持续被市场讨论：本分、长期与能力圈', en: 'Duan investing ideas keep being discussed: integrity, long-termism, and circle of competence'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E6%9C%AC%E5%88%86+%E6%8A%95%E8%B5%84', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '适合把人物专题定位为投资思想和企业文化研究，而不是新闻追踪。', en: 'Useful for positioning the page as investing thought and culture study, not news chasing.'}),
-  pc('news', '2006', {zh: '段永平拍下巴菲特午餐，强化价值投资公开学习线索', en: 'Duan wins Buffett charity lunch, strengthening public value-investing thread'}, 'https://www.google.com/search?q=Duan+Yongping+Buffett+lunch', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '典型新闻，适合研究段永平如何公开连接巴菲特体系。', en: 'Representative story for how Duan publicly connects to Buffett framework.'}),
-  pc('speech', '2020', {zh: '雪球 / 公开问答：本分、商业模式与投资', en: 'Public Q&A: integrity, business model, and investing'}, 'https://xueqiu.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3', {zh: '雪球公开资料入口', en: 'Xueqiu public material entry'}, {zh: '适合整理段永平的公开问答式表达。', en: 'Useful for organizing Duan public Q&A style expression.'}),
-  pc('speech', '2018', {zh: '公开分享资料：企业文化与长期主义', en: 'Public sharing material: culture and long-termism'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E6%BC%94%E8%AE%B2+%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '用于补充他如何把“本分”放进企业和投资体系。', en: 'Useful for how he puts integrity into company and investing systems.'}),
-  pc('speech', '2006', {zh: '巴菲特午餐后的公开分享线索', en: 'Public sharing after Buffett lunch'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%8D%88%E9%A4%90+%E5%88%86%E4%BA%AB', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '适合看中国语境下如何理解巴菲特和芒格。', en: 'Useful for how Buffett and Munger are interpreted in Chinese context.'}),
-  pc('interview', '2020', {zh: '段永平公开访谈：投资、企业与人生原则', en: 'Duan public interviews: investing, business, and life principles'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E8%AE%BF%E8%B0%88+%E6%8A%95%E8%B5%84', {zh: '公开访谈检索入口', en: 'Public interview search entry'}, {zh: '适合后续筛选最可信的一手或准一手访谈。', en: 'Useful for later selecting the most reliable primary or near-primary interviews.'}),
-  pc('interview', '2018', {zh: 'OPPO / vivo / 步步高相关访谈资料', en: 'OPPO / vivo / BBK related interview material'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+OPPO+vivo+%E6%AD%A5%E6%AD%A5%E9%AB%98+%E8%AE%BF%E8%B0%88', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '用于理解授权、品牌、渠道和文化延续。', en: 'Useful for delegation, brand, channel, and cultural continuity.'}),
-  pc('interview', '2001', {zh: '网易、步步高与早期投资访谈资料', en: 'NetEase, BBK, and early investing interview material'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E7%BD%91%E6%98%93+%E8%AE%BF%E8%B0%88', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '适合研究段永平从企业家转向长期投资者的路径。', en: 'Useful for Duan path from entrepreneur to long-term investor.'}),
-  pc('launch', '1995', {zh: '步步高品牌与消费电子业务启动', en: 'BBK brand and consumer electronics business begins'}, 'https://www.google.com/search?q=%E6%AD%A5%E6%AD%A5%E9%AB%98+%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E5%88%9B%E4%B8%9A', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '企业家专题里，品牌和商业模式启动就是核心发布节点。', en: 'For an entrepreneur page, brand and business-model launch is a core launch node.'}),
-  pc('launch', '2001', {zh: 'OPPO / vivo 生态的授权与延伸', en: 'Delegation and extension toward OPPO / vivo ecosystem'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+OPPO+vivo+%E6%8E%88%E6%9D%83', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '适合研究段永平如何通过文化、授权和利益机制延续组织能力。', en: 'Useful for culture, delegation, and incentive mechanisms.'}),
-  pc('launch', '2006', {zh: '巴菲特午餐：投资学习路线公开化', en: 'Buffett lunch: public investing-learning route'}, 'https://www.google.com/search?q=Duan+Yongping+Buffett+lunch', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '对投资人专题而言，这是思想路线的公开发布节点。', en: 'For an investor page, this is a public launch of a learning route.'}),
-  pc('book', '2020', {zh: '段永平公开问答与语录整理', en: 'Duan public Q&A and quotes collections'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E9%97%AE%E7%AD%94+%E8%AF%AD%E5%BD%95', {zh: '公开资料检索入口', en: 'Public material search entry'}, {zh: '目前更适合作为资料整理入口，后续可筛选可靠版本。', en: 'Currently best as a material entry; later we can select reliable versions.'}),
-  pc('book', '2020', {zh: '《本分》相关资料', en: 'Integrity / Benfen related material'}, 'https://www.google.com/search?q=%E6%AE%B5%E6%B0%B8%E5%B9%B3+%E6%9C%AC%E5%88%86+%E4%B9%A6', {zh: '图书检索入口', en: 'Book search entry'}, {zh: '用于整理“本分”作为企业文化和投资原则的核心概念。', en: 'Useful for integrity as core concept in company culture and investing principles.'}),
-  pc('book', '2006', {zh: '巴菲特股东信与芒格资料作为段永平投资底座', en: 'Buffett letters and Munger material as Duan investing foundation'}, 'https://www.berkshirehathaway.com/letters/letters.html', {zh: 'Berkshire 股东信', en: 'Berkshire shareholder letters'}, {zh: '段永平专题的底层阅读应连接巴菲特、芒格和长期商业质量。', en: 'Duan page foundation should connect Buffett, Munger, and long-term business quality.'})
-]);
 
 export const companies: CompanyProfile[] = [
   {
@@ -1053,8 +917,8 @@ export const companies: CompanyProfile[] = [
     },
     officialLinks: [
       {label: {zh: '官网', en: 'Official site'}, href: 'https://www.nvidia.com/'},
-      {label: {zh: '投资者关系', en: 'Investor relations'}, href: 'https://investor.nvidia.com/'},
-      {label: {zh: '新闻中心', en: 'Newsroom'}, href: 'https://nvidianews.nvidia.com/'}
+      {label: {zh: '公司资料', en: 'Company materials'}, href: 'https://www.nvidia.com/'},
+      {label: {zh: '资料中心', en: 'Company updates'}, href: 'https://nvidiaupdates.nvidia.com/'}
     ],
     timeline: [
       {
@@ -1067,7 +931,7 @@ export const companies: CompanyProfile[] = [
         year: '2024',
         event: {zh: '发布 Blackwell 平台，把 GPU、CPU、网络、系统和软件打包成面向 AI 工厂的新一代计算平台。', en: 'Launched the Blackwell platform, packaging GPU, CPU, networking, systems, and software into a next-generation platform for AI factories.'},
         imageHint: {zh: '可配 Blackwell 芯片、GB200 NVL72 或 GTC 发布会图片。', en: 'Use a Blackwell chip, GB200 NVL72, or GTC launch image.'},
-        href: 'https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing'
+        href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing'
       },
       {
         year: '2023',
@@ -1078,7 +942,7 @@ export const companies: CompanyProfile[] = [
         year: '2020',
         event: {zh: '完成收购 Mellanox，补强高速网络和数据中心系统能力。', en: 'Completed the acquisition of Mellanox, strengthening high-speed networking and data center systems capability.'},
         imageHint: {zh: '可配 Mellanox 网络设备或数据中心网络图片。', en: 'Use Mellanox networking hardware or data center networking imagery.'},
-        href: 'https://nvidianews.nvidia.com/news/nvidia-completes-acquisition-of-mellanox'
+        href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-completes-acquisition-of-mellanox'
       },
       {
         year: '2016',
@@ -1184,7 +1048,7 @@ export const companies: CompanyProfile[] = [
     cultureModel: {
       thesis: {
         zh: '英伟达的文化不是温和的“好公司氛围”，而是一种面向高难度技术平台的高强度组织系统：创始人长期掌舵、工程判断优先、信息快速流动、团队围绕长期平台战略持续投入。它的不同之处在于，文化直接服务于“提前十多年押注未来计算市场”的战略耐心。',
-        en: 'NVIDIA culture is not merely a pleasant workplace atmosphere. It is a high-intensity organizational system for a difficult technology platform: founder-led, engineering-first, fast information flow, and long-term team investment around platform strategy.'
+        en: 'NVIDIA culture is not merely a pleasant workplace atmosphere. It is a high-intensity organizational system for a difficult technology platform: founder-led, engineering-first, fast information flow, and long-term team ecosystem around platform strategy.'
       },
       dimensions: [
         {
@@ -1196,7 +1060,7 @@ export const companies: CompanyProfile[] = [
           practices: [
             {zh: '长期围绕“加速计算、CUDA、AI 工厂、数据中心即计算机”等核心概念反复表达。', en: 'Repeatedly communicates core ideas such as accelerated computing, CUDA, AI factories, and the data center as the computer.'},
             {zh: '把发布会变成战略地图：行业瓶颈、客户需求、产品路线图、生态伙伴和未来市场一起讲。', en: 'Turns launches into strategic maps linking industry bottlenecks, customer needs, roadmap, ecosystem partners, and future markets.'},
-            {zh: '在市场还不理解时坚持投入 CUDA、开发者生态、网络和系统平台。', en: 'Kept investing in CUDA, developer ecosystem, networking, and system platforms before the market fully understood them.'}
+            {zh: '在市场还不理解时坚持投入 CUDA、开发者生态、网络和系统平台。', en: 'Kept allocating resources in CUDA, developer ecosystem, networking, and system platforms before the market fully understood them.'}
           ],
           whyDifferent: {
             zh: '很多 CEO 管季度、管销售、管资本市场，黄仁勋更像“首席架构师 + 首席布道者”。他把技术判断、公司战略和外部叙事绑在一起。',
@@ -1305,7 +1169,7 @@ export const companies: CompanyProfile[] = [
     },
     officialLinks: [
       {label: {zh: '官网', en: 'Official site'}, href: 'https://www.tesla.com/'},
-      {label: {zh: '投资者关系', en: 'Investor relations'}, href: 'https://ir.tesla.com/'}
+      {label: {zh: '公司资料', en: 'Company materials'}, href: 'https://ir.tesla.com/'}
     ],
     timeline: [
       {year: '2003', event: {zh: '公司成立，推动电动车商业化。', en: 'Founded to commercialize electric vehicles.'}},
@@ -1344,7 +1208,7 @@ export const companies: CompanyProfile[] = [
     },
     officialLinks: [
       {label: {zh: '官网', en: 'Official site'}, href: 'https://openai.com/'},
-      {label: {zh: '新闻', en: 'News'}, href: 'https://openai.com/news/'},
+      {label: {zh: '资讯', en: 'Updates'}, href: 'https://openai.com/updates/'},
       {label: {zh: '开发者平台', en: 'Developer platform'}, href: 'https://platform.openai.com/'}
     ],
     timeline: [
@@ -1497,7 +1361,7 @@ const expandedCompanies: CompanyProfile[] = [
     name: {zh: '苹果', en: 'Apple'},
     category: {zh: '消费电子、软件与服务生态', en: 'Consumer electronics, software, and services ecosystem'},
     summary: {zh: 'Apple 的核心不是单个硬件，而是设备、系统、芯片、服务、品牌和开发者生态形成的高粘性消费平台。', en: 'Apple is not a single hardware product; it is a sticky consumer platform of devices, systems, chips, services, brand, and developers.'},
-    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.apple.com/'}, {label: {zh: '新闻中心', en: 'Newsroom'}, href: 'https://www.apple.com/newsroom/'}, {label: {zh: '投资者关系', en: 'Investor relations'}, href: 'https://investor.apple.com/'}],
+    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.apple.com/'}, {label: {zh: '资料中心', en: 'Company updates'}, href: 'https://www.apple.com/updates/'}, {label: {zh: '公司资料', en: 'Company materials'}, href: 'https://www.apple.com/'}],
     timeline: [
       {year: '2026', event: {zh: 'Apple 宣布 John Ternus 将于 2026-09-01 接任 CEO，Tim Cook 转任执行董事长。', en: 'Apple announced John Ternus will become CEO on 2026-09-01, with Tim Cook becoming Executive Chairman.'}},
       {year: '2020', event: {zh: 'Apple Silicon 推动 Mac 平台重构。', en: 'Apple Silicon reshaped the Mac platform.'}},
@@ -1507,7 +1371,7 @@ const expandedCompanies: CompanyProfile[] = [
     segments: [
       {title: {zh: 'iPhone', en: 'iPhone'}, revenueLabel: {zh: '核心硬件', en: 'Core hardware'}, summary: {zh: '品牌、系统和服务入口。', en: 'Brand, system, and service entry.'}, products: [{zh: 'iPhone 与 iOS 生态', en: 'iPhone and iOS ecosystem'}]},
       {title: {zh: 'Mac / iPad / Wearables', en: 'Mac / iPad / Wearables'}, revenueLabel: {zh: '设备矩阵', en: 'Device matrix'}, summary: {zh: '多设备协同提高用户粘性。', en: 'Multi-device integration increases stickiness.'}, products: [{zh: 'Mac、iPad、Apple Watch、AirPods', en: 'Mac, iPad, Apple Watch, AirPods'}]},
-      {title: {zh: 'Services', en: 'Services'}, revenueLabel: {zh: '高毛利业务', en: 'High-margin business'}, summary: {zh: '应用商店、订阅、支付、云和内容服务。', en: 'App Store, subscriptions, payments, cloud, and content.'}, products: [{zh: 'App Store、Apple Music、iCloud、Apple Pay', en: 'App Store, Apple Music, iCloud, Apple Pay'}]}
+      {title: {zh: 'Services', en: 'Services'}, revenueLabel: {zh: '高毛利业务', en: 'High-margin business'}, summary: {zh: '应用商店、订阅、服务、云和内容服务。', en: 'App Store, subscriptions, contents, cloud, and content.'}, products: [{zh: 'App Store、Apple Music、iCloud、Apple Pay', en: 'App Store, Apple Music, iCloud, Apple Pay'}]}
     ],
     businessModel: [{zh: '硬件销售建立用户基座，服务业务提高复购、毛利和生态粘性。', en: 'Hardware builds the user base; services increase repeat purchase, margin, and ecosystem stickiness.'}],
     cultureThesis: {zh: 'Apple 的文化核心是端到端产品体验、隐私价值观、供应链纪律和极强的品牌控制。', en: 'Apple culture centers on end-to-end product experience, privacy values, supply-chain discipline, and strong brand control.'},
@@ -1519,7 +1383,7 @@ const expandedCompanies: CompanyProfile[] = [
     name: {zh: 'Anthropic', en: 'Anthropic'},
     category: {zh: 'AI 模型与企业智能平台', en: 'AI model and enterprise intelligence platform'},
     summary: {zh: 'Anthropic 以 Claude 为核心，强调安全、可靠、可解释和企业级 AI 工作流。', en: 'Anthropic centers on Claude, emphasizing safety, reliability, interpretability, and enterprise AI workflows.'},
-    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.anthropic.com/'}, {label: {zh: '新闻', en: 'News'}, href: 'https://www.anthropic.com/news'}, {label: {zh: '研究', en: 'Research'}, href: 'https://www.anthropic.com/research'}],
+    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.anthropic.com/'}, {label: {zh: '资讯', en: 'Updates'}, href: 'https://www.anthropic.com/updates'}, {label: {zh: '研究', en: 'Research'}, href: 'https://www.anthropic.com/research'}],
     timeline: [
       {year: '2025', event: {zh: 'Claude、企业产品和云平台合作持续扩展。', en: 'Claude, enterprise products, and cloud partnerships continued expanding.'}},
       {year: '2023', event: {zh: 'Claude 进入更广泛商业使用。', en: 'Claude reached broader commercial use.'}},
@@ -1540,7 +1404,7 @@ const expandedCompanies: CompanyProfile[] = [
     name: {zh: '台积电', en: 'TSMC'},
     category: {zh: '晶圆代工与半导体制造基础设施', en: 'Foundry and semiconductor manufacturing infrastructure'},
     summary: {zh: '台积电是全球先进芯片制造的关键基础设施，核心是制程、良率、客户信任和超大规模资本开支。', en: 'TSMC is key infrastructure for advanced chip manufacturing, centered on process technology, yield, customer trust, and massive capital expenditure.'},
-    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.tsmc.com/'}, {label: {zh: '投资者关系', en: 'Investor relations'}, href: 'https://investor.tsmc.com/'}, {label: {zh: '新闻', en: 'News'}, href: 'https://pr.tsmc.com/english'}],
+    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.tsmc.com/'}, {label: {zh: '公司资料', en: 'Company materials'}, href: 'https://www.tsmc.com/'}, {label: {zh: '资讯', en: 'Updates'}, href: 'https://pr.tsmc.com/english'}],
     timeline: [
       {year: '2024', event: {zh: '魏哲家接任董事长并继续担任 CEO。', en: 'C.C. Wei became Chairman while continuing as CEO.'}},
       {year: '2020s', event: {zh: 'AI 芯片需求推动先进制程和先进封装扩张。', en: 'AI chip demand drove advanced-node and advanced-packaging expansion.'}},
@@ -1552,7 +1416,7 @@ const expandedCompanies: CompanyProfile[] = [
       {title: {zh: '全球制造', en: 'Global fabs'}, revenueLabel: {zh: '产能布局', en: 'Capacity footprint'}, summary: {zh: '台湾、美国、日本、欧洲等产能布局。', en: 'Capacity footprint across Taiwan, the U.S., Japan, Europe, and more.'}, products: [{zh: '晶圆制造与客户协同', en: 'Wafer manufacturing and customer collaboration'}]}
     ],
     businessModel: [{zh: '按晶圆制造、先进制程和客户长期需求获得收入，资本开支和良率决定长期回报。', en: 'Revenue comes from wafer manufacturing and customer demand; capex and yield determine long-term return.'}],
-    cultureThesis: {zh: '台积电文化强调客户信任、制造纪律、技术路线和长期资本投入。', en: 'TSMC culture emphasizes customer trust, manufacturing discipline, technology roadmap, and long-term capital investment.'},
+    cultureThesis: {zh: '台积电文化强调客户信任、制造纪律、技术路线和长期资本投入。', en: 'TSMC culture emphasizes customer trust, manufacturing discipline, technology roadmap, and long-term capital ecosystem.'},
     moat: [{zh: '制程领先、良率、客户中立、资本规模、工程人才和供应链协同。', en: 'Process leadership, yield, customer neutrality, capital scale, engineering talent, and supply chain coordination.'}],
     watchlist: [{zh: 'AI 芯片需求、先进封装产能、地缘风险、客户集中度和制程迁移。', en: 'AI chip demand, advanced packaging capacity, geopolitical risk, customer concentration, and node migration.'}]
   }),
@@ -1561,7 +1425,7 @@ const expandedCompanies: CompanyProfile[] = [
     name: {zh: '谷歌 / Alphabet', en: 'Google / Alphabet'},
     category: {zh: '搜索、广告、云与 AI 平台', en: 'Search, advertising, cloud, and AI platform'},
     summary: {zh: 'Google 的核心是搜索与广告现金流、云基础设施、AI 研究和 Android / YouTube 等全球分发入口。', en: 'Google combines search and advertising cash flow, cloud infrastructure, AI research, and global distribution through Android and YouTube.'},
-    officialLinks: [{label: {zh: 'Google', en: 'Google'}, href: 'https://www.google.com/'}, {label: {zh: 'Alphabet 投资者关系', en: 'Alphabet Investor Relations'}, href: 'https://abc.xyz/investor/'}, {label: {zh: 'Google AI', en: 'Google AI'}, href: 'https://ai.google/'}],
+    officialLinks: [{label: {zh: 'Google', en: 'Google'}, href: 'https://www.google.com/'}, {label: {zh: 'Alphabet 公司资料', en: 'Alphabet Company Materials'}, href: 'https://abc.xyz/'}, {label: {zh: 'Google AI', en: 'Google AI'}, href: 'https://ai.google/'}],
     timeline: [
       {year: '2020s', event: {zh: 'Gemini、云和 AI 搜索重塑公司竞争焦点。', en: 'Gemini, cloud, and AI search reshaped Google’s competitive focus.'}},
       {year: '2015', event: {zh: 'Alphabet 成立，Google 成为旗下核心业务。', en: 'Alphabet was formed with Google as the core business.'}},
@@ -1577,27 +1441,6 @@ const expandedCompanies: CompanyProfile[] = [
     moat: [{zh: '搜索默认入口、数据规模、广告网络、AI 人才、云基础设施和 Android 生态。', en: 'Search default position, data scale, ad network, AI talent, cloud infrastructure, and Android ecosystem.'}],
     watchlist: [{zh: 'AI 搜索替代、广告增长、云盈利、反垄断监管和模型竞争。', en: 'AI search substitution, ad growth, cloud profitability, antitrust regulation, and model competition.'}]
   }),
-  companyProfile({
-    slug: 'berkshire-hathaway',
-    name: {zh: 'Berkshire Hathaway', en: 'Berkshire Hathaway'},
-    category: {zh: '保险、投资与资本配置平台', en: 'Insurance, investing, and capital allocation platform'},
-    summary: {zh: 'Berkshire 是研究保险浮存金、长期持股、企业收购和资本配置的经典样本。', en: 'Berkshire is a classic case for insurance float, long-term holdings, acquisitions, and capital allocation.'},
-    officialLinks: [{label: {zh: '官网', en: 'Official site'}, href: 'https://www.berkshirehathaway.com/'}, {label: {zh: '股东信', en: 'Shareholder letters'}, href: 'https://www.berkshirehathaway.com/letters/letters.html'}],
-    timeline: [
-      {year: '2025', event: {zh: '巴菲特宣布将于 2025 年底卸任 CEO，Greg Abel 接任。', en: 'Buffett announced he would step down as CEO at the end of 2025, with Greg Abel succeeding him.'}},
-      {year: '1965', event: {zh: '巴菲特取得 Berkshire 控制权。', en: 'Buffett took control of Berkshire.'}},
-      {year: '1839', event: {zh: 'Berkshire 前身纺织企业历史可追溯至 19 世纪。', en: 'Berkshire’s predecessor textile roots trace back to the 19th century.'}}
-    ],
-    segments: [
-      {title: {zh: '保险', en: 'Insurance'}, revenueLabel: {zh: '浮存金来源', en: 'Float source'}, summary: {zh: 'GEICO、再保险和保险浮存金。', en: 'GEICO, reinsurance, and insurance float.'}, products: [{zh: '保险承保与浮存金投资', en: 'Insurance underwriting and float investment'}]},
-      {title: {zh: '控股公司', en: 'Operating businesses'}, revenueLabel: {zh: '多元现金流', en: 'Diversified cash flow'}, summary: {zh: '铁路、能源、制造、零售等。', en: 'Railroad, energy, manufacturing, retail, and more.'}, products: [{zh: 'BNSF、BHE、制造与服务企业', en: 'BNSF, BHE, manufacturing and service companies'}]},
-      {title: {zh: '股票投资', en: 'Equity portfolio'}, revenueLabel: {zh: '长期持股', en: 'Long-term holdings'}, summary: {zh: '以优质企业长期持有为核心。', en: 'Long-term ownership of high-quality businesses.'}, products: [{zh: 'Apple、金融、消费与能源持仓', en: 'Apple, financials, consumer, and energy holdings'}]}
-    ],
-    businessModel: [{zh: '保险浮存金、经营现金流和投资组合共同形成资本配置机器。', en: 'Insurance float, operating cash flow, and equity portfolio form a capital allocation machine.'}],
-    cultureThesis: {zh: 'Berkshire 文化强调理性、去中心化、声誉、长期主义和少犯大错。', en: 'Berkshire culture emphasizes rationality, decentralization, reputation, long-termism, and avoiding big mistakes.'},
-    moat: [{zh: '浮存金成本、资本配置信誉、长期股东基础、管理层信任和税务效率。', en: 'Float cost, capital allocation reputation, long-term shareholder base, management trust, and tax efficiency.'}],
-    watchlist: [{zh: '管理层交接、保险承保周期、现金规模、收购机会和核心持仓变化。', en: 'Succession, insurance cycle, cash balance, acquisition opportunities, and key holding changes.'}]
-  })
 ];
 
 companies.push(...expandedCompanies);
@@ -1726,7 +1569,7 @@ enrichCompany('nvidia', {
       year: '2024',
       event: {zh: '发布 Blackwell 平台，把 GPU、CPU、网络、系统和软件打包成面向 AI 工厂的新一代计算平台。', en: 'Launched the Blackwell platform, packaging GPU, CPU, networking, systems, and software into a next-generation AI factory platform.'},
       imageHint: {zh: 'Blackwell 芯片、GB200 NVL72 或 GTC 发布会舞台图。', en: 'Blackwell chip, GB200 NVL72, or GTC launch image.'},
-      href: 'https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing'
+      href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing'
     },
     {
       year: '2023',
@@ -1737,7 +1580,7 @@ enrichCompany('nvidia', {
       year: '2020',
       event: {zh: '完成收购 Mellanox，补齐高速网络能力，让英伟达从芯片公司进一步走向数据中心系统公司。', en: 'Completed the Mellanox acquisition, strengthening high-speed networking and moving further toward data center systems.'},
       imageHint: {zh: 'Mellanox 网络设备或数据中心网络图。', en: 'Mellanox networking hardware or data center network image.'},
-      href: 'https://nvidianews.nvidia.com/news/nvidia-completes-acquisition-of-mellanox'
+      href: 'https://nvidiaupdates.nvidia.com/updates/nvidia-completes-acquisition-of-mellanox'
     },
     {
       year: '2016',
@@ -1774,7 +1617,7 @@ enrichCompany('nvidia', {
   moat: [
     {zh: '底层技术：GPU 架构、先进封装、网络互联和系统集成能力。', en: 'Core technology: GPU architecture, advanced packaging, networking interconnect, and systems integration.'},
     {zh: '软件生态：CUDA、库、工具链、文档和开发者习惯形成长期锁定。', en: 'Software ecosystem: CUDA, libraries, toolchains, documentation, and developer habits create durable lock-in.'},
-    {zh: '客户关系：云厂商、模型公司和企业围绕英伟达路线图规划数据中心投资。', en: 'Customer relationships: clouds, model companies, and enterprises plan data center investment around NVIDIA roadmaps.'},
+    {zh: '客户关系：云厂商、模型公司和企业围绕英伟达路线图规划数据中心投入。', en: 'Customer relationships: clouds, model companies, and enterprises plan data center ecosystem around NVIDIA roadmaps.'},
     {zh: '供应链与规模：台积电、先进封装、HBM、整机伙伴和交付能力共同构成门槛。', en: 'Supply chain and scale: TSMC, advanced packaging, HBM, system partners, and delivery capacity create barriers.'},
     {zh: '叙事能力：黄仁勋把“加速计算、AI 工厂、物理 AI”讲成行业共同语言。', en: 'Narrative power: Jensen Huang turns accelerated computing, AI factories, and physical AI into shared industry language.'}
   ],
@@ -1845,7 +1688,7 @@ enrichCompany('openai', {
   ],
   watchlist: [
     {zh: '行业：推理成本下降是否带来使用量爆发，还是压缩模型公司定价权。', en: 'Industry: whether falling inference cost expands usage or compresses model-company pricing power.'},
-    {zh: '客户：企业是否从试点进入核心流程，个人用户是否保持高频付费。', en: 'Customers: whether enterprises move from pilots into core workflows and users keep high-frequency paid usage.'},
+    {zh: '客户：企业是否从试点进入核心流程，个人用户是否保持高频订阅。', en: 'Customers: whether enterprises move from pilots into core workflows and users keep high-frequency subscribed usage.'},
     {zh: '政策：版权、数据、模型安全、出口管制和各国 AI 法规。', en: 'Policy: copyright, data, model safety, export controls, and AI regulation across jurisdictions.'},
     {zh: '竞争：Anthropic、Google、Meta、xAI、开源模型和垂直应用。', en: 'Competition: Anthropic, Google, Meta, xAI, open models, and vertical applications.'},
     {zh: '公司自身：模型发布节奏、产品可靠性、算力成本、治理稳定和企业续费率。', en: 'Company: model cadence, product reliability, compute cost, governance stability, and enterprise renewals.'}
@@ -1906,12 +1749,12 @@ enrichCompany('apple', {
     {zh: '品牌与信任：高端消费电子心智、隐私叙事和长期服务体验。', en: 'Brand and trust: premium consumer-electronics mindshare, privacy narrative, and long-term service experience.'},
     {zh: '生态粘性：iOS、App Store、iCloud、Apple ID、多设备协同和家庭共享。', en: 'Ecosystem stickiness: iOS, App Store, iCloud, Apple ID, multi-device continuity, and family sharing.'},
     {zh: '软硬件一体化：芯片、系统、工业设计、零售和售后共同控制体验。', en: 'Integration: chips, operating systems, industrial design, retail, and service jointly control experience.'},
-    {zh: '开发者网络：高付费用户群和应用生态吸引开发者持续投入。', en: 'Developer network: high-paying users and app ecosystem attract continued developer investment.'},
+    {zh: '开发者网络：高订阅用户群和应用生态吸引开发者持续投入。', en: 'Developer network: high-subscribing users and app ecosystem attract continued developer ecosystem.'},
     {zh: '供应链能力：超大规模、质量控制、库存管理和全球渠道构成隐形门槛。', en: 'Supply-chain capability: scale, quality control, inventory management, and global channels create hidden barriers.'}
   ],
   watchlist: [
     {zh: '行业：智能手机换机周期、端侧 AI、空间计算和可穿戴健康场景。', en: 'Industry: smartphone replacement cycle, on-device AI, spatial computing, and wearable health.'},
-    {zh: '客户：高端用户忠诚度、服务付费率和新设备接受度。', en: 'Customers: premium-user loyalty, services attach rate, and adoption of new devices.'},
+    {zh: '客户：高端用户忠诚度、服务订阅率和新设备接受度。', en: 'Customers: premium-user loyalty, services attach rate, and adoption of new devices.'},
     {zh: '政策：App Store 监管、反垄断、隐私规则和供应链地缘风险。', en: 'Policy: App Store regulation, antitrust, privacy rules, and supply-chain geopolitics.'},
     {zh: '竞争：Android 阵营、AI 助手入口、云服务、可穿戴和混合现实设备。', en: 'Competition: Android ecosystem, AI assistant entry points, cloud services, wearables, and mixed-reality devices.'},
     {zh: '公司自身：AI 产品化速度、服务收入质量、毛利率、创新节奏和管理层延续。', en: 'Company: AI productization speed, services revenue quality, margins, innovation cadence, and leadership continuity.'}
@@ -1927,7 +1770,7 @@ enrichCompany('anthropic', {
     {year: '2021', event: {zh: 'Anthropic 成立，定位为重视安全、可靠和可解释性的前沿 AI 公司。', en: 'Anthropic was founded as a frontier AI company focused on safety, reliability, and interpretability.'}, imageHint: {zh: 'Anthropic 标识或早期团队图。', en: 'Anthropic logo or early team image.'}}
   ],
   businessModel: [
-    {zh: '订阅层：Claude 面向个人、团队和企业提供付费入口。', en: 'Subscription layer: Claude provides paid entry points for individuals, teams, and enterprises.'},
+    {zh: '订阅层：Claude 面向个人、团队和企业提供订阅入口。', en: 'Subscription layer: Claude provides subscribed entry points for individuals, teams, and enterprises.'},
     {zh: 'API 层：按模型调用、上下文长度、工具调用和企业集成收费。', en: 'API layer: monetizes model calls, context length, tool use, and enterprise integration.'},
     {zh: '企业层：以可靠、安全、合规和长上下文能力切入知识工作流。', en: 'Enterprise layer: enters knowledge workflows through reliability, safety, compliance, and long context.'},
     {zh: '渠道层：云平台合作扩大分发，但也要求处理算力、定价和客户关系依赖。', en: 'Channel layer: cloud partnerships expand distribution while creating dependencies around compute, pricing, and customer ownership.'}
@@ -1950,7 +1793,7 @@ enrichCompany('anthropic', {
 
 enrichCompany('tsmc', {
   timeline: [
-    {year: '2024', event: {zh: '魏哲家接任董事长并继续担任 CEO，台积电进入 AI 需求和全球扩产并行阶段。', en: 'C.C. Wei became Chairman while continuing as CEO, as TSMC entered a phase of AI demand and global expansion.'}, imageHint: {zh: '魏哲家、晶圆厂或投资者大会图。', en: 'C.C. Wei, fab, or investor event image.'}},
+    {year: '2024', event: {zh: '魏哲家接任董事长并继续担任 CEO，台积电进入 AI 需求和全球扩产并行阶段。', en: 'C.C. Wei became Chairman while continuing as CEO, as TSMC entered a phase of AI demand and global expansion.'}, imageHint: {zh: '魏哲家、晶圆厂或公司年度会议图。', en: 'C.C. Wei, fab, or observer event image.'}},
     {year: '2020s', event: {zh: 'AI 加速器需求推动先进制程、CoWoS 先进封装和 HBM 相关供应链扩张。', en: 'AI accelerator demand drove expansion in advanced nodes, CoWoS advanced packaging, and HBM-related supply chain.'}, imageHint: {zh: 'CoWoS、先进封装或 AI 芯片晶圆图。', en: 'CoWoS, advanced packaging, or AI chip wafer image.'}},
     {year: '2020', event: {zh: '宣布美国亚利桑那晶圆厂计划，全球产能布局成为客户和政策共同关注点。', en: 'Announced Arizona fab plans, making global capacity footprint a shared customer and policy focus.'}, imageHint: {zh: '亚利桑那晶圆厂建设或厂区图。', en: 'Arizona fab construction or campus image.'}},
     {year: '2018', event: {zh: '7nm 量产支撑智能手机、高性能计算和 AI 芯片客户，先进制程优势进一步拉开。', en: '7nm volume production supported smartphone, HPC, and AI chip customers, widening advanced-node leadership.'}, imageHint: {zh: '7nm 晶圆或先进制程示意图。', en: '7nm wafer or advanced-node image.'}},
@@ -1968,7 +1811,7 @@ enrichCompany('tsmc', {
     {zh: '制程领先：先进节点研发、量产爬坡和良率管理持续积累。', en: 'Process leadership: advanced-node R&D, ramp, and yield management compound over time.'},
     {zh: '客户中立：不与客户设计芯片竞争，获得苹果、英伟达、AMD 等客户信任。', en: 'Customer neutrality: avoids competing with chip-design customers, earning trust from Apple, NVIDIA, AMD, and others.'},
     {zh: '制造纪律：工艺控制、设备协同、工程人才和运营细节形成隐形壁垒。', en: 'Manufacturing discipline: process control, equipment coordination, engineering talent, and operational detail form hidden barriers.'},
-    {zh: '资本规模：先进晶圆厂和封装产能需要巨额、长期、连续投资。', en: 'Capital scale: advanced fabs and packaging capacity require massive, long-duration investment.'},
+    {zh: '资本规模：先进晶圆厂和封装产能需要巨额、长期、连续投入。', en: 'Capital scale: advanced fabs and packaging capacity require massive, long-duration ecosystem.'},
     {zh: '生态协同：EDA、设备、材料、封装、客户设计共同嵌入台积电路线图。', en: 'Ecosystem coordination: EDA, equipment, materials, packaging, and customer designs embed into TSMC roadmap.'}
   ],
   watchlist: [
@@ -2014,73 +1857,6 @@ enrichCompany('google', {
   ]
 });
 
-enrichCompany('berkshire-hathaway', {
-  timeline: [
-    {year: '2026', event: {zh: 'Greg Abel 接任 CEO，Berkshire 进入巴菲特之后的资本配置与文化延续阶段。', en: 'Greg Abel became CEO, moving Berkshire into a post-Buffett phase of capital allocation and cultural continuity.'}, imageHint: {zh: 'Greg Abel 与 Berkshire 年会图。', en: 'Greg Abel and Berkshire annual meeting image.'}},
-    {year: '2023', event: {zh: '查理·芒格去世，Berkshire 失去长期思想伙伴，公司文化传承受到更多关注。', en: 'Charlie Munger died, increasing attention on Berkshire cultural succession.'}, imageHint: {zh: '巴菲特与芒格年会图。', en: 'Buffett and Munger annual meeting image.'}},
-    {year: '2010', event: {zh: '完成收购 BNSF，Berkshire 获得大型铁路基础设施现金流。', en: 'Completed the BNSF acquisition, adding major railroad infrastructure cash flow.'}, imageHint: {zh: 'BNSF 铁路或货运列车图。', en: 'BNSF railroad or freight train image.'}},
-    {year: '1998', event: {zh: '收购 General Re，保险和再保险浮存金体系进一步扩大。', en: 'Acquired General Re, expanding insurance and reinsurance float.'}, imageHint: {zh: '保险业务或 Berkshire 年报图。', en: 'Insurance business or Berkshire annual report image.'}},
-    {year: '1988', event: {zh: '开始大量买入可口可乐，展示“好公司长期持有”的经典投资案例。', en: 'Began buying Coca-Cola, becoming a classic case of long-term ownership of a high-quality business.'}, imageHint: {zh: '可口可乐持仓或巴菲特资料图。', en: 'Coca-Cola holding or Buffett material image.'}},
-    {year: '1972', event: {zh: '收购 See’s Candies，让巴菲特和芒格更深理解品牌、定价权和轻资产现金流。', en: 'Acquired See’s Candies, deepening Buffett and Munger understanding of brand, pricing power, and asset-light cash flow.'}, imageHint: {zh: 'See’s Candies 门店或产品图。', en: 'See’s Candies store or product image.'}},
-    {year: '1967', event: {zh: '收购 National Indemnity，保险浮存金成为 Berkshire 资本配置机器的核心燃料。', en: 'Acquired National Indemnity, making insurance float core fuel for Berkshire capital allocation.'}, imageHint: {zh: '保险公司或早期 Berkshire 资料图。', en: 'Insurance company or early Berkshire material image.'}},
-    {year: '1965', event: {zh: '巴菲特取得 Berkshire 控制权，后续从纺织企业转型为投资控股平台。', en: 'Buffett took control of Berkshire, later transforming it from textile company into an investment holding platform.'}, imageHint: {zh: '早期 Berkshire 或巴菲特资料图。', en: 'Early Berkshire or Buffett material image.'}}
-  ],
-  businessModel: [
-    {zh: '保险层：承保利润和低成本浮存金提供可投资资金。', en: 'Insurance layer: underwriting profit and low-cost float provide investable capital.'},
-    {zh: '控股层：铁路、能源、制造、服务和零售公司提供多元现金流。', en: 'Operating layer: railroad, energy, manufacturing, service, and retail businesses provide diversified cash flow.'},
-    {zh: '投资层：长期持有优质上市公司，享受复利、分红和税务递延。', en: 'Investment layer: long-term ownership of public companies captures compounding, dividends, and tax deferral.'},
-    {zh: '资本配置层：在现金、股票、回购和收购之间做机会成本比较。', en: 'Capital-allocation layer: compares opportunity cost among cash, equities, buybacks, and acquisitions.'}
-  ],
-  moat: [
-    {zh: '低成本浮存金：保险业务在长期内提供独特资本来源。', en: 'Low-cost float: insurance provides a distinctive long-term capital source.'},
-    {zh: '声誉资产：卖家公司愿意把企业交给 Berkshire，因为它承诺长期持有和少干预。', en: 'Reputation asset: sellers choose Berkshire because it promises long-term ownership and limited interference.'},
-    {zh: '文化纪律：理性、耐心、少犯大错和去中心化管理降低组织摩擦。', en: 'Cultural discipline: rationality, patience, avoiding big mistakes, and decentralization reduce friction.'},
-    {zh: '股东结构：长期股东降低短期压力，让公司能等待大机会。', en: 'Shareholder base: long-term shareholders reduce short-term pressure and let the company wait for major opportunities.'},
-    {zh: '税务效率：长期持有和内部再配置提高资本复利效率。', en: 'Tax efficiency: long-term holding and internal reallocation improve compounding efficiency.'}
-  ],
-  watchlist: [
-    {zh: '行业：保险承保周期、利率、再保险价格和巨灾损失。', en: 'Industry: insurance underwriting cycle, interest rates, reinsurance pricing, and catastrophe losses.'},
-    {zh: '客户 / 资产：BNSF、Berkshire Hathaway Energy、GEICO 和核心持仓现金流。', en: 'Assets: cash flows from BNSF, Berkshire Hathaway Energy, GEICO, and key holdings.'},
-    {zh: '政策：能源监管、保险监管、税制变化和反垄断审查。', en: 'Policy: energy regulation, insurance regulation, tax changes, and antitrust review.'},
-    {zh: '竞争：私募股权、战略买家、保险资本和指数化资金争夺资产。', en: 'Competition: private equity, strategic buyers, insurance capital, and indexed money compete for assets.'},
-    {zh: '公司自身：Greg Abel 资本配置、现金规模、回购纪律、收购机会和文化传承。', en: 'Company: Greg Abel capital allocation, cash balance, buyback discipline, acquisition opportunities, and cultural succession.'}
-  ]
-});
-
-export const stockModules: StockModule[] = [
-  {
-    title: {zh: '股票到底是什么', en: 'What a stock really is'},
-    summary: {zh: '股票不是代码，而是公司所有权的一小部分。理解股票要先理解公司。', en: 'A stock is not a ticker; it is a fractional ownership claim on a company.'},
-    lessons: [
-      {zh: '股东拥有的是未来现金流和剩余索取权。', en: 'Shareholders own future cash flows and residual claims.'},
-      {zh: '好公司不等于好股票，价格和预期同样重要。', en: 'A good company is not always a good stock; price and expectations matter.'}
-    ]
-  },
-  {
-    title: {zh: '如何看商业模式', en: 'How to read business models'},
-    summary: {zh: '先看它卖什么、卖给谁、为什么客户愿意持续付费。', en: 'Start with what it sells, who pays, and why customers keep paying.'},
-    lessons: [
-      {zh: '区分硬件、软件、订阅、平台、服务和生态收入。', en: 'Separate hardware, software, subscription, platform, service, and ecosystem revenue.'},
-      {zh: '关注毛利率、复购、客户粘性和扩张成本。', en: 'Watch gross margin, repeat purchase, stickiness, and expansion cost.'}
-    ]
-  },
-  {
-    title: {zh: '财报与估值基础', en: 'Financial statements and valuation basics'},
-    summary: {zh: '财报看事实，估值看市场对未来的定价。两者要一起看。', en: 'Financial statements show facts; valuation prices the future. Read them together.'},
-    lessons: [
-      {zh: '收入、利润、现金流、资本开支和负债是基础。', en: 'Revenue, profit, cash flow, capital expenditure, and debt are the basics.'},
-      {zh: 'PE、PS、自由现金流和增长率都只是工具，不是答案。', en: 'PE, PS, free cash flow, and growth rate are tools, not answers.'}
-    ]
-  },
-  {
-    title: {zh: '风险与长期观察', en: 'Risk and long-term observation'},
-    summary: {zh: '投资学习的重点不是预测涨跌，而是识别变量和更新判断。', en: 'Investing study is less about predicting moves and more about identifying variables and updating judgment.'},
-    lessons: [
-      {zh: '看行业、市场、客户、政策、竞争和公司自己。', en: 'Watch industry, market, customers, policy, competition, and the company itself.'},
-      {zh: '建立观察日志，不把短期波动误当成长期结论。', en: 'Keep an observation log and avoid mistaking short-term volatility for long-term conclusions.'}
-    ]
-  }
-];
 
 export const personLessons: PersonLesson[] = [
   {
@@ -2103,17 +1879,17 @@ export const personLessons: PersonLesson[] = [
             en: 'Many people saw a product cycle; Jensen Huang saw a change in the nature of computing. GPUs began with graphics and gaming, but their parallel architecture made them useful for scientific computing, deep learning, data centers, and AI models.'
           },
           {
-            zh: '这类判断的关键不是预测某个爆款产品，而是判断底层需求是否会长期变大：数据是否越来越多，模型是否越来越大，算力是否越来越稀缺，客户是否愿意为更高效率持续付费。',
-            en: 'The key is not predicting a single hit product. It is judging whether the underlying demand will compound: more data, larger models, scarcer compute, and customers willing to keep paying for better efficiency.'
+            zh: '这类判断的关键不是预测某个爆款产品，而是判断底层需求是否会长期变大：数据是否越来越多，模型是否越来越大，算力是否越来越稀缺，客户是否愿意为更高效率持续订阅。',
+            en: 'The key is not predicting a single hit product. It is judging whether the underlying demand will compound: more data, larger models, scarcer compute, and customers willing to keep subscribing for better efficiency.'
           }
         ]
       },
       {
-        title: {zh: '2. 在市场不理解时坚持投入', en: '2. Keep investing before the market understands'},
+        title: {zh: '2. 在市场不理解时坚持投入', en: '2. Keep allocating resources before the market understands'},
         paragraphs: [
           {
-            zh: 'CUDA 是一个典型例子。早期很多竞争对手、投资人、客户甚至市场都不完全理解 NVIDIA 为什么要把 GPU 变成通用计算平台。短期看，这不是最容易讲清楚的业务；长期看，它是在为未来的开发者生态、应用场景和客户迁移成本打地基。',
-            en: 'CUDA is a classic example. Early on, many competitors, investors, customers, and market observers did not fully understand why NVIDIA wanted to turn GPUs into a general-purpose computing platform.'
+            zh: 'CUDA 是一个典型例子。早期很多竞争对手、观察者、客户甚至市场都不完全理解 NVIDIA 为什么要把 GPU 变成通用计算平台。短期看，这不是最容易讲清楚的业务；长期看，它是在为未来的开发者生态、应用场景和客户迁移成本打地基。',
+            en: 'CUDA is a classic example. Early on, many competitors, observers, customers, and market observers did not fully understand why NVIDIA wanted to turn GPUs into a general-purpose computing platform.'
           },
           {
             zh: '真正难的地方在于，平台战略往往需要在收入爆发前先烧很多年耐心：做工具链、做库、做开发者教育、做兼容、做生态合作。短期财务报表不一定立刻奖励你，但长期一旦市场打开，平台会把早期投入变成复利。',
@@ -2143,7 +1919,7 @@ export const personLessons: PersonLesson[] = [
           },
           {
             zh: '更重要的是，要理解“早看见”和“长期投入”必须连在一起。只看见趋势但不投入，等于观点；长期投入但没有大市场，容易变成消耗。伟大的平台战略，往往是大趋势、大市场、强执行和长期耐心同时出现。',
-            en: 'More importantly, early vision and long-term investment must connect. Seeing a trend without investing is only an opinion; investing for years without a large market can become waste. Great platform strategy combines large trend, large market, strong execution, and patience.'
+            en: 'More importantly, early vision and long-term ecosystem must connect. Seeing a trend without allocating resources is only an opinion; allocating resources for years without a large market can become waste. Great platform strategy combines large trend, large market, strong execution, and patience.'
           }
         ]
       }
@@ -2206,7 +1982,7 @@ export const personLessons: PersonLesson[] = [
         paragraphs: [
           {
             zh: '好的生态不是公司自己唱独角戏，而是让客户、云厂商、服务器厂商、模型公司、开发者、研究者都在这个平台上做增量投入。当他们投入越多，平台越强；平台越强，他们越愿意继续投入。',
-            en: 'A strong ecosystem is not a solo performance. It lets customers, cloud providers, server makers, model companies, developers, and researchers all invest on top of the platform. More investment makes the platform stronger, which attracts more investment.'
+            en: 'A strong ecosystem is not a solo performance. It lets customers, cloud providers, server makers, model companies, developers, and researchers all invest on top of the platform. More ecosystem makes the platform stronger, which attracts more ecosystem.'
           },
           {
             zh: 'NVIDIA 的强大之处在于，它把芯片、网络、整机、软件、云、开发者和企业客户放进同一个叙事里。这样客户买的不是孤立产品，而是一套可以持续升级的 AI 基础设施。',
@@ -2239,7 +2015,7 @@ export const personLessons: PersonLesson[] = [
       },
       {
         zh: '平台最强的时候，是客户和伙伴都愿意在上面继续投入。',
-        en: 'A platform is strongest when customers and partners keep investing on top of it.'
+        en: 'A platform is strongest when customers and partners keep allocating resources on top of it.'
       }
     ]
   },
@@ -2259,8 +2035,8 @@ export const personLessons: PersonLesson[] = [
         title: {zh: '1. 把复杂技术讲成清晰位置', en: '1. Turn complex technology into a clear position'},
         paragraphs: [
           {
-            zh: 'AI 芯片、CUDA、数据中心、网络、推理、训练、数字孪生、机器人，这些概念本来很复杂。如果只是堆技术名词，普通投资人、客户和媒体很难理解。黄仁勋的表达能力在于，他不断把这些复杂技术收束成一个更清楚的位置：NVIDIA 是 AI 时代的计算平台。',
-            en: 'AI chips, CUDA, data centers, networking, inference, training, digital twins, and robotics are complex. If they are only listed as technical terms, investors, customers, and media struggle to understand. Jensen Huang repeatedly compresses them into one clear position: NVIDIA as the computing platform for the AI era.'
+            zh: 'AI 芯片、CUDA、数据中心、网络、推理、训练、数字孪生、机器人，这些概念本来很复杂。如果只是堆技术名词，普通观察者、客户和媒体很难理解。黄仁勋的表达能力在于，他不断把这些复杂技术收束成一个更清楚的位置：NVIDIA 是 AI 时代的计算平台。',
+            en: 'AI chips, CUDA, data centers, networking, inference, training, digital twins, and robotics are complex. If they are only listed as technical terms, observers, customers, and media struggle to understand. Jensen Huang repeatedly compresses them into one clear position: NVIDIA as the computing platform for the AI era.'
           },
           {
             zh: '这类表达不是为了好听，而是为了降低理解成本。市场一旦能用一个清晰框架理解你，就更容易理解你的产品线、资本开支、客户需求和长期价值。',
@@ -2276,8 +2052,8 @@ export const personLessons: PersonLesson[] = [
             en: 'Great company narratives do not change language every time. They repeat key phrases over years. Terms such as accelerated computing, AI factories, data center as the computer, and trillion-dollar market reposition NVIDIA from hardware vendor to infrastructure company.'
           },
           {
-            zh: '关键词的作用，是让客户、员工、开发者、投资人和媒体逐渐使用同一套语言讨论这家公司。当外部世界开始复用你的语言，你的叙事就不再只是你自己说的话，而变成行业理解的一部分。',
-            en: 'Keywords help customers, employees, developers, investors, and media discuss the company using the same language. When the outside world starts reusing your language, the narrative becomes part of industry understanding.'
+            zh: '关键词的作用，是让客户、员工、开发者、观察者和媒体逐渐使用同一套语言讨论这家公司。当外部世界开始复用你的语言，你的叙事就不再只是你自己说的话，而变成行业理解的一部分。',
+            en: 'Keywords help customers, employees, developers, observers, and media discuss the company using the same language. When the outside world starts reusing your language, the narrative becomes part of industry understanding.'
           }
         ]
       },
@@ -2568,111 +2344,6 @@ const supplementalLessonConfig: Record<string, Array<{slug: string; summary: Loc
       focus: {
         zh: '平台型公司必须让伙伴相信它既有能力，又不会滥用位置优势。',
         en: 'Platform companies must convince partners they are capable and will not abuse their position.'
-      }
-    }
-  ],
-  'warren-buffett': [
-    {
-      slug: 'stocks-as-business-ownership',
-      summary: {
-        zh: '巴菲特最基础也最重要的投资教育，是把股票看成企业所有权，而不是短期价格符号。',
-        en: 'Buffett most basic lesson is seeing stocks as business ownership, not short-term price symbols.'
-      },
-      focus: {
-        zh: '先理解公司如何赚钱，再讨论股票是否值得买。',
-        en: 'Understand how the business earns money before asking whether the stock is worth buying.'
-      }
-    },
-    {
-      slug: 'moat-and-management',
-      summary: {
-        zh: '巴菲特投资体系的核心，是找到有持久护城河、优秀管理层和合理价格的好企业。',
-        en: 'Buffett system centers on businesses with durable moats, excellent management, and sensible prices.'
-      },
-      focus: {
-        zh: '护城河保护利润，管理层决定复利质量。',
-        en: 'Moat protects profit; management shapes compounding quality.'
-      }
-    },
-    {
-      slug: 'patience-investing-edge',
-      summary: {
-        zh: '巴菲特的优势不只是聪明，而是愿意等待、少犯大错，并让时间为好企业工作。',
-        en: 'Buffett edge is not only intelligence, but waiting, avoiding big mistakes, and letting time work for good businesses.'
-      },
-      focus: {
-        zh: '耐心不是不行动，而是在没有好机会时不乱动。',
-        en: 'Patience is not inaction; it is refusing bad action when opportunity is poor.'
-      }
-    }
-  ],
-  'charlie-munger': [
-    {
-      slug: 'multidisciplinary-models',
-      summary: {
-        zh: '芒格的核心贡献，是把投资判断扩展成跨学科常识系统。',
-        en: 'Munger core contribution is turning investing judgment into a multidisciplinary common-sense system.'
-      },
-      focus: {
-        zh: '现实问题不会按学科边界出现，多元模型能减少盲区。',
-        en: 'Reality does not follow academic boundaries; multiple models reduce blind spots.'
-      }
-    },
-    {
-      slug: 'inversion-reduce-mistakes',
-      summary: {
-        zh: '芒格反复强调反过来想：如果想成功，先问怎样会失败。',
-        en: 'Munger repeatedly uses inversion: if you want success, first ask how failure happens.'
-      },
-      focus: {
-        zh: '避免愚蠢常常比追求聪明更有价值。',
-        en: 'Avoiding stupidity is often more valuable than seeking brilliance.'
-      }
-    },
-    {
-      slug: 'common-sense-discipline',
-      summary: {
-        zh: '芒格的厉害之处，是把常识坚持成纪律：不懂不碰，诱惑越大越谨慎。',
-        en: 'Munger turns common sense into discipline: avoid what you do not understand and be careful with seductive opportunities.'
-      },
-      focus: {
-        zh: '常识人人知道，难的是在压力和诱惑下仍然执行。',
-        en: 'Common sense is widely known; the hard part is executing it under pressure and temptation.'
-      }
-    }
-  ],
-  'duan-yongping': [
-    {
-      slug: 'benfen-culture',
-      summary: {
-        zh: '段永平的“本分”适合放在企业文化和投资里一起理解：不骗用户、不骗伙伴、不骗自己。',
-        en: 'Duan Yongping concept of integrity is useful for both culture and investing: do not deceive users, partners, or yourself.'
-      },
-      focus: {
-        zh: '本分不是口号，而是降低长期交易成本的文化原则。',
-        en: 'Integrity is not a slogan; it lowers long-term transaction cost.'
-      }
-    },
-    {
-      slug: 'consumer-brands-channels',
-      summary: {
-        zh: '段永平的企业经历适合研究消费品牌、渠道、产品定位和用户心智如何形成商业价值。',
-        en: 'Duan business experience is useful for studying how consumer brands, channels, positioning, and mindshare create value.'
-      },
-      focus: {
-        zh: '消费品公司不只卖功能，也卖信任、渠道可得性和品牌心智。',
-        en: 'Consumer companies sell not only functions, but trust, availability, and brand mindshare.'
-      }
-    },
-    {
-      slug: 'value-investing-life-principles',
-      summary: {
-        zh: '段永平常把巴菲特、芒格体系转化成生活原则：能力圈、长期、价格、平常心和不做错事。',
-        en: 'Duan translates Buffett and Munger into life principles: competence, long-termism, price, calmness, and avoiding wrong things.'
-      },
-      focus: {
-        zh: '价值投资不只是买股票的方法，也是一套人生判断系统。',
-        en: 'Value investing is not only a stock method; it is a life judgment system.'
       }
     }
   ]

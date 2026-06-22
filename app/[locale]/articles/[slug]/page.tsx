@@ -4,7 +4,6 @@ import {notFound} from 'next/navigation';
 import {ChevronLeft} from 'lucide-react';
 import {ArticleBrief} from '@/components/ArticleBrief';
 import {ArticleCard} from '@/components/ArticleCard';
-import {ArticleInteractions} from '@/components/ArticleInteractions';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {JsonLd} from '@/components/JsonLd';
 import {PageShell} from '@/components/PageShell';
@@ -170,7 +169,6 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
             dangerouslySetInnerHTML={{__html: contentHtml}}
           />
         </article>
-        <ArticleInteractions locale={locale} />
         {relatedArticles.length > 0 ? (
           <section className="mt-14 border-t border-line pt-10">
             <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.articles.related}</h2>

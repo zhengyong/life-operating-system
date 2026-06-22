@@ -24,8 +24,6 @@ export function Header({locale}: HeaderProps) {
     {href: `/${locale}/life/`, label: t.nav.life},
     {href: `/${locale}/career/`, label: t.nav.career},
     {href: `/${locale}/education/`, label: t.nav.education},
-    {href: `/${locale}/investment/`, label: t.nav.investment},
-    {href: `/${locale}/news/`, label: t.nav.news},
     {href: `/${locale}/people/`, label: t.nav.people},
     {href: `/${locale}/companies/`, label: t.nav.companies},
     {href: `/${locale}/articles/`, label: t.nav.articles},

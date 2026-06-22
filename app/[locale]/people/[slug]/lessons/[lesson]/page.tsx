@@ -5,13 +5,16 @@ import {ChevronLeft} from 'lucide-react';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
-import {getPerson, getPersonLesson, people, personLessons, text} from '@/lib/topics';
+import {isPublicPersonLesson, isPublicPersonSlug} from '@/lib/publicTopics';
+import {getPerson, getPersonLesson, personLessons, text} from '@/lib/topics';
 
 export function generateStaticParams() {
-  return personLessons.flatMap((lesson) => [
-    {locale: 'en', slug: lesson.personSlug, lesson: lesson.slug},
-    {locale: 'zh', slug: lesson.personSlug, lesson: lesson.slug}
-  ]);
+  return personLessons
+    .filter((lesson) => isPublicPersonLesson(lesson.personSlug))
+    .flatMap((lesson) => [
+      {locale: 'en', slug: lesson.personSlug, lesson: lesson.slug},
+      {locale: 'zh', slug: lesson.personSlug, lesson: lesson.slug}
+    ]);
 }
 
 export async function generateMetadata({
@@ -22,7 +25,7 @@ export async function generateMetadata({
   const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
   const lesson = getPersonLesson(params.slug, params.lesson);
 
-  if (!lesson) {
+  if (!lesson || !isPublicPersonLesson(lesson.personSlug)) {
     return {};
   }
 
@@ -42,7 +45,7 @@ export default async function PersonLessonPage({
   const person = getPerson(params.slug);
   const lesson = getPersonLesson(params.slug, params.lesson);
 
-  if (!person || !lesson) {
+  if (!person || !lesson || !isPublicPersonSlug(person.slug)) {
     notFound();
   }
 

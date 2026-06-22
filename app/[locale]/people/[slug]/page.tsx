@@ -6,22 +6,25 @@ import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {LearningPathPanel} from '@/components/LearningPathPanel';
 import {PageShell} from '@/components/PageShell';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {isPublicCompanySlug, isPublicPersonSlug} from '@/lib/publicTopics';
 import {companies, getPerson, getPersonLessons, people, text} from '@/lib/topics';
 
-const archiveTypes = ['speech', 'interview', 'launch', 'book'] as const;
+const archiveTypes = ['source', 'speech', 'interview', 'launch', 'book'] as const;
 
 export function generateStaticParams() {
-  return people.flatMap((person) => [
-    {locale: 'en', slug: person.slug},
-    {locale: 'zh', slug: person.slug}
-  ]);
+  return people
+    .filter((person) => isPublicPersonSlug(person.slug))
+    .flatMap((person) => [
+      {locale: 'en', slug: person.slug},
+      {locale: 'zh', slug: person.slug}
+    ]);
 }
 
 export async function generateMetadata({params}: {params: {locale: string; slug: string}}): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
   const person = getPerson(params.slug);
 
-  if (!person) {
+  if (!person || !isPublicPersonSlug(person.slug)) {
     return {};
   }
 
@@ -36,13 +39,14 @@ export default async function PersonPage({params}: {params: {locale: string; slu
   const t = getDictionary(locale);
   const person = getPerson(params.slug);
 
-  if (!person) {
+  if (!person || !isPublicPersonSlug(person.slug)) {
     notFound();
   }
 
-  const relatedCompanies = companies.filter((company) => person.relatedCompanies.includes(company.slug));
-  const recentNews = person.content.filter((item) => item.type === 'news');
-  const archive = person.content.filter((item) => item.type !== 'news');
+  const relatedCompanies = companies.filter(
+    (company) => isPublicCompanySlug(company.slug) && person.relatedCompanies.includes(company.slug)
+  );
+  const archive = person.content;
   const lessons = getPersonLessons(person.slug);
   const getMatchingLesson = (title: string) => lessons.find((lesson) => text(lesson.title, locale) === title);
   const studyPath = {
@@ -134,32 +138,6 @@ export default async function PersonPage({params}: {params: {locale: string; slu
                 </div>
               );
             })}
-          </div>
-        </section>
-
-        <section className="mt-8 rounded-lg border border-line bg-white p-6">
-          <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.topics.recentNews}</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {recentNews.map((item) => (
-              <article key={text(item.title, locale)} className="flex min-h-64 flex-col rounded-md border border-line p-4">
-                <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-muted">
-                  {item.date ? <span>{item.date}</span> : null}
-                  <span>{text(item.source, locale)}</span>
-                </div>
-                <h3 className="mt-3 font-semibold text-ink">{text(item.title, locale)}</h3>
-                <p className="mt-2 flex-1 text-sm leading-6 text-muted">{text(item.note, locale)}</p>
-                {item.href ? (
-                  <Link
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-accent"
-                  >
-                    {t.topics.viewSource} <ExternalLink className="h-4 w-4" />
-                  </Link>
-                ) : null}
-              </article>
-            ))}
           </div>
         </section>
 

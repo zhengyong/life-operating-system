@@ -43,7 +43,7 @@ draft: false
 
 In the journey of personal growth, we often face a dilemma: should we focus our time on mastering a single domain to the extreme, or should we learn broadly to become a cross-disciplinary talent?
 
-This anxiety is amplified in the internet age. Every day, we are told to learn about investing, management, psychology, AI, coding, business, history, and philosophy. It feels as though if we do not master a dozen skills, we will be eliminated by the times.
+This anxiety is amplified in the internet age. Every day, we are told to learn about resource allocation, management, psychology, AI, coding, business, history, and philosophy. It feels as though if we do not master a dozen skills, we will be eliminated by the times.
 
 Consequently, many people fall into a strange state of low-level diligence:
 
@@ -100,7 +100,7 @@ If life is a long war, everyone needs a base camp. This base camp is your core p
 
 - For a programmer, the base camp is software engineering.
 - For a doctor, it is clinical medicine.
-- For an investor, it is capital allocation.
+- For an observer, it is capital allocation.
 
 The significance of a base camp is antifragility. Even if the external environment changes dramatically, a solid base gives you stable income, social identity, and core competitiveness.
 
@@ -118,7 +118,7 @@ Modern society increasingly values the T-shaped talent model:
 Only after you have enough depth in one domain can learning other fields generate cognitive compound interest.
 
 - A software engineer who understands psychology can build more humane products.
-- An investor who understands technology can judge industries more accurately.
+- An observer who understands technology can judge industries more accurately.
 
 Breadth is not meant to dilute depth. It is meant to amplify depth.
 

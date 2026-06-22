@@ -229,16 +229,6 @@ export default async function LifePage({params}: {params: {locale: string}}) {
                   <KnowledgeCard key={lt(item.title, locale)} item={item} locale={locale} />
                 ))}
               </div>
-              <div className="mt-5 rounded-lg border border-line bg-white p-5">
-                <p className="text-sm font-semibold text-ink">
-                  {locale === 'zh' ? '关联视角：投资' : 'Related Lens: Investing'}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-muted">
-                  {locale === 'zh'
-                    ? '投资版块研究公司、资产和风险；人生版块只讨论财富如何服务自由、家庭、责任和幸福。'
-                    : 'The investing area studies companies, assets, and risk. The life area focuses on how wealth serves freedom, family, responsibility, and happiness.'}
-                </p>
-              </div>
             </div>
           </div>
         </SectionBand>

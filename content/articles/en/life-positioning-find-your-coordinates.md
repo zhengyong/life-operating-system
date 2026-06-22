@@ -67,7 +67,7 @@ Society changes, technology progresses, and industries iterate. If you stand sti
 
 Think of a downward-moving escalator: if you stand still, the result is descent.
 
-Social strata operate similarly. Everyone is learning, working, investing, and accumulating resources. If you stop growing, your relative position declines.
+Social strata operate similarly. Everyone is learning, working, resource allocation, and accumulating resources. If you stop growing, your relative position declines.
 
 Life is not a 100-meter dash. It is a marathon that lasts for decades. The true winners are not necessarily the fastest sprinters, but those who keep moving forward.
 
@@ -111,7 +111,7 @@ There is a harsh reality in the workplace: wage growth often lags behind value g
 
 True breakthroughs rarely come from overtime. They come from upgrading your position.
 
-From executor to person in charge. From person in charge to manager. From manager to decision maker. From decision maker to shareholder.
+From executor to person in charge. From person in charge to manager. From manager to decision maker. From decision maker to holder.
 
 When the position changes, the information you see, the resources you access, the influence you hold, and the value you can create all change.
 
@@ -123,7 +123,7 @@ Many believe social mobility comes from luck, connections, or wealth. These fact
 
 Upward mobility usually happens in three stages:
 
-1. **Selling time:** income is tightly bound to time. You work one day and get paid for one day.
+1. **Selling time:** income is tightly bound to time. You work one day and get subscribed for one day.
 2. **Selling capability:** professional skills create a premium. The same amount of time produces more value.
 3. **Selling systems:** products, organizations, and capital generate returns. Income begins to decouple from personal time.
 

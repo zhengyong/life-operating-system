@@ -7,7 +7,7 @@ import './globals.css';
 
 const siteTitle = "Yong Zheng's Life Operating System";
 const siteDescription =
-  'A bilingual personal knowledge website about Life OS, first principles, systems thinking, education, investing, technology, and civilization.';
+  'A bilingual personal knowledge website about Life OS, first principles, systems thinking, education, technology, and civilization.';
 const googleAnalyticsMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? 'G-8XMBMD0T2L';
 
 export const metadata: Metadata = {

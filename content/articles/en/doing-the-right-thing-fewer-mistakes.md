@@ -74,7 +74,7 @@ There is a huge misconception here: many people use "choice is greater than effo
 
 The ultimate meaning of effort is to expand your radius of choice.
 
-In a world where resources are limited, top universities, core positions, and scarce investment opportunities are always reserved for those who are prepared. Every late night you spend studying, every skill you polish, and every upgrade to your cognition is essentially a way of accumulating chips for yourself.
+In a world where resources are limited, top universities, core positions, and scarce resource allocation opportunities are always reserved for those who are prepared. Every late night you spend studying, every skill you polish, and every upgrade to your cognition is essentially a way of accumulating chips for yourself.
 
 Without deep accumulation as a foundation, so-called choice is merely helpless "being chosen." Only when you possess sufficient capability reserves do you gain the right to say no to mediocrity and calmly select the path leading upward at life's crossroads.
 
@@ -104,7 +104,7 @@ In an age obsessed with quick results, people often overestimate what can change
 
 Many people's pain comes from wanting to eat the final bun that makes them full, while refusing to eat the first nine that seem useless.
 
-Whether one becomes a top engineer, investor, or entrepreneur, the visible brilliance is built on countless days and nights of boring repetition, correction, and trial and error.
+Whether one becomes a top engineer, observer, or entrepreneur, the visible brilliance is built on countless days and nights of boring repetition, correction, and trial and error.
 
 True long-termists are those who understand the truth of life and still love life. They are those who remain willing to take root before quantitative accumulation turns into qualitative change.
 

@@ -7,20 +7,23 @@ import {CompanyResearchSection} from '@/components/CompanyResearchSection';
 import {LearningPathPanel} from '@/components/LearningPathPanel';
 import {PageShell} from '@/components/PageShell';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {isPublicCompanySlug} from '@/lib/publicTopics';
 import {companies, getCompany, text} from '@/lib/topics';
 
 export function generateStaticParams() {
-  return companies.flatMap((company) => [
-    {locale: 'en', slug: company.slug},
-    {locale: 'zh', slug: company.slug}
-  ]);
+  return companies
+    .filter((company) => isPublicCompanySlug(company.slug))
+    .flatMap((company) => [
+      {locale: 'en', slug: company.slug},
+      {locale: 'zh', slug: company.slug}
+    ]);
 }
 
 export async function generateMetadata({params}: {params: {locale: string; slug: string}}): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
   const company = getCompany(params.slug);
 
-  if (!company) {
+  if (!company || !isPublicCompanySlug(company.slug)) {
     return {};
   }
 
@@ -80,7 +83,7 @@ export default async function CompanyPage({params}: {params: {locale: string; sl
   const t = getDictionary(locale);
   const company = getCompany(params.slug);
 
-  if (!company) {
+  if (!company || !isPublicCompanySlug(company.slug)) {
     notFound();
   }
 
@@ -108,11 +111,6 @@ export default async function CompanyPage({params}: {params: {locale: string; sl
         href: `/${locale}/companies/`,
         label: t.nav.companies,
         description: locale === 'zh' ? '回到公司专题，横向比较商业模式。' : 'Return to company studies and compare business models.'
-      },
-      {
-        href: `/${locale}/investment/`,
-        label: t.nav.investment,
-        description: locale === 'zh' ? '把公司研究连接到长期投资框架。' : 'Connect company research to a long-term investing framework.'
       },
       {
         href: `/${locale}/tags/business-model/`,

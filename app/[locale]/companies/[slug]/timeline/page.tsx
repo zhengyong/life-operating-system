@@ -5,20 +5,23 @@ import {ChevronLeft, ExternalLink} from 'lucide-react';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {isPublicCompanySlug} from '@/lib/publicTopics';
 import {companies, getCompany, text} from '@/lib/topics';
 
 export function generateStaticParams() {
-  return companies.flatMap((company) => [
-    {locale: 'en', slug: company.slug},
-    {locale: 'zh', slug: company.slug}
-  ]);
+  return companies
+    .filter((company) => isPublicCompanySlug(company.slug))
+    .flatMap((company) => [
+      {locale: 'en', slug: company.slug},
+      {locale: 'zh', slug: company.slug}
+    ]);
 }
 
 export async function generateMetadata({params}: {params: {locale: string; slug: string}}): Promise<Metadata> {
   const locale: Locale = isLocale(params.locale) ? params.locale : 'en';
   const company = getCompany(params.slug);
 
-  if (!company) {
+  if (!company || !isPublicCompanySlug(company.slug)) {
     return {};
   }
 
@@ -33,7 +36,7 @@ export default async function CompanyTimelinePage({params}: {params: {locale: st
   const t = getDictionary(locale);
   const company = getCompany(params.slug);
 
-  if (!company) {
+  if (!company || !isPublicCompanySlug(company.slug)) {
     notFound();
   }
 

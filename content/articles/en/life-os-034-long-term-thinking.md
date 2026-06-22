@@ -5,7 +5,7 @@ seoTitle: "Why Should Choice | Life OS"
 seoDescription: "A practical note on why should choice from a first-principles and long-term perspective."
 slug: "life-os-034-long-term-thinking"
 date: "2026-05-10"
-summary: "用时间轴重看职业、婚姻、投资和教育。 这篇文章从人生操作系统视角讨论这个问题，并给出可执行的长期判断框架。"
+summary: "用时间轴重看职业、婚姻、资源配置和教育。 这篇文章从人生操作系统视角讨论这个问题，并给出可执行的长期判断框架。"
 summary_en: "A practical note on why should choice from a first-principles and long-term perspective."
 category: "Life OS"
 tags:
@@ -38,7 +38,7 @@ Career change, housing, parenting, and health management look separate, but they
 
 A practical way to use this idea is to do three things. First, write down the real constraints behind the problem, not only the wish. Second, choose one small action that can produce feedback within a week. Third, review whether the action improves the structure, instead of asking only whether it feels comfortable in the short term. This looks slower, but it reduces the cost of restarting again and again.
 
-This topic connects naturally with the [frameworks](/en/books/), the [life section](/en/life/), and the [Life OS introduction](/en/articles/life-os-introduction/). The point is to keep articles, frameworks, categories, and tags connected rather than scattered. The value of the site is not simply to publish more articles. It is to connect each article back to a larger knowledge architecture, because life, career, investing, AI, education, and first principles are not separate subjects in practice.
+This topic connects naturally with the [frameworks](/en/books/), the [life section](/en/life/), and the [Life OS introduction](/en/articles/life-os-introduction/). The point is to keep articles, frameworks, categories, and tags connected rather than scattered. The value of the site is not simply to publish more articles. It is to connect each article back to a larger knowledge architecture, because life, career, resource allocation, AI, education, and first principles are not separate subjects in practice.
 
 Reliable growth rarely comes from one dramatic insight. It comes from many small corrections that eventually become a better system. Why Should Choice deserves attention because it points beyond collecting knowledge. It points toward a calmer, more stable, more long-term way to live and decide.
 

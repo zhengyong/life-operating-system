@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {PageShell} from '@/components/PageShell';
 import {TopicCard} from '@/components/TopicCard';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {isPublicPersonSlug} from '@/lib/publicTopics';
 import {localizedPageMetadata} from '@/lib/seo';
 import {people, text} from '@/lib/topics';
 
@@ -25,6 +26,7 @@ export default async function PeoplePage({params}: {params: {locale: string}}) {
   const {locale: rawLocale} = params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : 'en';
   const t = getDictionary(locale);
+  const visiblePeople = people.filter((person) => isPublicPersonSlug(person.slug));
 
   return (
     <PageShell locale={locale}>
@@ -38,7 +40,7 @@ export default async function PeoplePage({params}: {params: {locale: string}}) {
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {people.map((person) => (
+          {visiblePeople.map((person) => (
             <TopicCard
               key={person.slug}
               href={`/${locale}/people/${person.slug}/`}

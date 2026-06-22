@@ -152,16 +152,16 @@ export const lifeContent = {
       en: 'Family is one of life’s most important long-term partnerships, managed through values, responsibility, communication, and wealth stewardship.'
     },
     wealth: {
-      zh: '这里不重复投资内容，而是讨论财富如何影响自由、选择、幸福感、责任和人生结构。',
-      en: 'This section does not repeat investing content. It studies how wealth shapes freedom, choices, happiness, responsibility, and life structure.'
+      zh: '这里讨论财富如何影响自由、选择、幸福感、责任和人生结构。',
+      en: 'This section studies how wealth shapes freedom, choices, happiness, responsibility, and life structure.'
     },
     health: {
       zh: '健康是所有人生目标的基础设施。身体、睡眠、饮食、运动、情绪和韧性决定长期可持续性。',
       en: 'Health is the infrastructure beneath every life goal. Body, sleep, food, movement, emotion, and resilience determine long-term sustainability.'
     },
     decisions: {
-      zh: '教育、职业、婚姻、生育、创业、投资和国际化选择，都应放进长期人生系统里做案例分析。',
-      en: 'Education, career, marriage, parenting, entrepreneurship, investing, and international choices should be analyzed inside the long-term life system.'
+      zh: '教育、职业、婚姻、生育、创业和国际化选择，都应放进长期人生系统里做案例分析。',
+      en: 'Education, career, marriage, parenting, entrepreneurship, and international choices should be analyzed inside the long-term life system.'
     },
     cases: {
       zh: '通过人物、家庭和人生转折案例，研究不同选择如何形成长期结果，而不是崇拜单个成功故事。',
@@ -1085,8 +1085,8 @@ export const lifeContent = {
     },
     {
       title: {
-        zh: '创业、投资与国际化选择',
-        en: 'Entrepreneurship, Investing, and International Choice'
+        zh: '创业与国际化选择',
+        en: 'Entrepreneurship and International Choice'
       },
       context: {
         zh: '高杠杆选择需要同时评估能力圈、风险承受力、家庭支持、现金流和长期身份。',
@@ -1118,8 +1118,8 @@ export const lifeContent = {
           en: 'Entrepreneurship'
         },
         {
-          zh: '投资选择',
-          en: 'Investment Choice'
+          zh: '长期选择',
+          en: 'Long-Term Choice'
         }
       ]
     }
@@ -1440,7 +1440,7 @@ export const lifeTaxonomy = [
     title: lifeContent.sections.wealth,
     summary: lifeContent.sectionIntros.wealth,
     href: '#wealth-happiness',
-    categories: ['Life', 'Investing', 'Life OS'],
+    categories: ['Life', 'Life OS'],
     tags: ['Wealth and Happiness', 'Wealth', 'Happiness', 'Freedom']
   },
   {
@@ -1454,7 +1454,7 @@ export const lifeTaxonomy = [
     title: lifeContent.sections.decisions,
     summary: lifeContent.sectionIntros.decisions,
     href: '#major-decisions',
-    categories: ['Life', 'Methods and Judgment', 'Investing'],
+    categories: ['Life', 'Methods and Judgment'],
     tags: ['Major Life Decisions', 'Decision Making', 'Career Development', 'Education']
   },
   {

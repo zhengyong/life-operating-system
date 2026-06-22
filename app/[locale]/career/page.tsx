@@ -1,7 +1,5 @@
 import type {Metadata} from 'next';
-import Link from 'next/link';
 import {
-  ArrowRight,
   BriefcaseBusiness,
   Building2,
   ClipboardCheck,
@@ -12,7 +10,6 @@ import {
   RefreshCcw,
   Rocket,
   Route,
-  Scale,
   TrendingUp
 } from 'lucide-react';
 import {PageShell} from '@/components/PageShell';
@@ -43,8 +40,8 @@ export async function generateMetadata({params}: {params: {locale: string}}): Pr
     description,
     keywords:
       locale === 'zh'
-        ? ['Career', '职场', '职业发展', '职业规划', '成长', '创业', '管理', '投资', 'Life OS']
-        : ['Career', 'career development', 'career planning', 'growth', 'entrepreneurship', 'management', 'investing', 'Life OS'],
+        ? ['Career', '职场', '职业发展', '职业规划', '成长', '创业', '管理', 'Life OS']
+        : ['Career', 'career development', 'career planning', 'growth', 'entrepreneurship', 'management', 'Life OS'],
     alternates: {
       canonical: `${siteUrl}/${locale}/career/`,
       languages: {
@@ -252,36 +249,6 @@ export default async function CareerPage({params}: {params: {locale: string}}) {
               body={ct(careerContent.sectionIntros.review, locale)}
             />
             <ReviewTimeline items={careerContent.reviewTimeline} locale={locale} />
-          </div>
-        </SectionBand>
-
-        <SectionBand id="career-investment-link">
-          <div className="mx-auto max-w-6xl px-5 py-14">
-            <div className="rounded-lg border border-line bg-white p-6">
-              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-                <div className="max-w-3xl">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-md bg-soft text-accent">
-                      <Scale className="h-5 w-5" />
-                    </span>
-                    <h2 className="text-2xl font-semibold tracking-normal text-ink">
-                      {locale === 'zh' ? 'Career 与 Investment 联动' : 'Career and Investment Link'}
-                    </h2>
-                  </div>
-                  <p className="mt-4 text-sm leading-7 text-muted">
-                    {locale === 'zh'
-                      ? '职业创造现金流、能力和信用；投资把现金流和认知转化为长期资产。两者互相增强，但不能互相替代。'
-                      : 'Career creates cash flow, capability, and trust; investing turns cash flow and judgment into long-term assets. They reinforce each other, but do not replace each other.'}
-                  </p>
-                </div>
-                <Link
-                  href={`/${locale}/investment/`}
-                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md border border-line px-4 py-3 text-sm font-medium text-accent transition hover:border-accent hover:text-ink"
-                >
-                  {t.nav.investment} <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
           </div>
         </SectionBand>
       </main>

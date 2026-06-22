@@ -194,35 +194,6 @@ const categoryPaths: Record<string, LearningPathSeed> = {
       {zh: '复盘一次学习失败，判断是目标、方法还是反馈出了问题。', en: 'Review one learning failure and locate the issue: goal, method, or feedback.'}
     ]
   },
-  Investing: {
-    summary: {
-      zh: '投资不是追涨杀跌，而是理解资产、现金流、风险、估值和长期复利。',
-      en: 'Investing is not chasing price moves; it is understanding assets, cash flow, risk, valuation, and compounding.'
-    },
-    steps: [
-      {zh: '先区分能力投资、资产投资和现金流管理。', en: 'Separate self-investment, asset investment, and cash-flow management.'},
-      {zh: '再理解公司、商业模式和风险边界。', en: 'Understand companies, business models, and risk boundaries.'},
-      {zh: '最后形成自己的观察清单，而不是照抄结论。', en: 'Build your own watchlist instead of copying conclusions.'}
-    ],
-    tags: ['Investment Framework', 'Business Model', 'Capital Allocation', 'Risk Management', 'Long-Term Investing'],
-    destinations: [
-      {
-        href: (locale) => `/${locale}/investment/`,
-        label: {zh: '投资模块', en: 'Investment Module'},
-        description: {zh: '从框架、资产和风险理解投资。', en: 'Understand investing through framework, assets, and risk.'}
-      },
-      {
-        href: (locale) => `/${locale}/companies/`,
-        label: {zh: '公司专题', en: 'Company Studies'},
-        description: {zh: '把投资学习落到真实公司。', en: 'Ground investing in real companies.'}
-      }
-    ],
-    exercises: [
-      {zh: '列出你最重要的 3 类资产：能力、现金流、金融资产。', en: 'List your three key asset types: capability, cash flow, and financial assets.'},
-      {zh: '选一家公司，写出它怎么赚钱和最大风险。', en: 'Pick one company and write how it makes money and its biggest risk.'},
-      {zh: '写下你不该投资的边界。', en: 'Write the boundaries of what you should not invest in.'}
-    ]
-  },
   'AI and Technology': {
     summary: {
       zh: 'AI 与技术部分重点看趋势、工具、平台、生态和普通人如何迁移能力。',

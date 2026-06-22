@@ -13,9 +13,9 @@ import {
 } from '@/lib/bookArchitecture';
 import {careerContent, careerTaxonomy, ct as careerText} from '@/lib/career';
 import {educationContent, educationTaxonomy, et as educationText} from '@/lib/education';
-import {investmentContent, investmentTaxonomy, it as investmentText} from '@/lib/investment';
 import {lifeContent, lifeTaxonomy, lt as lifeText} from '@/lib/life';
-import {companies, people, stockModules, text as topicText} from '@/lib/topics';
+import {isPublicCompanySlug, isPublicPersonSlug} from '@/lib/publicTopics';
+import {companies, people, text as topicText} from '@/lib/topics';
 import {slugify} from '@/lib/utils';
 
 export {locales};
@@ -33,7 +33,6 @@ export const categories = [
   'Education',
   'People and Leadership',
   'Company Research',
-  'Investing',
   'AI and Technology',
   'Civilization'
 ] as const;
@@ -247,28 +246,16 @@ function getSiteTaxonomyItems(locale: Locale) {
     'cc-wei': {
       categories: ['People and Leadership', 'Company Research'],
       tags: ['Leadership', 'Competitive Moat', 'Business Model', 'Long-Term Strategy']
-    },
-    'warren-buffett': {
-      categories: ['People and Leadership', 'Investing'],
-      tags: ['Great People', 'Investment Framework', 'Capital Allocation', 'Competitive Moat', 'Long-Term Strategy']
-    },
-    'charlie-munger': {
-      categories: ['People and Leadership', 'Investing', 'World Models'],
-      tags: ['Great People', 'Mental Models', 'Investment Framework', 'Capital Allocation', 'World Models']
-    },
-    'duan-yongping': {
-      categories: ['People and Leadership', 'Investing'],
-      tags: ['Investment Framework', 'Business Model', 'Company Culture', 'Long-Term Strategy']
     }
   };
 
   const companyTaxonomy: Record<string, {categories: Category[]; tags: string[]}> = {
     nvidia: {
-      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      categories: ['Company Research', 'AI and Technology'],
       tags: ['Great Companies', 'AI', 'Platform Strategy', 'Developer Ecosystem', 'Competitive Moat', 'Business Model']
     },
     tesla: {
-      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      categories: ['Company Research', 'AI and Technology'],
       tags: ['Great Companies', 'Product Strategy', 'Technology Trend', 'Business Model', 'Competitive Moat', 'Company Culture']
     },
     openai: {
@@ -280,7 +267,7 @@ function getSiteTaxonomyItems(locale: Locale) {
       tags: ['Great Companies', 'Technology Trend', 'Business Model', 'Competitive Moat', 'Long-Term Strategy']
     },
     apple: {
-      categories: ['Company Research', 'Investing', 'AI and Technology'],
+      categories: ['Company Research', 'AI and Technology'],
       tags: ['Great Companies', 'Product Strategy', 'Business Model', 'Competitive Moat', 'Company Culture']
     },
     anthropic: {
@@ -288,16 +275,12 @@ function getSiteTaxonomyItems(locale: Locale) {
       tags: ['AI', 'Business Model', 'Company Culture', 'Technology Trend', 'Competitive Moat']
     },
     tsmc: {
-      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      categories: ['Company Research', 'AI and Technology'],
       tags: ['Great Companies', 'Competitive Moat', 'Business Model', 'Technology Trend', 'Long-Term Strategy']
     },
     google: {
-      categories: ['Company Research', 'AI and Technology', 'Investing'],
+      categories: ['Company Research', 'AI and Technology'],
       tags: ['Great Companies', 'AI', 'Platform Strategy', 'Business Model', 'Competitive Moat']
-    },
-    'berkshire-hathaway': {
-      categories: ['Company Research', 'Investing'],
-      tags: ['Great Companies', 'Investment Framework', 'Capital Allocation', 'Business Model', 'Competitive Moat']
     }
   };
 
@@ -344,16 +327,7 @@ function getSiteTaxonomyItems(locale: Locale) {
     }
   };
 
-  const stockItems = stockModules.map((module) => ({
-    title: topicText(module.title, locale),
-    summary: topicText(module.summary, locale),
-    href: `/${locale}/stocks/`,
-    type: locale === 'zh' ? '股票模块' : 'Stock module',
-    categories: ['Investing' as Category],
-    tags: ['Investment Framework', 'Business Model', 'Capital Allocation', 'Decision Making']
-  }));
-
-  const personItems = people.map((person) => {
+  const personItems = people.filter((person) => isPublicPersonSlug(person.slug)).map((person) => {
     const taxonomy = personTaxonomy[person.slug] ?? {
       categories: ['People and Leadership' as Category],
       tags: ['Great People', 'Leadership', 'Long-Term Strategy']
@@ -367,7 +341,7 @@ function getSiteTaxonomyItems(locale: Locale) {
     };
   });
 
-  const companyItems = companies.map((company) => {
+  const companyItems = companies.filter((company) => isPublicCompanySlug(company.slug)).map((company) => {
     const taxonomy = companyTaxonomy[company.slug] ?? {
       categories: ['Company Research' as Category],
       tags: ['Great Companies', 'Business Model', 'Competitive Moat']
@@ -507,37 +481,16 @@ function getSiteTaxonomyItems(locale: Locale) {
     tags: item.tags.map((tag) => careerText(tag, 'en'))
   }));
 
-  const investmentModuleItems = investmentTaxonomy.map((item) => ({
-    title: investmentText(item.title, locale),
-    summary: investmentText(item.summary, locale),
-    href: `/${locale}/investment/${item.href}`,
-    type: locale === 'zh' ? '投资模块' : 'Investment module',
-    categories: [...item.categories] as Category[],
-    tags: [...item.tags]
-  }));
-
-  const investmentAssetItems = investmentContent.assets.map((asset) => ({
-    title: investmentText(asset.title, locale),
-    summary: investmentText(asset.summary, locale),
-    href: `/${locale}/investment/#asset-classes`,
-    type: locale === 'zh' ? '资产类别' : 'Asset class',
-    categories: ['Investing' as Category, 'Career' as Category],
-    tags: asset.tags.map((tag) => investmentText(tag, 'en'))
-  }));
-
   return [
     ...personItems,
     ...companyItems,
     ...bookItems,
-    ...stockItems,
     ...educationModuleItems,
     ...educationCardItems,
     ...lifeModuleItems,
     ...lifeCardItems,
     ...careerModuleItems,
-    ...careerCardItems,
-    ...investmentModuleItems,
-    ...investmentAssetItems
+    ...careerCardItems
   ];
 }
 

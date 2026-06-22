@@ -79,26 +79,6 @@ const categoryConfig = {
     quoteZh: '职业成长不是证明自己很忙，而是持续进入更有价值的问题。',
     quoteEn: 'Career growth is not proving you are busy. It is entering more valuable problems.'
   },
-  investing: {
-    match: '财富与投资',
-    siteCategory: 'Investing',
-    slugPrefix: 'investing',
-    zhName: '财富与投资',
-    enName: 'Wealth and Investing',
-    tags: ['Investment Framework', 'Long-Term Investing', 'Risk Management', 'Capital Allocation', 'Business Model'],
-    zhLinks: [
-      ['投资版块', '/zh/investment/'],
-      ['投资框架标签', '/zh/tags/investment-framework/'],
-      ['公司研究', '/zh/companies/']
-    ],
-    enLinks: [
-      ['investment section', '/en/investment/'],
-      ['investment framework tag', '/en/tags/investment-framework/'],
-      ['company research', '/en/companies/']
-    ],
-    quoteZh: '投资的难处不在知道道理，而在长期按道理行动。',
-    quoteEn: 'The hard part of investing is not knowing the principle. It is acting on it for long enough.'
-  },
   ai: {
     match: 'AI与科技',
     siteCategory: 'AI and Technology',
@@ -225,7 +205,6 @@ const translationPhrases = [
   ['人生操作系统', 'life operating system'],
   ['第一性原理', 'first principles'],
   ['长期主义', 'long termism'],
-  ['长期投资', 'long term investing'],
   ['长期增长', 'long term growth'],
   ['长期价值', 'long term value'],
   ['独立思考', 'independent thinking'],
@@ -246,7 +225,6 @@ const translationPhrases = [
   ['职场', 'career'],
   ['财富自由', 'financial freedom'],
   ['财富', 'wealth'],
-  ['投资', 'investing'],
   ['科技公司', 'technology company'],
   ['科技革命', 'technology revolution'],
   ['科技', 'technology'],
@@ -470,11 +448,6 @@ const zhExamples = {
     '职场里的很多差距，不是从加班时长拉开的，而是从进入什么问题、跟谁共事、能否复盘项目开始拉开的。',
     '平台、行业和角色会放大个人努力，也会限制个人努力，所以职业选择本质上是把自己放进怎样的系统。'
   ],
-  investing: [
-    '一个家庭做资产配置时，最重要的往往不是找到最高收益，而是现金流、风险承受、理解范围和长期持有能力是否匹配。',
-    '投资里最贵的错误，常常不是少赚一点，而是在自己不理解的地方重仓，等波动来临时被迫出局。',
-    '真正的投资框架，会把公司、价格、现金流、周期和人性放在一起看，而不是只看一段行情。'
-  ],
   ai: [
     '同样使用 AI，有人只是让它生成更多信息，有人却用它整理流程、校准判断、复盘项目，差距来自人的系统，而不是按钮。',
     'AI 像一台放大器：问题定义清楚，它放大效率；问题定义混乱，它放大噪音。',
@@ -502,11 +475,6 @@ const enExamples = {
     'A young engineer who only optimizes the next performance review may miss the more important assets: complex projects, strong colleagues, good processes, and transferable experience.',
     'Career gaps are not created only by working hours. They are created by the quality of problems, the people around you, and whether projects are reviewed honestly.',
     'Platforms, industries, and roles can amplify effort or trap it. Career choice is partly the choice of the system you put yourself inside.'
-  ],
-  investing: [
-    'For a household portfolio, the key is often not the highest return. It is whether cash flow, risk tolerance, understanding, and holding capacity fit together.',
-    'The expensive investing mistake is often not earning less. It is taking a large position in something you do not understand and being forced out by volatility.',
-    'A real investing framework looks at companies, price, cash flow, cycles, and human nature together, not only a short price movement.'
   ],
   ai: [
     'With the same AI tool, one person creates more noise while another improves workflow, judgment, and review. The difference comes from the human system, not the button.',
@@ -775,7 +743,7 @@ function zhArticle(topic) {
     `从第一性原理看，很多困境不是因为人不懂道理，而是没有把道理拆成输入、结构、反馈和行动。输入决定你每天接收什么，结构决定资源如何分配，反馈决定你是否看见偏差，行动决定系统是否继续进化。${topic.title}真正要提醒我们的，是不要只看表面的输赢，而要看这个选择会不会改善长期结构。\n\n` +
     `${example} 这个例子不复杂，但它说明了一个朴素事实：现实世界不会因为我们想得很用力就自动变好。一个人需要把想法变成流程，把流程变成习惯，把习惯放进可复盘的系统。否则，很多正确认知都会停在笔记里，无法进入生活。\n\n` +
     `落实到个人，可以先做三件事。第一，写下这个问题背后的真实约束，而不是只写愿望。第二，找出一个最小行动，让自己在一周内能得到反馈。第三，定期复盘这个行动是否带来了更好的结构，而不是只看短期情绪是否舒服。这样做看似慢，但它能减少反复推倒重来的成本。\n\n` +
-    `${linkSentenceZh(topic)} 网站的价值不只是多放文章，而是让每篇文章都能回到一套更大的知识体系：人生、职场、投资、AI、教育和第一性原理之间，本来就不是割裂的。\n\n` +
+    `${linkSentenceZh(topic)} 网站的价值不只是多放文章，而是让每篇文章都能回到一套更大的知识体系：人生、职场、AI、教育和第一性原理之间，本来就不是割裂的。\n\n` +
     `真正可靠的成长，往往不是一次顿悟，而是多次小修正之后形成的新系统。${topic.title}这个选题值得被写出来，也值得被反复使用，因为它最终指向的不是知识收藏，而是更清醒、更稳定、更长期的生活方式。\n\n` +
     `## 总结\n\n` +
     `${topic.title}不是一个孤立观点，而是一个可以放进人生操作系统里的判断工具。先看清约束，再设计行动，再用反馈修正，普通人才能把认知变成长期复利。\n\n` +
@@ -797,7 +765,7 @@ function enArticle(topic) {
     `From a first-principles view, many difficulties do not come from a lack of slogans. They come from the absence of a working system. Inputs decide what you receive every day. Structure decides how resources are allocated. Feedback decides whether you can see deviation. Action decides whether the system keeps evolving. The point of this topic is not to win an argument, but to improve the long-term structure behind repeated choices.\n\n` +
     `${example} The example is simple, but it points to a basic truth: reality does not improve just because we think intensely. A person needs to turn ideas into processes, processes into habits, and habits into a system that can be reviewed. Otherwise, even good ideas remain in notes and never enter life.\n\n` +
     `A practical way to use this idea is to do three things. First, write down the real constraints behind the problem, not only the wish. Second, choose one small action that can produce feedback within a week. Third, review whether the action improves the structure, instead of asking only whether it feels comfortable in the short term. This looks slower, but it reduces the cost of restarting again and again.\n\n` +
-    `${linkSentenceEn(topic)} The value of the site is not simply to publish more articles. It is to connect each article back to a larger knowledge architecture, because life, career, investing, AI, education, and first principles are not separate subjects in practice.\n\n` +
+    `${linkSentenceEn(topic)} The value of the site is not simply to publish more articles. It is to connect each article back to a larger knowledge architecture, because life, career, AI, education, and first principles are not separate subjects in practice.\n\n` +
     `Reliable growth rarely comes from one dramatic insight. It comes from many small corrections that eventually become a better system. ${enTitle} deserves attention because it points beyond collecting knowledge. It points toward a calmer, more stable, more long-term way to live and decide.\n\n` +
     `## Summary\n\n` +
     `${enTitle} is not an isolated idea. It is a judgment tool that can be placed inside a personal operating system. See the constraints, design the action, and use feedback to correct the system. That is how cognition becomes long-term compounding.\n\n` +
@@ -810,7 +778,7 @@ function ensureDirectory(directory) {
 }
 
 function cleanGeneratedArticles() {
-  const generatedPattern = /^(life-os|first-principles|career|investing|ai-technology|education-growth)-\d{3}-.*\.md$/;
+  const generatedPattern = /^(life-os|first-principles|career|ai-technology|education-growth)-\d{3}-.*\.md$/;
 
   for (const locale of ['zh', 'en']) {
     const directory = path.join(outputRoot, locale);

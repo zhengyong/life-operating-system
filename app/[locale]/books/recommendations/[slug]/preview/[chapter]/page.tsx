@@ -2,7 +2,6 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ArrowLeft} from 'lucide-react';
-import {ArticleInteractions} from '@/components/ArticleInteractions';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {StaticPracticeBlock} from '@/components/StaticPracticeBlock';
@@ -167,12 +166,10 @@ export default async function BookPreviewChapterPage({
         <section className="mt-8 rounded-lg border border-line bg-soft p-5">
           <p className="text-sm leading-7 text-muted">
             {locale === 'zh'
-              ? '当前页面仅开放指定试读范围。其余部分和章节需要付费阅读，支持作者后可回到书籍页面添加微信继续交流。'
-              : 'This page only opens the selected preview range. Other parts and chapters require paid access.'}
+              ? '当前页面为公开试读内容。'
+              : 'This page is public preview content.'}
           </p>
         </section>
-
-        <ArticleInteractions locale={locale} />
       </main>
     </PageShell>
   );

@@ -4,14 +4,14 @@ import {bookArchitectureNodes, t as bookText} from '../lib/bookArchitecture';
 import {bookPreviewConfigs, getBookPreviewChapters} from '../lib/bookPreview';
 import {careerContent, ct as careerText} from '../lib/career';
 import {getAllArticles, getArticle} from '../lib/content';
-import {investmentContent, it as investmentText} from '../lib/investment';
+import {isPublicCompanySlug, isPublicPersonSlug} from '../lib/publicTopics';
 import {siteUrl} from '../lib/site';
-import {companies, people, stockModules, text as topicText} from '../lib/topics';
+import {companies, people, text as topicText} from '../lib/topics';
 import {Locale, locales} from '../lib/i18n';
 
 const publicDirectory = path.join(process.cwd(), 'public');
 
-type SearchType = 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'stock' | 'career' | 'investment';
+type SearchType = 'article' | 'book' | 'book-chapter' | 'person' | 'company' | 'career';
 
 type SearchIndexItem = {
   id: string;
@@ -35,9 +35,7 @@ const typeLabels: Record<Locale, Record<SearchType, string>> = {
     'book-chapter': '书籍章节',
     person: '人物',
     company: '公司',
-    stock: '投资',
-    career: '职场',
-    investment: '投资'
+    career: '职场'
   },
   en: {
     article: 'Article',
@@ -45,9 +43,7 @@ const typeLabels: Record<Locale, Record<SearchType, string>> = {
     'book-chapter': 'Book chapter',
     person: 'Person',
     company: 'Company',
-    stock: 'Investment',
-    career: 'Career',
-    investment: 'Investment'
+    career: 'Career'
   }
 };
 
@@ -147,7 +143,7 @@ const bookChapterIndex: SearchIndexItem[] = locales.flatMap((locale) =>
 );
 
 const personIndex: SearchIndexItem[] = locales.flatMap((locale) =>
-  people.map((person) => {
+  people.filter((person) => isPublicPersonSlug(person.slug)).map((person) => {
     const title = topicText(person.name, locale);
     const summary = topicText(person.summary, locale);
     const relatedCompanies = person.relatedCompanies.join(' ');
@@ -156,12 +152,6 @@ const personIndex: SearchIndexItem[] = locales.flatMap((locale) =>
       topicText(item.summary, locale),
       ...item.points.map((point) => topicText(point, locale))
     ]) ?? [];
-    const content = person.content.flatMap((item) => [
-      topicText(item.title, locale),
-      topicText(item.source, locale),
-      topicText(item.note, locale)
-    ]);
-
     return {
       id: `${locale}:person:${person.slug}`,
       type: 'person',
@@ -176,15 +166,14 @@ const personIndex: SearchIndexItem[] = locales.flatMap((locale) =>
         summary,
         relatedCompanies,
         ...person.learnFrom.map((item) => topicText(item, locale)),
-        ...advice,
-        ...content
+        ...advice
       ])
     };
   })
 );
 
 const companyIndex: SearchIndexItem[] = locales.flatMap((locale) =>
-  companies.map((company) => {
+  companies.filter((company) => isPublicCompanySlug(company.slug)).map((company) => {
     const title = topicText(company.name, locale);
     const summary = topicText(company.summary, locale);
     const productSegments = company.productSegments?.flatMap((segment) => [
@@ -224,23 +213,6 @@ const companyIndex: SearchIndexItem[] = locales.flatMap((locale) =>
         ...company.watchlist.map((item) => topicText(item, locale)),
         ...company.futureQuestions.map((item) => topicText(item, locale))
       ])
-    };
-  })
-);
-
-const stockIndex: SearchIndexItem[] = locales.flatMap((locale) =>
-  stockModules.map((module, index) => {
-    const title = topicText(module.title, locale);
-    const summary = topicText(module.summary, locale);
-    return {
-      id: `${locale}:stock:${index}`,
-      type: 'stock',
-      typeLabel: typeLabels[locale].stock,
-      title,
-      summary,
-      href: `/${locale}/stocks/`,
-      locale,
-      text: compactText([title, summary, ...module.lessons.map((lesson) => topicText(lesson, locale))])
     };
   })
 );
@@ -285,38 +257,13 @@ const careerIndex: SearchIndexItem[] = locales.flatMap((locale) => {
   }));
 });
 
-const investmentIndex: SearchIndexItem[] = locales.flatMap((locale) =>
-  investmentContent.assets.map((asset, index) => {
-    const title = investmentText(asset.title, locale);
-    const summary = investmentText(asset.summary, locale);
-
-    return {
-      id: `${locale}:investment:${index}`,
-      type: 'investment',
-      typeLabel: typeLabels[locale].investment,
-      title,
-      summary,
-      href: `/${locale}/investment/#asset-classes`,
-      locale,
-      text: compactText([
-        title,
-        summary,
-        ...asset.items.map((item) => investmentText(item, locale)),
-        ...asset.tags.map((tag) => investmentText(tag, locale))
-      ])
-    };
-  })
-);
-
 const index: SearchIndexItem[] = [
   ...articleIndex,
   ...bookIndex,
   ...bookChapterIndex,
   ...personIndex,
   ...companyIndex,
-  ...stockIndex,
-  ...careerIndex,
-  ...investmentIndex
+  ...careerIndex
 ];
 
 fs.writeFileSync(path.join(publicDirectory, 'search-index.json'), JSON.stringify(index, null, 2));

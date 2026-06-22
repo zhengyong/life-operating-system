@@ -97,7 +97,7 @@ const groupDefinitions: GroupDefinition[] = [
   },
   {
     id: 'business',
-    label: {en: 'Business & Investing', zh: '商业与投资'},
+    label: {en: 'Business & Company Studies', zh: '商业与公司研究'},
     names: [
       'Business',
       'Business Model',
@@ -108,13 +108,7 @@ const groupDefinitions: GroupDefinition[] = [
       'Competitive Moat',
       'Platform Strategy',
       'Product Strategy',
-      'Investment Framework',
-      'Investment Choice',
-      'Long-Term Investing',
       'Capital Allocation',
-      'Asset Allocation',
-      'Stocks',
-      'ETF',
       'Cash Flow',
       'Margin of Safety',
       'Risk',
@@ -126,7 +120,7 @@ const groupDefinitions: GroupDefinition[] = [
       'Family Wealth',
       'Real Estate'
     ],
-    keywords: ['business', 'company', 'investment', 'investing', 'capital', 'asset', 'stock', 'risk', 'value', 'wealth']
+    keywords: ['business', 'company', 'capital', 'asset', 'risk', 'value', 'wealth']
   },
   {
     id: 'ai-technology',
@@ -159,7 +153,6 @@ const groupDefinitions: GroupDefinition[] = [
       'Personal Growth',
       'Self Awareness',
       'Self Knowledge',
-      'Self-Investment',
       'Self Discipline',
       'Strengths',
       'Weaknesses',

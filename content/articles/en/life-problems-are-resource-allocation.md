@@ -30,7 +30,7 @@ The first step is admitting scarcity. This is not pessimistic. It is clarifying.
 
 Many people avoid allocation because allocation requires trade-offs. But if you do not choose actively, the system will choose for you. The body will remind you through fatigue. Cash flow will remind you through pressure. Relationships will remind you through distance. A career will remind you through stagnation. Management means noticing before the alarm becomes loud.
 
-A simple practice is to divide life resources into five buckets: time, attention, physical energy, relationships, and money. Review them weekly. Where did each resource go? Did those flows support my long-term direction? If the answer stays inconsistent, the issue may not be willpower. The allocation structure needs repair. The investing idea of [asset allocation](/en/tags/asset-allocation/) can be applied to life systems as well.
+A simple practice is to divide life resources into five buckets: time, attention, physical energy, relationships, and money. Review them weekly. Where did each resource go? Did those flows support my long-term direction? If the answer stays inconsistent, the issue may not be willpower. The allocation structure needs repair. The resource allocation idea of [asset allocation](/en/tags/asset-allocation/) can be applied to life systems as well.
 
 Ordinary people may not have abundant resources, but they can improve the quality of allocation. Reduce low-value consumption. Increase high-quality accumulation. Stop chasing every opportunity. Protect key directions. Use values and feedback to allocate resources, not only emotion. A life system often improves not because it suddenly has more, but because it wastes less of what is scarce.
 

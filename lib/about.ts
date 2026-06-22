@@ -136,14 +136,14 @@ const zh: AboutProfile = {
       items: ['人工智能', '自动驾驶', '机器人', '航天产业', '数据中心', '数字基础设施']
     },
     {
-      title: '投资与商业分析',
+      title: '商业系统分析',
       body: '长期研究科技企业、平台型商业模式与竞争壁垒',
-      items: ['科技企业', '平台型商业模式', '网络效应', '竞争壁垒', '戴维斯双击']
+      items: ['科技企业', '平台型商业模式', '网络效应', '竞争壁垒', '长期增长']
     }
   ],
   valuesTitle: '价值观',
   values: ['长期主义', '第一性原理', '独立思考', '责任优先', '持续学习'],
-  valuesClosing: '我相信，人与人之间最大的差异，最终来自认知系统的差异。持续构建更好的认知系统，是一项终身事业。人生、职场、学习与成长、教育、投资，本质上彼此相通；普通人也可以通过长期学习、正确选择与持续行动，走出一条属于自己的逆袭之路。'
+  valuesClosing: '我相信，人与人之间最大的差异，最终来自认知系统的差异。持续构建更好的认知系统，是一项终身事业。人生、职场、学习与成长、教育，本质上彼此相通；普通人也可以通过长期学习、正确选择与持续行动，走出一条属于自己的逆袭之路。'
 };
 
 const en: AboutProfile = {
@@ -235,9 +235,9 @@ const en: AboutProfile = {
       items: ['Artificial intelligence', 'Autonomous driving', 'Robotics', 'Space industry', 'Data centers', 'Digital infrastructure']
     },
     {
-      title: 'Investing & Business Analysis',
+      title: 'Business Systems Analysis',
       body: 'Long-term research on technology companies, platform business models, and durable competitive advantages.',
-      items: ['Technology companies', 'Platform business models', 'Network effects', 'Competitive advantages', 'Davis Double Play']
+      items: ['Technology companies', 'Platform business models', 'Network effects', 'Competitive advantages', 'Long-term growth']
     }
   ],
   valuesTitle: 'Values',

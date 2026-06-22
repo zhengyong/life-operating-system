@@ -3,13 +3,14 @@ import type {MetadataRoute} from 'next';
 import {bookArchitectureNodes} from '@/lib/bookArchitecture';
 import {getAllArticles, getTaxonomy, locales} from '@/lib/content';
 import {getPageCount} from '@/lib/pagination';
+import {isPublicCompanySlug, isPublicPersonLesson, isPublicPersonSlug} from '@/lib/publicTopics';
 import {pageUrl} from '@/lib/site';
 import {companies, people, personLessons} from '@/lib/topics';
 import {slugify} from '@/lib/utils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = locales.flatMap((locale) =>
-    ['', '/about', '/books', '/life', '/career', '/education', '/news', '/articles', '/people', '/companies', '/investment', '/stocks', '/categories', '/tags', '/contact', '/privacy'].map((path) => ({
+    ['', '/about', '/books', '/life', '/career', '/education', '/articles', '/people', '/companies', '/categories', '/tags', '/contact', '/privacy'].map((path) => ({
       url: pageUrl(`${locale}${path}`),
       lastModified: new Date()
     }))
@@ -42,30 +43,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]);
 
   const peopleRoutes = locales.flatMap((locale) =>
-    people.map((person) => ({
-      url: pageUrl(`${locale}/people/${person.slug}`),
-      lastModified: new Date()
-    }))
+    people
+      .filter((person) => isPublicPersonSlug(person.slug))
+      .map((person) => ({
+        url: pageUrl(`${locale}/people/${person.slug}`),
+        lastModified: new Date()
+      }))
   );
 
   const companyRoutes = locales.flatMap((locale) =>
-    companies.flatMap((company) => [
-      {
-        url: pageUrl(`${locale}/companies/${company.slug}`),
-        lastModified: new Date()
-      },
-      {
-        url: pageUrl(`${locale}/companies/${company.slug}/timeline`),
-        lastModified: new Date()
-      }
-    ])
+    companies
+      .filter((company) => isPublicCompanySlug(company.slug))
+      .flatMap((company) => [
+        {
+          url: pageUrl(`${locale}/companies/${company.slug}`),
+          lastModified: new Date()
+        },
+        {
+          url: pageUrl(`${locale}/companies/${company.slug}/timeline`),
+          lastModified: new Date()
+        }
+      ])
   );
 
   const personLessonRoutes = locales.flatMap((locale) =>
-    personLessons.map((lesson) => ({
-      url: pageUrl(`${locale}/people/${lesson.personSlug}/lessons/${lesson.slug}`),
-      lastModified: new Date()
-    }))
+    personLessons
+      .filter((lesson) => isPublicPersonLesson(lesson.personSlug))
+      .map((lesson) => ({
+        url: pageUrl(`${locale}/people/${lesson.personSlug}/lessons/${lesson.slug}`),
+        lastModified: new Date()
+      }))
   );
 
   const bookRecommendationRoutes = locales.flatMap((locale) =>

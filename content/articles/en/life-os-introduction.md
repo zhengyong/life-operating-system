@@ -22,7 +22,7 @@ When we understand life as a system, we naturally pay attention to inputs, struc
 
 ## Why Life OS Matters
 
-Modern life is increasingly complex. Education, career, investing, technology, family, and social responsibility influence one another. A decision in one domain may reshape the result in another.
+Modern life is increasingly complex. Education, career, resource allocation, technology, family, and social responsibility influence one another. A decision in one domain may reshape the result in another.
 
 Life OS tries to answer three questions:
 

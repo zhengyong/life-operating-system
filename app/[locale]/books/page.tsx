@@ -30,8 +30,8 @@ const knowledgeLayers = [
   {
     label: {zh: '专业 / 专家', en: 'Expertise'},
     items: {
-      zh: ['技术', '投资', '教育', '管理', '产业'],
-      en: ['Technology', 'Investing', 'Education', 'Management', 'Industry']
+      zh: ['技术', '教育', '管理', '产业'],
+      en: ['Technology', 'Education', 'Management', 'Industry']
     }
   }
 ];

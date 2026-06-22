@@ -11,7 +11,7 @@ const categoryLabels: Record<string, {en: string; zh: string}> = {
   'People and Leadership': {en: 'People and Leadership', zh: '人物与领导力'},
   'Company Research': {en: 'Company Research', zh: '公司研究'},
   Education: {en: 'Education', zh: '教育'},
-  Investing: {en: 'Investing', zh: '投资'},
+  'Resource Allocation': {en: 'Resource Allocation', zh: '投入'},
   'AI and Technology': {en: 'AI and Technology', zh: 'AI 与技术'},
   Civilization: {en: 'Civilization', zh: '文明'}
 };
@@ -74,10 +74,8 @@ const tagLabels: Record<string, {en: string; zh: string}> = {
   'Growth Environment': {en: 'Growth Environment', zh: '成长环境'},
   'Growth Path': {en: 'Growth Path', zh: '成长路径'},
   Habits: {en: 'Habits', zh: '习惯'},
-  'Investment Framework': {en: 'Investment Framework', zh: '投资框架'},
   'Individual Difference': {en: 'Individual Difference', zh: '个体差异'},
   Interest: {en: 'Interest', zh: '兴趣'},
-  'Investment Choice': {en: 'Investment Choice', zh: '投资选择'},
   'Inversion Thinking': {en: 'Inversion Thinking', zh: '逆向思维'},
   Iteration: {en: 'Iteration', zh: '迭代'},
   'Knowledge Compound Interest': {en: 'Knowledge Compound Interest', zh: '知识复利'},
@@ -177,7 +175,6 @@ const tagLabels: Record<string, {en: string; zh: string}> = {
   'High-Value Roles': {en: 'High-Value Roles', zh: '高价值岗位'},
   'Interview Review': {en: 'Interview Review', zh: '面试复盘'},
   'Learning Ability': {en: 'Learning Ability', zh: '学习能力'},
-  'Long-Term Investing': {en: 'Long-Term Investing', zh: '长期投资'},
   Management: {en: 'Management', zh: '管理'},
   'Management Thinking': {en: 'Management Thinking', zh: '管理思想'},
   Optionality: {en: 'Optionality', zh: '选择权'},
@@ -190,10 +187,9 @@ const tagLabels: Record<string, {en: string; zh: string}> = {
   'Real Estate': {en: 'Real Estate', zh: '房地产'},
   Risk: {en: 'Risk', zh: '风险'},
   'Risk Management': {en: 'Risk Management', zh: '风险管理'},
-  'Self-Investment': {en: 'Self-Investment', zh: '自我投资'},
   'Skill Development': {en: 'Skill Development', zh: '技能提升'},
   Startup: {en: 'Startup', zh: '小公司'},
-  Stocks: {en: 'Stocks', zh: '股票'},
+  'Company Shares': {en: 'Company Shares', zh: '公司份额'},
   'Value Creation': {en: 'Value Creation', zh: '价值创造'},
   'World Models': {en: 'World Models', zh: '世界模型'}
 };

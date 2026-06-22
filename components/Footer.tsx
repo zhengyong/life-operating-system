@@ -9,8 +9,7 @@ const friendlyCompanies = [
   'anthropic',
   'openai',
   'apple',
-  'tsmc',
-  'berkshire-hathaway'
+  'tsmc'
 ];
 
 export function Footer({locale}: {locale: Locale}) {
@@ -53,12 +52,6 @@ export function Footer({locale}: {locale: Locale}) {
             </Link>
             <Link href={`/${locale}/education/`} className="hover:text-accent">
               {t.nav.education}
-            </Link>
-            <Link href={`/${locale}/investment/`} className="hover:text-accent">
-              {t.nav.investment}
-            </Link>
-            <Link href={`/${locale}/news/`} className="hover:text-accent">
-              {t.nav.news}
             </Link>
             <Link href={`/${locale}/people/`} className="hover:text-accent">
               {t.nav.people}

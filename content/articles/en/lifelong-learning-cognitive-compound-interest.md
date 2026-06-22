@@ -105,7 +105,7 @@ Therefore, we need to view learning as the process of building a "Life Operating
 
 Many people seem diligent, having bookmarked countless courses and read numerous books, yet their growth remains sluggish. The reason is that their knowledge has not formed a system. Knowledge is like bricks, and models are like blueprints; only by structuring knowledge can we build a skyscraper of capability.
 
-Whether understanding investment or workplace survival, we should not limit ourselves to a single discipline. Instead, we should integrate multi-dimensional perspectives such as economics, psychology, and game theory to construct a complete cognitive closed loop.
+Whether understanding resource allocation or workplace survival, we should not limit ourselves to a single discipline. Instead, we should integrate multi-dimensional perspectives such as economics, psychology, and game theory to construct a complete cognitive closed loop.
 
 ## From Knowledge to Wisdom
 

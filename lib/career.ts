@@ -100,10 +100,6 @@ export const careerContent = {
       {
         zh: '管理',
         en: 'Management'
-      },
-      {
-        zh: '投资',
-        en: 'Investing'
       }
     ]
   },
@@ -386,8 +382,8 @@ export const careerContent = {
         en: 'Ordinary Person Path'
       },
       summary: {
-        zh: '多数人更适合先深耕专业、提升技能、稳定现金流，再通过长期投资放大职业成果。',
-        en: 'Most people are better served by deepening expertise, improving skills, stabilizing cash flow, and amplifying career results through long-term investing.'
+        zh: '多数人更适合先深耕专业、提升技能、稳定现金流，再通过长期作品和行业理解放大职业成果。',
+        en: 'Most people are better served by deepening expertise, improving skills, stabilizing cash flow, and amplifying career results through long-term work and industry understanding.'
       },
       category: {
         zh: '稳健路径',
@@ -403,8 +399,8 @@ export const careerContent = {
           en: 'Skill Development'
         },
         {
-          zh: '长期投资',
-          en: 'Long-Term Investing'
+          zh: '长期作品',
+          en: 'Long-Term Work'
         }
       ]
     }
@@ -1005,12 +1001,10 @@ export const careerContent = {
       'career-operating-system',
       'case-studies',
       'career-review',
-      'investment',
       'life-os'
     ],
     edges: [
       ['career', 'life-os'],
-      ['career', 'investment'],
       ['career-philosophy', 'career-path'],
       ['career-path', 'career-growth'],
       ['career-growth', 'company-choice'],
@@ -1055,7 +1049,7 @@ export const careerTaxonomy = [
     title: careerContent.sections.entrepreneurship,
     summary: careerContent.sectionIntros.entrepreneurship,
     href: '#entrepreneurship',
-    categories: ['Career', 'Company Research', 'Investing'],
+    categories: ['Career', 'Company Research'],
     tags: ['Entrepreneurship', 'Management', 'Risk Management', 'Cash Flow']
   },
   {

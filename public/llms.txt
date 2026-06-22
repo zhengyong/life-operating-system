@@ -1,6 +1,6 @@
 # Yong Zheng's Life Operating System
 
-> A bilingual personal knowledge website by Yong Zheng about Life OS, first principles, systems thinking, education, investing, technology, and civilization.
+> A bilingual personal knowledge website by Yong Zheng about Life OS, first principles, systems thinking, education, technology, and civilization.
 
 Site: https://www.zhengyong.world/
 Sitemap: https://www.zhengyong.world/sitemap.xml
@@ -17,7 +17,6 @@ RSS: https://www.zhengyong.world/rss.xml
 - Education: https://www.zhengyong.world/en/education/ and https://www.zhengyong.world/zh/education/
 - People studies: https://www.zhengyong.world/en/people/ and https://www.zhengyong.world/zh/people/
 - Company studies: https://www.zhengyong.world/en/companies/ and https://www.zhengyong.world/zh/companies/
-- Investment studies: https://www.zhengyong.world/en/investment/ and https://www.zhengyong.world/zh/investment/
 
 ## Core Topics
 
@@ -28,7 +27,6 @@ RSS: https://www.zhengyong.world/rss.xml
 - Long-term growth
 - Education and family education
 - Career development
-- Investing frameworks
 - AI and technology
 - Civilization and society
 

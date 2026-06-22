@@ -21,8 +21,8 @@ export async function generateMetadata({params}: {params: {locale: string}}): Pr
     title: t.taxonomy.tagsTitle,
     description:
       locale === 'zh'
-        ? '通过标签探索人生操作系统、第一性原理、系统思维、教育、投资、AI 与文明主题。'
-        : 'Explore Life OS, first-principles thinking, systems thinking, education, investing, AI, and civilization by tag.'
+        ? '通过标签探索人生操作系统、第一性原理、系统思维、教育、AI 与文明主题。'
+        : 'Explore Life OS, first-principles thinking, systems thinking, education, AI, and civilization by tag.'
   });
 }
 

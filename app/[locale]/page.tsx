@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
-import {ArrowRight, BookOpen, Building2, Compass, Layers, LineChart, Newspaper, UserRound} from 'lucide-react';
+import {ArrowRight, BookOpen, Building2, Compass, Layers, UserRound} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
 import {PageShell} from '@/components/PageShell';
 import {categories, getArticles} from '@/lib/content';
@@ -128,9 +128,7 @@ export default async function HomePage({params}: {params: {locale: string}}) {
             <div className="grid gap-4 sm:grid-cols-2">
               {[
                 {href: `/${locale}/people/`, label: t.nav.people, icon: UserRound},
-                {href: `/${locale}/companies/`, label: t.nav.companies, icon: Building2},
-                {href: `/${locale}/investment/`, label: t.nav.investment, icon: LineChart},
-                {href: `/${locale}/news/`, label: t.nav.news, icon: Newspaper}
+                {href: `/${locale}/companies/`, label: t.nav.companies, icon: Building2}
               ].map((item) => {
                 const Icon = item.icon;
                 return (

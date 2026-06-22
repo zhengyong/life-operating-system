@@ -1,18 +1,12 @@
 import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
-import {ArrowLeft, ArrowUpRight, BookOpen, LockKeyhole, MessageCircle} from 'lucide-react';
+import {ArrowLeft, ArrowUpRight, BookOpen} from 'lucide-react';
 import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {PageShell} from '@/components/PageShell';
 import {bookArchitectureNodes, getBookArchitectureNode, t as archText} from '@/lib/bookArchitecture';
 import {getBookPreviewChapters, getBookPreviewConfig} from '@/lib/bookPreview';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
-
-const supportQrCodes = [
-  {zh: '支付宝支持', en: 'Alipay', src: '/support/alipay.jpg'},
-  {zh: '微信支付支持', en: 'WeChat Pay', src: '/support/wechat-pay.jpg'},
-  {zh: '添加作者微信', en: 'Author WeChat', src: '/support/wechat-contact.jpg'}
-];
 
 export function generateStaticParams() {
   return bookArchitectureNodes.flatMap((node) => [
@@ -52,14 +46,6 @@ export default async function BookRecommendationsPage({params}: {params: {locale
     locale === 'zh'
       ? '这里开放序言、第一部分、第二部分的试读内容。其余部分和章节暂不公开展示。'
       : 'The preface, Part One, and Part Two are open for preview. Other parts and chapters are not listed publicly.';
-  const supportCopy =
-    locale === 'zh'
-      ? '知识值得被认真对待，创作者也值得被尊重。付费不是买一份文件，而是支持持续写作，并获得和作者成为好友、深度交流、共同成长的机会。'
-      : 'Knowledge deserves respect, and authors deserve support. Paid access supports continued writing and opens the door to deeper conversation with the author.';
-  const supportNote =
-    locale === 'zh'
-      ? `其余部分和章节需要付费阅读。完成支持后，可添加作者微信，备注“${previewConfig?.zhTitle.replace(/[《》]/g, '') ?? archText(node.label, locale)}”，获取后续阅读与交流方式。`
-      : `The remaining parts and chapters require paid access. After supporting the author, add the WeChat contact and mention “${previewConfig?.enTitle ?? archText(node.label, locale)}”.`;
 
   return (
     <PageShell locale={locale}>
@@ -127,42 +113,6 @@ export default async function BookRecommendationsPage({params}: {params: {locale
                     <p className="mt-3 line-clamp-3 text-sm leading-7 text-muted">{chapter.summary}</p>
                   </Link>
                 ))}
-              </div>
-            </section>
-
-            <section className="mt-8 rounded-lg border border-line bg-[#f7faf9] p-5 md:p-7">
-              <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr] lg:items-start">
-                <div>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-md bg-white text-accent">
-                    <LockKeyhole className="h-5 w-5" />
-                  </div>
-                  <p className="mt-5 text-sm font-medium text-accent">{locale === 'zh' ? '付费阅读 / 支持作者' : 'Paid Access / Support'}</p>
-                  <h2 className="mt-2 text-2xl font-semibold tracking-normal text-ink">
-                    {locale === 'zh' ? '尊重知识，也和作者建立更深连接' : 'Respect Knowledge, Support the Author'}
-                  </h2>
-                  <p className="mt-4 text-base leading-8 text-ink">{supportCopy}</p>
-                  <p className="mt-4 text-sm leading-7 text-muted">{supportNote}</p>
-                  <div className="mt-5 inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 text-sm font-medium text-ink">
-                    <MessageCircle className="h-4 w-4 text-accent" />
-                    {locale === 'zh'
-                      ? `支持后添加微信，备注：${previewConfig.zhTitle.replace(/[《》]/g, '')}`
-                      : 'After payment, add WeChat and mention the book title.'}
-                  </div>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-3">
-                  {supportQrCodes.map((code) => (
-                    <figure key={code.src} className="rounded-lg border border-line bg-white p-3 text-center">
-                      <img
-                        src={code.src}
-                        alt={code[locale]}
-                        loading="lazy"
-                        className="mx-auto aspect-square w-full max-w-[180px] rounded-md object-contain"
-                      />
-                      <figcaption className="mt-3 text-sm font-medium text-ink">{code[locale]}</figcaption>
-                    </figure>
-                  ))}
-                </div>
               </div>
             </section>
           </>

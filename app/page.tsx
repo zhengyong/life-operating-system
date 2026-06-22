@@ -4,7 +4,7 @@ import {ArrowRight} from 'lucide-react';
 import {siteUrl} from '@/lib/site';
 
 const title = "Yong Zheng's Life Operating System";
-const description = 'A bilingual personal knowledge system for growth, education, investing, technology, and civilization.';
+const description = 'A bilingual personal knowledge system for growth, education, technology, and civilization.';
 
 export const metadata: Metadata = {
   title,
@@ -45,7 +45,7 @@ export default function RootPage() {
         Yong Zheng&apos;s Life Operating System
       </h1>
       <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-        A bilingual personal knowledge system for growth, education, investing, technology, and civilization.
+        A bilingual personal knowledge system for growth, education, technology, and civilization.
       </p>
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
         <Link
