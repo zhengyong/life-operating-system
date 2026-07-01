@@ -22,6 +22,11 @@ export const metadata: Metadata = {
       'application/rss+xml': '/rss.xml'
     }
   },
+  verification: {
+    other: {
+      'baidu-site-verification': 'codeva-ABDSJ3FWOv'
+    }
+  },
   icons: {
     icon: '/brand-mark.svg'
   },
