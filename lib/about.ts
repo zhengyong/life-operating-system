@@ -80,7 +80,7 @@ const zh: AboutProfile = {
     {
       company: '海康威视系统技术有限公司',
       role: '产品经理 / 高级解决方案顾问',
-      period: '2019 - 至今',
+      period: '2019 - 2025',
       description: '负责智慧园区及行业数字化场景解决方案设计与推广。',
       responsibilities: ['复杂项目需求分析', '解决方案设计', '场景化产品规划', '区域业务支持', '行业研究与竞争分析'],
       achievements: [
@@ -179,7 +179,7 @@ const en: AboutProfile = {
     {
       company: 'Hikvision System Technology Co., Ltd.',
       role: 'Product Manager / Senior Solution Consultant',
-      period: '2019 - Present',
+      period: '2019 - 2025',
       description: 'Responsible for smart campus and industry digitalization solutions.',
       responsibilities: ['Requirement analysis', 'Solution architecture', 'Scenario-based product planning', 'Regional business support', 'Competitive and market analysis'],
       achievements: [
