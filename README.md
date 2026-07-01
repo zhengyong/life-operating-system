@@ -1,6 +1,6 @@
 # Life Operating System
 
-Official Website: https://www.zhengyong.world/
+Official Website: https://zhengyong.world/
 
 中文名称：郑勇的人生操作系统  
 Author: Yong Zheng  
@@ -23,7 +23,7 @@ This repository is the GitHub home of Yong Zheng's Life Operating System. It lin
 Primary backlink:
 
 ```text
-GitHub -> https://www.zhengyong.world/
+GitHub -> https://zhengyong.world/
 ```
 
 This repository powers a bilingual, static-first personal knowledge website about Life OS, first-principles thinking, systems thinking, education, career growth, AI, technology, and civilization.
@@ -34,14 +34,14 @@ Life OS is a long-term knowledge system for turning scattered reading, experienc
 
 ## Live Site
 
-- Root: https://www.zhengyong.world/
-- English: https://www.zhengyong.world/en/
-- 中文: https://www.zhengyong.world/zh/
-- Articles: https://www.zhengyong.world/en/articles/ and https://www.zhengyong.world/zh/articles/
-- Sitemap: https://www.zhengyong.world/sitemap.xml
-- Robots: https://www.zhengyong.world/robots.txt
-- RSS: https://www.zhengyong.world/rss.xml
-- LLM guide: https://www.zhengyong.world/llms.txt
+- Root: https://zhengyong.world/
+- English: https://zhengyong.world/en/
+- Chinese: https://zhengyong.world/zh/
+- Articles: https://zhengyong.world/en/articles/ and https://zhengyong.world/zh/articles/
+- Sitemap: https://zhengyong.world/sitemap.xml
+- Robots: https://zhengyong.world/robots.txt
+- RSS: https://zhengyong.world/rss.xml
+- LLM guide: https://zhengyong.world/llms.txt
 
 ## Features
 
@@ -112,21 +112,38 @@ Node.js version: 20
 Recommended production environment variable:
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://www.zhengyong.world
+NEXT_PUBLIC_SITE_URL=https://zhengyong.world
 ```
 
-For Tencent Cloud EdgeOne Pages, use `out` as the output directory. If the acceleration region includes Mainland China, the custom domain needs ICP filing before Mainland China acceleration can be enabled.
+For Tencent Cloud CloudBase static hosting, build and upload the static export:
+
+```bash
+npm run deploy:prod
+```
+
+This runs `npm run build` and then uploads `out/` to the CloudBase environment used by the Mainland China CDN origin.
 
 ## SEO Checklist
 
 - Keep `NEXT_PUBLIC_SITE_URL` set to the canonical production domain.
-- Submit `https://www.zhengyong.world/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
-- Verify that `https://www.zhengyong.world/robots.txt` allows crawling and points to the sitemap.
+- Submit `https://zhengyong.world/sitemap.xml` in Google Search Console, Bing Webmaster Tools, and Baidu Search Resource Platform.
+- Verify that `https://zhengyong.world/robots.txt` allows crawling and points to the sitemap.
 - Keep `public/rss.xml`, `public/llms.txt`, and generated sitemap reachable after deployment.
 - Use canonical URLs under `/en/` and `/zh/` for language-specific content.
 - Keep article front matter summaries and tags clear, specific, and human-readable.
 - Link from the GitHub repository description and README to the live site.
 - Link from Notion Wiki pages back to the most relevant public URLs, not only the homepage.
+
+### Baidu submission
+
+After verifying `zhengyong.world` in Baidu Search Resource Platform and copying the API token, submit URLs with:
+
+```bash
+$env:BAIDU_PUSH_TOKEN="your-baidu-token"
+npm run seo:baidu -- --all --limit 2000
+```
+
+Run this after publishing meaningful new or changed pages.
 
 ## Writing Articles
 

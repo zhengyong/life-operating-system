@@ -9,7 +9,10 @@
     "validate:content": "tsx scripts/validate-content.ts",
     "build:index": "tsx scripts/build-search-index.ts",
     "seo:indexnow": "node scripts/submit-indexnow.mjs",
+    "seo:baidu": "node scripts/submit-baidu.mjs",
     "build": "npm run validate:content && npm run build:index && next build",
+    "deploy:cloudbase": "tcb hosting deploy out -e zhengyong-world-d0fqr41v1a488e29 --concurrency 10 --retry-count 5",
+    "deploy:prod": "npm run build && npm run deploy:cloudbase",
     "start": "next start",
     "lint": "next lint"
   },
