@@ -83,6 +83,12 @@ export function Footer({locale}: {locale: Locale}) {
             ))}
           </div>
         </div>
+
+        <div className="border-t border-line pt-5 text-xs text-muted">
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" className="hover:text-accent">
+            浙ICP备2026047700号-1
+          </a>
+        </div>
       </div>
     </footer>
   );
