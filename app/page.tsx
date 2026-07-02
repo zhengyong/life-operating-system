@@ -42,7 +42,6 @@ export const metadata: Metadata = {
 export default function RootPage() {
   return (
     <main className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-16">
-      <meta httpEquiv="refresh" content="1; url=/zh/" />
       <script dangerouslySetInnerHTML={{__html: redirectScript}} />
       <h1 className="text-2xl font-semibold tracking-normal text-ink">{chineseTitle}</h1>
       <p className="mt-4 text-sm leading-7 text-muted">
