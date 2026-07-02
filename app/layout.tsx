@@ -6,6 +6,7 @@ import {siteUrl} from '@/lib/site';
 import './globals.css';
 
 const siteTitle = "Yong Zheng's Life Operating System";
+const chineseSiteTitle = '\u90d1\u52c7\u7684\u4eba\u751f\u64cd\u4f5c\u7cfb\u7edf';
 const siteDescription =
   'A bilingual personal knowledge website about Life OS, first principles, systems thinking, education, technology, and civilization.';
 const googleAnalyticsMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? 'G-8XMBMD0T2L';
@@ -51,7 +52,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: siteTitle,
-    alternateName: ['Life OS', '郑勇的人生操作系统'],
+    alternateName: ['Life OS', chineseSiteTitle],
     url: siteUrl,
     inLanguage: ['en', 'zh-CN'],
     description: siteDescription,
