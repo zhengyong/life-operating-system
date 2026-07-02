@@ -1,4 +1,5 @@
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zhengyong.world').replace(/\/$/, '');
+const baiduSite = (process.env.BAIDU_SITE ?? siteUrl).replace(/\/$/, '');
 const baiduToken = process.env.BAIDU_PUSH_TOKEN;
 
 const defaultPaths = ['/', '/zh/', '/zh/about/', '/zh/articles/', '/zh/books/', '/zh/life/', '/zh/career/', '/zh/education/'];
@@ -8,7 +9,11 @@ function unique(values) {
 }
 
 function normalizeUrl(value) {
-  return new URL(value, `${siteUrl}/`).toString();
+  const url = new URL(value, `${siteUrl}/`);
+  const baiduOrigin = new URL(baiduSite);
+  url.protocol = baiduOrigin.protocol;
+  url.host = baiduOrigin.host;
+  return url.toString();
 }
 
 function parseArgs(argv) {
@@ -56,15 +61,14 @@ async function main() {
 
   const options = parseArgs(process.argv.slice(2));
   const sitemapUrls = options.all ? await readUrlsFromSitemap() : [];
-  const selectedUrls = unique([...defaultPaths.map(normalizeUrl), ...options.urls.map(normalizeUrl), ...sitemapUrls]);
+  const selectedUrls = unique([...defaultPaths, ...options.urls, ...sitemapUrls].map(normalizeUrl));
   const urlList = options.limit ? selectedUrls.slice(0, options.limit) : selectedUrls;
 
   if (urlList.length === 0) {
     throw new Error('No URLs selected for Baidu submission.');
   }
 
-  const siteHost = new URL(siteUrl).host;
-  const endpoint = `https://data.zz.baidu.com/urls?site=${encodeURIComponent(siteHost)}&token=${encodeURIComponent(baiduToken)}`;
+  const endpoint = `http://data.zz.baidu.com/urls?site=${baiduSite}&token=${encodeURIComponent(baiduToken)}`;
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -78,7 +82,7 @@ async function main() {
     throw new Error(`Baidu submission failed: HTTP ${response.status} ${body}`);
   }
 
-  console.log(`Submitted ${urlList.length} URL(s) to Baidu.`);
+  console.log(`Submitted ${urlList.length} URL(s) to Baidu for ${baiduSite}.`);
   console.log(body);
 }
 
