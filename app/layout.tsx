@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   verification: {
     other: {
-      'baidu-site-verification': 'codeva-ABDSJ3FWOv'
+      'baidu-site-verification': 'codeva-NOJrgcThdt'
     }
   },
   icons: {
