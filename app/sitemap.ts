@@ -4,14 +4,22 @@ import {bookArchitectureNodes} from '@/lib/bookArchitecture';
 import {getAllArticles, getTaxonomy, locales} from '@/lib/content';
 import {getPageCount} from '@/lib/pagination';
 import {isPublicCompanySlug, isPublicPersonLesson, isPublicPersonSlug} from '@/lib/publicTopics';
+import {seoTopics} from '@/lib/seoTopics';
 import {pageUrl} from '@/lib/site';
 import {companies, people, personLessons} from '@/lib/topics';
 import {slugify} from '@/lib/utils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = locales.flatMap((locale) =>
-    ['', '/about', '/books', '/life', '/career', '/education', '/articles', '/people', '/companies', '/categories', '/tags', '/contact', '/privacy'].map((path) => ({
+    ['', '/about', '/books', '/life', '/career', '/education', '/articles', '/topics', '/people', '/companies', '/categories', '/tags', '/contact', '/privacy'].map((path) => ({
       url: pageUrl(`${locale}${path}`),
+      lastModified: new Date()
+    }))
+  );
+
+  const seoTopicRoutes = locales.flatMap((locale) =>
+    seoTopics.map((topic) => ({
+      url: pageUrl(`${locale}/topics/${topic.slug}`),
       lastModified: new Date()
     }))
   );
@@ -94,6 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {url: pageUrl(), lastModified: new Date()},
     ...staticRoutes,
+    ...seoTopicRoutes,
     ...articleRoutes,
     ...articlePaginationRoutes,
     ...taxonomyRoutes,

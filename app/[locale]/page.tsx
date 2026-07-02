@@ -3,8 +3,10 @@ import Link from 'next/link';
 import {ArrowRight, BookOpen, Building2, Compass, Layers, UserRound} from 'lucide-react';
 import {ArticleCard} from '@/components/ArticleCard';
 import {PageShell} from '@/components/PageShell';
+import {TopicCard} from '@/components/TopicCard';
 import {categories, getArticles} from '@/lib/content';
 import {getDictionary, isLocale, Locale} from '@/lib/i18n';
+import {getSeoTopicContent, getSeoTopicHref, seoTopics} from '@/lib/seoTopics';
 import {siteUrl} from '@/lib/site';
 import {getCategoryHref, getCategoryLabel} from '@/lib/taxonomy';
 
@@ -50,6 +52,22 @@ export default async function HomePage({params}: {params: {locale: string}}) {
   const locale: Locale = isLocale(rawLocale) ? rawLocale : 'en';
   const t = getDictionary(locale);
   const latest = getArticles(locale).slice(0, 3);
+  const topicSection =
+    locale === 'zh'
+      ? {
+          title: '专题学习',
+          body: '围绕人生操作系统、第一性原理、终身学习、企业文化和家庭教育，建立更清晰的主题页和内链路径。',
+          action: '进入主题',
+          all: '全部主题',
+          meta: 'SEO 主题页'
+        }
+      : {
+          title: 'Focused Topics',
+          body: 'Follow topic hubs for Life OS, first principles, lifelong learning, company culture, and family education.',
+          action: 'Open topic',
+          all: 'All topics',
+          meta: 'Topic hub'
+        };
 
   return (
     <PageShell locale={locale}>
@@ -122,10 +140,31 @@ export default async function HomePage({params}: {params: {locale: string}}) {
         <section className="mx-auto max-w-6xl px-5 py-14">
           <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-start">
             <div>
-              <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.home.topicsTitle}</h2>
-              <p className="mt-3 text-sm leading-7 text-muted">{t.home.topicsBody}</p>
+              <h2 className="text-2xl font-semibold tracking-normal text-ink">{topicSection.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-muted">{topicSection.body}</p>
+              <Link
+                href={`/${locale}/topics/`}
+                className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-ink"
+              >
+                {topicSection.all} <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
+              {seoTopics.map((topic) => {
+                const content = getSeoTopicContent(topic, locale);
+
+                return (
+                  <TopicCard
+                    key={topic.slug}
+                    href={getSeoTopicHref(topic, locale)}
+                    eyebrow={content.eyebrow}
+                    title={content.title}
+                    summary={content.summary}
+                    actionLabel={topicSection.action}
+                    meta={topicSection.meta}
+                  />
+                );
+              })}
               {[
                 {href: `/${locale}/people/`, label: t.nav.people, icon: UserRound},
                 {href: `/${locale}/companies/`, label: t.nav.companies, icon: Building2}

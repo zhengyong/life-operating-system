@@ -1,8 +1,23 @@
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zhengyong.world').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zhengyong.world').replace(/\/$/, '');
 const baiduSite = (process.env.BAIDU_SITE ?? siteUrl).replace(/\/$/, '');
 const baiduToken = process.env.BAIDU_PUSH_TOKEN;
 
-const defaultPaths = ['/', '/zh/', '/zh/about/', '/zh/articles/', '/zh/books/', '/zh/life/', '/zh/career/', '/zh/education/'];
+const defaultPaths = [
+  '/',
+  '/zh/',
+  '/zh/about/',
+  '/zh/articles/',
+  '/zh/books/',
+  '/zh/life/',
+  '/zh/career/',
+  '/zh/education/',
+  '/zh/topics/',
+  '/zh/topics/life-operating-system/',
+  '/zh/topics/first-principles/',
+  '/zh/topics/lifelong-learning/',
+  '/zh/topics/company-culture/',
+  '/zh/topics/family-education/'
+];
 
 function unique(values) {
   return [...new Set(values.filter(Boolean))];

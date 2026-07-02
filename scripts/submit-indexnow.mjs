@@ -1,4 +1,4 @@
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zhengyong.world').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zhengyong.world').replace(/\/$/, '');
 const indexNowKey = process.env.INDEXNOW_KEY ?? '8f2c9d4b7a1e4f6c9b0d3e5a7c8f1b2d';
 const keyLocation = `${siteUrl}/${indexNowKey}.txt`;
 
@@ -13,7 +13,19 @@ const defaultUrls = [
   '/en/people/',
   '/zh/people/',
   '/en/companies/',
-  '/zh/companies/'
+  '/zh/companies/',
+  '/en/topics/',
+  '/zh/topics/',
+  '/en/topics/life-operating-system/',
+  '/zh/topics/life-operating-system/',
+  '/en/topics/first-principles/',
+  '/zh/topics/first-principles/',
+  '/en/topics/lifelong-learning/',
+  '/zh/topics/lifelong-learning/',
+  '/en/topics/company-culture/',
+  '/zh/topics/company-culture/',
+  '/en/topics/family-education/',
+  '/zh/topics/family-education/'
 ].map((path) => new URL(path, siteUrl).toString());
 
 function parseArgs(argv) {

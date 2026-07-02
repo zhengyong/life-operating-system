@@ -2,21 +2,22 @@
 
 > A bilingual personal knowledge website by Yong Zheng about Life OS, first principles, systems thinking, education, technology, and civilization.
 
-Site: https://zhengyong.world/
-Sitemap: https://zhengyong.world/sitemap.xml
-RSS: https://zhengyong.world/rss.xml
+Site: https://www.zhengyong.world/
+Sitemap: https://www.zhengyong.world/sitemap.xml
+RSS: https://www.zhengyong.world/rss.xml
 
 ## Primary Sections
 
-- English home: https://zhengyong.world/en/
-- Chinese home: https://zhengyong.world/zh/
-- Articles: https://zhengyong.world/en/articles/ and https://zhengyong.world/zh/articles/
-- Frameworks and books: https://zhengyong.world/en/books/ and https://zhengyong.world/zh/books/
-- Life: https://zhengyong.world/en/life/ and https://zhengyong.world/zh/life/
-- Career: https://zhengyong.world/en/career/ and https://zhengyong.world/zh/career/
-- Education: https://zhengyong.world/en/education/ and https://zhengyong.world/zh/education/
-- People studies: https://zhengyong.world/en/people/ and https://zhengyong.world/zh/people/
-- Company studies: https://zhengyong.world/en/companies/ and https://zhengyong.world/zh/companies/
+- English home: https://www.zhengyong.world/en/
+- Chinese home: https://www.zhengyong.world/zh/
+- Articles: https://www.zhengyong.world/en/articles/ and https://www.zhengyong.world/zh/articles/
+- Focused topics: https://www.zhengyong.world/en/topics/ and https://www.zhengyong.world/zh/topics/
+- Frameworks and books: https://www.zhengyong.world/en/books/ and https://www.zhengyong.world/zh/books/
+- Life: https://www.zhengyong.world/en/life/ and https://www.zhengyong.world/zh/life/
+- Career: https://www.zhengyong.world/en/career/ and https://www.zhengyong.world/zh/career/
+- Education: https://www.zhengyong.world/en/education/ and https://www.zhengyong.world/zh/education/
+- People studies: https://www.zhengyong.world/en/people/ and https://www.zhengyong.world/zh/people/
+- Company studies: https://www.zhengyong.world/en/companies/ and https://www.zhengyong.world/zh/companies/
 
 ## Core Topics
 
@@ -25,6 +26,8 @@ RSS: https://zhengyong.world/rss.xml
 - Systems thinking
 - Mental models
 - Long-term growth
+- Lifelong learning
+- Company culture
 - Education and family education
 - Career development
 - AI and technology
