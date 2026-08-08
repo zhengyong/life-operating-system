@@ -8,13 +8,14 @@ type TopicCardProps = {
   summary: string;
   actionLabel: string;
   meta?: string;
+  variant?: 'topic' | 'directory';
 };
 
-export function TopicCard({href, eyebrow, title, summary, actionLabel, meta}: TopicCardProps) {
+export function TopicCard({href, eyebrow, title, summary, actionLabel, meta, variant = 'topic'}: TopicCardProps) {
   return (
-    <article className="rounded-lg border border-line bg-white p-5 transition hover:border-accent hover:shadow-soft">
+    <article className={variant === 'directory' ? 'directory-card' : 'topic-card'}>
       <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-muted">
-        <span className="rounded-md bg-soft px-2.5 py-1">{eyebrow}</span>
+        <span>{eyebrow}</span>
         {meta ? <span>{meta}</span> : null}
       </div>
       <h2 className="mt-4 text-xl font-semibold tracking-normal text-ink">

@@ -67,14 +67,15 @@ export default function TopicsPage({params}: {params: {locale: string}}) {
   return (
     <PageShell locale={locale}>
       <main>
-        <section className="mx-auto max-w-6xl px-5 py-12 md:py-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Topics</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-normal text-ink md:text-5xl">{copy.title}</h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-muted">{copy.intro}</p>
+        <section className="directory-page__hero">
+          <div className="directory-page__hero-inner">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Topics</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-normal text-ink md:text-5xl">{copy.title}</h1>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-muted">{copy.intro}</p>
+          </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 pb-16">
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <section className="directory-grid directory-grid--topics">
             {seoTopics.map((topic) => {
               const content = getSeoTopicContent(topic, locale);
 
@@ -87,10 +88,10 @@ export default function TopicsPage({params}: {params: {locale: string}}) {
                   summary={content.summary}
                   actionLabel={copy.action}
                   meta={copy.meta}
+                  variant="directory"
                 />
               );
             })}
-          </div>
         </section>
       </main>
     </PageShell>

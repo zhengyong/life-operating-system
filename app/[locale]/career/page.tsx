@@ -75,8 +75,8 @@ export default async function CareerPage({params}: {params: {locale: string}}) {
 
   return (
     <PageShell locale={locale}>
-      <main>
-        <section className="mx-auto max-w-6xl px-5 pb-12 pt-14 md:pb-16 md:pt-20">
+      <main className="pillar-page pillar-page--career">
+        <section className="pillar-hero mx-auto max-w-6xl px-5 pb-12 pt-14 md:pb-16 md:pt-20">
           <div className="grid gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{t.nav.career}</p>
@@ -96,7 +96,7 @@ export default async function CareerPage({params}: {params: {locale: string}}) {
               </div>
             </div>
 
-            <aside className="rounded-lg border border-line bg-white p-6 shadow-soft">
+            <aside className="pillar-thesis rounded-lg border border-line bg-white p-6">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-md bg-soft text-accent">
                   <Compass className="h-5 w-5" />
@@ -116,7 +116,7 @@ export default async function CareerPage({params}: {params: {locale: string}}) {
             </aside>
           </div>
 
-          <nav className="mt-10 flex gap-2 overflow-x-auto border-y border-line py-3" aria-label={locale === 'zh' ? '职场页面导航' : 'Career page navigation'}>
+          <nav className="pillar-nav mt-10 flex gap-2 overflow-x-auto border-y border-line py-3" aria-label={locale === 'zh' ? '职场页面导航' : 'Career page navigation'}>
             {sectionNav.map((item) => (
               <a
                 key={item.id}
@@ -258,7 +258,7 @@ export default async function CareerPage({params}: {params: {locale: string}}) {
 
 function SectionBand({children, id, muted = false}: {children: React.ReactNode; id: string; muted?: boolean}) {
   return (
-    <section id={id} className={`${muted ? 'border-y border-line bg-soft/70' : 'bg-white'} scroll-mt-24`}>
+    <section id={id} className={`pillar-band ${muted ? 'border-y border-line bg-soft/70' : 'bg-white'} scroll-mt-24`}>
       {children}
     </section>
   );
@@ -266,7 +266,7 @@ function SectionBand({children, id, muted = false}: {children: React.ReactNode; 
 
 function SectionIntro({icon, title, body}: {icon: React.ReactNode; title: string; body: string}) {
   return (
-    <div>
+    <div className="pillar-section-intro">
       <div className="flex items-center gap-3">
         <span className="flex h-10 w-10 items-center justify-center rounded-md bg-white text-accent shadow-sm ring-1 ring-line">
           {icon}

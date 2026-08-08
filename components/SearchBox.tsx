@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import {X} from 'lucide-react';
+import {Search, X} from 'lucide-react';
 import {useEffect, useMemo, useState} from 'react';
 import {Locale, getDictionary} from '@/lib/i18n';
 
@@ -49,6 +49,20 @@ export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => voi
       .then((data: SearchItem[]) => setItems(data.filter((item) => item.locale === locale).map(prepareSearchItem)))
       .catch(() => setItems([]));
   }, [locale]);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [onClose]);
 
   const typeFilters = useMemo(() => {
     const seen = new Map<SearchItem['type'], string>();
@@ -99,32 +113,28 @@ export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => voi
   }, [activeType, items, query]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-ink/20 px-4 py-4 backdrop-blur-sm" role="dialog" aria-modal="true">
-      <div className="mx-auto max-w-3xl rounded-lg border border-line bg-white shadow-soft">
-        <div className="flex items-center gap-3 border-b border-line p-4">
-          <input
-            autoFocus
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={t.search.placeholder}
-            aria-label={t.search.label}
-            className="min-w-0 flex-1 rounded-md border border-line px-3 py-2 text-base outline-none transition focus:border-accent"
-          />
-          <button
-            onClick={onClose}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-muted transition hover:border-accent hover:text-accent"
-            aria-label="Close search"
-          >
-            <X className="h-4 w-4" />
+    <div className="search-dialog" role="dialog" aria-modal="true" aria-label={t.search.label}>
+      <div className="search-dialog__panel">
+        <div className="search-dialog__top">
+          <label className="search-dialog__input-wrap">
+            <Search aria-hidden="true" />
+            <input
+              autoFocus
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder={t.search.placeholder}
+              aria-label={t.search.label}
+            />
+          </label>
+          <button onClick={onClose} className="search-dialog__close" aria-label={locale === 'zh' ? '关闭搜索' : 'Close search'}>
+            <X aria-hidden="true" />
           </button>
         </div>
-        <div className="flex gap-2 overflow-x-auto border-b border-line px-4 py-3">
+        <div className="search-dialog__filters">
           <button
             type="button"
             onClick={() => setActiveType('all')}
-            className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-medium transition ${
-              activeType === 'all' ? 'bg-ink text-white' : 'bg-soft text-muted hover:text-accent'
-            }`}
+            className={activeType === 'all' ? 'is-active' : undefined}
           >
             {locale === 'zh' ? '全部' : 'All'}
           </button>
@@ -133,39 +143,33 @@ export function SearchBox({locale, onClose}: {locale: Locale; onClose: () => voi
               key={filter.type}
               type="button"
               onClick={() => setActiveType(filter.type)}
-              className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-medium transition ${
-                activeType === filter.type ? 'bg-ink text-white' : 'bg-soft text-muted hover:text-accent'
-              }`}
+              className={activeType === filter.type ? 'is-active' : undefined}
             >
               {filter.label}
             </button>
           ))}
         </div>
-        <div className="max-h-[70vh] overflow-y-auto p-3">
+        <div className="search-dialog__results">
           {results.length > 0 ? (
-            <div className="grid gap-2">
+            <div>
               {results.map((item) => (
                 <Link
                   key={item.id}
                   href={item.href}
                   onClick={onClose}
-                  className="rounded-md p-3 transition hover:bg-soft"
+                  className="search-result"
                 >
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-md bg-soft px-2 py-0.5 text-[11px] font-medium text-accent">
-                      {item.typeLabel}
-                    </span>
-                    {item.category ? (
-                      <span className="text-[11px] text-muted">{item.category}</span>
-                    ) : null}
+                  <div className="search-result__meta">
+                    <span>{item.typeLabel}</span>
+                    {item.category ? <span>{item.category}</span> : null}
                   </div>
-                  <p className="mt-2 text-sm font-semibold text-ink">{item.title}</p>
-                  <p className="mt-1 line-clamp-2 text-sm leading-6 text-muted">{item.summary}</p>
+                  <p className="search-result__title">{item.title}</p>
+                  <p className="search-result__summary">{item.summary}</p>
                 </Link>
               ))}
             </div>
           ) : (
-            <p className="p-8 text-center text-sm text-muted">{t.search.empty}</p>
+            <p className="search-dialog__empty">{t.search.empty}</p>
           )}
         </div>
       </div>

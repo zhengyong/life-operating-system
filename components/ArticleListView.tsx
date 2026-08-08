@@ -11,7 +11,7 @@ export function ArticleListView({articles, locale, page = 1}: {articles: Article
   return (
     <>
       {pageData.items.length > 0 ? (
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="article-list">
           {pageData.items.map((article) => (
             <ArticleCard key={article.slug} article={article} locale={locale} />
           ))}

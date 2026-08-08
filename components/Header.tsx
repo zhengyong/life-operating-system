@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
-import {Menu, Search} from 'lucide-react';
-import {useState} from 'react';
-import {alternateLocale, getDictionary, Locale, localizePath} from '@/lib/i18n';
+import {Menu, Search, X} from 'lucide-react';
+import {useEffect, useState} from 'react';
 import {SearchBox} from '@/components/SearchBox';
+import {alternateLocale, getDictionary, Locale, localizePath} from '@/lib/i18n';
 
 type HeaderProps = {
   locale: Locale;
@@ -32,71 +32,119 @@ export function Header({locale}: HeaderProps) {
     {href: `/${locale}/contact/`, label: t.nav.contact}
   ];
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [open]);
+
+  const isActive = (href: string) => {
+    if (href === `/${locale}/`) return pathname === href;
+    return pathname?.startsWith(href) ?? false;
+  };
+
+  const localeHref = localizePath(pathname ?? `/${locale}/`, otherLocale);
+
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-white/92 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <Link href={`/${locale}/`} className="flex min-w-0 items-center gap-3">
-          <img src="/brand-mark.svg" alt="Life OS" className="h-9 w-9 shrink-0" />
-          <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-ink">{t.brandShort}</p>
-            <p className="truncate text-xs text-muted">{t.brand}</p>
-          </div>
-        </Link>
-
-        <nav className="hidden items-center gap-1 xl:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted transition hover:bg-soft hover:text-ink"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-muted transition hover:border-accent hover:text-accent"
-            onClick={() => setSearchOpen(true)}
-            aria-label={t.search.open}
-          >
-            <Search className="h-4 w-4" />
-          </button>
-          <Link
-            href={localizePath(pathname ?? `/${locale}/`, otherLocale)}
-            className="rounded-md border border-line px-3 py-2 text-sm font-medium text-muted transition hover:border-accent hover:text-accent"
-          >
-            {otherLocale === 'en' ? 'EN' : '中文'}
+    <>
+      <header className="site-header">
+        <div className="site-header__inner">
+          <Link href={`/${locale}/`} className="site-brand" aria-label={t.brand}>
+            {locale === 'zh' ? '郑勇' : 'Yong Zheng'}
           </Link>
-          <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-muted transition hover:border-accent hover:text-accent xl:hidden"
-            onClick={() => setOpen((value) => !value)}
-            aria-label="Menu"
-          >
-            <Menu className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
 
-      {open ? (
-        <div className="border-t border-line bg-white px-5 py-3 xl:hidden">
-          <nav className="mx-auto grid max-w-6xl gap-1">
+          <nav className="site-nav" aria-label={locale === 'zh' ? '主导航' : 'Primary navigation'}>
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted hover:bg-soft hover:text-ink"
-                onClick={() => setOpen(false)}
+                className={isActive(item.href) ? 'site-nav__link is-active' : 'site-nav__link'}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
+
+          <div className="site-header__utilities">
+            <button
+              className="site-header__icon"
+              onClick={() => setSearchOpen(true)}
+              aria-label={t.search.open}
+              title={t.search.open}
+            >
+              <Search aria-hidden="true" />
+            </button>
+            <Link href={localeHref} className="site-header__locale">
+              ZH / EN
+            </Link>
+            <button
+              className="site-header__icon site-header__menu-button"
+              onClick={() => setOpen(true)}
+              aria-label={locale === 'zh' ? '打开菜单' : 'Open menu'}
+              aria-expanded={open}
+              title={locale === 'zh' ? '菜单' : 'Menu'}
+            >
+              <Menu aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {open ? (
+        <div className="mobile-menu" role="dialog" aria-modal="true" aria-label={locale === 'zh' ? '移动导航' : 'Mobile navigation'}>
+          <div className="mobile-menu__header">
+            <Link href={`/${locale}/`} className="site-brand">
+              {locale === 'zh' ? '郑勇' : 'Yong Zheng'}
+            </Link>
+            <button
+              className="mobile-menu__close"
+              onClick={() => setOpen(false)}
+              aria-label={locale === 'zh' ? '关闭菜单' : 'Close menu'}
+            >
+              <X aria-hidden="true" />
+            </button>
+          </div>
+          <nav className="mobile-menu__nav">
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={isActive(item.href) ? 'mobile-menu__link is-active' : 'mobile-menu__link'}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="mobile-menu__utilities">
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                setSearchOpen(true);
+              }}
+            >
+              {t.search.label}
+            </button>
+            <Link href={localeHref}>ZH / EN</Link>
+          </div>
         </div>
       ) : null}
 
       {searchOpen ? <SearchBox locale={locale} onClose={() => setSearchOpen(false)} /> : null}
-    </header>
+    </>
   );
 }

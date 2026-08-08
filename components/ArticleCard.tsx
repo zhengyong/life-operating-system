@@ -10,7 +10,7 @@ export function ArticleCard({article, locale}: {article: ArticleMeta; locale: Lo
   const summary = locale === 'en' && article.summary_en ? article.summary_en : article.summary;
 
   return (
-    <article className="rounded-lg border border-line bg-white p-5 transition hover:border-accent hover:shadow-soft">
+    <article className="article-row">
       <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-muted">
         <span>{formatDate(article.date, locale)}</span>
         <span aria-hidden="true">/</span>
@@ -18,16 +18,16 @@ export function ArticleCard({article, locale}: {article: ArticleMeta; locale: Lo
           {getCategoryLabel(article.category, locale)}
         </Link>
       </div>
-      <h2 className="mt-3 text-xl font-semibold tracking-normal text-ink">
+      <h2 className="article-row__title">
         <Link href={`/${locale}/articles/${article.slug}/`}>{title}</Link>
       </h2>
-      <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted">{summary}</p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <p className="article-row__summary">{summary}</p>
+      <div className="article-row__tags">
         {article.tags.slice(0, 4).map((tag) => (
           <Link
             key={tag}
             href={getTagHref(tag, locale)}
-            className="rounded-md bg-soft px-2.5 py-1 text-xs text-muted transition hover:text-accent"
+            className="content-tag"
           >
             {getTagLabel(tag, locale)}
           </Link>
@@ -35,7 +35,7 @@ export function ArticleCard({article, locale}: {article: ArticleMeta; locale: Lo
       </div>
       <Link
         href={`/${locale}/articles/${article.slug}/`}
-        className="mt-5 inline-flex text-sm font-medium text-accent hover:text-ink"
+        className="article-row__action"
       >
         {t.articles.readMore}
       </Link>

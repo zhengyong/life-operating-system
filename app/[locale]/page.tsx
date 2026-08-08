@@ -71,8 +71,8 @@ export default async function HomePage({params}: {params: {locale: string}}) {
 
   return (
     <PageShell locale={locale}>
-      <main>
-        <section className="mx-auto max-w-6xl px-5 pb-14 pt-16 md:pb-20 md:pt-24">
+      <main className="home-page">
+        <section className="mx-auto max-w-7xl px-5 pb-16 pt-16 md:pb-20 md:pt-20">
           <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{t.brandShort}</p>
@@ -95,7 +95,7 @@ export default async function HomePage({params}: {params: {locale: string}}) {
                 </Link>
               </div>
             </div>
-            <div className="rounded-lg border border-line bg-white p-6 shadow-soft">
+            <div className="rounded-md border border-line bg-white p-6 md:p-8">
               <div className="flex items-center gap-3">
                 <Compass className="h-5 w-5 text-accent" />
                 <h2 className="text-lg font-semibold text-ink">{t.home.introTitle}</h2>
@@ -116,7 +116,7 @@ export default async function HomePage({params}: {params: {locale: string}}) {
         </section>
 
         <section className="border-y border-line bg-white">
-          <div className="mx-auto max-w-6xl px-5 py-12">
+          <div className="mx-auto max-w-7xl px-5 py-12">
             <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-start">
               <div>
                 <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.home.systemTitle}</h2>
@@ -137,7 +137,7 @@ export default async function HomePage({params}: {params: {locale: string}}) {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 py-14">
+        <section className="mx-auto max-w-7xl px-5 py-14 md:py-20">
           <div className="grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-start">
             <div>
               <h2 className="text-2xl font-semibold tracking-normal text-ink">{topicSection.title}</h2>
@@ -174,7 +174,7 @@ export default async function HomePage({params}: {params: {locale: string}}) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-lg border border-line bg-white p-5 transition hover:border-accent hover:shadow-soft"
+                    className="border border-line bg-white p-5 transition hover:border-accent"
                   >
                     <Icon className="h-5 w-5 text-accent" />
                     <p className="mt-4 font-semibold text-ink">{item.label}</p>
@@ -186,14 +186,14 @@ export default async function HomePage({params}: {params: {locale: string}}) {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 py-14">
+        <section className="mx-auto max-w-7xl px-5 py-14 md:py-20">
           <div className="mb-7 flex items-end justify-between gap-4">
             <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.home.latest}</h2>
             <Link href={`/${locale}/articles/`} className="text-sm font-medium text-accent hover:text-ink">
               {t.common.allArticles}
             </Link>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="max-w-4xl">
             {latest.map((article) => (
               <ArticleCard key={article.slug} article={article} locale={locale} />
             ))}

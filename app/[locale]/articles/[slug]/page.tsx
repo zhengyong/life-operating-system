@@ -8,7 +8,7 @@ import {Breadcrumbs} from '@/components/Breadcrumbs';
 import {JsonLd} from '@/components/JsonLd';
 import {PageShell} from '@/components/PageShell';
 import {prepareArticleBrief} from '@/lib/articleBrief';
-import {getAllArticles, getArticle, getRelatedArticles, markdownToHtml} from '@/lib/content';
+import {getAllArticles, getArticle, getArticleHeadings, getRelatedArticles, markdownToHtml} from '@/lib/content';
 import {alternateLocale, getDictionary, isLocale, Locale} from '@/lib/i18n';
 import {breadcrumbJsonLd} from '@/lib/seo';
 import {siteUrl} from '@/lib/site';
@@ -85,6 +85,7 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
   const summary = locale === 'en' && article.summary_en ? article.summary_en : article.summary;
   const brief = prepareArticleBrief(article.content, summary);
   const contentHtml = await markdownToHtml(brief.mainContent);
+  const headings = getArticleHeadings(brief.mainContent);
   const relatedArticles = getRelatedArticles(article);
   const canonical = `${siteUrl}/${locale}/articles/${slug}/`;
   const breadcrumbs = [
@@ -127,18 +128,17 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
   return (
     <PageShell locale={locale}>
       <JsonLd data={[articleSchema, breadcrumbSchema]} />
-      <main className="mx-auto max-w-3xl px-5 py-10 md:py-16">
-        <Breadcrumbs items={breadcrumbs} />
-
-        <Link
-          href={`/${locale}/articles/`}
-          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-accent"
-        >
-          <ChevronLeft className="h-4 w-4" />
-          {t.common.backToArticles}
-        </Link>
-
-        <article className="mt-8">
+      <main className="article-page">
+        <header className="article-page__header">
+          <div className="article-page__header-inner">
+            <Breadcrumbs items={breadcrumbs} />
+            <Link
+              href={`/${locale}/articles/`}
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-accent"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              {t.common.backToArticles}
+            </Link>
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
             <span>{formatDate(article.date, locale)}</span>
             <span aria-hidden="true">/</span>
@@ -157,25 +157,45 @@ export default async function ArticlePage({params}: {params: {locale: string; sl
               <Link
                 key={tag}
                 href={getTagHref(tag, locale)}
-                className="rounded-md bg-soft px-2.5 py-1 text-xs text-muted transition hover:text-accent"
+                className="content-tag"
               >
                 {getTagLabel(tag, locale)}
               </Link>
             ))}
           </div>
-          <ArticleBrief brief={brief} locale={locale} />
-          <div
-            className="prose prose-lg mt-8 prose-neutral"
-            dangerouslySetInnerHTML={{__html: contentHtml}}
-          />
-        </article>
+          </div>
+        </header>
+
+        <div className="article-page__reading-layout">
+          {headings.length > 0 ? (
+            <aside className="article-toc" aria-label={locale === 'zh' ? '文章目录' : 'Table of contents'}>
+              <p>{locale === 'zh' ? '目录' : 'Contents'}</p>
+              <nav>
+                {headings.map((heading) => (
+                  <a key={heading.id} href={`#${heading.id}`} data-depth={heading.depth}>
+                    {heading.text}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+          ) : null}
+          <article className="article-page__body">
+            <ArticleBrief brief={brief} locale={locale} />
+            <div
+              className="prose prose-lg mt-8 prose-neutral"
+              dangerouslySetInnerHTML={{__html: contentHtml}}
+            />
+          </article>
+        </div>
         {relatedArticles.length > 0 ? (
-          <section className="mt-14 border-t border-line pt-10">
-            <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.articles.related}</h2>
-            <div className="mt-6 grid gap-5">
-              {relatedArticles.map((relatedArticle) => (
-                <ArticleCard key={relatedArticle.slug} article={relatedArticle} locale={locale} />
-              ))}
+          <section className="article-page__related">
+            <div className="article-page__related-inner">
+              <h2 className="text-2xl font-semibold tracking-normal text-ink">{t.articles.related}</h2>
+              <div className="mt-6 max-w-4xl">
+                {relatedArticles.map((relatedArticle) => (
+                  <ArticleCard key={relatedArticle.slug} article={relatedArticle} locale={locale} />
+                ))}
+              </div>
             </div>
           </section>
         ) : null}

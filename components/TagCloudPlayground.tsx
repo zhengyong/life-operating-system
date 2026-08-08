@@ -65,7 +65,7 @@ function rotatePoint(point: Pick<SphereNode, 'x' | 'y' | 'z'>, rotation: Rotatio
 }
 
 function createSphereNodes(items: TagCloudItem[]) {
-  const sortedItems = [...items].sort((a, b) => a.label.localeCompare(b.label));
+  const sortedItems = [...items].sort((a, b) => (a.name === b.name ? 0 : a.name < b.name ? -1 : 1));
   const goldenAngle = Math.PI * (3 - Math.sqrt(5));
   const lastIndex = Math.max(1, sortedItems.length - 1);
 
@@ -247,33 +247,35 @@ export function TagCloudPlayground({items, locale}: {items: TagCloudItem[]; loca
             </div>
           ) : null}
 
-          {nodes.map((node) => {
-            const point = rotatePoint(node, rotation);
-            const depth = (point.z + 1) / 2;
-            const scale = 0.72 + depth * 0.42;
-            const opacity = 0.34 + depth * 0.64;
+          {diameter > 0
+            ? nodes.map((node) => {
+                const point = rotatePoint(node, rotation);
+                const depth = (point.z + 1) / 2;
+                const scale = 0.72 + depth * 0.42;
+                const opacity = 0.34 + depth * 0.64;
 
-            return (
-              <a
-                key={node.name}
-                href={node.href}
-                onClick={(event) => {
-                  if (Date.now() - lastDragEndRef.current < 250) {
-                    event.preventDefault();
-                  }
-                }}
-                className={`absolute left-1/2 top-1/2 select-none whitespace-nowrap rounded-md border px-2.5 py-1 text-center text-[11px] font-semibold leading-5 shadow-sm transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/30 sm:px-3 sm:text-sm ${tones[node.tone]}`}
-                style={{
-                  opacity,
-                  zIndex: Math.round(depth * 1000),
-                  transform: `translate(-50%, -50%) translate3d(${point.x * radius}px, ${point.y * radius}px, 0) scale(${scale})`,
-                  willChange: 'transform, opacity'
-                }}
-              >
-                {node.label}
-              </a>
-            );
-          })}
+                return (
+                  <a
+                    key={node.name}
+                    href={node.href}
+                    onClick={(event) => {
+                      if (Date.now() - lastDragEndRef.current < 250) {
+                        event.preventDefault();
+                      }
+                    }}
+                    className={`absolute left-1/2 top-1/2 select-none whitespace-nowrap rounded-md border px-2.5 py-1 text-center text-[11px] font-semibold leading-5 shadow-sm transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/30 sm:px-3 sm:text-sm ${tones[node.tone]}`}
+                    style={{
+                      opacity,
+                      zIndex: Math.round(depth * 1000),
+                      transform: `translate(-50%, -50%) translate3d(${point.x * radius}px, ${point.y * radius}px, 0) scale(${scale})`,
+                      willChange: 'transform, opacity'
+                    }}
+                  >
+                    {node.label}
+                  </a>
+                );
+              })
+            : null}
         </div>
       </div>
     </section>

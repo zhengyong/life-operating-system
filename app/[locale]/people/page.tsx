@@ -30,16 +30,18 @@ export default async function PeoplePage({params}: {params: {locale: string}}) {
 
   return (
     <PageShell locale={locale}>
-      <main className="mx-auto max-w-6xl px-5 py-14 md:py-20">
-        <div className="max-w-3xl">
+      <main className="directory-page">
+        <section className="directory-page__hero">
+          <div className="directory-page__hero-inner">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{t.nav.people}</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl">
             {t.topics.peopleTitle}
           </h1>
           <p className="mt-5 text-lg leading-8 text-muted">{t.topics.peopleSubtitle}</p>
-        </div>
+          </div>
+        </section>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <section className="directory-grid">
           {visiblePeople.map((person) => (
             <TopicCard
               key={person.slug}
@@ -48,9 +50,10 @@ export default async function PeoplePage({params}: {params: {locale: string}}) {
               title={text(person.name, locale)}
               summary={text(person.summary, locale)}
               actionLabel={t.topics.readTopic}
+              variant="directory"
             />
           ))}
-        </div>
+        </section>
       </main>
     </PageShell>
   );

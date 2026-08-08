@@ -34,22 +34,27 @@ export default async function CategoriesPage({params}: {params: {locale: string}
 
   return (
     <PageShell locale={locale}>
-      <main className="mx-auto max-w-5xl px-5 py-14 md:py-20">
-        <h1 className="text-4xl font-semibold tracking-normal text-ink md:text-5xl">{t.taxonomy.categoriesTitle}</h1>
-        <div className="mt-10 grid gap-3 sm:grid-cols-2">
+      <main className="directory-page">
+        <section className="directory-page__hero">
+          <div className="directory-page__hero-inner">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Categories</p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl">{t.taxonomy.categoriesTitle}</h1>
+          </div>
+        </section>
+        <section className="directory-grid">
           {taxonomy.map((item) => (
             <Link
               key={item.name}
               href={`/${locale}/categories/${slugify(item.name)}/`}
-              className="flex items-center justify-between rounded-lg border border-line bg-white p-5 transition hover:border-accent hover:shadow-soft"
+              className="taxonomy-directory-card"
             >
-              <span className="font-medium text-ink">{getCategoryLabel(item.name, locale)}</span>
-              <span className="text-sm text-muted">
+              <span className="taxonomy-directory-card__title">{getCategoryLabel(item.name, locale)}</span>
+              <span className="taxonomy-directory-card__meta">
                 {item.count} {locale === 'zh' ? '项内容' : 'items'} / {item.articleCount} {t.taxonomy.articleCount}
               </span>
             </Link>
           ))}
-        </div>
+        </section>
       </main>
     </PageShell>
   );

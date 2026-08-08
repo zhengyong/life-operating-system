@@ -1,9 +1,31 @@
 import type {Metadata} from 'next';
+import {Inter, Noto_Sans_SC, Noto_Serif_SC} from 'next/font/google';
 import {Suspense} from 'react';
 import {GoogleAnalytics} from '@/components/GoogleAnalytics';
 import {JsonLd} from '@/components/JsonLd';
 import {siteUrl} from '@/lib/site';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter'
+});
+
+const notoSans = Noto_Sans_SC({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-noto-sans'
+});
+
+const notoSerif = Noto_Serif_SC({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-noto-serif'
+});
 
 const siteTitle = "Yong Zheng's Life Operating System";
 const chineseSiteTitle = '\u90d1\u52c7\u7684\u4eba\u751f\u64cd\u4f5c\u7cfb\u7edf';
@@ -65,7 +87,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.variable} ${notoSans.variable} ${notoSerif.variable}`}>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementId}`} />
         <script
           id="google-analytics"

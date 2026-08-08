@@ -10,17 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: '#171717',
-        muted: '#5F6368',
-        line: '#E8EAED',
+        ink: '#10221C',
+        muted: '#51615B',
+        line: '#D9DED9',
         paper: '#FFFFFF',
-        soft: '#F7F8FA',
-        accent: '#0F766E',
-        gold: '#B7791F'
+        soft: '#F1F3EF',
+        accent: '#245B46',
+        gold: '#9A6B25'
       },
       fontFamily: {
         sans: [
-          'Inter',
+          'var(--font-inter)',
+          'var(--font-noto-sans)',
           'ui-sans-serif',
           'system-ui',
           'BlinkMacSystemFont',
@@ -30,10 +31,11 @@ const config: Config = {
           'Arial',
           'sans-serif'
         ],
-        serif: ['Georgia', 'Noto Serif SC', 'SimSun', 'serif']
+        serif: ['var(--font-noto-serif)', 'Noto Serif SC', 'Songti SC', 'SimSun', 'serif']
       },
       boxShadow: {
-        soft: '0 18px 50px rgba(23, 23, 23, 0.08)'
+        soft: '0 2px 8px rgba(16, 34, 28, 0.06)',
+        lifted: '0 12px 32px -4px rgba(16, 34, 28, 0.10)'
       }
     }
   },

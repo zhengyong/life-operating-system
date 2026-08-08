@@ -243,7 +243,7 @@ function sortTags(a: TagCloudItem, b: TagCloudItem) {
     return b.count - a.count;
   }
 
-  return a.label.localeCompare(b.label);
+  return a.name === b.name ? 0 : a.name < b.name ? -1 : 1;
 }
 
 export function TagDirectory({items, locale}: {items: TagCloudItem[]; locale: Locale}) {

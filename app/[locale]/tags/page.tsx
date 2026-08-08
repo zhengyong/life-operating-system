@@ -47,16 +47,22 @@ export default async function TagsPage({params}: {params: {locale: string}}) {
 
   return (
     <PageShell locale={locale}>
-      <main className="mx-auto max-w-5xl px-5 py-14 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Life OS</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl">{t.taxonomy.tagsTitle}</h1>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-          {locale === 'zh'
-            ? '用精选标签保持探索感，用完整目录承接持续增长的知识关键词。'
-            : 'A focused sphere for exploration, and a full directory for the growing knowledge taxonomy.'}
-        </p>
-        <TagCloudPlayground items={tagItems} locale={locale} />
-        <TagDirectory items={tagItems} locale={locale} />
+      <main className="tags-page">
+        <section className="directory-page__hero">
+          <div className="directory-page__hero-inner">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Life OS</p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-normal text-ink md:text-5xl">{t.taxonomy.tagsTitle}</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
+              {locale === 'zh'
+                ? '用精选标签保持探索感，用完整目录承接持续增长的知识关键词。'
+                : 'A focused sphere for exploration, and a full directory for the growing knowledge taxonomy.'}
+            </p>
+          </div>
+        </section>
+        <div className="tags-page__content">
+          <TagCloudPlayground items={tagItems} locale={locale} />
+          <TagDirectory items={tagItems} locale={locale} />
+        </div>
       </main>
     </PageShell>
   );

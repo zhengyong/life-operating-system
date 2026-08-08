@@ -3,6 +3,7 @@ import path from 'node:path';
 import matter from 'gray-matter';
 import {remark} from 'remark';
 import html from 'remark-html';
+import type {Heading, Root} from 'mdast';
 import {Locale, locales} from '@/lib/i18n';
 import {
   architectureCapabilities,
@@ -158,8 +159,69 @@ export function getRelatedArticles(article: ArticleMeta, limit = 3): ArticleMeta
 }
 
 export async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown);
+  const result = await remark().use(addHeadingIds).use(html).process(markdown);
   return result.toString().replace(/<img /g, '<img loading="lazy" decoding="async" ');
+}
+
+export type ArticleHeading = {
+  depth: number;
+  id: string;
+  text: string;
+};
+
+function headingText(node: Heading) {
+  const collect = (value: Heading['children'][number]): string => {
+    if ('value' in value && typeof value.value === 'string') return value.value;
+    if ('children' in value && Array.isArray(value.children)) {
+      return value.children.map((child) => collect(child as Heading['children'][number])).join('');
+    }
+    return '';
+  };
+
+  return node.children.map(collect).join('').trim();
+}
+
+function uniqueHeadingId(text: string, counts: Map<string, number>) {
+  const base = slugify(text) || 'section';
+  const count = counts.get(base) ?? 0;
+  counts.set(base, count + 1);
+  return count === 0 ? base : `${base}-${count + 1}`;
+}
+
+function walkHeadings(tree: Root, callback: (node: Heading) => void) {
+  const walk = (node: Root | Root['children'][number]) => {
+    if (node.type === 'heading') callback(node);
+    if ('children' in node && Array.isArray(node.children)) {
+      node.children.forEach((child) => walk(child));
+    }
+  };
+
+  walk(tree);
+}
+
+function addHeadingIds() {
+  return (tree: Root) => {
+    const counts = new Map<string, number>();
+    walkHeadings(tree, (node) => {
+      const id = uniqueHeadingId(headingText(node), counts);
+      node.data = {
+        ...node.data,
+        hProperties: {...node.data?.hProperties, id}
+      };
+    });
+  };
+}
+
+export function getArticleHeadings(markdown: string): ArticleHeading[] {
+  const tree = remark().parse(markdown) as Root;
+  const counts = new Map<string, number>();
+  const headings: ArticleHeading[] = [];
+  walkHeadings(tree, (node) => {
+    if (node.depth < 2 || node.depth > 3) return;
+    const text = headingText(node);
+    headings.push({depth: node.depth, id: uniqueHeadingId(text, counts), text});
+  });
+  return headings;
 }
 
 export function getTaxonomy(locale: Locale, key: 'category' | 'tags') {
