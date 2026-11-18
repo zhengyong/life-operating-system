@@ -110,6 +110,11 @@ export default async function PersonPage({params}: {params: {locale: string; slu
             {text(person.name, locale)}
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">{text(person.summary, locale)}</p>
+          {person.slug === 'jensen-huang' ? (
+            <Link href={`/${locale}/perspectives/#huang-return`} className="mt-4 inline-flex items-center gap-2 font-medium text-accent hover:underline">
+              {t.perspectives.eventLink} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          ) : null}
         </section>
 
         <LearningPathPanel {...studyPath} />

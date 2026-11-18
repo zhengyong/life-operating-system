@@ -26,6 +26,7 @@ export function Header({locale}: HeaderProps) {
     {href: `/${locale}/education/`, label: t.nav.education},
     {href: `/${locale}/people/`, label: t.nav.people},
     {href: `/${locale}/companies/`, label: t.nav.companies},
+    {href: `/${locale}/perspectives/`, label: t.nav.perspectives},
     {href: `/${locale}/articles/`, label: t.nav.articles},
     {href: `/${locale}/categories/`, label: t.nav.categories},
     {href: `/${locale}/tags/`, label: t.nav.tags},
@@ -55,7 +56,7 @@ export function Header({locale}: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <button
             className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-muted transition hover:border-accent hover:text-accent"
             onClick={() => setSearchOpen(true)}
@@ -65,7 +66,7 @@ export function Header({locale}: HeaderProps) {
           </button>
           <Link
             href={localizePath(pathname ?? `/${locale}/`, otherLocale)}
-            className="rounded-md border border-line px-3 py-2 text-sm font-medium text-muted transition hover:border-accent hover:text-accent"
+            className="whitespace-nowrap rounded-md border border-line px-3 py-2 text-sm font-medium text-muted transition hover:border-accent hover:text-accent"
           >
             {otherLocale === 'en' ? 'EN' : '中文'}
           </Link>

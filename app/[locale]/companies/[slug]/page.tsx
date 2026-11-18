@@ -143,6 +143,11 @@ export default async function CompanyPage({params}: {params: {locale: string; sl
               {text(company.name, locale)}
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">{text(company.summary, locale)}</p>
+            {company.slug === 'nvidia' ? (
+              <Link href={`/${locale}/perspectives/#nvidia-transition`} className="mt-4 inline-flex items-center gap-2 font-medium text-accent hover:underline">
+                {t.perspectives.eventLink} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            ) : null}
           </div>
           <aside className="rounded-lg border border-line bg-white p-5">
             <h2 className="text-lg font-semibold text-ink">{t.topics.officialLinks}</h2>

@@ -11,7 +11,7 @@ import {slugify} from '@/lib/utils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = locales.flatMap((locale) =>
-    ['', '/about', '/books', '/life', '/career', '/education', '/articles', '/topics', '/people', '/companies', '/categories', '/tags', '/contact', '/privacy'].map((path) => ({
+    ['', '/about', '/books', '/life', '/career', '/education', '/articles', '/topics', '/people', '/companies', '/perspectives', '/categories', '/tags', '/contact', '/privacy'].map((path) => ({
       url: pageUrl(`${locale}${path}`),
       lastModified: new Date()
     }))
