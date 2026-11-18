@@ -47,6 +47,7 @@ export type PerspectiveEvent = {
   weekLabels: Record<string, LocalizedText>;
   timeline: TimelineEntry[];
   debate: DebateEntry[];
+  articleSeries?: Record<'handoff' | 'return', string[]>;
   author: Partial<Record<Locale, AuthorOpinion>>;
 };
 

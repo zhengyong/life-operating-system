@@ -331,5 +331,22 @@ export const jensenHuangPerspective: PerspectiveEvent = {
       sources: [source.gerstner]
     }
   ],
-  author: {}
+  articleSeries: {
+    handoff: [
+      'nvidia-jensen-debate-05-platform-continuity',
+      'nvidia-jensen-debate-06-governance-succession',
+      'nvidia-jensen-debate-07-partnership-continuity',
+      'nvidia-jensen-debate-08-ai-industrial-system'
+    ],
+    return: [
+      'nvidia-jensen-debate-01-platform-leadership',
+      'nvidia-jensen-debate-02-founder-succession',
+      'nvidia-jensen-debate-03-industry-network',
+      'nvidia-jensen-debate-04-us-ai-competitiveness'
+    ]
+  },
+  author: {
+    zh: {articleSlug: 'nvidia-jensen-debate-09-handover-timing'},
+    en: {articleSlug: 'nvidia-jensen-debate-09-handover-timing'}
+  }
 };

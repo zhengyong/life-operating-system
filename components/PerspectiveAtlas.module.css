@@ -296,7 +296,8 @@
 
 .panel { margin-top: 1.35rem; }
 .panel h2 { font-size: clamp(1.48rem, 4vw, 2.25rem); font-weight: 750; line-height: 1.32; }
-.order { margin: .5rem 0 1.2rem; color: var(--atlas-muted); font-size: .86rem; }
+.debateIntro { display: flex; align-items: center; flex-wrap: wrap; gap: .15rem 1rem; margin: .5rem 0 .85rem; }
+.order { color: var(--atlas-muted); font-size: .86rem; }
 .debateGrid { display: grid; min-width: 0; gap: .8rem; align-items: start; }
 .atlas [data-side='handoff'] { --camp-ink: #7c403b; --camp-tint: #f7e9e6; --camp-line: #e0c1bb; }
 .atlas [data-side='return'] { --camp-ink: #254f6d; --camp-tint: #e9f0f6; --camp-line: #bccfdf; }
@@ -387,8 +388,16 @@
 .positionKind { margin-top: .14rem; color: var(--atlas-muted); font-size: .79rem; }
 .positionTitle { margin: .5rem 0 .28rem; font-size: 1.05rem; font-weight: 750; line-height: 1.43; }
 .position .recordLink, .recordBody .recordLink { display: flex; width: fit-content; }
-.context { margin-top: 1.6rem; padding-top: 1.25rem; border-top: 1px solid var(--atlas-line); }
-.context h3, .author h3 { font-size: 1.2rem; font-weight: 750; }
+.context, .reading { margin-top: 1.6rem; padding-top: 1.25rem; border-top: 1px solid var(--atlas-line); }
+.context h3, .reading h3, .author h3 { font-size: 1.2rem; font-weight: 750; }
+.reading { scroll-margin-top: 5.5rem; }
+.reading:focus { outline: 2px solid var(--atlas-green); outline-offset: 4px; }
+.readingGroup { padding: .9rem 1.05rem; border: 1px solid var(--camp-line); border-radius: .72rem; background: var(--camp-tint); }
+.readingGroup h4 { color: var(--camp-ink); font-size: .93rem; font-weight: 750; }
+.readingGroup ol { margin: .45rem 0 0; padding-inline-start: 1.3rem; list-style: decimal; }
+.readingGroup li { padding-block: .25rem; }
+.readingGroup a { display: inline-flex; align-items: center; min-height: 2.2rem; line-height: 1.55; }
+.readingGroup a:hover { text-decoration: underline; }
 
 .author {
   margin-top: .7rem;

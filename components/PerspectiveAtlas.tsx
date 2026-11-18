@@ -11,6 +11,7 @@ import styles from './PerspectiveAtlas.module.css';
 
 const views = ['timeline', 'pk', 'my-view'] as const;
 const sides = ['handoff', 'return'] as const;
+const readingId = 'atlas-reading';
 type View = (typeof views)[number];
 type Labels = ReturnType<typeof getDictionary>['perspectives'];
 
@@ -19,6 +20,7 @@ type Props = {
   locale: Locale;
   labels: Labels;
   author?: {title?: string; summary: string; date?: string; articleHref?: string};
+  series?: Record<(typeof sides)[number], Array<{href: string; title: string}>>;
   children: ReactNode;
 };
 
@@ -62,18 +64,23 @@ function focusSection(id: string) {
   section?.scrollIntoView({block: 'start'});
 }
 
-export function PerspectiveAtlas({event, locale, labels, author, children}: Props) {
+export function PerspectiveAtlas({event, locale, labels, author, series, children}: Props) {
   const [view, setView] = useState<View>('timeline');
   const [selected, setSelected] = useState<string[]>([]);
   const [newest, setNewest] = useState(true);
-  const [pendingRecord, setPendingRecord] = useState<TimelineEntry>();
+  const [pendingFocus, setPendingFocus] = useState<string>();
 
   useEffect(() => {
     function readLocation() {
       const hash = window.location.hash.slice(1);
+      if (hash === readingId) {
+        setView('pk');
+        setPendingFocus(readingId);
+        return;
+      }
       const match = event.timeline.find((record) => record.id === hash);
       setView(views.find((item) => item === hash) ?? 'timeline');
-      setPendingRecord(match);
+      setPendingFocus(match?.id);
     }
 
     readLocation();
@@ -82,19 +89,20 @@ export function PerspectiveAtlas({event, locale, labels, author, children}: Prop
   }, [event.timeline]);
 
   useEffect(() => {
-    if (!pendingRecord || view !== 'timeline') return;
+    if (!pendingFocus) return;
+    const match = event.timeline.find((record) => record.id === pendingFocus);
 
-    if (selected.length > 0 && !selected.includes(pendingRecord.participant)) {
-      setSelected([...selected, pendingRecord.participant]);
+    if (match && selected.length > 0 && !selected.includes(match.participant)) {
+      setSelected([...selected, match.participant]);
       return;
     }
 
-    focusSection(pendingRecord.id);
-    setPendingRecord(undefined);
-  }, [pendingRecord, selected, view]);
+    focusSection(pendingFocus);
+    setPendingFocus(undefined);
+  }, [event.timeline, pendingFocus, selected]);
 
   function chooseView(next: View) {
-    setPendingRecord(undefined);
+    setPendingFocus(undefined);
     setView(next);
     if (window.location.hash !== `#${next}`) window.history.pushState(null, '', `#${next}`);
   }
@@ -118,7 +126,7 @@ export function PerspectiveAtlas({event, locale, labels, author, children}: Prop
     if (click.ctrlKey || click.metaKey || click.shiftKey || click.altKey) return;
     click.preventDefault();
     setView('timeline');
-    setPendingRecord(record);
+    setPendingFocus(record.id);
     if (window.location.hash !== `#${record.id}`) window.history.pushState(null, '', `#${record.id}`);
   }
 
@@ -270,7 +278,14 @@ export function PerspectiveAtlas({event, locale, labels, author, children}: Prop
 
         <section className={styles.panel} id="pk" role="tabpanel" aria-labelledby="atlas-tab-pk" hidden={view !== 'pk'}>
           <h2>{event.question[locale]}</h2>
-          <p className={styles.order}>{labels.rankOrder}</p>
+          <div className={styles.debateIntro}>
+            <p className={styles.order}>{labels.rankOrder}</p>
+            {series ? (
+              <button type="button" className={styles.recordLink} onClick={() => focusSection(readingId)}>
+                {labels.readingJump} <ArrowDownRight size={15} aria-hidden="true" />
+              </button>
+            ) : null}
+          </div>
           <div className={styles.campShortcuts}>
             {sides.map((side) => (
               <button key={side} type="button" aria-controls={`atlas-${side}`} data-side={side} onClick={() => focusSection(`atlas-${side}`)}>
@@ -297,6 +312,31 @@ export function PerspectiveAtlas({event, locale, labels, author, children}: Prop
               <div className={styles.campCards}>{debateCards('return')}</div>
             </section>
           </div>
+
+          {series ? (
+            <section id={readingId} tabIndex={-1} className={styles.reading} aria-labelledby="atlas-reading-title">
+              <h3 id="atlas-reading-title">{labels.reading}</h3>
+              <div className={styles.contextGrid}>
+                {sides.map((side) => (
+                  <div key={side} className={styles.readingGroup} data-side={side}>
+                    <h4>{side === 'handoff' ? labels.seriesHandoff : labels.seriesReturn}</h4>
+                    <ol>
+                      {series[side].map((item) => (
+                        <li key={item.href}>
+                          <Link href={item.href}>{item.title}</Link>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                ))}
+              </div>
+              {author?.articleHref ? (
+                <Link className={styles.recordLink} href={author.articleHref}>
+                  {labels.readFinale} <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              ) : null}
+            </section>
+          ) : null}
 
           <section className={styles.context} aria-labelledby="atlas-context-heading">
             <h3 id="atlas-context-heading">{labels.otherViews}</h3>

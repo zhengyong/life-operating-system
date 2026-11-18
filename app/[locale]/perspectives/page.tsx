@@ -6,11 +6,20 @@ import {PageShell} from '@/components/PageShell';
 import {PerspectiveAtlas} from '@/components/PerspectiveAtlas';
 import {jensenHuangPerspective} from '@/content/perspectives/jensen-huang';
 import {getArticle} from '@/lib/content';
-import {getDictionary, isLocale} from '@/lib/i18n';
+import {getDictionary, isLocale, type Locale} from '@/lib/i18n';
 import {breadcrumbJsonLd, localizedPageMetadata} from '@/lib/seo';
 import {pageUrl} from '@/lib/site';
 
 type PageProps = {params: {locale: string}};
+
+function loadSeries(locale: Locale, slugs: string[]) {
+  return slugs.flatMap((slug) => {
+    const article = getArticle(locale, slug);
+    if (!article) return [];
+    const title = locale === 'en' ? article.title_en ?? article.title : article.title;
+    return [{href: `/${locale}/articles/${slug}/`, title: title.split(/\s*[|｜]\s*/).at(-1) ?? title}];
+  });
+}
 
 export function generateMetadata({params: {locale}}: PageProps): Metadata {
   if (!isLocale(locale)) return {};
@@ -35,6 +44,10 @@ export default function PerspectivesPage({params: {locale}}: PageProps) {
     date: opinion?.date ?? article?.date,
     articleHref: article ? `/${locale}/articles/${article.slug}/` : undefined
   } : undefined;
+  const series = event.articleSeries ? {
+    handoff: loadSeries(locale, event.articleSeries.handoff),
+    return: loadSeries(locale, event.articleSeries.return)
+  } : undefined;
 
   return (
     <PageShell locale={locale}>
@@ -42,7 +55,7 @@ export default function PerspectivesPage({params: {locale}}: PageProps) {
         {name: dictionary.nav.home, url: pageUrl(locale)},
         {name: dictionary.perspectives.title, url: pageUrl(`${locale}/perspectives`)}
       ])} />
-      <PerspectiveAtlas event={event} locale={locale} labels={dictionary.perspectives} author={author}>
+      <PerspectiveAtlas event={event} locale={locale} labels={dictionary.perspectives} author={author} series={series}>
         <Breadcrumbs items={[
           {label: dictionary.nav.home, href: `/${locale}/`},
           {label: dictionary.perspectives.title}
