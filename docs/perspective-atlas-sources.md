@@ -2,7 +2,7 @@
 
 Audit date: **2026-11-19** (Asia/Shanghai). Scope: the Jensen Huang event in `content/perspectives/jensen-huang.ts`, during local development of the interactive prototype. This audit checks whether linked material supports the recorded statement; it does not endorse a speaker's view or resolve an investigation's underlying allegations.
 
-The first version remains a local prototype. The public timeline and the author's nine analysis essays are separate kinds of content: an essay's argument must not be presented as an outside person's statement. Pending sources should remain visibly pending until the actual material can be reviewed.
+The published timeline and the author's nine analysis essays are separate kinds of content: an essay's argument must not be presented as an outside person's statement. Pending sources should remain visibly pending until the actual material can be reviewed.
 
 ## Sources whose substantive content was reviewed
 
