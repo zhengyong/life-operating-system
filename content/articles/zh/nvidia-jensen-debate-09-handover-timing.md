@@ -10,6 +10,31 @@ category: "Company Research"
 tags: ["NVIDIA", "Jensen Huang", "AI", "Corporate Governance"]
 language: "zh"
 draft: false
+authorOpinion:
+  conclusion: "英伟达终究会有第二任 CEO，但从 AI 产业未来十年的战略价值来看，现在不是理想的交接时点。"
+  evidence:
+    - "英伟达现有 GPU、CUDA 和研发团队能够维持短期运营，但无法证明未来技术路线判断和下一代 CUDA 的创造能力已被继任体系复制。"
+    - "黄仁勋三十多年形成的技术远见、组织领导、商业判断和产业协调能力，难以由单一 CEO 立即替代。"
+    - "台积电、微软、亚马逊和 OpenAI 等合作关系依托商业利益与长期信任，领导交接可能带来协调和机会成本。"
+    - "2025—2035 年是训练、推理、智能体、机器人、自动驾驶和物理 AI 的关键窗口，现有财报和短期股价波动不足以衡量长期战略损失。"
+    - "公司治理、合规、利益冲突和国家安全问题仍应依法调查并由董事会独立判断。"
+  probability: null
+  probabilityStatus: "unspecified"
+  invalidationConditions:
+    - "新 CEO 在未来数年持续作出同等质量的技术路线和产业战略判断，并证明能创造下一代平台能力。"
+    - "英伟达在 2025—2035 年 AI 关键窗口持续保持技术、生态和产业协调优势，且没有可归因于交接的长期机会成本。"
+    - "独立调查或后续公开证据否定关键事实前提，证明领导交接不会造成文中所述风险。"
+  retrospective: "pending"
+  related:
+    - type: "event"
+      label: "黄仁勋道歉与卸任"
+      href: "/zh/perspectives/#event"
+    - type: "person"
+      label: "黄仁勋"
+      href: "/zh/people/jensen-huang/"
+    - type: "company"
+      label: "英伟达"
+      href: "/zh/companies/nvidia/"
 ---
 
 **我的判断｜从企业价值到AI产业的未来**

@@ -3,9 +3,23 @@ import type {Locale} from '@/lib/i18n';
 export type LocalizedText = Record<Locale, string>;
 export type PerspectiveRole = 'subject' | 'company' | 'media' | 'investor' | 'entrepreneur' | 'official' | 'institution';
 
-type Source = {
+export type PerspectiveSource = {
   label: LocalizedText;
   href: string;
+  verification?: 'verified' | 'pending';
+  checkedAt?: string;
+};
+
+export type PerspectiveRelationship = 'statement' | 'different-view' | 'direct-reply' | 'media-interpretation' | 'update';
+
+export type PerspectiveParticipant = {
+  id: string;
+  label: LocalizedText;
+  role: PerspectiveRole;
+  group?: string;
+  profilePath?: string;
+  archiveSlug?: string;
+  bio?: LocalizedText;
 };
 
 export type PerspectiveStatement = {
@@ -15,16 +29,20 @@ export type PerspectiveStatement = {
   kind: LocalizedText;
   title: LocalizedText;
   summary: LocalizedText;
-  sources: [Source, ...Source[]];
+  sources: [PerspectiveSource, ...PerspectiveSource[]];
   note?: LocalizedText;
   timelineId?: string;
+  relationship?: PerspectiveRelationship;
+  relatedTo?: string[];
+  verification?: 'verified' | 'pending';
 };
 
 export type TimelineEntry = PerspectiveStatement & {participant: string};
 
 export type DebateEntry = PerspectiveStatement & {
   role: PerspectiveRole;
-  side: 'handoff' | 'return' | 'context';
+  side: string;
+  participant?: string;
   // Lower values lead their side based on decision-making authority and public prominence.
   priority: number;
   profilePath?: string;
@@ -38,16 +56,20 @@ export type AuthorOpinion = {
 };
 
 export type PerspectiveEvent = {
+  id?: string;
+  prototype?: boolean;
   title: LocalizedText;
   shortTitle: LocalizedText;
   description: LocalizedText;
   question: LocalizedText;
-  participants: Array<{id: string; label: LocalizedText; role: PerspectiveRole; profilePath?: string}>;
+  participants: PerspectiveParticipant[];
+  groups?: Array<{id: string; label: LocalizedText; role: PerspectiveRole}>;
+  positions?: Array<{id: string; label: LocalizedText; title: LocalizedText; tone: 'red' | 'blue' | 'neutral'}>;
   milestones: Array<{timelineId: string; label: LocalizedText}>;
   weekLabels: Record<string, LocalizedText>;
   timeline: TimelineEntry[];
   debate: DebateEntry[];
-  articleSeries?: Record<'handoff' | 'return', string[]>;
+  articleSeries?: Record<string, string[]>;
   author: Partial<Record<Locale, AuthorOpinion>>;
 };
 

@@ -10,6 +10,31 @@ category: "Company Research"
 tags: ["NVIDIA", "Jensen Huang", "AI", "Corporate Governance"]
 language: "en"
 draft: false
+authorOpinion:
+  conclusion: "NVIDIA will eventually have a second CEO, but given what the next decade of AI has at stake, this is the wrong time to hand over leadership."
+  evidence:
+    - "NVIDIA's existing GPUs, CUDA and research teams can support near-term continuity, but that does not show that its successor leadership can reproduce the judgment needed to create the next CUDA."
+    - "The technical vision, organizational leadership, commercial judgment and industry coordination Huang developed over more than three decades are difficult for one successor to replace immediately."
+    - "Relationships with TSMC, Microsoft, Amazon and OpenAI rest on commercial value and long-term trust; a leadership transition can still carry coordination and opportunity costs."
+    - "2025 to 2035 is a crucial window for training, inference, agents, robots, autonomous driving and physical AI, and current results or short-term stock moves cannot measure long-term strategic costs."
+    - "Questions involving governance, compliance, conflicts of interest and national security should still be investigated lawfully and judged independently by the board."
+  probability: null
+  probabilityStatus: "unspecified"
+  invalidationConditions:
+    - "A new CEO makes technology and industry strategy decisions of comparable quality over the coming years and demonstrates the ability to create the next platform capability."
+    - "NVIDIA maintains its technical, ecosystem and industry coordination advantages through the 2025–2035 AI window without a long-term opportunity cost attributable to the transition."
+    - "An independent investigation or later public evidence disproves a key factual premise and shows that the transition creates none of the risks described here."
+  retrospective: "pending"
+  related:
+    - type: "event"
+      label: "Jensen Huang's apology and resignation"
+      href: "/en/perspectives/#event"
+    - type: "person"
+      label: "Jensen Huang"
+      href: "/en/people/jensen-huang/"
+    - type: "company"
+      label: "NVIDIA"
+      href: "/en/companies/nvidia/"
 ---
 
 **My judgment | From company value to the future of the AI industry**
