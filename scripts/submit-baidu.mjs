@@ -1,4 +1,4 @@
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zhengyong.world').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zhengyong.world').replace(/\/$/, '');
 const baiduSite = (process.env.BAIDU_SITE ?? siteUrl).replace(/\/$/, '');
 const baiduToken = process.env.BAIDU_PUSH_TOKEN;
 

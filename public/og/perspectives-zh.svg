@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">观点星图：谁能替代黄仁勋？</title>
+  <desc id="desc">Life OS 观点星图，九篇文章、观点对照与来源时间轴。</desc>
+  <rect width="1200" height="630" fill="#f4f3ed"/>
+  <rect width="1200" height="14" fill="#205543"/>
+  <g transform="translate(76 58)">
+    <rect width="52" height="52" rx="13" fill="#171717"/>
+    <path d="M13 15h14c12 0 20 7 20 16s-8 16-20 16H13V15Z" fill="#fff"/>
+    <path d="M22 23h7c5 0 9 3 9 8s-4 8-9 8h-7V23Z" fill="#0f766e"/>
+    <path d="m38 12 6 6-6 6-6-6 6-6Z" fill="#b7791f"/>
+    <text x="70" y="23" fill="#19271f" font-family="Avenir Next, PingFang SC, Hiragino Sans GB, sans-serif" font-size="25" font-weight="750">Life OS</text>
+    <text x="70" y="46" fill="#66736b" font-family="Avenir Next, PingFang SC, Hiragino Sans GB, sans-serif" font-size="17">郑勇的人生操作系统</text>
+  </g>
+  <text x="76" y="186" fill="#205543" font-family="Avenir Next, PingFang SC, Hiragino Sans GB, sans-serif" font-size="25" font-weight="700" letter-spacing="4">观点星图  /  PERSPECTIVE ATLAS</text>
+  <text x="76" y="276" fill="#19271f" font-family="PingFang SC, Hiragino Sans GB, Avenir Next, sans-serif" font-size="67" font-weight="750">谁能替代黄仁勋？</text>
+  <text x="80" y="324" fill="#53625a" font-family="PingFang SC, Hiragino Sans GB, Avenir Next, sans-serif" font-size="25" font-weight="500">9 篇文章 · 观点对照 · 来源时间轴</text>
+  <g transform="translate(76 374)">
+    <rect width="505" height="152" rx="18" fill="#a64b4b"/>
+    <rect x="529" width="519" height="152" rx="18" fill="#365f8a"/>
+    <text x="34" y="46" fill="#fff8f3" font-family="PingFang SC, Hiragino Sans GB, Avenir Next, sans-serif" font-size="27" font-weight="750">挺黄派</text>
+    <text x="34" y="78" fill="#f8dfdb" font-family="Avenir Next, sans-serif" font-size="17" font-weight="700" letter-spacing="2">CASE FOR HUANG</text>
+    <text x="34" y="119" fill="#fff8f3" font-family="PingFang SC, Hiragino Sans GB, Avenir Next, sans-serif" font-size="21">技术 · 领导力 · 产业关系</text>
+    <text x="563" y="46" fill="#f6fbff" font-family="PingFang SC, Hiragino Sans GB, Avenir Next, sans-serif" font-size="27" font-weight="750">换帅派</text>
+    <text x="563" y="78" fill="#dce9f6" font-family="Avenir Next, sans-serif" font-size="17" font-weight="700" letter-spacing="2">CASE FOR SUCCESSION</text>
+    <text x="563" y="119" fill="#f6fbff" font-family="PingFang SC, Hiragino Sans GB, Avenir Next, sans-serif" font-size="21">组织 · 接班 · 产业体系</text>
+  </g>
+  <g transform="translate(76 566)">
+    <circle cx="7" cy="0" r="7" fill="#205543"/><circle cx="43" cy="0" r="7" fill="#a64b4b"/><circle cx="79" cy="0" r="7" fill="#365f8a"/>
+    <path d="M100 0h220" stroke="#c7d2c7" stroke-width="2"/>
+    <text x="340" y="7" fill="#66736b" font-family="PingFang SC, Hiragino Sans GB, Avenir Next, sans-serif" font-size="18">事件 · 来源 · 观点变化</text>
+  </g>
+</svg>

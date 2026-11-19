@@ -1,4 +1,4 @@
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zhengyong.world').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zhengyong.world').replace(/\/$/, '');
 const indexNowKey = process.env.INDEXNOW_KEY ?? '8f2c9d4b7a1e4f6c9b0d3e5a7c8f1b2d';
 const keyLocation = `${siteUrl}/${indexNowKey}.txt`;
 

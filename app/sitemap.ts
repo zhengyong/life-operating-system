@@ -7,6 +7,7 @@ import {isPublicCompanySlug, isPublicPersonLesson, isPublicPersonSlug} from '@/l
 import {seoTopics} from '@/lib/seoTopics';
 import {pageUrl} from '@/lib/site';
 import {companies, people, personLessons} from '@/lib/topics';
+import {perspectiveEvents} from '@/content/perspectives';
 import {slugify} from '@/lib/utils';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -83,6 +84,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }))
   );
 
+  const perspectiveProfileRoutes = locales.flatMap((locale) =>
+    Array.from(new Set(perspectiveEvents.flatMap((event) => event.participants.flatMap((participant) => participant.archiveSlug ? [participant.archiveSlug] : [])))).map((person) => ({
+      url: pageUrl(`${locale}/perspectives/people/${person}`),
+      lastModified: new Date()
+    }))
+  );
+
   const bookRecommendationRoutes = locales.flatMap((locale) =>
     bookArchitectureNodes.map((node) => ({
       url: pageUrl(`${locale}/books/recommendations/${node.slug}`),
@@ -109,6 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...peopleRoutes,
     ...companyRoutes,
     ...personLessonRoutes,
+    ...perspectiveProfileRoutes,
     ...bookRecommendationRoutes,
     ...bookPreviewRoutes
   ];

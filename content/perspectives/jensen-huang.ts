@@ -87,7 +87,9 @@ const boardPosition: TimelineEntry = {
   sources: [source.boardCall, source.succession]
 };
 
-export const jensenHuangPerspective: PerspectiveEvent = {
+const event: PerspectiveEvent = {
+  id: 'jensen-huang',
+  prototype: false,
   shortTitle: label('黄仁勋事件', 'Jensen Huang'),
   title: label('黄仁勋道歉与卸任', 'Jensen Huang’s apology and resignation'),
   description: label(
@@ -96,11 +98,33 @@ export const jensenHuangPerspective: PerspectiveEvent = {
   ),
   question: label('黄仁勋现在是否应回任英伟达 CEO？', 'Should Jensen Huang return as NVIDIA CEO now?'),
   participants: [
-    {id: 'huang', label: speaker.huang, role: 'subject', profilePath: 'people/jensen-huang/'},
-    {id: 'nvidia', label: label('英伟达', 'NVIDIA'), role: 'company', profilePath: 'companies/nvidia/'},
-    {id: 'media', label: label('媒体', 'Media'), role: 'media'},
-    {id: 'duan', label: speaker.duan, role: 'investor'},
-    {id: 'dan', label: speaker.dan, role: 'investor'}
+    {id: 'huang', label: speaker.huang, role: 'subject', group: 'huang', profilePath: 'people/jensen-huang/', archiveSlug: 'jensen-huang'},
+    {id: 'nvidia', label: label('英伟达', 'NVIDIA'), role: 'company', group: 'nvidia', profilePath: 'companies/nvidia/'},
+    {id: 'media', label: label('媒体', 'Media'), role: 'media', group: 'media'},
+    {id: 'duan', label: speaker.duan, role: 'investor', group: 'investors', archiveSlug: 'duan-yongping'},
+    {id: 'dan', label: speaker.dan, role: 'investor', group: 'investors', archiveSlug: 'dan-bin'},
+    {id: 'bessent', label: label('贝森特', 'Scott Bessent'), role: 'official', group: 'government'},
+    {id: 'trump', label: label('特朗普', 'Donald Trump'), role: 'official', group: 'president'},
+    {id: 'musk', label: label('马斯克', 'Elon Musk'), role: 'entrepreneur', group: 'entrepreneurs', profilePath: 'people/elon-musk/', archiveSlug: 'elon-musk'},
+    {id: 'congress', label: label('美国众议院', 'U.S. House committees'), role: 'institution', group: 'government'},
+    {id: 'commerce', label: label('美国商务部', 'U.S. Commerce Department'), role: 'institution', group: 'government'},
+    {id: 'bezos', label: label('贝索斯', 'Jeff Bezos'), role: 'entrepreneur', group: 'entrepreneurs', archiveSlug: 'jeff-bezos'},
+    {id: 'altman', label: label('奥尔特曼', 'Sam Altman'), role: 'entrepreneur', group: 'entrepreneurs', profilePath: 'people/sam-altman/', archiveSlug: 'sam-altman'},
+    {id: 'gerstner', label: label('格斯特纳', 'Brad Gerstner'), role: 'investor', group: 'investors', archiveSlug: 'brad-gerstner'}
+  ],
+  groups: [
+    {id: 'huang', label: speaker.huang, role: 'subject'},
+    {id: 'nvidia', label: label('英伟达', 'NVIDIA'), role: 'company'},
+    {id: 'government', label: label('美国政府', 'U.S. government'), role: 'institution'},
+    {id: 'president', label: label('美国总统', 'U.S. president'), role: 'official'},
+    {id: 'entrepreneurs', label: label('企业家', 'Entrepreneurs'), role: 'entrepreneur'},
+    {id: 'investors', label: label('投资人士', 'Investors'), role: 'investor'},
+    {id: 'media', label: label('媒体', 'Media'), role: 'media'}
+  ],
+  positions: [
+    {id: 'handoff', label: label('继续交接', 'Continue succession'), title: label('组织应超越创始人', 'The institution must outlast its founder'), tone: 'red'},
+    {id: 'return', label: label('支持回任', 'Open to a return'), title: label('关键时期需要领导力延续', 'Leadership continuity matters now'), tone: 'blue'},
+    {id: 'context', label: label('其他视角', 'Other perspectives'), title: label('保留判断与政策背景', 'Reserved judgment and policy context'), tone: 'neutral'}
   ],
   milestones: [
     {timelineId: 'huang-apology', label: label('致信道歉', 'Apology letter')},
@@ -166,7 +190,7 @@ export const jensenHuangPerspective: PerspectiveEvent = {
         '英伟达宣布黄仁勋辞去总裁、CEO 及董事职务，首席财务官科莱特·克雷斯出任临时 CEO。董事会启动正式继任者遴选。',
         'NVIDIA announced that Huang had resigned as president, CEO and director. CFO Colette Kress became interim CEO, and the board began its search for a permanent successor.'
       ),
-      note: label('11 月 12 日是公开披露日。8-K 记载董事会于 11 月 11 日接受辞呈，即刻生效。', 'The announcement was published November 12. NVIDIA’s Form 8-K records board acceptance on November 11, effective immediately.'),
+      note: label('11 月 12 日是官方公告日期。所附 8-K 原文目前未完成核验，文件中的具体生效日期仍待核对。', 'November 12 is the date of the official announcement. The linked Form 8-K has not yet been independently checked, so its precise effective date remains pending.'),
       sources: [source.succession, source.filing]
     },
     {
@@ -349,4 +373,68 @@ export const jensenHuangPerspective: PerspectiveEvent = {
     zh: {articleSlug: 'nvidia-jensen-debate-09-handover-timing'},
     en: {articleSlug: 'nvidia-jensen-debate-09-handover-timing'}
   }
+};
+
+// Verification records concern the linked material, not an endorsement of a speaker's view.
+const verifiedSources = new Set([
+  source.apology.href,
+  source.boardReview.href,
+  source.independentDirectors.href,
+  source.succession.href,
+  source.congress.href,
+  'https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology',
+  'https://finance.sina.com.cn/roll/2026-11-13/doc-iniypvhm1318501.shtml',
+  'https://static.cdsb.com/micropub/Articles/202611/25a02cbb69e34a3c78640f3370e70ec6.html'
+]);
+
+const verifiedRecords = new Set(['huang-apology', 'board-investigation', 'independent-counsel', 'nvidia-transition', 'dan-competition', 'congress-context', 'commerce-context']);
+
+function withVerification<T extends PerspectiveEvent['timeline'][number] | PerspectiveEvent['debate'][number]>(entry: T): T {
+  const sources = entry.sources.map((item) => ({
+    ...item,
+    verification: verifiedSources.has(item.href) ? 'verified' as const : 'pending' as const,
+    checkedAt: '2026-11-19'
+  })) as T['sources'];
+  return {
+    ...entry,
+    sources,
+    verification: verifiedRecords.has(entry.id) ? 'verified' : 'pending',
+    note: entry.id === 'zaobao-coverage'
+      ? label('原节目链接目前返回 404，记录保留为待核验线索，尚不能据此确认报道内容。', 'The original programme link currently returns 404. This remains an unchecked lead, not a confirmed account.')
+      : entry.id === 'gerstner-context'
+        ? label('原访谈来源目前无法解析域名，需补充可访问的原始记录。', 'The interview source’s domain is currently unavailable. An accessible original record is still needed.')
+        : entry.note,
+    relationship: entry.relationship ?? (entry.participant === 'media' ? 'media-interpretation' : 'statement')
+  };
+}
+
+const participantByDebate: Record<string, string> = {
+  'board-debate': 'nvidia', 'bessent-debate': 'bessent', 'trump-debate': 'trump',
+  'musk-debate': 'musk', 'congress-context': 'congress', 'commerce-context': 'commerce',
+  'bezos-context': 'bezos', 'altman-context': 'altman', 'gerstner-context': 'gerstner'
+};
+
+const timeline = event.timeline.map((entry) => withVerification({
+  ...entry,
+  relationship: entry.id === 'duan-later-view' ? 'update' as const : entry.relationship,
+  relatedTo: entry.timelineId ? [entry.timelineId] : undefined
+}));
+const debate = event.debate.map((entry) => withVerification({
+  ...entry,
+  participant: participantByDebate[entry.id],
+  relationship: entry.id === 'musk-debate' ? 'media-interpretation' as const : entry.role === 'institution' ? 'statement' as const : 'different-view' as const
+}));
+
+export const jensenHuangPerspective: PerspectiveEvent = {
+  ...event,
+  timeline: [
+    ...timeline,
+    ...debate.filter((entry) => entry.id !== 'board-debate').map((entry) => ({
+      ...entry,
+      participant: entry.participant!,
+      // Media coverage and the reported petition are separate records on the same axis.
+      relatedTo: entry.timelineId ? [entry.timelineId] : undefined
+    }))
+  ],
+  debate
 };

@@ -1,5 +1,347 @@
 [
   {
+    "id": "en:article:nvidia-jensen-debate-01-platform-leadership",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "Who Can Replace Jensen Huang? Part 1 of 4 | Would NVIDIA Still Be the NVIDIA We Know Without Him?",
+    "summary": "Technology and ecosystem give NVIDIA its lead. Sustaining that lead requires sound strategic leadership.",
+    "href": "/en/articles/nvidia-jensen-debate-01-platform-leadership/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Competitive Advantage"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "Who Can Replace Jensen Huang? Part 1 of 4 | Would NVIDIA Still Be the NVIDIA We Know Without Him? Technology and ecosystem give NVIDIA its lead. Sustaining that lead requires sound strategic leadership. Company Research NVIDIA Jensen Huang AI Competitive Advantage The case for Huang The company · Technical barriers and strategic leadership Introduction NVIDIA itself may be the only company that can beat NVIDIA. Jensen Huang has been the person pushing it to keep surpassing its own achievements. One sentence summary: Technology and ecosystem give NVIDIA its lead. Sustaining that lead requires sound strategic leadership. Here are five reasons. 1. Zeno’s paradox. Why are rivals always chasing yesterday’s NVIDIA? From Hopper to Blackwell to Rubin, AMD has been working to catch up with NVIDIA’s previous generation while NVIDIA has expanded the race from GPUs to CPUs, networking, software and complete systems. Its competitors are pursuing a moving target. Zeno’s paradox offers no proof that a leader will stay ahead forever. It does capture how continuous iteration has helped NVIDIA preserve its advantage. 2. The Matthew effect. Why might a bigger lead produce an even stronger advantage? More customers bring in more revenue, which pays for more R&D. More developers improve the CUDA ecosystem, which in turn draws in more customers. The cycle reinforces itself. AMD, Broadcom and chips designed in house by cloud providers can make inroads in specific"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-02-founder-succession",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "Who Can Replace Jensen Huang? Part 2 of 4 | The World Has Plenty of CEOs. NVIDIA Needs Another Jensen Huang",
+    "summary": "There are plenty of capable CEOs. What is hard to reproduce is the breadth of leadership Huang and NVIDIA developed together over more than three decades.",
+    "href": "/en/articles/nvidia-jensen-debate-02-founder-succession/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Leadership"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "Who Can Replace Jensen Huang? Part 2 of 4 | The World Has Plenty of CEOs. NVIDIA Needs Another Jensen Huang There are plenty of capable CEOs. What is hard to reproduce is the breadth of leadership Huang and NVIDIA developed together over more than three decades. Company Research NVIDIA Jensen Huang AI Leadership The case for Huang The entrepreneur · The scarcity of exceptional leadership Introduction Elon Musk, Sam Altman, Dario Amodei and Tim Cook, who spent years running Apple, are all prominent technology leaders. If asked to take over NVIDIA today, which of them would want the job? Who could do it well from day one? One sentence summary: There are plenty of capable CEOs. What is hard to reproduce is the breadth of leadership Huang and NVIDIA developed together over more than three decades. I want to make five points. 1. Exceptional entrepreneurs are scarce The world has many professional managers. Few can lead a major technology company for years and steer it successfully through multiple industry cycles. Musk has his space and automotive businesses. Altman and Amodei have AI companies of their own. A top entrepreneur is not someone a company can hire or replace on demand. Even someone NVIDIA could recruit might be a poor fit. 2. What does an exceptional CEO need to do well? Strategy, technology, organizational management, commercial operations and coordination across an industry. It is easy to imagine someone excelling in any one of those areas. The hard part is being able to handle a"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-03-industry-network",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "Who Can Replace Jensen Huang? Part 3 of 4 | Can NVIDIA Keep Huang’s Network After Replacing Him?",
+    "summary": "Orders can be handed over and contracts can continue. Trust and the ability to coordinate strategy across companies are much harder to pass on.",
+    "href": "/en/articles/nvidia-jensen-debate-03-industry-network/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "AI Infrastructure"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "Who Can Replace Jensen Huang? Part 3 of 4 | Can NVIDIA Keep Huang’s Network After Replacing Him? Orders can be handed over and contracts can continue. Trust and the ability to coordinate strategy across companies are much harder to pass on. Company Research NVIDIA Jensen Huang AI AI Infrastructure The case for Huang The industry · The global AI ecosystem and strategic relationships Introduction Among NVIDIA’s greatest assets, alongside its GPUs, CUDA and engineering teams, is the global network of industry partnerships that Huang built over more than three decades. One sentence summary: Orders can be handed over and contracts can continue. Trust and the ability to coordinate strategy across companies are much harder to pass on. There are five parts to that argument. 1. TSMC. Can money alone buy the most advanced capacity? NVIDIA designs excellent chips. It still relies on partners for advanced manufacturing and packaging. Through years of work together, NVIDIA and TSMC have built a deep relationship in advanced process technology, packaging and capacity planning. Design determines how powerful an AI chip can be. Supply chain coordination helps determine whether it reaches customers on time. That relationship goes well beyond a contract signed by procurement. 2. Microsoft and Amazon. Why do customers work with a competitor? Technology companies such as Microsoft and Amazon develop their own AI chips while continuing to adopt NVIDIA’s computing platform. Amazon Web Services, f"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-04-us-ai-competitiveness",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "Who Can Replace Jensen Huang? Part 4 of 4 | America Wants to Win the AI Race. Why Lose Jensen Huang Now?",
+    "summary": "America’s AI industry needs leading computing platforms and leaders who can bring technology, capital and manufacturing together.",
+    "href": "/en/articles/nvidia-jensen-debate-04-us-ai-competitiveness/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Industrial Strategy"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "Who Can Replace Jensen Huang? Part 4 of 4 | America Wants to Win the AI Race. Why Lose Jensen Huang Now? America’s AI industry needs leading computing platforms and leaders who can bring technology, capital and manufacturing together. Company Research NVIDIA Jensen Huang AI Industrial Strategy The case for Huang National competitiveness · AI competition and rebuilding U.S. manufacturing Introduction If AI determines future industrial competitiveness, NVIDIA matters beyond the stock market. Huang’s departure deserves to be considered in the wider context of America’s AI industry. One sentence summary: America’s AI industry needs leading computing platforms and leaders who can bring technology, capital and manufacturing together. Why take Huang’s departure so seriously? I have five reasons. 1. The U.S.–China AI race goes beyond large models The United States is promoting AI infrastructure, innovation and advanced manufacturing. China is advancing its AI Plus initiative and building out intelligent computing capacity. The competition is spreading from model capabilities to data centers, robotics, advanced manufacturing, scientific research and other industries. A country’s future competitiveness depends on whether it can turn AI into productivity at scale and keep doing so over time. This industrial competition could last more than a decade. 2. NVIDIA is a foundation of the U.S. AI industry The United States has strong technology companies including OpenAI, Google, Microsof"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-05-platform-continuity",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "NVIDIA Is Bigger Than Jensen Huang. Part 1 of 4 | NVIDIA Is Still NVIDIA Without Him",
+    "summary": "Huang created NVIDIA’s competitive lead, and those advantages have become durable assets of the company.",
+    "href": "/en/articles/nvidia-jensen-debate-05-platform-continuity/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Competitive Advantage"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "NVIDIA Is Bigger Than Jensen Huang. Part 1 of 4 | NVIDIA Is Still NVIDIA Without Him Huang created NVIDIA’s competitive lead, and those advantages have become durable assets of the company. Company Research NVIDIA Jensen Huang AI Competitive Advantage The case for succession The company · Technical barriers and strategic continuity Introduction Will NVIDIA lose its competitive edge when Jensen Huang leaves? I see it differently. NVIDIA’s greatest strength is that it has built an AI computing system that can keep operating without depending on one person. One sentence summary: Huang created NVIDIA’s competitive lead, and those advantages have become durable assets of the company. I want to make five points. 1. Zeno’s paradox. Rivals are chasing NVIDIA as a company From Hopper to Blackwell to Rubin, what drives NVIDIA’s product iterations is a large engineering workforce, an established research operation and a product roadmap. CUDA and the research teams will still be there after Huang leaves. Work on the next generation will carry on. NVIDIA has already turned its founder’s strategic judgments into capabilities the organization can use. 2. The Matthew effect. NVIDIA’s lead can outlast a change of CEO Customers, revenue, R&D spending, developers and supply chain partnerships have come to reinforce one another. Once a real moat is in place, its survival is no longer wholly up to the person who dug it. AMD, Broadcom and in house ch"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-06-governance-succession",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "NVIDIA Is Bigger Than Jensen Huang. Part 2 of 4 | NVIDIA Needs a Successor Who Can Lead Its Next Chapter",
+    "summary": "The CEO’s job is to lead the existing organization through its next stage of development.",
+    "href": "/en/articles/nvidia-jensen-debate-06-governance-succession/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Corporate Governance"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "NVIDIA Is Bigger Than Jensen Huang. Part 2 of 4 | NVIDIA Needs a Successor Who Can Lead Its Next Chapter The CEO’s job is to lead the existing organization through its next stage of development. Company Research NVIDIA Jensen Huang AI Corporate Governance The case for succession The entrepreneur · Organizational capability and corporate governance Introduction Some argue that even Musk, Altman or Amodei might have trouble taking over NVIDIA. How could another CEO possibly do it? I think that starts with the wrong question. Why does NVIDIA have to find another Jensen Huang? One sentence summary: The CEO’s job is to lead the existing organization through its next stage of development. I want to make five points. 1. Great founders are scarce. Capable successors still exist Leaders such as Huang and Musk have different experiences and abilities. Successful companies are led by more than one kind of CEO. Some create new markets, some expand mature businesses, some bring organizations together, and some excel at running complex global operations. NVIDIA needs a leader suited to its next phase. 2. Huang’s success also testifies to the strength of NVIDIA’s people The CEO of a global technology company cannot design every chip, write CUDA, build networks and coordinate the supply chain alone. NVIDIA’s achievements come from the engineers, researchers and managers it has built up over time. Giving Huang all the credit would underrate the orga"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-07-partnership-continuity",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "NVIDIA Is Bigger Than Jensen Huang. Part 3 of 4 | Will Huang’s Network Really Leave With Him?",
+    "summary": "Commercial partnerships rest on technology, shared interests and long-term contracts. Huang’s personal relationships are one important part of that foundation.",
+    "href": "/en/articles/nvidia-jensen-debate-07-partnership-continuity/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "AI Infrastructure"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "NVIDIA Is Bigger Than Jensen Huang. Part 3 of 4 | Will Huang’s Network Really Leave With Him? Commercial partnerships rest on technology, shared interests and long-term contracts. Huang’s personal relationships are one important part of that foundation. Company Research NVIDIA Jensen Huang AI AI Infrastructure The case for succession The industry · Commercial interests and the global partnership ecosystem Introduction TSMC, Microsoft, Amazon and OpenAI are among Huang’s many industry relationships. Do they work with NVIDIA because of Huang personally, or because NVIDIA can create value for them? One sentence summary: Commercial partnerships rest on technology, shared interests and long term contracts. Huang’s personal relationships are one important part of that foundation. I want to make five points. 1. TSMC. Commercial value sustains a long term relationship NVIDIA needs TSMC’s advanced manufacturing capability. TSMC benefits from NVIDIA’s large demand for chips. Their work together covers process technology, packaging, capacity planning and long term roadmaps. Changing the CEO is unlikely to make TSMC suddenly stop supplying chips to NVIDIA. The main factor in whether the partnership continues is whether the companies keep creating value together. 2. Microsoft and Amazon. They buy GPUs because they need the computing power Cloud giants have procurement teams, technical evaluation processes and long term investment plans of their own. They buy NVIDIA computing platforms for AI training"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-08-ai-industrial-system",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "NVIDIA Is Bigger Than Jensen Huang. Part 4 of 4 | Can the Future of American AI Really Depend on Jensen Huang Alone?",
+    "summary": "U.S. AI competitiveness depends on a system of technology, capital and manufacturing that extends far beyond any one entrepreneur.",
+    "href": "/en/articles/nvidia-jensen-debate-08-ai-industrial-system/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Industrial Strategy"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "NVIDIA Is Bigger Than Jensen Huang. Part 4 of 4 | Can the Future of American AI Really Depend on Jensen Huang Alone? U.S. AI competitiveness depends on a system of technology, capital and manufacturing that extends far beyond any one entrepreneur. Company Research NVIDIA Jensen Huang AI Industrial Strategy The case for succession National competitiveness · U.S.–China AI competition and industrial capacity Introduction AI is becoming an important force in global technology competition and industrial change. Can the future of the U.S. AI industry really depend on whether one company’s CEO stays in office? One sentence summary: U.S. AI competitiveness depends on a system of technology, capital and manufacturing that extends far beyond any one entrepreneur. I want to make five points. 1. The U.S.–China AI race is a contest between industrial systems GPUs are one part of AI competition. The race also involves large models, cloud computing, semiconductor manufacturing, power, networking, software, talent and research institutions. The United States has many technology companies and research institutions. China continues to build out its AI industry. One CEO’s career decision cannot determine the outcome of a contest this large. 2. NVIDIA matters within a much bigger American AI industry The United States has Microsoft, Google, Amazon, Meta, OpenAI, Anthropic and many companies in semiconductors, manufacturing and energy. NVIDIA is a major computing platform provider. In house chips from cl"
+  },
+  {
+    "id": "en:article:nvidia-jensen-debate-09-handover-timing",
+    "type": "article",
+    "typeLabel": "Article",
+    "title": "Who Can Replace Jensen Huang? Finale to the Eight-Essay Debate | NVIDIA Will Have a Second CEO. Now Is the Wrong Time",
+    "summary": "NVIDIA will eventually have to replace Jensen Huang. Losing him in this crucial decade for AI could come at a significant cost to NVIDIA, the global AI industry and U.S. advanced manufacturing.",
+    "href": "/en/articles/nvidia-jensen-debate-09-handover-timing/",
+    "locale": "en",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Corporate Governance"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "Who Can Replace Jensen Huang? Finale to the Eight-Essay Debate | NVIDIA Will Have a Second CEO. Now Is the Wrong Time NVIDIA will eventually have to replace Jensen Huang. Losing him in this crucial decade for AI could come at a significant cost to NVIDIA, the global AI industry and U.S. advanced manufacturing. Company Research NVIDIA Jensen Huang AI Corporate Governance My judgment From company value to the future of the AI industry Introduction Eight essays, two positions and four rounds of debate. Can NVIDIA stay ahead? Who can take over from Huang? Will its global partnerships change? What happens to America’s AI competitiveness? The case for Huang is that he is extremely hard to replace. The case for succession is that a mature company should be able to outlast any individual leader. Both arguments have a logic of their own. I think the case for succession overlooks the most important question. A company can keep operating and still pay a heavy price. One sentence summary: NVIDIA will eventually have to replace Jensen Huang. Losing him in this crucial decade for AI could come at a significant cost to NVIDIA, the global AI industry and U.S. advanced manufacturing. Here are my five judgments. 1. The technical debate. CUDA will remain. Who will create the next CUDA? The case for succession is that NVIDIA will keep its GPUs, CUDA, research teams and roadmap after Huang leaves. That is true. These are already achievements NVIDIA can draw on. NVIDIA’s advantage depends on the choices it has made so far and on its ability to keep identifying the next"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-01-platform-leadership",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《谁能替代黄仁勋？》四部曲·第1篇｜没有黄仁勋，英伟达还是今天的英伟达吗？",
+    "summary": "英伟达的领先来自技术与生态，而持续领先离不开正确的战略领导。",
+    "href": "/zh/articles/nvidia-jensen-debate-01-platform-leadership/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Competitive Advantage"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《谁能替代黄仁勋？》四部曲·第1篇｜没有黄仁勋，英伟达还是今天的英伟达吗？ 英伟达的领先来自技术与生态，而持续领先离不开正确的战略领导。 Company Research NVIDIA Jensen Huang AI Competitive Advantage 挺黄派｜论企业 · 技术壁垒与战略领导力 文章导读 打败英伟达的，可能只有英伟达自己。而黄仁勋，恰恰是那个不断推动英伟达超越自己的人。 一句话摘要：英伟达的领先来自技术与生态，而持续领先离不开正确的战略领导。 为什么这么说？我想讲五点。 一、芝诺悖论：为什么追赶者总在追赶昨天的英伟达？ 从Hopper到Blackwell，再到Rubin，当AMD努力追赶英伟达上一代产品时，英伟达已经把竞争从GPU扩展到CPU、网络、软件和整机系统。 竞争对手追赶的是一个不断向前移动的目标。 芝诺悖论不能证明领先者永远不会被超越，但非常适合形容英伟达不断迭代的竞争优势。 二、马太效应：为什么英伟达可能越领先，优势越大？ 更多客户带来更多收入，更多收入支持更大研发投入；更多开发者完善CUDA生态，更成熟的生态又吸引更多客户。 这形成了持续强化的正向循环。 AMD、博通及云巨头自研芯片可以在局部市场取得突破，但 追赶某一颗芯片，与替代一整套AI计算平台，是两回事。 三、历史反转：打败柯达的不是富士，打败诺基亚的也不是摩托罗拉 至少，真正改变行业格局的，不只是这些传统竞争对手。 柯达没能成功完成数字影像时代的商业转型；诺基亚则在智能手机操作系统和应用生态竞争中失去主导地位。 行业第一名最大的危险，可能不是第二名，而是下一代产业规则。 英伟达也必须警惕自己成为下一个柯达或诺基亚。 四、黄仁勋最稀缺的能力，是敢于淘汰昨天的英伟达 从游戏显卡到CUDA，从AI训练到数据中心，再到推理、智能体和物理AI，黄仁勋持续推动英伟达跨越不同技术周期。 优秀的CEO能管理今天的企业，卓越的创始人则可能不断重新定义企业的明天。 黄仁勋最重要的价值，正是长期坚持技术投入、推动企业自我革新的能力。 五、换掉黄仁勋，换来的会是什么？ 英伟达不会因为一位CEO离开，就立即失去产品、客户和技术团队。 但未来十年，AI产业仍将经历重大变化。 换帅真正需要担忧的，不是明天少卖多少GPU，而是下一次技术转型时，英伟达还能否作出同样出色的战略判断。 总结 英伟达的护城河，来自三十多年的技术积累；黄仁勋的价值，在于持续推动这条护城河向未来延伸。 没有黄仁勋，英伟达依然是一家强大的公司。 但没有黄仁勋，它还会是今天的英伟达吗？ 我对此持怀疑态度。 留给读者：如果下一次计算革命到来，谁能继续带领英伟达成为下一代的领导者？ 对照阅读 《英伟达不止黄仁勋》四部曲·第1篇｜没有黄仁勋，英伟达依然是英伟达 阅读终章《英伟达会有第二任CEO，但不该是现在》 到观点星图查看八篇对辩"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-02-founder-succession",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《谁能替代黄仁勋？》四部曲·第2篇｜世界不缺CEO，英伟达缺的是第二个黄仁勋",
+    "summary": "优秀CEO并不稀缺到绝迹，难以复制的是黄仁勋与英伟达共同成长三十多年的综合领导能力。",
+    "href": "/zh/articles/nvidia-jensen-debate-02-founder-succession/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Leadership"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《谁能替代黄仁勋？》四部曲·第2篇｜世界不缺CEO，英伟达缺的是第二个黄仁勋 优秀CEO并不稀缺到绝迹，难以复制的是黄仁勋与英伟达共同成长三十多年的综合领导能力。 Company Research NVIDIA Jensen Huang AI Leadership 挺黄派｜论企业家 · 顶级领导力的稀缺性 文章导读 马斯克、奥尔特曼、阿莫代伊，以及曾长期掌管苹果的库克，都是科技产业中具有代表性的领导者。 但如果今天让他们接管英伟达，谁愿意？谁又能立即胜任？ 一句话摘要：优秀CEO并不稀缺到绝迹，难以复制的是黄仁勋与英伟达共同成长三十多年的综合领导能力。 我想谈五点。 一、真正的顶级企业家，是稀缺资源 世界上有无数职业经理人，但能长期领导大型科技企业、成功跨越产业周期的人，并不多。 马斯克有自己的航天和汽车事业，奥尔特曼和阿莫代伊有各自的AI企业。 顶级企业家不是一个可以随时招聘、随时替换的岗位资源。 更重要的是，即便请得到，也不代表适合英伟达。 二、优秀CEO需要什么能力？ 战略判断、技术理解、组织管理、商业经营和产业协调。 这五种能力，分别拥有一项并不难理解。 真正困难的是，一个人能够长期同时驾驭五种能力，并在重大决策上不断取得成果。 黄仁勋用了三十多年，证明了自己能够把技术创新转化为持续发展的商业体系。 三、黄仁勋的管理方式，很难照搬 黄仁勋曾公开介绍，自己有约60名直接汇报的高管。 他强调减少管理层级、共享信息，让不同团队直接参与问题解决。 别人可以复制60名直属高管的组织图，却未必能够复制驾驭这套组织的能力。 这种管理方式依赖CEO对技术、业务和人员的深入理解。 四、从外部找CEO，谁能立即接手？ 如果一位新CEO需要重新理解CUDA、GPU架构、全球供应链、客户关系和下一代AI技术路线，那么交接就不只是更换办公室里的一张椅子。 即使是其他行业非常成功的企业家，也不一定能够迅速胜任英伟达的CEO。 那么，我们又凭什么认为，履历优秀的普通职业经理人就能轻松接棒？ 五、从内部选CEO，就一定更好吗？ 内部高管熟悉英伟达，也可能拥有深厚的技术与管理经验。 但负责一个部门，与统筹整个AI计算平台的战略发展，是两种不同的挑战。 黄仁勋不仅领导英伟达，他长期塑造了英伟达的组织方式、技术方向和企业文化。 接替职位容易，完整接替这种综合影响力却很难。 总结 世界上当然还有优秀企业家，但优秀不等于适合，适合也不等于能够立即接替。 黄仁勋与英伟达共同成长了三十多年。 他的独特之处，不是比所有CEO都优秀，而是他与英伟达的历史、技术和组织体系高度契合。 你可以任命一位新的CEO，却未必能够找到第二个黄仁勋。 留给读者：如果由你来决定英伟达下一任CEO，你能说出一个更有把握的人选吗？ 资料来源 Stripe Sessions 黄仁勋访谈 对照阅读 《英伟达不止黄仁勋》四部曲·第2篇｜英伟达需要下一任CEO，而不是第二个黄仁勋 阅读终章《英伟达会有第二任CEO，但不该是现在》 到观点星图查看八篇对辩"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-03-industry-network",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《谁能替代黄仁勋？》四部曲·第3篇｜换掉黄仁勋，英伟达还能留住他的朋友圈吗？",
+    "summary": "订单可以交接，合同可以延续，但长期形成的产业信任与战略协调能力，很难一起交给新CEO。",
+    "href": "/zh/articles/nvidia-jensen-debate-03-industry-network/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "AI Infrastructure"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《谁能替代黄仁勋？》四部曲·第3篇｜换掉黄仁勋，英伟达还能留住他的朋友圈吗？ 订单可以交接，合同可以延续，但长期形成的产业信任与战略协调能力，很难一起交给新CEO。 Company Research NVIDIA Jensen Huang AI AI Infrastructure 挺黄派｜论产业 · 全球AI生态与战略关系 文章导读 英伟达最大的财富，除了GPU、CUDA和技术团队，还有黄仁勋三十多年建立的全球产业合作网络。 一句话摘要：订单可以交接，合同可以延续，但长期形成的产业信任与战略协调能力，很难一起交给新CEO。 我想从五个方面谈谈。 一、台积电：有钱就能买到最先进的产能吗？ 英伟达拥有出色的芯片设计能力，但先进制造和封装仍然依赖产业链合作。 英伟达与台积电长期协作，在先进制程、封装和产能规划上形成了深厚的合作基础。 在AI芯片竞争中，设计能力决定产品能有多强，供应链协作则影响产品能否及时交付。 这种长期合作关系，显然不只是采购部门的一份合同。 二、微软、亚马逊：客户为什么愿意和竞争对手合作？ 微软、亚马逊等科技巨头，一边研发自有AI芯片，一边持续采用英伟达的计算平台。 例如，亚马逊AWS已公布未来进一步部署数百万颗英伟达GPU的计划。 如何让正在研发替代产品的大客户，仍然愿意持续采购你的下一代产品？ 这不仅需要技术优势，也需要长期可信的产品路线和商业合作能力。 三、OpenAI等AI公司：从买卖芯片走向共同规划未来 英伟达与OpenAI公布过10GW AI基础设施合作规划。 这已经不是简单的卖方报价、买方采购。 双方需要围绕未来模型、算力架构、数据中心和交付节奏进行长期协调。 当客户的未来发展与供应商的下一代产品路线紧密相连，合作关系就成为企业重要的战略资产。 四、黄仁勋真正的朋友圈，是全球AI产业网络 台积电负责芯片制造，云巨头建设计算基础设施，OpenAI等企业研发模型，服务器、网络和能源企业共同支撑部署。 每一家企业都有自己的利益与目标。 黄仁勋的重要能力之一，是让这些企业围绕英伟达的平台持续合作。 这不是简单认识多少位大佬，而是让不同公司相信：与英伟达合作，能够共同创造长期价值。 五、换一位CEO，这张关系网能够完整继承吗？ 客户不会因为黄仁勋离开，就立即停止采购GPU。 合作合同也不会自动失效。 但长期的战略互信、重大项目协调能力，以及关键时刻推动合作的个人影响力，是否能够原封不动地转移？ 产品可以继承，合同可以继承，但人与人之间几十年形成的信任，很难一夜之间完成交接。 总结 英伟达不只是一家芯片公司，更是连接全球AI产业的重要平台。 黄仁勋不仅塑造了英伟达的产品和技术，也长期参与建立了其全球合作生态。 换掉黄仁勋，英伟达未必会失去这些客户，但可能失去一部分难以量化的产业协调能力。 留给读者：如果黄仁勋的朋友圈是英伟达的重要无形资产，我们究竟应该如何为它估值？ 资料来源 AWS 与英伟达扩展合作的公告 OpenAI 与英伟达公布的 10 吉瓦合作意向 对照阅读 《英伟达不止黄仁勋》四部曲·第3篇｜黄仁勋的朋友圈，真的会跟着黄仁勋离开吗？ 阅读终章《英伟达会有第二任CEO，但不该是现在》 到观点星图查看八篇对辩"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-04-us-ai-competitiveness",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《谁能替代黄仁勋？》四部曲·第4篇｜美国要赢得AI竞赛，却在此时失去了黄仁勋？",
+    "summary": "美国AI产业需要领先的算力平台，也需要能够将技术、资本和制造业组织起来的产业领导者。",
+    "href": "/zh/articles/nvidia-jensen-debate-04-us-ai-competitiveness/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Industrial Strategy"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《谁能替代黄仁勋？》四部曲·第4篇｜美国要赢得AI竞赛，却在此时失去了黄仁勋？ 美国AI产业需要领先的算力平台，也需要能够将技术、资本和制造业组织起来的产业领导者。 Company Research NVIDIA Jensen Huang AI Industrial Strategy 挺黄派｜论国运 · AI产业竞争与美国制造业重塑 文章导读 如果AI决定未来的产业竞争力，那么英伟达就不只是一家上市公司。黄仁勋的离开，也值得放到美国AI产业发展的更大背景下思考。 一句话摘要：美国AI产业需要领先的算力平台，也需要能够将技术、资本和制造业组织起来的产业领导者。 为什么黄仁勋的离开值得如此重视？我想讲五点。 一、中美AI竞争，争夺的不只是一款大模型 美国推动AI基础设施、创新和先进制造，中国推进“人工智能+”与智能算力体系建设。 AI竞争正在从模型能力，延伸到数据中心、机器人、智能制造、科研和其他产业。 未来决定国家竞争力的，不只是拥有多少先进模型，而是能否让AI持续转化为生产力。 这是一场可能持续十年以上的产业竞争。 二、英伟达是美国AI产业的重要基石 美国拥有OpenAI、谷歌、微软、亚马逊等强大的科技企业。 它们在模型、云计算和AI应用方面各有所长，而英伟达提供了大量AI基础设施所依赖的GPU、网络、计算系统和软件生态。 英伟达的技术路线和交付能力，已经与美国AI产业的发展速度紧密相连。 英伟达如果出现重大创新或执行失误，影响可能沿着整个产业链扩散。 三、美国制造业重塑，需要的不只是投资 美国希望扩大先进半导体制造、服务器生产和数据中心基础设施建设。 从英伟达与台积电推动美国本土Blackwell芯片制造，到AI服务器、网络和能源配套建设，算力投资正在连接更多制造业环节。 但建设工厂只是第一步。 真正重要的是，有没有企业能够把芯片设计、先进制造、供应链和全球需求组织成一个高效运转的产业体系。 黄仁勋长期承担着这一体系中的重要战略协调角色。 四、美国拥有技术和资本，但卓越产业领导者同样稀缺 技术突破需要科学家，产品落地需要工程师，基础设施建设需要资本。 但谁来判断未来十年的技术路线？谁来协调数以千亿甚至万亿美元计的产业投入？谁来带领一家大型企业持续跨越技术周期？ 国家可以制定产业战略，但真正把战略变成产品、工厂和商业成果的，终究还需要企业。 黄仁勋正是美国AI产业中具有代表性的企业领导者之一。 五、AI竞争的关键时期，为什么要承受换帅风险？ 从生成式AI到智能体，再到自动驾驶、机器人和物理AI，整个产业仍在快速变化。 英伟达需要不断作出产品、研发、供应链和资本配置的重大决策。 此时换帅，影响未必立刻反映在财报上。 真正值得担忧的，是战略连续性可能受到冲击，进而影响未来几个技术周期的执行效率。 从一家公司的角度看，这是CEO更替；从产业的角度看，则是核心基础设施供应商的一次重大领导层变化。 总结 美国希望通过AI提升科技竞争力、带动先进制造业发展，并在未来产业中保持优势。 英伟达是这一进程的重要参与者，而黄仁勋是英伟达过去三十多年战略发展的关键人物。 AI产业的竞争优势，不仅来自技术与资本，也来自能够持续组织技术创新、制造和商业合作的卓越领"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-05-platform-continuity",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《英伟达不止黄仁勋》四部曲·第1篇｜没有黄仁勋，英伟达依然是英伟达",
+    "summary": "黄仁勋创造了英伟达的领先优势，但这些优势已经沉淀为公司的长期资产。",
+    "href": "/zh/articles/nvidia-jensen-debate-05-platform-continuity/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Competitive Advantage"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《英伟达不止黄仁勋》四部曲·第1篇｜没有黄仁勋，英伟达依然是英伟达 黄仁勋创造了英伟达的领先优势，但这些优势已经沉淀为公司的长期资产。 Company Research NVIDIA Jensen Huang AI Competitive Advantage 换帅派｜论企业 · 技术壁垒与战略延续 文章导读 黄仁勋离开，英伟达就会失去竞争力吗？ 我的观点恰恰相反：英伟达最强大的地方，是它已经建立了一套不依赖单个人就能持续运转的AI计算体系。 一句话摘要：黄仁勋创造了英伟达的领先优势，但这些优势已经沉淀为公司的长期资产。 我想讲五点。 一、芝诺悖论：竞争对手追赶的是英伟达，而不是黄仁勋 从Hopper到Blackwell，再到Rubin，英伟达持续迭代的背后，是庞大的工程团队、研发体系和产品规划。 黄仁勋可以离开，但CUDA不会消失，研发团队不会消失，下一代产品也不会因此从零开始。 英伟达的技术领先，早已从个人战略判断转化为组织能力。 二、马太效应：领先优势不会随着CEO离开而消失 客户、收入、研发投入、开发者生态和供应链合作，已经形成相互强化的商业循环。 真正的护城河一旦建立，就不再完全依赖最初挖掘护城河的人。 AMD、博通和云巨头自研芯片面对的，依然是完整的英伟达计算平台。 三、柯达和诺基亚的教训，也可以从另一个方向理解 柯达和诺基亚的失利，说明企业不能永远依赖过去成功的经营方式。 但这并不意味着只有创始人才能领导下一次创新。 真正重要的，是企业能否形成持续纠错、自我革新和适应新技术的机制。 如果一种企业文化只能由一个人维持，那么它本身就存在长期风险。 四、短期经营，为什么未必出现明显阵痛？ 英伟达2026年11月17日公布的财报显示，第三季度营收约1,158亿美元，同比增长103%；公司给出的下一季度营收指引约为1,300亿美元。 这些业绩主要反映换帅前的经营成果，不能证明换帅完全没有影响。 但它们说明： 英伟达拥有强大的订单基础、成熟的产品路线和正在持续交付的计算平台。 短期经营不会因为CEO更替就自动停摆。 五、长期增长，靠的是制度化的创新能力 AI训练、推理、智能体和物理AI的需求，不会因为黄仁勋离开而消失。 英伟达未来能否继续领先，取决于技术研发、产品交付、客户价值和组织执行。 一家真正伟大的科技企业，应该能够把创始人的战略思想沉淀为长期运行的制度，而不是永久依赖创始人本人。 总结 黄仁勋的历史贡献毋庸置疑。 但 今天的英伟达，已经不只是黄仁勋的英伟达，而是由技术、人才、客户、资本和生态共同构成的全球AI平台。 我的判断：英伟达可以在短期保持经营连续性，也有能力沿既定战略继续发展。 留给读者：如果一家公司的护城河足够深，我们为什么还认为它必须依赖同一位CEO才能存在？ 资料来源 英伟达 2027 财年第三季度财报及业绩指引 对照阅读 《谁能替代黄仁勋？》四部曲·第1篇｜没有黄仁勋，英伟达还是今天的英伟达吗？ 阅读终章《英伟达会有第二任CEO，但不该是现在》 到观点星图查看八篇对辩"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-06-governance-succession",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《英伟达不止黄仁勋》四部曲·第2篇｜英伟达需要下一任CEO，而不是第二个黄仁勋",
+    "summary": "CEO的使命不是复制前任，而是带领现有组织完成下一阶段的发展。",
+    "href": "/zh/articles/nvidia-jensen-debate-06-governance-succession/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Corporate Governance"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《英伟达不止黄仁勋》四部曲·第2篇｜英伟达需要下一任CEO，而不是第二个黄仁勋 CEO的使命不是复制前任，而是带领现有组织完成下一阶段的发展。 Company Research NVIDIA Jensen Huang AI Corporate Governance 换帅派｜论企业家 · 组织能力与现代公司治理 文章导读 有人说，马斯克、奥尔特曼、阿莫代伊都未必能够接管英伟达，其他CEO又怎么可能胜任？ 但这个问题本身可能就问错了：英伟达为什么必须寻找第二个黄仁勋？ 一句话摘要：CEO的使命不是复制前任，而是带领现有组织完成下一阶段的发展。 我想讲五点。 一、顶级企业家稀缺，不代表优秀接班人不存在 黄仁勋、马斯克等企业领导者拥有不同的经历和能力。 但成功企业的CEO并不只有一种类型。 有人善于创造新市场，有人善于扩大成熟业务，有人擅长组织整合，有人擅长管理复杂的全球经营体系。 英伟达需要的是适合下一阶段的领导者，而不是黄仁勋的复制品。 二、黄仁勋的优秀，恰恰证明英伟达的人才体系强大 一家全球领先的科技公司，不可能靠CEO一个人研发芯片、编写CUDA、设计网络、协调供应链。 英伟达今天的成就，来自长期积累的优秀工程师、研究人员和管理团队。 如果所有成功都归功于黄仁勋，反而低估了他亲手建立的组织。 伟大企业家的真正成就之一，就是培养出能够独立承担责任的团队。 三、60名直属高管，不一定意味着组织无法接班 黄仁勋采用高度扁平化管理方式，曾公开介绍自己拥有约60名直接汇报高管。 但这种架构也意味着大量高级管理人员长期参与跨部门协调与重大决策。 熟悉技术、熟悉客户、熟悉公司文化的团队，本身就是企业延续的基础。 新CEO不一定需要继续采用完全相同的管理方式。 四、CEO是管理职位，不应该成为不可替代的身份 如果一家企业只能由一个人领导，那不是治理优势，而可能是关键人物风险。 董事会、管理层、内控机制和战略规划存在的目的，就是让企业在领导层变化时仍能正常运行。 2026年11月，英伟达任命长期担任CFO的Colette Kress为临时CEO，并启动内部与外部继任者遴选。 这不是否定黄仁勋，而是上市公司治理机制开始承担应有的职责。 五、下一任CEO不必超越黄仁勋，只需要做好下一阶段的英伟达 继任者不必重新发明CUDA，也不必从头建设全球客户关系。 他或她首先需要守住既定技术路线、维持研发投入、强化组织协作，并在必要时作出新的战略判断。 企业接班不是一场谁比黄仁勋更伟大的比赛，而是一场组织能否持续创造价值的考验。 总结 黄仁勋可以是一位卓越的创始人，但这并不意味着英伟达只能由黄仁勋领导。 真正成熟的企业，不应要求每一任CEO都成为传奇人物。 它需要的是清晰的战略、可靠的制度、优秀的团队，以及能够持续创造价值的领导者。 留给读者：一家伟大企业的最高成就，究竟是拥有一位不可替代的创始人，还是最终不再依赖任何一个人？ 资料来源 Stripe Sessions 黄仁勋访谈 英伟达管理层交接公告 对照阅读 《谁能替代黄仁勋？》四部曲·第2篇｜世界不缺CEO，英伟达缺的是第二个黄仁勋 阅读终章《英伟达会有第二任CEO，但不该是现在》 到观点星图查看"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-07-partnership-continuity",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《英伟达不止黄仁勋》四部曲·第3篇｜黄仁勋的朋友圈，真的会跟着黄仁勋离开吗？",
+    "summary": "商业合作建立在技术、利益和长期契约之上。黄仁勋的个人关系重要，但不是合作的唯一基础。",
+    "href": "/zh/articles/nvidia-jensen-debate-07-partnership-continuity/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "AI Infrastructure"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《英伟达不止黄仁勋》四部曲·第3篇｜黄仁勋的朋友圈，真的会跟着黄仁勋离开吗？ 商业合作建立在技术、利益和长期契约之上。黄仁勋的个人关系重要，但不是合作的唯一基础。 Company Research NVIDIA Jensen Huang AI AI Infrastructure 换帅派｜论产业 · 商业利益与全球合作生态 文章导读 台积电、微软、亚马逊、OpenAI……黄仁勋拥有广泛的产业合作关系。 但这些科技巨头与英伟达合作，究竟是因为黄仁勋这个人，还是因为英伟达能够创造商业价值？ 一句话摘要：商业合作建立在技术、利益和长期契约之上。黄仁勋的个人关系重要，但不是合作的唯一基础。 我想讲五点。 一、台积电：长期合作靠的是商业价值，而不是私人交情 英伟达需要台积电的先进制造能力，台积电也能从英伟达庞大的芯片需求中获得商业价值。 双方合作涉及工艺、封装、产能规划和长期技术路线。 台积电不会因为更换CEO，就突然不愿意向英伟达供应芯片。 决定合作能否持续的，首先是双方能否继续创造价值。 二、微软、亚马逊：采购GPU，首先是因为需要GPU 全球云巨头拥有自己的采购体系、技术评估机制和长期资本开支规划。 它们采购英伟达计算平台，是为了满足AI训练、推理和云服务需求。 数百亿美元级的基础设施投资，不会仅凭CEO之间的私人关系决定。 只要英伟达继续提供有竞争力的产品与稳定交付，客户就有充分的商业理由维持合作。 三、OpenAI等AI公司：战略合作属于企业，不属于个人 英伟达与OpenAI等企业的合作，涉及技术架构、计算需求、长期规划和组织协同。 双方拥有大量参与合作的工程师、研究人员与业务团队。 合作关系已经从高层共识，逐渐转化为具体技术项目和企业之间的长期安排。 高层关系可以推动合作，但日常合作不是靠高层个人持续维护的。 四、真正的产业生态，不应只是一张私人关系网 英伟达已经拥有全球开发者、系统厂商、云平台和软件企业组成的庞大生态。 CUDA不会因为CEO离开而失去开发者，NVLink也不会因为换帅而停止发挥技术价值。 企业生态最强大的特征，就是它能够通过共同利益持续运转，而不必依赖一个人的协调。 如果所有合作都必须依靠黄仁勋本人，反而说明这套产业体系还不够成熟。 五、换帅可能改变合作方式，但未必削弱合作关系 新CEO可能采取不同的沟通方式，更加制度化地管理客户关系、合作承诺和供应链协调。 个人影响力减少，不等于商业影响力必然减少。 真正决定英伟达产业地位的，仍然是产品性能、技术路线、交付能力和客户价值。 合作伙伴最终需要的是持续兑现承诺的英伟达，而不是永远由同一个人签署承诺。 总结 黄仁勋建立的产业关系值得尊重。 但 黄仁勋的朋友圈，并不等于英伟达全部的客户关系；他的个人影响力，也不等于英伟达全部的商业竞争力。 一个真正成熟的产业生态，应该能够跨越创始人的任期继续发展。 我的判断：只要技术和商业价值仍在，英伟达的全球合作网络就有足够动力继续运转。 留给读者：如果微软、亚马逊和台积电仍然需要英伟达，他们真的会因为黄仁勋离开就放弃合作吗？ 资料来源 AWS 与英伟达扩展合作的公告 OpenAI 与英伟达公布的 10 吉瓦合作意向 对照阅读 《谁能"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-08-ai-industrial-system",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《英伟达不止黄仁勋》四部曲·第4篇｜美国AI的未来，难道只能系于黄仁勋一人？",
+    "summary": "美国AI竞争力来自完整的科技、资本与制造业体系，而不是某一位企业家的不可替代性。",
+    "href": "/zh/articles/nvidia-jensen-debate-08-ai-industrial-system/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Industrial Strategy"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《英伟达不止黄仁勋》四部曲·第4篇｜美国AI的未来，难道只能系于黄仁勋一人？ 美国AI竞争力来自完整的科技、资本与制造业体系，而不是某一位企业家的不可替代性。 Company Research NVIDIA Jensen Huang AI Industrial Strategy 换帅派｜论国运 · 中美AI竞争与产业体系 文章导读 AI正在成为大国科技竞争和产业变革的重要力量。 但美国AI产业的未来，真的取决于一家公司的CEO是否继续留任吗？ 一句话摘要：美国AI竞争力来自完整的科技、资本与制造业体系，而不是某一位企业家的不可替代性。 我想讲五点。 一、中美AI竞争，是产业体系的竞争 AI竞争不仅是GPU竞争。 它还涉及大模型、云计算、半导体制造、电力、网络、软件、人才和科研体系。 美国拥有大量科技企业和研究机构，中国也在持续建设自己的AI产业体系。 如此庞大的产业竞争，不可能只由一位CEO的去留决定。 二、英伟达很重要，但美国AI产业不只有英伟达 美国拥有微软、谷歌、亚马逊、Meta、OpenAI、Anthropic等企业，以及大量半导体、制造业和能源企业。 英伟达是重要的计算平台供应商，但云厂商自研芯片、AMD和其他计算架构也在参与竞争。 AI产业的力量，来自众多企业持续创新，而不是将国家的技术命运交给一家公司的领导者。 英伟达继续强大很重要，但美国AI产业的发展不能以任何一名CEO不可替代为前提。 三、美国制造业重塑，靠的是长期投资与产业链 半导体工厂、先进封装、AI服务器、电力设施和数据中心建设，都需要长期资本投入与跨企业合作。 这些项目的实施周期往往跨越多年，涉及不同企业的工程团队、供应商和合同安排。 换帅不会让已经建成的工厂消失，也不会让正在执行的基础设施规划自动归零。 制造业竞争力最终需要由持续投资、工程能力和生产效率来支撑。 四、成熟的企业治理，也是国家产业竞争力的一部分 国家级科技产业需要持续创新，也需要稳定的治理、合规和风险管理能力。 一家公司如果过度依赖单一领导者，就可能形成较高的关键人物风险。 从长期看，将卓越创始人的个人能力转化为组织制度，可能比永久依赖创始人更加重要。 英伟达如果能够完成平稳交接，反而可以证明美国大型科技企业具备超越个人的经营韧性。 五、真正的国运竞争，考验的是长期创新能力 2025—2030年，AI训练、推理和智能体仍将推动计算需求。 2030年之后，机器人、自动驾驶和工业AI等领域也可能带来新的产业机会。 这些发展方向不会因为一位企业家离开就停止。 英伟达未来仍需要优秀的领导者，但还拥有技术团队、客户生态、研发能力和长期战略规划。 美国AI产业真正需要的，不是一位永不离任的CEO，而是一套能够持续产生优秀企业与优秀领导者的体系。 总结 黄仁勋对英伟达和AI产业的贡献，值得历史给予充分肯定。 但 一位企业家的伟大，不应该成为一个国家产业发展必须依赖他的理由。 如果美国AI产业真的足够强大，就应当能够承受核心企业正常的领导层更替，并保持持续创新。 我的判断：黄仁勋可以离开英伟达，英伟达可以继续发展，美国AI产业也完全有可能沿着既定方向持续前进。 留给读者：真正强大的国家，是拥有一位不可替代"
+  },
+  {
+    "id": "zh:article:nvidia-jensen-debate-09-handover-timing",
+    "type": "article",
+    "typeLabel": "文章",
+    "title": "《谁能替代黄仁勋？》八篇对辩·终章｜英伟达会有第二任CEO，但不该是现在",
+    "summary": "黄仁勋不是永远不可替代，但在AI产业最重要的十年里，失去他，可能是英伟达、整个AI产业乃至美国先进制造业的一次重大损失。",
+    "href": "/zh/articles/nvidia-jensen-debate-09-handover-timing/",
+    "locale": "zh",
+    "category": "Company Research",
+    "tags": [
+      "NVIDIA",
+      "Jensen Huang",
+      "AI",
+      "Corporate Governance"
+    ],
+    "keywords": [],
+    "date": "2026-11-18",
+    "text": "《谁能替代黄仁勋？》八篇对辩·终章｜英伟达会有第二任CEO，但不该是现在 黄仁勋不是永远不可替代，但在AI产业最重要的十年里，失去他，可能是英伟达、整个AI产业乃至美国先进制造业的一次重大损失。 Company Research NVIDIA Jensen Huang AI Corporate Governance 我的判断｜从企业价值到AI产业的未来 文章导读 八篇文章，两种立场，四轮交锋。 英伟达能否继续领先？谁能接替黄仁勋？全球产业关系会不会改变？美国AI竞争力是否受到影响？ 挺黄派认为，黄仁勋难以替代；换帅派认为，成熟的企业应该超越个人。 两派都有自己的逻辑。但我认为， 换帅派忽略了一个最重要的问题：能够继续运转，不等于没有付出代价。 一句话摘要：黄仁勋不是永远不可替代，但在AI产业最重要的十年里，失去他，可能是英伟达、整个AI产业乃至美国先进制造业的一次重大损失。 以下是我的五点判断。 一、第一轮交锋：CUDA不会消失，但谁来创造下一个CUDA？ 换帅派说，黄仁勋离开，英伟达的GPU、CUDA、研发团队和技术路线依然存在。 这当然没错。但这些都是已经创造出来的成果。 英伟达今天的技术优势，不只是来自过去做对了什么，更来自它能否持续判断下一个技术方向。 从GPU到CUDA，从AI训练到整机系统，黄仁勋的价值恰恰是不断推动英伟达重新定义自己。 继承昨天的英伟达，与创造明天的英伟达，是两种完全不同的能力。 二、第二轮交锋：优秀高管很多，为什么一定能够接替黄仁勋？ 换帅派认为，英伟达拥有成熟团队，不需要再找一个黄仁勋。 但我认为，问题恰恰在这里。 优秀的工程师、业务负责人和职业经理人，可以有很多；同时具备技术远见、组织领导力、商业判断和产业影响力的企业家，却极其稀缺。 即使让马斯克、奥尔特曼等知名科技企业领导者接管英伟达，也不能保证他们能够迅速胜任。 更何况黄仁勋用三十多年塑造的高度扁平化管理体系，本身就高度依赖他的综合协调能力。 任命一位CEO，不等于复制了一位黄仁勋。 三、第三轮交锋：合同不会消失，但产业信任真的没有成本吗？ 换帅派认为，台积电、微软、亚马逊、OpenAI等企业与英伟达合作，是因为商业利益，而不是私人交情。 我同意。 但商业合作从来不只有合同，还有共同判断未来、承担风险和协调资源的能力。 先进芯片产能如何分配？下一代计算架构如何规划？AI公司与云巨头未来几年的投入如何协调？ 这些问题并不是一份合同就能全部解决的。 黄仁勋三十多年积累的，不只是人脉，而是全球AI产业对他长期战略判断和执行能力形成的信任。 客户不会立即离开英伟达，但失去一位能够推动整个产业共同前进的领导者，难道没有代价？ 四、第四轮交锋：美国不依赖一个人，但能承受失去他带来的机会成本吗？ 换帅派认为，美国拥有谷歌、微软、亚马逊、OpenAI等众多企业，国家AI竞争力不可能取决于黄仁勋一人。 这同样没错。 但国家产业竞争力，恰恰是由一个个关键企业、关键技术和关键人物共同构成的。 英伟达不是美国AI产业的全部，却是其中极其重要的计算基础设施供应商。 当美国正在推进AI基础设施建设、先进制造业发展，而中国也在加速AI产业布局时，英伟达的战略执行效率具有超出公司本身的意义。 美国不会因为失去黄"
+  },
+  {
     "id": "en:article:career-151-ai-era-unemployment-system-mismatch",
     "type": "article",
     "typeLabel": "Article",

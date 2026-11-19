@@ -39,6 +39,22 @@ export const categories = [
 
 export type Category = (typeof categories)[number];
 
+export type ArticleRelatedLink = {
+  type: 'event' | 'person' | 'company' | 'article';
+  label: string;
+  href: string;
+};
+
+export type ArticleAuthorOpinion = {
+  conclusion: string;
+  evidence: string[];
+  probability: number | null;
+  probabilityStatus: 'unspecified' | 'estimated';
+  invalidationConditions: string[];
+  retrospective: 'pending' | 'completed';
+  related: ArticleRelatedLink[];
+};
+
 export type ArticleFrontMatter = {
   title: string;
   title_en?: string;
@@ -52,6 +68,7 @@ export type ArticleFrontMatter = {
   keywords?: string[];
   language: Locale;
   draft?: boolean;
+  authorOpinion?: ArticleAuthorOpinion;
 };
 
 export type Article = ArticleFrontMatter & {
